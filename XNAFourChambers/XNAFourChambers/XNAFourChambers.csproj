@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XNAFourChambers</RootNamespace>
+    <AssemblyName>XNAFourChambers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaProfile>Reach</XnaProfile>
+    <XnaCrossPlatformGroupID>1922123c-d5dd-40a2-aadf-05b12b28ae46</XnaCrossPlatformGroupID>
+    <XnaOutputType>Game</XnaOutputType>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FourChambers\Actors\Actor.cs" />
+    <Compile Include="FourChambers\Actors\BaseActor.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Automaton.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Chicken.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Corsair.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Cow.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Deer.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Executor.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Feline.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Gloom.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Grizzly.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Harvester.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Kerberos.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Lion.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Medusa.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Mummy.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Nymph.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Paladin.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Rat.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Snake.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Spider.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Succubus.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Tormentor.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Unicorn.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Vampire.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Wolf.cs" />
+    <Compile Include="FourChambers\Actors\enemies\Zombie.cs" />
+    <Compile Include="FourChambers\Actors\EnemyActor.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\Bat.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\Drone.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\FlyingEnemy.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\Zinger.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\ZingerHoming.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\ZingerNest.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Artist.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Assassin.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Blight.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Bloatedzombie.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Bogbeast.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Bombling.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Centaur.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Chimaera.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Cyclops.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Deathclaw.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Devil.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Djinn.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Druid.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Dwarf.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Embersteed.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Floatingeye.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Fungant.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Gelatine.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Glutton.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Goblin.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Golem.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Gorgon.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Gourmet.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Grimwarrior.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Horse.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Ifrit.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Imp.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Lich.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Mechanic.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Mephisto.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Merchant.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Mermaid.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Mimick.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Monk.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Nightmare.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Ogre.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Phantom.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Priest.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Prism.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Savage.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Sheep.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Skeleton.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Soldier.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Sphinx.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Tauro.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Toad.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Treant.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Troll.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Willowisp.cs" />
+    <Compile Include="FourChambers\Actors\nonanimated\Wizard.cs" />
+    <Compile Include="FourChambers\Actors\playable\Arrow.cs" />
+    <Compile Include="FourChambers\Actors\playable\BigExplosion.cs" />
+    <Compile Include="FourChambers\Actors\playable\Marksman.cs" />
+    <Compile Include="FourChambers\Actors\playable\MeleeHitBox.cs" />
+    <Compile Include="FourChambers\Actors\playable\Mistress.cs" />
+    <Compile Include="FourChambers\Actors\playable\Seraphine.cs" />
+    <Compile Include="FourChambers\Actors\playable\Warlock.cs" />
+    <Compile Include="FourChambers\Actors\playable\WarlockFireBall.cs" />
+    <Compile Include="FourChambers\CharacterSelectionState.cs" />
+    <Compile Include="FourChambers\CharacterTestState.cs" />
+    <Compile Include="FourChambers\Cutscenes\CutsceneState.cs" />
+    <Compile Include="FourChambers\Dangers\FireBall.cs" />
+    <Compile Include="FourChambers\Dangers\FireThrower.cs" />
+    <Compile Include="FourChambers\DataEntryState.cs" />
+    <Compile Include="FourChambers\Environment\Firefly.cs" />
+    <Compile Include="FourChambers\EventSprite.cs" />
+    <Compile Include="FourChambers\GameProgress.cs" />
+    <Compile Include="FourChambers\GameSelectionMenuState.cs" />
+    <Compile Include="FourChambers\Hud\PlayHud.cs" />
+    <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
+    <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
+    <Compile Include="FourChambers\Levels\Door.cs" />
+    <Compile Include="FourChambers\Levels\FallAwayBridgeBlock.cs" />
+    <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
+    <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
+    <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
+    <Compile Include="FourChambers\PointBurst.cs" />
+    <Compile Include="FourChambers\PowerUp.cs" />
+    <Compile Include="FourChambers\PowerUpProgress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FourChambers\ActorRecording\automaton.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\chicken.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\corsair.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\cow.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\deer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\executor.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\feline.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\gloom.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\grizzly.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\harvester.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\kerberos.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\lion.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\medusa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\mistress.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\mistress_getaway.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\mistress_level3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\mummy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\nymph.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\paladin.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\rat.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\snake.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\spider.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\succubus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\tormentor.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\unicorn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\vampire.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\wolf.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\ActorRecording\zombie.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FourChambers\Text\script.txt" />
+    <Content Include="Game.ico" />
+    <Content Include="GAMESETTINGS.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameThumbnail.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XNAFlixel\XFlixelContent\XFlixelContent.contentproj">
+      <Project>{327F8527-448C-470E-9016-949859914C92}</Project>
+      <Name>XFlixelContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XNAFlixel\XFlixel\XFlixel.csproj">
+      <Project>{50463AEB-DA30-46D5-B01B-93F9C42F5765}</Project>
+      <Name>XFlixel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XNAFourChambersContent\XNAFourChambersContent.contentproj">
+      <Name>XNAFourChambersContent</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FourChambers\Weapons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ogmoLevels\level0.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level1.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level10.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level101.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level1012.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level102.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level11.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level12.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level13.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level14.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level15.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level16.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level17.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level18.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level19.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level2.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level20.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level21.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level22.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level3.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level4.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level4500.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level5.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level6.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level7.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level8.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level9.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\levelTutorial.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\PathTesting.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\ProjectFile.oep">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>

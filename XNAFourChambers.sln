@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNAFourChambers", "XNAFourChambers\XNAFourChambers\XNAFourChambers.csproj", "{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "XNAFourChambersContent", "XNAFourChambers\XNAFourChambersContent\XNAFourChambersContent.contentproj", "{168706FB-BDFD-4790-A241-5052D68A03D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixel", "..\XNAFlixel\XFlixel\XFlixel.csproj", "{50463AEB-DA30-46D5-B01B-93F9C42F5765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelContent", "..\XNAFlixel\XFlixelContent\XFlixelContent.contentproj", "{327F8527-448C-470E-9016-949859914C92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Revvolvver|x86 = Revvolvver|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Debug|x86.ActiveCfg = Debug|x86
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Debug|x86.Build.0 = Debug|x86
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Release|x86.ActiveCfg = Release|x86
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Release|x86.Build.0 = Release|x86
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Revvolvver|x86.ActiveCfg = Release|x86
+		{0EB25D5E-4660-4B61-B40E-E706DF62C6FE}.Revvolvver|x86.Build.0 = Release|x86
+		{168706FB-BDFD-4790-A241-5052D68A03D6}.Debug|x86.ActiveCfg = Debug|x86
+		{168706FB-BDFD-4790-A241-5052D68A03D6}.Release|x86.ActiveCfg = Release|x86
+		{168706FB-BDFD-4790-A241-5052D68A03D6}.Revvolvver|x86.ActiveCfg = Release|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Debug|x86.ActiveCfg = Debug|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Debug|x86.Build.0 = Debug|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Release|x86.ActiveCfg = Release|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Release|x86.Build.0 = Release|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Revvolvver|x86.ActiveCfg = Revvolvver|x86
+		{50463AEB-DA30-46D5-B01B-93F9C42F5765}.Revvolvver|x86.Build.0 = Revvolvver|x86
+		{327F8527-448C-470E-9016-949859914C92}.Debug|x86.ActiveCfg = Debug|x86
+		{327F8527-448C-470E-9016-949859914C92}.Release|x86.ActiveCfg = Release|x86
+		{327F8527-448C-470E-9016-949859914C92}.Revvolvver|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
