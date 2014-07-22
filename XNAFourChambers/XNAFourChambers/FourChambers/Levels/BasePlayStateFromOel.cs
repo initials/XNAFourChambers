@@ -575,7 +575,7 @@ namespace FourChambers
             //if (FlxG.joystickBeingUsed) FlxG.mouse.hide();
             //else FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
-            if (marksman.hasRangeWeapon) FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+            if (marksman.hasRangeWeapon) FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
             else FlxG.mouse.hide();
 
             localHud = new PlayHud();
