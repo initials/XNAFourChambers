@@ -16,7 +16,7 @@
     <Width>3200</Width>
     <Height>3200</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Shane\Documents\Visual Studio 2010\Projects\XNAMode\XNAMode\ogmoLevels\ProjectFile.oep</Filename>
+  <Filename>C:\Users\Shane\Documents\Visual Studio 2010\Projects\XNAFourChambers\XNAFourChambers\XNAFourChambers\ogmoLevels\ProjectFile.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>true</CameraEnabled>
   <CameraSize>
@@ -92,53 +92,8 @@
   </LayerDefinitions>
   <Tilesets>
     <Tileset>
-      <Name>autotiles_16x16</Name>
-      <FilePath>..\..\XNAModeContent\fourchambers\autotiles_16x16.png</FilePath>
-      <TileSize>
-        <Width>16</Width>
-        <Height>16</Height>
-      </TileSize>
-      <TileSep>0</TileSep>
-    </Tileset>
-    <Tileset>
-      <Name>autotiles_generic_16x16</Name>
-      <FilePath>..\..\XNAModeContent\fourchambers\autotiles_generic_16x16.png</FilePath>
-      <TileSize>
-        <Width>16</Width>
-        <Height>16</Height>
-      </TileSize>
-      <TileSep>0</TileSep>
-    </Tileset>
-    <Tileset>
-      <Name>RockTiles</Name>
-      <FilePath>..\..\XNAModeContent\fourchambers\RockTiles.png</FilePath>
-      <TileSize>
-        <Width>16</Width>
-        <Height>16</Height>
-      </TileSize>
-      <TileSep>0</TileSep>
-    </Tileset>
-    <Tileset>
-      <Name>autotiles_ice_16x16</Name>
-      <FilePath>..\..\XNAModeContent\fourchambers\autotiles_ice_16x16.png</FilePath>
-      <TileSize>
-        <Width>16</Width>
-        <Height>16</Height>
-      </TileSize>
-      <TileSep>0</TileSep>
-    </Tileset>
-    <Tileset>
-      <Name>autotiles_alt</Name>
-      <FilePath>..\..\XNAModeContent\initials\autotiles_alt.png</FilePath>
-      <TileSize>
-        <Width>16</Width>
-        <Height>16</Height>
-      </TileSize>
-      <TileSep>0</TileSep>
-    </Tileset>
-    <Tileset>
-      <Name>autotiles</Name>
-      <FilePath>..\..\XNAModeContent\initials\autotiles.png</FilePath>
+      <Name>auto_surt_16x16</Name>
+      <FilePath>..\..\XNAFourChambersContent\fourchambers\auto_surt_16x16.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>
@@ -226,7 +181,7 @@
         <X>0</X>
         <Y>0</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\..\XNAModeContent\fourchambers\ladderTiles_16x16.png" Tiled="true">
+      <ImageDefinition DrawMode="Image" ImagePath="..\..\XNAFourChambersContent\fourchambers\ladderTiles_16x16.png" Tiled="true">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
@@ -270,7 +225,7 @@
         <X>0</X>
         <Y>0</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\..\XNAModeContent\fourchambers\fallAwayBridgeTiles_16x32.png" Tiled="true">
+      <ImageDefinition DrawMode="Image" ImagePath="..\..\XNAFourChambersContent\fourchambers\fallAwayBridgeTiles_16x32.png" Tiled="true">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
