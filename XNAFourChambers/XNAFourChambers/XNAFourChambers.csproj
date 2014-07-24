@@ -384,6 +384,7 @@
     </None>
     <None Include="ogmoLevels\level21.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level22.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -402,15 +403,18 @@
     </None>
     <None Include="ogmoLevels\level6.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level7.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level8.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ogmoLevels\level9.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\levelTutorial.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
