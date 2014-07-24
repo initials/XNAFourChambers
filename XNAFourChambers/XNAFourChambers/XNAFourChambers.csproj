@@ -335,6 +335,7 @@
     </None>
     <None Include="ogmoLevels\level1.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level10.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
