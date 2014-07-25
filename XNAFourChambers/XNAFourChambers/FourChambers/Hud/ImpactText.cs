@@ -17,14 +17,16 @@ namespace FourChambers
         {
             members = new List<FlxObject>();
 
-            int count = 1;
+            int count = 0;
             int total = Texts.Length;
             foreach (String t in Texts)
             {
                 FlxG.write("Text string " + t);
 
-                FlxText localText = new FlxText(0, count * 50, FlxG.width);
+                FlxText localText = new FlxText(0, 10 + (count * 30), FlxG.width);
                 localText.text = t;
+                localText.setFormat(FlxG.Content.Load<SpriteFont>("initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
+
                 add(localText);
 
                 count++;
