@@ -239,7 +239,8 @@ namespace FourChambers
 
             if (FlxG.keys.justPressed(Keys.F9))
             {
-                FlxG.bloom.Visible = !FlxG.bloom.Visible;
+                //FlxG.bloom.Visible = !FlxG.bloom.Visible;
+                FlxG.state = new TextTestState();
             }
 
             if (FlxG.username == "" || FlxG.username==null)

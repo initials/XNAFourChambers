@@ -2,6 +2,9 @@
 Thumbs.db
 ehthumbs.db
 
+XNAFourChambers/XNAFourChambers/bin/x86/Debug/Content/fourchambers/sfx/
+
+
 # Folder config file
 Desktop.ini
 
@@ -40,3 +43,5 @@ XNAFourChambers/XNAFourChambers/bin/
 XNAFourChambers/XNAFourChambers/obj/
 XNAFourChambers/XNAFourChambers/bin/
 *.cachefile
+*.xnb
+*.wma

@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>Reach</XnaProfile>
+    <XnaProfile>HiDef</XnaProfile>
     <XnaCrossPlatformGroupID>1922123c-d5dd-40a2-aadf-05b12b28ae46</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
@@ -231,6 +231,7 @@
     <Compile Include="FourChambers\EventSprite.cs" />
     <Compile Include="FourChambers\GameProgress.cs" />
     <Compile Include="FourChambers\GameSelectionMenuState.cs" />
+    <Compile Include="FourChambers\Hud\ImpactText.cs" />
     <Compile Include="FourChambers\Hud\PlayHud.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="FourChambers\PointBurst.cs" />
     <Compile Include="FourChambers\PowerUp.cs" />
     <Compile Include="FourChambers\PowerUpProgress.cs" />
+    <Compile Include="FourChambers\TestStates\TextTestState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
