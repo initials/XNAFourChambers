@@ -33,14 +33,39 @@ namespace Loader_Four
 
             initGame(w, h, new FourChambers.GameSelectionMenuState(), new Color(15, 15, 15), true, new Color(5, 5, 5));
 
-            FlxG.debug = true;
+            FlxG.debug = false;
             //FlxG.zoom = 1280 / w;
             FlxG.level = -1;
 
             FourChambers_Globals.gif = false;
-            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_PRESS;
+            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_RELEASE;
             FourChambers_Globals.DEMO_VERSION = false;
             FourChambers_Globals.PIRATE_COPY = false;
+
+#if DEBUG
+            FlxG.debug = true;
+#endif
+#if DEMO
+            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_RELEASE;
+            FourChambers_Globals.DEMO_VERSION = true;
+#endif
+#if FULL
+            FourChambers_Globals.gif = false;
+            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_RELEASE;
+            FourChambers_Globals.DEMO_VERSION = false;
+            FourChambers_Globals.PIRATE_COPY = false;
+#endif
+#if PIRATE
+            FourChambers_Globals.PIRATE_COPY = true;
+#endif
+#if PRESS
+            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_PRESS;
+#endif
+#if MAKEGIF
+            FourChambers_Globals.gif = true;
+#endif
+
+
 
         }
     }
