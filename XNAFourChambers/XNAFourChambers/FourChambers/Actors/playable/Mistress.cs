@@ -30,7 +30,7 @@ namespace FourChambers
             maxVelocity.Y = 1000;
             drag.X = runSpeed * 4;
             //drag.Y = runSpeed * 4;
-            playbackFile = "FourChambers/ActorRecording/mistress_Attack.txt";
+            playbackFile = "FourChambers/ActorRecording/mistress.txt";
             timeDownAfterHurt = 0.525f;
             actorType = "mistress";
 
