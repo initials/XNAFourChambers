@@ -229,6 +229,7 @@
     <Compile Include="FourChambers\DataEntryState.cs" />
     <Compile Include="FourChambers\Environment\Firefly.cs" />
     <Compile Include="FourChambers\EventSprite.cs" />
+    <Compile Include="FourChambers\FourChambers_Globals.cs" />
     <Compile Include="FourChambers\GameProgress.cs" />
     <Compile Include="FourChambers\GameSelectionMenuState.cs" />
     <Compile Include="FourChambers\Hud\ImpactText.cs" />

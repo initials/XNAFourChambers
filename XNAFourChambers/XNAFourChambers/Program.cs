@@ -37,10 +37,10 @@ namespace Loader_Four
             //FlxG.zoom = 1280 / w;
             FlxG.level = -1;
 
-            FourChambers_Globals.gif = false;
-            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_RELEASE;
-            FourChambers_Globals.DEMO_VERSION = false;
-            FourChambers_Globals.PIRATE_COPY = false;
+            FourChambers.FourChambers_Globals.gif = false;
+            FourChambers.FourChambers_Globals.BUILD_TYPE = FourChambers.FourChambers_Globals.BUILD_TYPE_RELEASE;
+            FourChambers.FourChambers_Globals.DEMO_VERSION = false;
+            FourChambers.FourChambers_Globals.PIRATE_COPY = false;
 
 #if DEBUG
             FlxG.debug = true;
