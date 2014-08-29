@@ -103,7 +103,7 @@ namespace FourChambers
         }
         public override void kill()
         {
-            FlxG.score += score;
+            //FlxG.score += score;
 
             play("death");
             dead = true;

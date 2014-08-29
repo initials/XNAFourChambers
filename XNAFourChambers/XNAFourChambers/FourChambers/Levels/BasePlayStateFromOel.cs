@@ -700,7 +700,7 @@ namespace FourChambers
             localHud.combo.text = FourChambers_Globals.arrowCombo.ToString() + "x Combo";
             if (FourChambers_Globals.arrowCombo>5) localHud.combo.text += "!";
 
-            localHud.score.text = "Score: " + FlxG.score.ToString();
+            localHud.score.text = "$" + FlxG.score.ToString();
             localHud.healthText.text = playerControlledActors.members[0].health.ToString();
 
 
@@ -1000,7 +1000,8 @@ namespace FourChambers
             }
             else
             {
-                FlxG.score += 1000;
+
+                //FlxG.score += 1000;
             }
 
             e.Object1.kill();

@@ -108,7 +108,7 @@ namespace FourChambers
             drag.X = 1000;
             acceleration.Y = FourChambers_Globals.GRAVITY;
 
-            FlxG.score += score * FourChambers_Globals.arrowCombo;
+            //FlxG.score += score * FourChambers_Globals.arrowCombo;
 
             //base.kill();
         }

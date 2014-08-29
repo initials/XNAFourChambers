@@ -272,7 +272,7 @@ namespace FourChambers
         {
             color = Color.White;
 
-            FlxG.score += score * FourChambers_Globals.arrowCombo;
+            //FlxG.score += score * FourChambers_Globals.arrowCombo;
 
             play("death");
             velocity.X = 0;

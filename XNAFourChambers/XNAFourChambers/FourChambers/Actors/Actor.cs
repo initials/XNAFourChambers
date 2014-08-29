@@ -517,7 +517,7 @@ namespace FourChambers
 
             dead = true;
 
-            FlxG.score += score;
+            //FlxG.score += score;
 
             FlxG.write(actorName + " is dead");
 
