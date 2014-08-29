@@ -29,7 +29,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -39,12 +40,12 @@ Icon
 .Trashes
 
 *.suo
-XNAFourChambers/XNAFourChambers/bin/
-XNAFourChambers/XNAFourChambers/obj/
-XNAFourChambers/XNAFourChambers/bin/
+/XNAFourChambers/XNAFourChambers/bin/
+/XNAFourChambers/XNAFourChambers/obj/
+/XNAFourChambers/XNAFourChambers/bin/
 *.cachefile
 *.xnb
 *.wma
 *.suo
 *.suo
-XNAFourChambers.suo
+/XNAFourChambers.suo
