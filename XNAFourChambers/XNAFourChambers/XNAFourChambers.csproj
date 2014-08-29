@@ -470,6 +470,7 @@
     </None>
     <None Include="ogmoLevels\level8.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level9.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
