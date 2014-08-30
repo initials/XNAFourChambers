@@ -118,7 +118,9 @@
     <fallAwayBridge id="0" x="656" y="656" width="160" />
     <_event id="1" x="288" y="736" width="16" height="16" event="bow" value1="0" value2="0" repeat="1" />
     <_event id="15" x="320" y="736" width="16" height="16" event="sword" value1="0" value2="0" repeat="1" />
-    <grizzly id="18" x="208" y="736" flip="False" />
-    <rat id="20" x="160" y="736" flip="False" />
+    <unicorn id="16" x="-160" y="0" flip="False" />
+    <rat id="17" x="848" y="416" flip="False" />
+    <rat id="18" x="992" y="736" flip="False" />
+    <rat id="20" x="864" y="640" flip="False" />
   </ActorsLayer>
 </level>

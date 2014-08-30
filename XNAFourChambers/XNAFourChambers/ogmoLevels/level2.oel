@@ -151,5 +151,8 @@
     <fireThrower id="36" x="960" y="688" shootEvery="1" angleCounter="0" />
     <fireThrower id="38" x="1312" y="640" shootEvery="1" angleCounter="0" />
     <fireThrower id="39" x="1152" y="656" shootEvery="1" angleCounter="0" />
+    <unicorn id="19" x="848" y="736" flip="False" />
+    <unicorn id="21" x="1072" y="400" flip="False" />
+    <unicorn id="29" x="848" y="208" flip="False" />
   </ActorsLayer>
 </level>

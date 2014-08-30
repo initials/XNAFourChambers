@@ -138,7 +138,6 @@
       <node x="432" y="496" />
       <node x="400" y="496" />
     </zinger>
-    <mistress id="39" x="704" y="736" flip="False" />
     <ladder id="15" x="1440" y="176" height="432" />
     <_event id="41" x="624" y="704" width="48" height="48" event="mistress_level3" value1="0" value2="0" repeat="1" />
     <unicorn id="42" x="960" y="160" flip="False" />
