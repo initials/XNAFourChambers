@@ -62,7 +62,7 @@ namespace Loader_Four
             FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_PRESS;
 #endif
 #if MAKEGIF
-            FourChambers_Globals.gif = true;
+            FourChambers.FourChambers_Globals.gif = true;
 #endif
 
 

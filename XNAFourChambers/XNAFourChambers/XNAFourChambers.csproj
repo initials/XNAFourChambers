@@ -104,7 +104,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MAKEGIF|x86'">
     <OutputPath>bin\x86\MAKEGIF\</OutputPath>
-    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <DefineConstants>TRACE;WINDOWS, MAKEGIF</DefineConstants>
     <Optimize>true</Optimize>
     <NoStdLib>true</NoStdLib>
     <DebugType>pdbonly</DebugType>
