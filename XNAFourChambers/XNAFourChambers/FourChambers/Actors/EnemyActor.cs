@@ -143,6 +143,8 @@ namespace FourChambers
 
         public FlxBar healthBar;
 
+        public bool customAnimation = false;
+
         public enum Recording
         {
             None = 0,

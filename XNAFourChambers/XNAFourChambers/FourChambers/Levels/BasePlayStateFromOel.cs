@@ -339,20 +339,17 @@ namespace FourChambers
 
             Console.WriteLine("Level Width: " + FlxG.levelWidth + " Level Height: " + FlxG.levelHeight);
 
-
-            if (FourChambers_Globals.gif== false)
-            {
-                Texture2D bgGraphic = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["bgGraphic"]);
-                bgSprite = new FlxSprite(0, 0, bgGraphic);
-                bgSprite.loadGraphic(bgGraphic);
-                bgSprite.scrollFactor.X = 0.4f;
-                bgSprite.scrollFactor.Y = 0.4f;
-                bgSprite.x = 0;
-                bgSprite.y = 0;
-                bgSprite.color = Color.DarkGray;
-                bgSprite.boundingBoxOverride = false;
-                add(bgSprite);
-            }
+            Texture2D bgGraphic = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["bgGraphic"]);
+            bgSprite = new FlxSprite(0, 0, bgGraphic);
+            bgSprite.loadGraphic(bgGraphic);
+            bgSprite.scrollFactor.X = 0.4f;
+            bgSprite.scrollFactor.Y = 0.4f;
+            bgSprite.x = 0;
+            bgSprite.y = 0;
+            bgSprite.color = Color.DarkGray;
+            bgSprite.boundingBoxOverride = false;
+            add(bgSprite);
+            
 
             Console.WriteLine("Generate the levels caves/tiles.");
 

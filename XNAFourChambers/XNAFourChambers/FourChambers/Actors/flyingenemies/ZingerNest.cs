@@ -18,7 +18,7 @@ namespace FourChambers
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/spawner"), true, false, 16, 16);
 
-            addAnimation("idle", new int[] { (int)FlxU.random(0, 19), (int)FlxU.random(0, 19), (int)FlxU.random(0, 19), (int)FlxU.random(0, 19), (int)FlxU.random(0, 19) }, (int)FlxU.random(3, 5));
+            addAnimation("idle", new int[] { 0,1,2,3,2,1 }, (int)FlxU.random(8,12));
             play("idle");
 
 

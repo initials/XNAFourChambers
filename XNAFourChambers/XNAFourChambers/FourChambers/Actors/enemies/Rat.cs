@@ -33,6 +33,8 @@ namespace FourChambers
             timeDownAfterHurt = 2.5f;
             actorType = "rat";
 
+ 
+
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
 
@@ -41,15 +43,69 @@ namespace FourChambers
             // walk, run, idle, attack, death, hurt, jump
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Rat_20x20"), true, false, 20, 20);
+            
+            width = 8;
+            height = 8;
 
-            //addAnimation("run", new int[] { 0, 1, 2, 3, 4, 5, 6, 7 }, 12);
-            addAnimation("idle", new int[] {0 ,1,2,3,2 }, 12, true);
+            setOffset(6, 12);
+
+            addAnimation("run", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
+            addAnimation("walk", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
+            addAnimation("jump", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
+
+
+            addAnimation("idle", new int[] { 0 }, 12, true);
             //addAnimation("attack", new int[] { 2, 4 }, 18);
+            addAnimation("death", new int[] { 4 }, 0, true);
+            
 
+            //addAnimationCallback(jump);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Frame"></param>
+        /// <param name="FrameIndex"></param>
+        public void jump(string Name, uint Frame, int FrameIndex)
+        {
+            string info = "Current animation: " + Name + " Frame: " + Frame + " FrameIndex: " + FrameIndex;
+            Console.WriteLine(info);
+
+            //if (Frame == 1 && Name=="idle")
+            //{
+            //    if (FlxU.random() > 0.5f)
+            //    {
+            //        velocity.Y = -180;
+            //        velocity.X = 130;
+            //    }
+            //    else
+            //    {
+            //        velocity.Y = -200;
+            //        velocity.X = -110;
+            //    }
+            //}
         }
 
         override public void update()
         {
+            if (onFloor && !dead)
+            {
+                if (FlxU.random() > 0.99f)
+                {
+                    velocity.Y = -180;
+                    velocity.X = 130;
+                }
+                else if (FlxU.random() > 0.98f)
+                {
+                    velocity.Y = -200;
+                    velocity.X = -110;
+                }
+            }
+
+
             base.update();
         }
     }
