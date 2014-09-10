@@ -386,7 +386,7 @@ namespace FourChambers
             }
             else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
             {
-                if (FlxU.random() > 0.1)
+                if (FlxU.random() > 0.5)
                 {
                     typeOfPowerUp = FR_Arrows;
                 }

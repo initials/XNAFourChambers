@@ -316,6 +316,13 @@ namespace FourChambers
             bigEx = new BigExplosion(-1000, -1000);
 
 
+            for (int i = 0; i < 30; i++)
+            {
+                powerUp = new PowerUp(-100, -100);
+                powerUp.dead = true;
+                powerUps.add(powerUp);
+            }
+
             //First build a dictionary of levelAttrs
             //This will determine how the level is built.
 
@@ -675,6 +682,17 @@ namespace FourChambers
                 FlxG.state = new BasePlayStateFromOel();
                 return;
             }
+            else if (FlxG.keys.justPressed(Keys.F4) && FlxG.debug && timeOfDay > 2.0f)
+            {
+
+                FlxObject dor = doors.members[((int)(FlxU.random() * doors.members.Count))];
+
+
+                playerControlledActors.members[0].x = dor.x;
+                playerControlledActors.members[0].y = dor.y;
+
+
+            }
 
             // Allow editing of terrain if SHIFT + Mouse is pressed.
             if (FlxG.mouse.pressedRightButton() && FlxG.keys.SHIFT)
@@ -973,6 +991,9 @@ namespace FourChambers
             specialFX.at(e.Object1);
             specialFX.start(true, 0, 30);
 
+            FlxG.score += ((20 + (int)FlxU.random(0, 50)) * (FourChambers_Globals.arrowCombo + 1));
+
+
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
             if (x == 154 || x == 155 || x == 156 || x == 157)
             {
@@ -1080,6 +1101,10 @@ namespace FourChambers
         /// <returns></returns>
         protected bool overlapped(object Sender, FlxSpriteCollisionEvent e)
         {
+
+
+
+
             // First reject Actors and their bullets.
             if ((e.Object1 is Warlock) && (e.Object2 is WarlockFireBall)) { }
             else if ((e.Object1 is Marksman) && (e.Object2 is Arrow)) { }
@@ -1136,24 +1161,7 @@ namespace FourChambers
                     ((FlxSprite)(z)).play("fly");
 
                 }
-                // throw out a power up.
-                FlxObject p = powerUps.getFirstDead();
-                if (p != null)
-                {
-                    p.dead = false;
-                    p.acceleration.Y = FourChambers_Globals.GRAVITY;
-                    p.velocity.X = 0;
-                    p.exists = true;
-                    p.x = e.Object1.x;
-                    p.y = e.Object1.y;
-                    p.flicker(0.001f);
-                    p.angle = 0;
-                    p.visible = true;
-                }
-                else
-                {
-
-                }
+                
 
                 e.Object2.x = -1000;
                 e.Object2.y = -1000;
@@ -1164,22 +1172,6 @@ namespace FourChambers
             else if ((e.Object1 is Seraphine) && (e.Object2 is Arrow))
             {
                 FourChambers_Globals.seraphineHasBeenKilled = true;
-
-                if (FourChambers_Globals.gif == false)
-                {
-                    foreach (var p in powerUps.members)
-                    {
-                        p.dead = false;
-                        p.acceleration.Y = FourChambers_Globals.GRAVITY;
-                        p.velocity.X = FlxU.random(-220, 220);
-                        p.exists = true;
-                        p.x = e.Object1.x;
-                        p.y = e.Object1.y;
-                        p.flicker(0.001f);
-                        p.angle = 0;
-                        p.visible = true;
-                    }
-                }
 
                 if (e.Object2 is Arrow)
                 {
@@ -1216,11 +1208,11 @@ namespace FourChambers
                     //comboInfo.counter = 0;
 
 
-                    Vector2 p = e.Object1.getScreenXY();
+                    Vector2 p2 = e.Object1.getScreenXY();
 
 
-                    localHud.comboOnScreen.x = p.X * FlxG.zoom;
-                    localHud.comboOnScreen.y = (p.Y - 20) * FlxG.zoom;
+                    localHud.comboOnScreen.x = p2.X * FlxG.zoom;
+                    localHud.comboOnScreen.y = (p2.Y - 20) * FlxG.zoom;
 
                     localHud.comboOnScreen.counter = 0;
 
@@ -1244,6 +1236,29 @@ namespace FourChambers
                     e.Object1.hurt(e.Object2.damage);
                     blood.at(e.Object1);
                     blood.start(true, 0, 10);
+
+                    // throw out a power up.
+                    FlxObject p = powerUps.getRandom();
+
+                    if (p != null && p.dead == true) //
+                    {
+                        p.dead = false;
+                        p.acceleration.Y = FourChambers_Globals.GRAVITY;
+                        p.velocity.X = 0;
+                        p.velocity.Y = -100;
+                        p.exists = true;
+                        p.x = e.Object1.x;
+                        p.y = e.Object1.y;
+                        p.flicker(0.001f);
+                        p.angle = 0;
+                        p.visible = true;
+                    }
+                    else
+                    {
+
+                    }
+
+
                 }
 
                 if (!e.Object1.dead) localHud.comboOnScreen.x = -1000;
