@@ -19,12 +19,12 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Johnny Football Hero";
             score = 250;
-            health = 5;
-            runSpeed = 40;
-            _jumpPower = -50.0f;
-            _jumpInitialPower = -50.0f;
+            health = 15;
+            runSpeed = 80;
+            _jumpPower = -150.0f;
+            _jumpInitialPower = -150.0f;
             _jumpMaxTime = 0.10f;
-            _jumpInitialTime = 0.035f;
+            _jumpInitialTime = 0.055f;
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
             drag.X = runSpeed * 4;
