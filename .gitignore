@@ -40,9 +40,9 @@ Icon
 .Trashes
 
 *.suo
-/XNAFourChambers/XNAFourChambers/bin/
-/XNAFourChambers/XNAFourChambers/obj/
-/XNAFourChambers/XNAFourChambers/bin/
+/XNAFourChambers/XNAFourChambers/bin/*
+/XNAFourChambers/XNAFourChambers/obj/*
+/XNAFourChambers/XNAFourChambers/bin/*
 *.cachefile
 *.xnb
 *.wma
