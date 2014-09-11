@@ -52,6 +52,9 @@
     <ValueDefinition xsi:type="ColorValueDefinition" Name="fireflyColor">
       <Default A="255" R="255" G="255" B="0" />
     </ValueDefinition>
+    <ValueDefinition xsi:type="ColorValueDefinition" Name="bgColor">
+      <Default A="255" R="85" G="180" B="255" />
+    </ValueDefinition>
   </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="TileLayerDefinition">

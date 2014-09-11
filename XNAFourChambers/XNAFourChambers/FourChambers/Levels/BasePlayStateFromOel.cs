@@ -346,16 +346,38 @@ namespace FourChambers
 
             Console.WriteLine("Level Width: " + FlxG.levelWidth + " Level Height: " + FlxG.levelHeight);
 
-            Texture2D bgGraphic = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["bgGraphic"]);
-            bgSprite = new FlxSprite(0, 0, bgGraphic);
-            bgSprite.loadGraphic(bgGraphic);
+            //Texture2D bgGraphic = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["bgGraphic"]);
+            bgSprite = new FlxSprite(0, 0);
+            bgSprite.loadGraphic("fourchambers/" + levelAttrs["bgGraphic"]);
             bgSprite.scrollFactor.X = 0.4f;
             bgSprite.scrollFactor.Y = 0.4f;
             bgSprite.x = 0;
             bgSprite.y = 0;
-            bgSprite.color = Color.DarkGray;
+            //bgSprite.color = Color.DarkGray;
             bgSprite.boundingBoxOverride = false;
+            bgSprite.allowColorFlicker = false;
+            //Console.WriteLine("Color : {0}", levelAttrs["bgColor"]);
+
+            bgSprite.color = FlxColor.ToColor(levelAttrs["bgColor"]);
+            //bgSprite.color = Color.Blue;
+
             add(bgSprite);
+
+            
+            
+            for (int i = 0; i < 6; i++)
+            {
+                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height));
+                cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
+                cloud.setScrollFactors(0.1f, 0.1f);
+                
+                cloud.setVelocity(FlxU.random(-5, 5), 0);
+                cloud.alpha = 0.9f;
+                add(cloud);
+
+            }
+
+
             
 
             Console.WriteLine("Generate the levels caves/tiles.");
@@ -504,7 +526,8 @@ namespace FourChambers
             //FlxG.followAdjust(0.5f, 0.0f);
             FlxG.followBounds(0, 0, Convert.ToInt32(levelAttrs["width"]) , Convert.ToInt32(levelAttrs["height"]) );
 
-            
+
+
             add(bullets);
             add(allLevelTiles);
             add(ladders);
@@ -780,7 +803,7 @@ namespace FourChambers
             if (FourChambers_Globals.gif == false && FlxG.level >= 1 && FlxG.level <= 100)
             {
                 // color whole game.
-                FlxG.color(FlxU.getColorFromBitmapAtPoint(paletteTexture, (int)timeOfDay, ((FlxG.level-1) * 10) + 5 ));
+                //FlxG.color(FlxU.getColorFromBitmapAtPoint(paletteTexture, (int)timeOfDay, ((FlxG.level-1) * 10) + 5 ));
             }
             
             // bring time back to regular.
@@ -1760,6 +1783,7 @@ namespace FourChambers
                     actors.add(marksman);
                     bullets.add(marksman.meleeHitBox);
                     playerControlledActors.add(marksman);
+                    //marksman.color 
 
                 }
 
