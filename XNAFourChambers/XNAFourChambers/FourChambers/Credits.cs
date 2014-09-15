@@ -54,23 +54,6 @@ namespace FourChambers
             add(credits);
             credits.setScrollFactors(1, 1);
             
-
-            /*
-            A Game by Initials
-
-            Art by Stephanie Chiew
-
-            Logo Artist Auro Cyanide
-
-            Score by Girls With Depression
-
-            Additional Music by Ralph Hilton / Rotary Dial Sins
-
-            Minifigs by svh440
-
-            Background Pixel Art by Surt
-            */
-
             addString("A game by:");
             addString("initials");
             addString(" ");
@@ -83,27 +66,6 @@ namespace FourChambers
             addString("Background Pixel Art by Surt");
             addString("");
             addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-            addString("");
-
         }
 
         public void addString(string Credit)
