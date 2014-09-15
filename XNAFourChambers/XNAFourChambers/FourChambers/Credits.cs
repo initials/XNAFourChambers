@@ -23,8 +23,6 @@ namespace FourChambers
             FlxG.resetHud();
             FlxG.hideHud();
 
-
-
             bgSprite = new FlxSprite(-350, 0);
             bgSprite.loadGraphic("fourchambers/Fear");
             bgSprite.scrollFactor.X = 1.0f;
@@ -47,7 +45,7 @@ namespace FourChambers
             }
 
 
-            credits = new FlxText(0, 210, FlxG.width);
+            credits = new FlxText(80, 210, FlxG.width);
             credits.setFormat(null, 1, Color.White, FlxJustification.Center, Color.White); //FlxG.Content.Load<SpriteFont>("initials/SpaceMarine")
             //_menuItems.text = "Four Chambers\n\nEnter name, use @ symbol to specify Twitter handle.\nPress enter when complete.";
             credits.text = "Credits";
