@@ -25,7 +25,14 @@ namespace FourChambers
 
         private FlxSprite bgSprite;
 
+        private FlxSprite bgSprite2;
+
+
         private Tweener tween;
+
+        private ColorTweener colTween;
+
+        private Vector2 offsetButton;
 
         override public void create()
         {
@@ -48,21 +55,45 @@ namespace FourChambers
             FlxG.showHud();
 
             tween = new Tweener(0, -240 , TimeSpan.FromSeconds(3.9f), Quadratic.EaseOut);
+            //colTween = new ColorTweener(FlxColor.ToColor("#55B4FF"), FlxColor.ToColor("#ffffff"), 1.5f, Quadratic.EaseOut);
+            //colTween.Play();
 
             // -350, -310
-            bgSprite = new FlxSprite(-350, 0, FlxG.Content.Load<Texture2D>("fourchambers/Fear"));
+            //bgSprite = new FlxSprite(-350, 0, FlxG.Content.Load<Texture2D>("fourchambers/Fear"));
+            //add(bgSprite);
+
+
+
+            //Texture2D bgGraphic = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["bgGraphic"]);
+            bgSprite = new FlxSprite(-350, 0);
+            bgSprite.loadGraphic("fourchambers/Fear");
+            bgSprite.scrollFactor.X = 1.0f;
+            bgSprite.scrollFactor.Y = 1.0f;
+            bgSprite.boundingBoxOverride = false;
+            bgSprite.allowColorFlicker = false;
+            bgSprite.color = FlxColor.ToColor("#55B4FF");
             add(bgSprite);
+
+            for (int i = 0; i < 6; i++)
+            {
+                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height));
+                cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
+                cloud.setScrollFactors(0.1f, 0.1f);
+
+                cloud.setVelocity(FlxU.random(-5, 5), 0);
+                cloud.alpha = 0.85f;
+                add(cloud);
+
+            }
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
             FlxG.mouse.cursor.offset.X = 5;
             FlxG.mouse.cursor.offset.Y = 5;
-
-
             
             _menuItems = new FlxText(0, 10, FlxG.width);
             _menuItems.setFormat(FlxG.Content.Load<SpriteFont>("initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
             //_menuItems.text = "Four Chambers\n\nEnter name, use @ symbol to specify Twitter handle.\nPress enter when complete.";
-            _menuItems.text = "The Four\nChambers Of The\nHuman Heart";
+            _menuItems.text = " ";
             _menuItems.shadow = Color.Black;
             add(_menuItems);
 
@@ -96,7 +127,9 @@ namespace FourChambers
             add(playMultiPlayer);
             playMultiPlayer.debugName = "playMultiPlayer";
 
-            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, FlxG.height - 105);
+            offsetButton = new Vector2(530, 90);
+
+            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
 
             FlxG.flash.start(Color.Black, 1.5f);
 
@@ -117,10 +150,15 @@ namespace FourChambers
                 FlxG.setHudText(3, "Username:\n"+FlxG.username);
                 FlxG.setHudTextPosition(3, 50, FlxG.height - 30);
                 FlxG.setHudTextScale(3, 2);
-
-
-
             }
+
+            FlxSprite robot = new FlxSprite(220, 30);
+            robot.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
+            //add(robot);
+
+            FlxG._game.hud.hudGroup.add(robot);
+
+
 
         }
 
@@ -140,7 +178,6 @@ namespace FourChambers
 
         override public void update()
         {
-
             if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
             {
                 FlxG.Game.Exit();
@@ -154,25 +191,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, editName.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 3) + offsetButton.X, (editName.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, play.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, playProcedural.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 3) + offsetButton.X, (playProcedural.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, playMultiPlayer.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 3) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 3) + offsetButton.Y);
                 }
             }
             if (FlxG.keys.justPressed(Keys.Down) || FlxG.gamepads.isNewButtonPress(Buttons.DPadDown) || FlxG.gamepads.isNewButtonPress(Buttons.LeftThumbstickDown))
@@ -182,25 +219,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, playProcedural.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 3) + offsetButton.X, (playProcedural.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, playMultiPlayer.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 3) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, editName.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 3) + offsetButton.X, (editName.getScreenXY().Y * 3) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, FlxG.width / 2 + 54, play.y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
                 }
             }
             if (FlxG.gamepads.isNewButtonRelease(Buttons.A) && play._counter > 0.5f)
@@ -270,7 +307,11 @@ namespace FourChambers
             //    FourChambers_Globals.startGame();
             //}
             FourChambers_Globals.startGame();
+
             FlxG.state = new BasePlayStateFromOel();
+
+            //colTween.Play();
+
             return;
 
         }
