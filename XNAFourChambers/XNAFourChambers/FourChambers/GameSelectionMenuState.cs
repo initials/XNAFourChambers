@@ -123,9 +123,9 @@ namespace FourChambers
 
             playMultiPlayer = new FlxButton(FlxG.width / 2 - 50, FlxG.height - 55, playMultiPlayerGame, FlxButton.ControlPadA);
             playMultiPlayer.loadGraphic((new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButton"), false, false, 100, 20), (new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButtonPressed"), false, false, 100, 20));
-            playMultiPlayer.loadText(new FlxText(2, 2, 100, "Multi Player"), new FlxText(2, 2, 100, "Multi Player"));
+            playMultiPlayer.loadText(new FlxText(2, 2, 100, "Credits"), new FlxText(2, 2, 100, "Credits"));
             add(playMultiPlayer);
-            playMultiPlayer.debugName = "playMultiPlayer";
+            playMultiPlayer.debugName = "credits";
 
             offsetButton = new Vector2(530, 90);
 
@@ -353,15 +353,15 @@ namespace FourChambers
 
         public void playMultiPlayerGame()
         {
-            Console.WriteLine("Play MultiPlayer Game Proc");
+            //Console.WriteLine("Play MultiPlayer Game Proc");
 
-            FlxG.level = 101;
-            FlxG.score = 0;
-            FlxG.hideHud();
+            //FlxG.level = 101;
+            //FlxG.score = 0;
+            //FlxG.hideHud();
 
-            //FlxG.transition.startFadeOut(0.1f,0,120);
+            ////FlxG.transition.startFadeOut(0.1f,0,120);
 
-            FlxG.state = new FourChambers.BasePlayStateFromOel();
+            FlxG.state = new Credits();
         }
     }
         

@@ -226,6 +226,7 @@
     <Compile Include="FourChambers\Actors\playable\WarlockFireBall.cs" />
     <Compile Include="FourChambers\CharacterSelectionState.cs" />
     <Compile Include="FourChambers\CharacterTestState.cs" />
+    <Compile Include="FourChambers\Credits.cs" />
     <Compile Include="FourChambers\Cutscenes\CutsceneState.cs" />
     <Compile Include="FourChambers\Dangers\FireBall.cs" />
     <Compile Include="FourChambers\Dangers\FireThrower.cs" />
