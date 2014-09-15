@@ -82,8 +82,6 @@
 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</IndestructableTerrain>
   <ActorsLayer>
     <marksman id="0" x="16" y="48" flip="False" isPlayerControlled="True" />
-    <mistress id="1" x="288" y="48" flip="False" />
-    <warlock id="2" x="16" y="112" flip="False" />
     <unicorn id="3" x="272" y="112" flip="False" />
   </ActorsLayer>
 </level>

@@ -443,6 +443,20 @@ namespace FourChambers
 
         }
 
+        public override void overlapped(FlxObject obj)
+        {
+            if (this.typeOfPowerUp == FR_SwordFlame || this.typeOfPowerUp == FR_SwordGold)
+            {
+                FourChambers_Globals.canDestroyTerrain = true;
+
+
+            }
+
+
+
+            base.overlapped(obj);
+        }
+
         public void powerUpType(int setToType)
         {
             if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_PRESS)

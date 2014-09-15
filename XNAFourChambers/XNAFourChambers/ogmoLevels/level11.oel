@@ -105,7 +105,6 @@
     <zingernest id="1" x="1024" y="400" />
     <zingernest id="2" x="1152" y="608" />
     <zingernest id="3" x="464" y="544" />
-    <tauro id="4" x="1216" y="304" flip="False" />
     <ladder id="5" x="400" y="656" height="96" />
     <ladder id="6" x="368" y="384" height="96" />
     <ladder id="7" x="912" y="512" height="96" />

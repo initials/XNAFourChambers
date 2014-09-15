@@ -112,8 +112,6 @@
     <ladder id="8" x="272" y="512" height="80" />
     <ladder id="9" x="240" y="384" height="96" />
     <ladder id="10" x="288" y="192" height="112" />
-    <_event id="11" x="608" y="48" width="32" height="160" event="mistress" value1="0" value2="0" repeat="1" />
-    <mistress id="12" x="688" y="192" flip="True" />
     <bat id="13" x="528" y="80" flip="False" pathType="LOOP_FORWARD" pathSpeed="200" pathCornering="3">
       <node x="704" y="80" />
       <node x="720" y="128" />
