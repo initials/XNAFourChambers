@@ -1267,8 +1267,8 @@ namespace FourChambers
                     {
                         p.dead = false;
                         p.acceleration.Y = FourChambers_Globals.GRAVITY;
-                        p.velocity.X = 0;
-                        p.velocity.Y = -100;
+                        p.velocity.X = FlxU.random(-150,150);
+                        p.velocity.Y = -200;
                         p.exists = true;
                         p.x = e.Object1.x;
                         p.y = e.Object1.y;

@@ -399,7 +399,7 @@ namespace FourChambers
                 {
                     typeOfPowerUp = 308;
 
-                    addAnimation("item", new int[] { 308, 310, 312, 314, 316, 318 });
+                    addAnimation("item", new int[] { 308, 310, 312, 314, 316, 318, 320, 322, 324 , 316  }, 12, true);
                     play("item");
 
                 }
