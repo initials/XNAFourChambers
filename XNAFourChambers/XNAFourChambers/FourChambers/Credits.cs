@@ -58,13 +58,20 @@ namespace FourChambers
             addString("initials");
             addString(" ");
             addString("Art by Stephanie Chiew");
-            addString("Logo Artist Auro Cyanide");
-            addString("Score by Girls With Depression");
+            addString(" ");
+            addString("Logo by Auro Cyanide");
+            addString(" ");
+            addString("Score by ");
+            addString("Girls With Depression ");
+            addString(" ");
             addString("Additional Music by ");
-            addString("Ralph Hilton / Rotary Dial Sins");
+            addString("Ralph Hilton aka");
+            addString("Rotary Dial Sins");
+            addString(" ");
             addString("Minifigs by svh440");
-            addString("Background Pixel Art by Surt");
-            addString("");
+            addString(" ");
+            addString("Background Pixel Art by ");
+            addString("Surt");
             addString("");
         }
 

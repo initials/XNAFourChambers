@@ -386,18 +386,33 @@ namespace FourChambers
             }
             else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
             {
-                if (FlxU.random() > 0.5)
+                float rr = FlxU.random();
+                if (rr > 0.5)
                 {
                     typeOfPowerUp = FR_Arrows;
+
+                    addAnimation("item", new int[] { typeOfPowerUp });
+                    play("item");
+
+                }
+                else if (rr > 0.1)
+                {
+                    typeOfPowerUp = 308;
+
+                    addAnimation("item", new int[] { 308, 310, 312, 314, 316, 318 });
+                    play("item");
+
                 }
                 else
                 {
                     typeOfPowerUp = (int)FlxU.random(0, 22 * 14);
+
+                    addAnimation("item", new int[] { typeOfPowerUp });
+                    play("item");
                 }
             }
             
-            addAnimation("item", new int[] { typeOfPowerUp });
-            play("item");
+
             
         }
 
