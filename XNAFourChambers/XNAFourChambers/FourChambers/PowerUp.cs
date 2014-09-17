@@ -411,9 +411,6 @@ namespace FourChambers
                     play("item");
                 }
             }
-            
-
-            
         }
 
         public void TypeOfPowerUp(int Typ)
@@ -448,11 +445,7 @@ namespace FourChambers
             if (this.typeOfPowerUp == FR_SwordFlame || this.typeOfPowerUp == FR_SwordGold)
             {
                 FourChambers_Globals.canDestroyTerrain = true;
-
-
             }
-
-
 
             base.overlapped(obj);
         }

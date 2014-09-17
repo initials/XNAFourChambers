@@ -30,6 +30,8 @@ namespace FourChambers
 
         private Tweener tween;
 
+
+
         private ColorTweener colTween;
 
         private Vector2 offsetButton;
@@ -39,13 +41,11 @@ namespace FourChambers
 
             //FlxG.playMusic("music/" + FourChambers_Globals.MUSIC_MENU, 1.0f);
 
-            FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1]; //6 is the super bright.
+            FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[2]; //6 is the super bright.
             FourChambers_Globals.hasMeleeWeapon = false;
             FourChambers_Globals.hasRangeWeapon = false;
 
-
             FlxG.backColor = new Color(0.2f, 0.2f, 0.2f);
-
 
             base.create();
 
@@ -127,9 +127,9 @@ namespace FourChambers
             add(playMultiPlayer);
             playMultiPlayer.debugName = "credits";
 
-            offsetButton = new Vector2(530, 90);
+            offsetButton = new Vector2(400, -10);
 
-            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
+            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
 
             FlxG.flash.start(Color.Black, 1.5f);
 
@@ -178,6 +178,8 @@ namespace FourChambers
 
         override public void update()
         {
+
+            
             if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
             {
                 FlxG.Game.Exit();
@@ -191,25 +193,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 3) + offsetButton.X, (editName.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 4) + offsetButton.X, (editName.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 3) + offsetButton.X, (playProcedural.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 4) + offsetButton.X, (playProcedural.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 3) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 4) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 4) + offsetButton.Y);
                 }
             }
             if (FlxG.keys.justPressed(Keys.Down) || FlxG.gamepads.isNewButtonPress(Buttons.DPadDown) || FlxG.gamepads.isNewButtonPress(Buttons.LeftThumbstickDown))
@@ -219,25 +221,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 3) + offsetButton.X, (playProcedural.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 4) + offsetButton.X, (playProcedural.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 3) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 4) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 3) + offsetButton.X, (editName.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 4) + offsetButton.X, (editName.getScreenXY().Y * 4) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 3) + offsetButton.X, (play.getScreenXY().Y * 3) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
                 }
             }
             if (FlxG.gamepads.isNewButtonRelease(Buttons.A) && play._counter > 0.5f)
