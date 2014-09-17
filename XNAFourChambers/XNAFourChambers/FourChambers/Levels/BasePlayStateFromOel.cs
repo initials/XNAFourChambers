@@ -113,6 +113,9 @@ namespace FourChambers
 
         private LevelBeginText comboInfo;
 
+        private PowerUpThrower powerUpThrower;
+
+
 
         #region Actors
         private Artist artist;
@@ -658,6 +661,9 @@ namespace FourChambers
                     f.color = FlxColor.ToColor(levelAttrs["fireflyColor"]);
                 }
             }
+
+
+
         }
 
         override public void update()
@@ -841,6 +847,21 @@ namespace FourChambers
             FlxU.overlap(powerUps, playerControlledActors, getPowerUp);
             if (seraphine.dead) FlxU.collide(seraphine, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
+
+            if (powerUpThrower != null)
+            {
+                PowerUp p = ( (PowerUp)(powerUps.getRandom()));
+                p.x = powerUpThrower.x;
+                p.y = powerUpThrower.y;
+                p.velocity.Y = -50;
+                p.acceleration.Y = 50;
+                p.velocity.X = FlxU.random(-50, 50);
+                p.dead = false;
+                p.exists = true;
+                
+
+
+            }
 
             base.update();
 
@@ -1696,6 +1717,11 @@ namespace FourChambers
                 //powerUp.typeOfPowerUp = 177;
                 powerUps.add(powerUp);
                 powerUp.TypeOfPowerUp(190);
+            }
+            else if (eventOrQuote == "throwPowerUps")
+            {
+                powerUpThrower = new PowerUpThrower(x, y);
+                add(powerUpThrower);
             }
             else
             {
