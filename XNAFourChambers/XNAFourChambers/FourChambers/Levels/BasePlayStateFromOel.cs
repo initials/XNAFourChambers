@@ -850,15 +850,18 @@ namespace FourChambers
 
             if (powerUpThrower != null)
             {
-                PowerUp p = ( (PowerUp)(powerUps.getRandom()));
-                p.x = powerUpThrower.x;
-                p.y = powerUpThrower.y;
-                p.velocity.Y = -50;
-                p.acceleration.Y = 50;
-                p.velocity.X = FlxU.random(-50, 50);
-                p.dead = false;
-                p.exists = true;
-                
+                PowerUp p = ( (PowerUp)(powerUps.getFirstDead()));
+                if (p != null)
+                {
+                    p.x = powerUpThrower.x;
+                    p.y = powerUpThrower.y;
+                    p.velocity.Y = 35;
+                    p.acceleration.Y = 98;
+                    p.velocity.X = FlxU.random(-150, 150);
+                    p.dead = false;
+                    p.exists = true;
+                    p.frame = (int)FlxU.random(0, 307);
+                }
 
 
             }
