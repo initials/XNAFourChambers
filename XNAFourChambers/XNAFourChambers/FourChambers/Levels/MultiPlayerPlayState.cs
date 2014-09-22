@@ -26,13 +26,18 @@ namespace FourChambers
             marksman.hasRangeWeapon = true;
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
 
+            //mistress = new Mistress(30, 30);
 
             mistress.startPlayingBack("FourChambers/ActorRecording/mistress.txt");
             //warlock.startPlayingBack("FourChambers/ActorRecording/warlock.txt");
+
+
             unicorn.startPlayingBack("FourChambers/ActorRecording/unicorn.txt");
+            
             executor.startPlayingBack("FourChambers/ActorRecording/executor.txt");
 
             vampire.startPlayingBack("FourChambers/ActorRecording/vampire.txt");
+            
             paladin.startPlayingBack("FourChambers/ActorRecording/paladin.txt");
 
 
