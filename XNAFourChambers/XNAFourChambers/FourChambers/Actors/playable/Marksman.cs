@@ -27,8 +27,6 @@ namespace FourChambers
 
         private Vector2 lastJoystickDirection;
 
-        
-
         public Marksman(int xPos, int yPos, List<FlxObject> Bullets)
             : base(xPos, yPos)
         {
@@ -366,7 +364,6 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
-            
             base.render(spriteBatch);
             meleeHitBox.render(spriteBatch);
         }

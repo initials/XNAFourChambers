@@ -380,9 +380,6 @@ namespace FourChambers
 
             }
 
-
-            
-
             Console.WriteLine("Generate the levels caves/tiles.");
 
             destructableAttrs = new Dictionary<string, string>();
@@ -528,9 +525,7 @@ namespace FourChambers
 
             //FlxG.followAdjust(0.5f, 0.0f);
             FlxG.followBounds(0, 0, Convert.ToInt32(levelAttrs["width"]) , Convert.ToInt32(levelAttrs["height"]) );
-
-
-
+            
             add(bullets);
             add(allLevelTiles);
             add(ladders);
@@ -654,10 +649,6 @@ namespace FourChambers
                 {
                     Firefly f = new Firefly(xp + (int)FlxU.random(-30, 30), yp - (int)FlxU.random(-30, 30));
                     add(f);
-
-                    //Console.WriteLine("Color: " + FlxColor.ToColor(levelAttrs["fireflyColor"]));
-
-
                     f.color = FlxColor.ToColor(levelAttrs["fireflyColor"]);
                 }
             }

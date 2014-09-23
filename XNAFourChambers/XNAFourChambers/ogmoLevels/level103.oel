@@ -41,17 +41,16 @@
 15,19,17,15,20,18,20,16,18,18,15,19,19,15,15,19,19,17,19,15
 17,20,20,20,16,19,18,15,19,17,20,17,17,16,20,20,15,15,18,16</IndestructableTerrain>
   <ActorsLayer>
-    <marksman id="0" x="16" y="48" flip="False" isPlayerControlled="True" />
-    <mistress id="1" x="288" y="48" flip="False" />
-    <warlock id="2" x="16" y="112" flip="False" />
-    <unicorn id="3" x="272" y="112" flip="False" />
-    <zingernest id="4" x="144" y="128" />
-    <zingernest id="5" x="160" y="128" />
-    <zingernest id="6" x="144" y="16" />
-    <zingernest id="7" x="160" y="16" />
-    <ladder id="8" x="112" y="64" height="96" />
-    <executor id="9" x="64" y="48" flip="False" />
-    <paladin id="10" x="128" y="144" flip="False" />
-    <vampire id="11" x="224" y="48" flip="False" />
+    <ladder id="0" x="112" y="64" height="96" />
+    <_event id="1" x="32" y="48" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="2" x="32" y="112" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="3" x="272" y="48" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="4" x="272" y="112" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="5" x="144" y="80" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="6" x="160" y="80" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="7" x="144" y="144" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="8" x="160" y="144" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="9" x="64" y="48" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
+    <_event id="10" x="240" y="48" width="16" height="16" event="spawn" value1="0" value2="0" repeat="1" />
   </ActorsLayer>
 </level>

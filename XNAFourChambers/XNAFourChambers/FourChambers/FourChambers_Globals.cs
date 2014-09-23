@@ -111,6 +111,8 @@ namespace FourChambers
 
         public static float health = 3;
 
+        public static bool invincible = false;
+
         /// <summary>
         /// Allows the FlxConsole to run commands.
         /// </summary>
@@ -129,6 +131,7 @@ namespace FourChambers
             {
                 FourChambers_Globals.arrowsToFire = Convert.ToInt32(Cheat[Cheat.Length - 1].ToString());
             }
+            else if (Cheat == "nouse") FourChambers_Globals.invincible = true;
             FlxGlobal.cheatString = Cheat;
 
         }

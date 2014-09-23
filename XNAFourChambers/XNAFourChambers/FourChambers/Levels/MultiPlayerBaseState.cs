@@ -215,10 +215,11 @@ namespace FourChambers
         public Arrow arrow;
         private BigExplosion bigEx;
 
-        private FlxSprite leftExitBlockerWall;
-        private FlxSprite rightExitBlockerWall;
         private Door door;
         private FlxGroup doors;
+
+        private FlxGroup spawnPoints;
+
         public void test()
         {
             levelAttrs = new Dictionary<string, string>();
@@ -265,6 +266,9 @@ namespace FourChambers
 
             base.create();
 
+            spawnPoints = new FlxGroup();
+
+
             FlxG.colorFlickeringEnabled = true;
             FlxG.autoHandlePause = true;
 
@@ -298,8 +302,6 @@ namespace FourChambers
             //important to reset the hud to get the text, gamepad buttons out.
             FlxG.resetHud();
             FlxG.showHud();
-
-            //FlxG.mouse.show(FlxG.Content.Load<Texture2D>("Mode/cursor"));
 
             // initialize a bunch of groups
             actors = new FlxGroup();
@@ -335,15 +337,6 @@ namespace FourChambers
 
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level");
 
-            //Console.WriteLine("----------------------------------" + levelAttrs);
-
-            //foreach (KeyValuePair<string, string> kvp in levelAttrs)
-            //{
-            //    Console.WriteLine("Key = {0}, Value = {1}",
-            //        kvp.Key, kvp.Value);
-            //}
-
-
             FlxG.levelWidth = Convert.ToInt32(levelAttrs["width"]);
             FlxG.levelHeight = Convert.ToInt32(levelAttrs["height"]);
 
@@ -359,15 +352,9 @@ namespace FourChambers
             //bgSprite.color = Color.DarkGray;
             bgSprite.boundingBoxOverride = false;
             bgSprite.allowColorFlicker = false;
-            //Console.WriteLine("Color : {0}", levelAttrs["bgColor"]);
-
             bgSprite.color = FlxColor.ToColor(levelAttrs["bgColor"]);
-            //bgSprite.color = Color.Blue;
-
             add(bgSprite);
-
-
-
+            
             for (int i = 0; i < 6; i++)
             {
                 FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height));
@@ -379,11 +366,6 @@ namespace FourChambers
                 add(cloud);
 
             }
-
-
-
-
-            Console.WriteLine("Generate the levels caves/tiles.");
 
             destructableAttrs = new Dictionary<string, string>();
             destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/DestructableTerrain");
@@ -398,14 +380,6 @@ namespace FourChambers
 
             indestructableAttrs = new Dictionary<string, string>();
             indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/IndestructableTerrain");
-
-            //leftExitBlockerWall = new FlxSprite(0, FlxG.levelHeight - (FourChambers_Globals.TILE_SIZE_X * 6), FlxG.Content.Load<Texture2D>("fourchambers/exitBlocker"));
-            //leftExitBlockerWall.@fixed = true;
-            //allLevelTiles.add(leftExitBlockerWall);
-
-            //rightExitBlockerWall = new FlxSprite(FlxG.levelWidth - (FourChambers_Globals.TILE_SIZE_X * 2), FlxG.levelHeight - (FourChambers_Globals.TILE_SIZE_X * 6), FlxG.Content.Load<Texture2D>("fourchambers/exitBlocker"));
-            //rightExitBlockerWall.@fixed = true;
-            //allLevelTiles.add(rightExitBlockerWall);
 
             indestructableTilemap = new FlxTilemap();
             indestructableTilemap.auto = FlxTilemap.STRING;
@@ -423,11 +397,7 @@ namespace FourChambers
             {
                 fireBall = new FireBall(-1000, -1000);
                 fireBalls.add(fireBall);
-
-                //bullets.add(fireBall);
             }
-
-            //bullets.add(fireBalls);
 
             foreach (Dictionary<string, string> nodes in actorsAttrs)
             {
@@ -487,12 +457,6 @@ namespace FourChambers
                     addedMap = caveExt.addStrings(destructableAttrs["DestructableTerrain"], newMap, Convert.ToInt32(nodes["x"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X);
                 }
 
-                //foreach (KeyValuePair<string, string> kvp in nodes)
-                //{
-                //    //Console.Write("Key = {0}, Value = {1}, ",
-                //    //    kvp.Key, kvp.Value);
-                //}
-                //Console.Write("\r\n");
             }
 
             //reload the map
@@ -508,28 +472,16 @@ namespace FourChambers
                 s2.createGraphic(Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]), Color.Red);
 
                 eventSprites.add(s2);
-
-                foreach (KeyValuePair<string, string> kvp in nodes)
-                {
-                    //Console.Write("Key = {0}, Value = {1}, ",
-                    //    kvp.Key, kvp.Value);
-                }
-                //Console.Write("\r\n");
             }
 
             add(eventSprites);
 
             Console.WriteLine("Done generating levels");
 
-            // build atmospheric effects here
-
-            //paletteTexture = FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["timeOfDayPalette"]);
             paletteTexture = FlxG.Content.Load<Texture2D>("fourchambers/skyPalettes");
 
             //FlxG.followAdjust(0.5f, 0.0f);
             FlxG.followBounds(0, 0, Convert.ToInt32(levelAttrs["width"]), Convert.ToInt32(levelAttrs["height"]));
-
-
 
             add(bullets);
             add(allLevelTiles);
@@ -605,8 +557,8 @@ namespace FourChambers
             //if (FlxG.joystickBeingUsed) FlxG.mouse.hide();
             //else FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
-            if (marksman.hasRangeWeapon) FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
-            else FlxG.mouse.hide();
+            //if (marksman.hasRangeWeapon) FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
+            //else FlxG.mouse.hide();
 
             localHud = new PlayHud();
             FlxG._game.hud.hudGroup = localHud;
@@ -654,287 +606,45 @@ namespace FourChambers
                 {
                     Firefly f = new Firefly(xp + (int)FlxU.random(-30, 30), yp - (int)FlxU.random(-30, 30));
                     add(f);
-
-                    //Console.WriteLine("Color: " + FlxColor.ToColor(levelAttrs["fireflyColor"]));
-
-
                     f.color = FlxColor.ToColor(levelAttrs["fireflyColor"]);
                 }
             }
 
+
+            loadCharacters();
+
+
+        }
+
+        public void loadCharacters()
+        {
+
+            FlxObject g = spawnPoints.getRandom();
+
+            buildActor("marksman", 1, true,(int)g.x,(int)g.y,0,0,"","",0,0,0.0f);
+            marksman.isPlayerControlled = true;
+            marksman.hasRangeWeapon = true;
+
+            g = spawnPoints.getRandom();
+            buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
 
 
         }
 
         override public void update()
         {
-            runCheat();
-
-            #region debugLevelSkip
-            if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug && timeOfDay > 2.0f)
-            {
-                foreach (var item in actors.members)
-                {
-                    if (item is ZingerNest) item.dead = true;
-                }
-            }
-            if (FlxG.keys.justPressed(Keys.F9) && FlxG.debug && timeOfDay > 2.0f)
-            {
-                FlxG.level++;
-                //if (FlxG.level > 25) FlxG.level = 1;
-
-                FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-
-                FlxG.transition.startFadeIn(0.2f);
-
-                FlxG.state = new BasePlayStateFromOel();
-
-                return;
-            }
-            else if (FlxG.keys.justPressed(Keys.F7) && FlxG.debug && timeOfDay > 2.0f)
-            {
-                FlxG.level--;
-                //if (FlxG.level < 1) FlxG.level = 25;
-
-                FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-
-                FlxG.transition.startFadeIn(0.2f);
-
-                FlxG.state = new BasePlayStateFromOel();
-
-                return;
-            }
-            else if (FlxG.keys.justPressed(Keys.F8) && FlxG.debug && timeOfDay > 2.0f)
-            {
-                FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-                FlxG.transition.startFadeIn(0.2f);
-                FlxG.state = new BasePlayStateFromOel();
-                return;
-            }
-            else if (FlxG.keys.justPressed(Keys.F4) && FlxG.debug && timeOfDay > 2.0f)
-            {
-
-                FlxObject dor = doors.members[((int)(FlxU.random() * doors.members.Count))];
-
-
-                playerControlledActors.members[0].x = dor.x;
-                playerControlledActors.members[0].y = dor.y;
-
-
-            }
-
-            // Allow editing of terrain if SHIFT + Mouse is pressed.
-            if (FlxG.mouse.pressedRightButton() && FlxG.keys.SHIFT)
-            {
-                //Console.WriteLine((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X + " " + (int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y);
-
-                destructableTilemap.setTile((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X, (int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y, 0, true);
-                //decorationsTilemap.setTile((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X, ((int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y) - 1, 0, true);
-            }
-            if (FlxG.mouse.pressedLeftButton() && FlxG.keys.SHIFT)
-            {
-                destructableTilemap.setTile((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X, (int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y, 1, true);
-            }
-
-            if (FlxG.keys.justPressed(Microsoft.Xna.Framework.Input.Keys.B) && FlxG.debug)
-                FlxG.showBounds = !FlxG.showBounds;
-
-            #endregion
-
-            localHud.combo.text = FourChambers_Globals.arrowCombo.ToString() + "x Combo";
-            if (FourChambers_Globals.arrowCombo > 5) localHud.combo.text += "!";
-
-            localHud.score.text = "$" + FlxG.score.ToString();
-            localHud.healthText.text = playerControlledActors.members[0].health.ToString();
-
-
-            if (marksman != null)
-            {
-                localHud.setArrowsRemaining(marksman.arrowsRemaining);
-
-                //localHud.nestsRemaining.text = "Unicorns Left: " + actors.countLivingOfType("FourChambers.Unicorn").ToString();
-            }
-            //if (actors.countLivingOfType("FourChambers.Unicorn") <= 0)
-            //{
-
-            //    if (leftExitBlockerWall.velocity.Y == 0)
-            //    {
-            //        FlxG.quake.start(0.025f, 1.5f);
-            //    }
-
-            //    leftExitBlockerWall.velocity.Y = -50;
-            //    rightExitBlockerWall.velocity.Y = -50;
-
-            //}
-
-            if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && FourChambers_Globals.seraphineHasBeenKilled == false)
-            {
-                //Console.WriteLine("SEREAPHINE");
-
-#if !__ANDROID__
-                FlxG.bloom.Visible = true;
-#endif
-                seraphine.velocity.Y = 0;
-                seraphine.x = marksman.x - marksman.width / 2;
-                seraphine.y = marksman.y - marksman.height;
-                seraphine.facing = marksman.facing;
-
-            }
-            else if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && FourChambers_Globals.seraphineHasBeenKilled == true)
-            {
-                //imp.x = marksman.x - 30;
-                //imp.y = marksman.y - marksman.height;
-                //imp.facing = marksman.facing;
-            }
-            else if (seraphine.dead == true)
-            {
-                seraphine.acceleration.Y = FourChambers_Globals.GRAVITY;
-            }
-            else if (marksman.canFly)
-            {
-                FlxG.bloom.Visible = false;
-                seraphine.velocity.Y = -50;
-            }
-            else
-            {
-                FlxG.bloom.Visible = false;
-
-            }
-
-
-            timeOfDay += FlxG.elapsed * timeScale;
-            if (timeOfDay > 239.99f) timeOfDay = 0.0f;
-
-            //calculate time of day.
-            if (FourChambers_Globals.gif == false && FlxG.level >= 1 && FlxG.level <= 100)
-            {
-                // color whole game.
-                //FlxG.color(FlxU.getColorFromBitmapAtPoint(paletteTexture, (int)timeOfDay, ((FlxG.level-1) * 10) + 5 ));
-            }
-
-            // bring time back to regular.
-            if (FlxG.timeScale != 1.0f) FlxG.timeScale += 0.05f;
-            if (FlxG.timeScale > 1.0f) FlxG.timeScale = 1.0f;
-
-            bool ev = FlxU.overlap(playerControlledActors, eventSprites, eventCallback);
-            if (!ev)
-            {
-                FlxG.setHudText(1, "");
-            }
-
-            //collides
+            
             FlxU.collide(actors, allLevelTiles);
             FlxU.collide(powerUps, allLevelTiles);
             FlxU.overlap(actors, bullets, overlapped);
-            FlxU.overlap(actors, fireBalls, overlappFireball);
-            FlxU.overlap(seraphine, bullets, overlapped);
-
-            FlxU.overlap(actors, doors, openDoor);
-
-            FlxU.overlap(actors, ladders, overlapWithLadder);
-
-            if (FourChambers_Globals.canDestroyTerrain)
-            {
-                FlxU.overlap(marksman.meleeHitBox, destructableTilemap, destroyTileAtMelee);
-            }
-
-            FlxU.overlap(seraphine, playerControlledActors, canNowFly);
-            FlxU.collide(seraphine, allLevelTiles);
-            // Maybe use the return value of this to reset the combo counter.
+            
             FlxU.collide(allLevelTiles, bullets);
             FlxU.collide(blood, allLevelTiles);
-            FlxU.overlap(actors, playerControlledActors, actorOverlap);
-            FlxU.overlap(powerUps, playerControlledActors, getPowerUp);
-            if (seraphine.dead) FlxU.collide(seraphine, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
 
-            if (powerUpThrower != null)
-            {
-                PowerUp p = ((PowerUp)(powerUps.getFirstDead()));
-                if (p != null)
-                {
-                    p.x = powerUpThrower.x;
-                    p.y = powerUpThrower.y;
-                    p.velocity.Y = 35;
-                    p.acceleration.Y = 98;
-                    p.velocity.X = FlxU.random(-150, 150);
-                    p.dead = false;
-                    p.exists = true;
-                    p.frame = (int)FlxU.random(0, 307);
-                }
 
-
-            }
 
             base.update();
-
-            // exit.
-            if (FlxG.keys.justPressed(Keys.Escape))
-            {
-                int i = 0;
-                int l = playerControlledActors.members.Count;
-                while (i < l)
-                {
-                    (playerControlledActors.members[i] as FlxSprite).dead = true;
-                    i++;
-                }
-                Console.WriteLine("Just pressed Escape and killed all player characters.");
-            }
-
-            int i2 = 0;
-            int l2 = playerControlledActors.members.Count;
-            while (i2 < l2)
-            {
-                //Console.WriteLine((playerControlledActors.members[i2] as FlxSprite).x + "    " + FlxG.levelWidth + "  " + playerControlledActors.members[i2]);
-                if ((playerControlledActors.members[i2] as FlxSprite).x < 9)
-                {
-                    //Console.WriteLine("ArrowsFired : {0} Arrows Hit : {1}", FourChambers_Globals.arrowsFired, FourChambers_Globals.arrowsHitTarget);
-                    //int newLevel = (int)FlxU.random(0, FourChambers_Globals.availableLevels.Count);
-                    //FlxG.level = FourChambers_Globals.availableLevels[newLevel];
-                    //FourChambers_Globals.availableLevels.RemoveAt(newLevel);
-                    //goToLevel(++FlxG.level);
-                    (playerControlledActors.members[i2] as FlxSprite).x = 10;
-                }
-                if ((playerControlledActors.members[i2] as FlxSprite).x > FlxG.levelWidth - 10)
-                {
-                    //goToLevel(++FlxG.level);
-                    (playerControlledActors.members[i2] as FlxSprite).x = FlxG.levelWidth - 11;
-                }
-
-                i2++;
-            }
-
-            if (playerControlledActors.getFirstAlive() == null)
-            {
-                FourChambers_Globals.hasMeleeWeapon = false;
-                FourChambers_Globals.hasRangeWeapon = false;
-                //FlxG.setHudText(1, "Press X to go to Menu \n Press Y to restart.");
-                FlxG._game.hud.p1HudText.alignment = FlxJustification.Center;
-
-                if (marksman.hasUsedJoystickToAim)
-                {
-                    FlxG._game.hud.p1HudText.text = "Press B to go to Menu \n Press X to restart.";
-                }
-                else if (!marksman.hasUsedJoystickToAim)
-                {
-                    FlxG._game.hud.p1HudText.text = "Left Click to go to Menu \n Right Click to restart.";
-                }
-                FlxG.setHudTextScale(1, 2);
-                FlxG.setHudTextPosition(1, 0, FlxG.height / 2);
-                FourChambers_Globals.seraphineHasBeenKilled = false;
-
-                if (FlxG.gamepads.isButtonDown(Buttons.B) || FlxG.mouse.pressedLeftButton())
-                {
-                    FlxOnlineStatCounter.sendStats("fourchambers", "marksman", FlxG.score);
-                    goToMenu();
-                }
-
-                if (FlxG.gamepads.isButtonDown(Buttons.X) || FlxG.mouse.pressedRightButton())
-                {
-                    FlxOnlineStatCounter.sendStats("fourchambers", "marksman", FlxG.score);
-                    restart();
-                }
-            }
         }
 
         /// <summary>
@@ -1691,7 +1401,6 @@ namespace FourChambers
                 {
                     mistress.isPlayerControlled = true;
                     marksman.isPlayerControlled = false;
-                    FlxG.follow(mistress, 1.0f);
                 }
                 else if (FlxGlobal.cheatString.StartsWith("door"))
                 {
@@ -1725,6 +1434,12 @@ namespace FourChambers
             {
                 powerUpThrower = new PowerUpThrower(x, y);
                 add(powerUpThrower);
+            }
+            else if (eventOrQuote == "spawn")
+            {
+                FlxSprite sp = new FlxSprite(x, y);
+                spawnPoints.add(sp);
+
             }
             else
             {
@@ -1808,18 +1523,9 @@ namespace FourChambers
                 for (int i = 0; i < NumberOfActors; i++)
                 {
                     marksman = new Marksman(x, y, arrows.members);
-                    marksman.flicker(2);
                     actors.add(marksman);
                     bullets.add(marksman.meleeHitBox);
                     playerControlledActors.add(marksman);
-                    //marksman.color 
-
-                }
-
-                if (playerControlled == true) //levelAttrs["playerControlled"] == "marksman" ||
-                {
-                    marksman.isPlayerControlled = true;
-                    FlxG.follow(marksman, FOLLOW_LERP);
                 }
             }
             #endregion
@@ -1831,17 +1537,8 @@ namespace FourChambers
 
                     mistress = new Mistress(x, y);
                     actors.add(mistress);
-                    //mistress.flicker(2);
-                    //playerControlledActors.add(mistress);
                     bullets.add(mistress.whipHitBox);
-
                 }
-
-                //if (levelAttrs["playerControlled"] == "mistress")
-                //{
-                //    mistress.isPlayerControlled = true;
-                //    FlxG.follow(mistress, FOLLOW_LERP);
-                //}
             }
             #endregion
             #region Warlock
@@ -1856,14 +1553,7 @@ namespace FourChambers
 
                     warlock = new Warlock(x, y, warlockFireBalls.members);
                     actors.add(warlock);
-                    warlock.flicker(2);
-                    //playerControlledActors.add(warlock);
                 }
-                //if (levelAttrs["playerControlled"] == "warlock")
-                //{
-                //    warlock.isPlayerControlled = true;
-                //    FlxG.follow(warlock, FOLLOW_LERP);
-                //}
             }
             #endregion
             #region Artist

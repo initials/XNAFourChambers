@@ -501,18 +501,21 @@ namespace FourChambers
 
         public override void hurt(float Damage)
         {
+            if (FourChambers_Globals.invincible==false)
+            {
+                velocity.X = 0;
 
-            velocity.X = 0;
+                hurtTimer = 0.0f;
 
-            hurtTimer = 0.0f;
+                colorFlicker(2);
 
-            colorFlicker(2);
-
-            base.hurt(Damage);
+                base.hurt(Damage);
+            }
         }
 
         public override void kill()
         {
+
             play("death");
 
             dead = true;

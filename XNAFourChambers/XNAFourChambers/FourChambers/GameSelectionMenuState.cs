@@ -299,6 +299,24 @@ namespace FourChambers
                 return;
 
             }
+            if (FlxG.keys.justPressed(Keys.F3))
+            {
+                FlxG.level = 103;
+                FlxG.score = 0;
+                FlxG.hideHud();
+
+                FlxG.state = new MultiPlayerBaseState();
+                return;
+
+            }
+            if (FlxG.keys.justPressed(Keys.F4))
+            {
+                FlxG.hideHud();
+
+                FlxG.state = new AllLevels();
+                return;
+
+            }
         }
 
         /// <summary>

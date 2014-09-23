@@ -238,10 +238,12 @@
     <Compile Include="FourChambers\GameSelectionMenuState.cs" />
     <Compile Include="FourChambers\Hud\ImpactText.cs" />
     <Compile Include="FourChambers\Hud\PlayHud.cs" />
+    <Compile Include="FourChambers\Levels\AllLevels.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
     <Compile Include="FourChambers\Levels\Door.cs" />
     <Compile Include="FourChambers\Levels\FallAwayBridgeBlock.cs" />
+    <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
@@ -416,6 +418,9 @@
     <None Include="ogmoLevels\level102.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="ogmoLevels\level103.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ogmoLevels\level11.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -454,6 +459,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ogmoLevels\level22.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level23.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ogmoLevels\level3.oel">
