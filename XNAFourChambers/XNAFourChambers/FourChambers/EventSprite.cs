@@ -31,7 +31,7 @@ namespace FourChambers
             if (FlxG.debug)
             {
                 visible = true;
-                alpha = 0.3f;
+                alpha = 0.0f;
             }
             else
             {
