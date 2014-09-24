@@ -367,6 +367,7 @@ namespace FourChambers
             add(bgSprite);
             if (FlxG.debug) bgSprite.scale = 100;
             
+
             
             for (int i = 0; i < 6; i++)
             {
@@ -378,7 +379,33 @@ namespace FourChambers
                 cloud.alpha = 0.9f;
                 add(cloud);
 
+            
             }
+
+
+
+
+                //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+                Hill hill = new Hill(0, 200);
+                //hill.color = new Color(0.132f , 0.2f, 0.75f);
+                hill.allowColorFlicker = false;
+                hill.setScrollFactors(0.2f,0.2f);
+                add(hill);
+            
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+                Tree tree = new Tree(i*120, (FlxG.levelHeight - 48 - 96)/2);
+                tree.color = new Color(0.2f, 0.2f,0.25f);
+                tree.allowColorFlicker = false;
+                tree.setScrollFactors(0.3f, 0.3f);
+                add(tree);
+            }
+
+
+
 
             Console.WriteLine("Generate the levels caves/tiles.");
 
@@ -604,7 +631,12 @@ namespace FourChambers
             else FlxG.mouse.hide();
 
             localHud = new PlayHud();
-            FlxG._game.hud.hudGroup = localHud;
+            
+
+            if (!FlxG.debug)
+            {
+                FlxG._game.hud.hudGroup = localHud;
+            }
 
             Console.WriteLine("Level is: " + FlxG.level);
 
@@ -652,6 +684,7 @@ namespace FourChambers
                     f.color = FlxColor.ToColor(levelAttrs["fireflyColor"]);
                 }
             }
+
 
 
 

@@ -243,12 +243,14 @@
     <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
     <Compile Include="FourChambers\Levels\Door.cs" />
     <Compile Include="FourChambers\Levels\FallAwayBridgeBlock.cs" />
+    <Compile Include="FourChambers\Levels\Hill.cs" />
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerBaseState.cs" />
+    <Compile Include="FourChambers\Levels\Tree.cs" />
     <Compile Include="FourChambers\PointBurst.cs" />
     <Compile Include="FourChambers\PowerUp.cs" />
     <Compile Include="FourChambers\PowerUpProgress.cs" />
