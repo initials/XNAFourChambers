@@ -507,7 +507,7 @@ namespace FourChambers
 
                 hurtTimer = 0.0f;
 
-                colorFlicker(2);
+                colorFlicker(timeDownAfterHurt * 2);
 
                 base.hurt(Damage);
             }

@@ -74,7 +74,7 @@ namespace FourChambers
 
             lastJoystickDirection = new Vector2(0, 0);
 
-            timeDownAfterHurt = 2.0f;
+            timeDownAfterHurt = 1.5f;
 
 
             hasMeleeWeapon = FourChambers_Globals.hasMeleeWeapon;
@@ -214,9 +214,7 @@ namespace FourChambers
 
             if (hasRangeWeapon && ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && attackingJoystick) || (FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder) && velocity.X != 0) )
             {
-
-                Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
-
+                //Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
 
                 float rightX = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X;
                 float rightY = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y;
@@ -283,7 +281,7 @@ namespace FourChambers
             // use the mouse position to fire a bullet.
             if ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && (attackingMouse) && hasRangeWeapon)
             {
-                Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
+                //Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
 
                 float rightX1 = FlxG.mouse.x;
                 float rightY1 = FlxG.mouse.y;

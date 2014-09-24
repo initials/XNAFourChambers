@@ -385,24 +385,31 @@ namespace FourChambers
 
 
 
-                //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
-                Hill hill = new Hill(0, 200);
-                //hill.color = new Color(0.132f , 0.2f, 0.75f);
-                hill.allowColorFlicker = false;
-                hill.setScrollFactors(0.2f,0.2f);
-                add(hill);
-            
+            //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+            Hill hill = new Hill(0, 188);
+            hill.color = new Color(0.8f , 0.8f, 0.885f);
+            hill.allowColorFlicker = false;
+            hill.setScrollFactors(0.1f,0.1f);
+            add(hill);
+
+            //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+            hill = new Hill(-50, 267);
+            //hill.color = new Color(0.90132f , 0.902f, 0.9025f);
+            hill.allowColorFlicker = false;
+            hill.setScrollFactors(0.2f, 0.2f);
+            add(hill);
 
 
-            for (int i = 0; i < 10; i++)
-            {
-                //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
-                Tree tree = new Tree(i*120, (FlxG.levelHeight - 48 - 96)/2);
-                tree.color = new Color(0.2f, 0.2f,0.25f);
-                tree.allowColorFlicker = false;
-                tree.setScrollFactors(0.3f, 0.3f);
-                add(tree);
-            }
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+            //    Tree tree = new Tree(i*120, (int)((FlxG.levelHeight)/1.5f));
+            //    tree.color = new Color(0.02f, 0.02f,0.025f);
+            //    tree.allowColorFlicker = false;
+            //    tree.setScrollFactors(0.5f, 0.5f);
+            //    add(tree);
+            //}
 
 
 
@@ -930,6 +937,7 @@ namespace FourChambers
 
             if (playerControlledActors.getFirstAlive() == null)
             {
+                /*
                 FourChambers_Globals.hasMeleeWeapon = false;
                 FourChambers_Globals.hasRangeWeapon = false;
                 //FlxG.setHudText(1, "Press X to go to Menu \n Press Y to restart.");
@@ -943,6 +951,7 @@ namespace FourChambers
                 {
                     FlxG._game.hud.p1HudText.text = "Left Click to go to Menu \n Right Click to restart.";
                 }
+
                 FlxG.setHudTextScale(1, 2);
                 FlxG.setHudTextPosition(1, 0, FlxG.height / 2);
                 FourChambers_Globals.seraphineHasBeenKilled = false;
@@ -958,6 +967,12 @@ namespace FourChambers
                     FlxOnlineStatCounter.sendStats("fourchambers", "marksman", FlxG.score);
                     restart();
                 }
+                 * */
+
+
+
+                FlxG.state = new LevelEndState();
+                return;
             }
         }
 
