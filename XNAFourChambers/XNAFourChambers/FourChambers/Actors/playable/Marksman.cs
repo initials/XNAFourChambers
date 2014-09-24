@@ -174,8 +174,8 @@ namespace FourChambers
 
             adjustMeleeBox();
 
-            float rightX11 = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X;
-            float rightY11 = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y;
+            float rightX11 = GamePad.GetState(playerIndex).ThumbSticks.Right.X;
+            float rightY11 = GamePad.GetState(playerIndex).ThumbSticks.Right.Y;
 
 			#if __ANDROID__
 
@@ -207,7 +207,7 @@ namespace FourChambers
 
             }
 
-            if (FlxG.mouse.pressed())
+            if (FlxG.mouse.pressed() && playerIndex == PlayerIndex.One)
             {
                 hasUsedJoystickToAim = false;
             }
@@ -216,8 +216,8 @@ namespace FourChambers
             {
                 //Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
 
-                float rightX = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X;
-                float rightY = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y;
+                float rightX = GamePad.GetState(playerIndex).ThumbSticks.Right.X;
+                float rightY = GamePad.GetState(playerIndex).ThumbSticks.Right.Y;
 
 				#if __ANDROID__
 
@@ -329,10 +329,11 @@ namespace FourChambers
 
             }
 
+            PlayerIndex pi;
 
-            if (FourChambers_Globals.seraphineHasBeenKilled == false)
+            if (FourChambers_Globals.seraphineHasBeenKilled == false && canFly)
             {
-                if (FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W)
+                if (FlxG.gamepads.isButtonDown(Buttons.Y, playerIndex, out pi) || FlxG.keys.W)
                 {
                     velocity.Y = -100;
                     //FlxG.bloom.Visible = true;

@@ -50,6 +50,10 @@ namespace FourChambers
         public float hurtTimer = 550.0f;
 
         public int runSpeed = 120;
+
+        public PlayerIndex playerIndex = PlayerIndex.One;
+
+
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
         /// </summary>

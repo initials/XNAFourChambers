@@ -1,5 +1,29 @@
-﻿x=400
-y=300
+﻿x=960
+y=540
+fullscreen=0
+zoom=2
+
+
+x=1920
+y=1080
+fullscreen=0
+zoom=4
+
+x=960
+y=540
+fullscreen=0
+zoom=2
+
+
+
+
+
+
+
+
+// -- FOR MAP
+x=1600
+y=900
 fullscreen=0
 zoom=1
 

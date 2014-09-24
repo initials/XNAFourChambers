@@ -182,7 +182,7 @@ namespace FourChambers
         private Prism prism;
         private Rat rat;
         private Savage savage;
-        private Seraphine seraphine;
+        private SeraphineMulti seraphine;
         private Sheep sheep;
         private Skeleton skeleton;
         private Snake snake;
@@ -382,11 +382,14 @@ namespace FourChambers
             indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/IndestructableTerrain");
 
             indestructableTilemap = new FlxTilemap();
+            indestructableTilemap.collideMin = 0;
+            indestructableTilemap.collideMax = 21;
             indestructableTilemap.auto = FlxTilemap.STRING;
             indestructableTilemap.loadMap(indestructableAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             indestructableTilemap.boundingBoxOverride = true;
 
             allLevelTiles.add(indestructableTilemap);
+
 
             actorsAttrs = new List<Dictionary<string, string>>();
             actorsAttrs = FlxXMLReader.readNodesFromOelFile(levelFile, "level/ActorsLayer");
@@ -547,8 +550,8 @@ namespace FourChambers
             //if (marksman.hasRangeWeapon) FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
             //else FlxG.mouse.hide();
 
-            localHud = new PlayHud();
-            FlxG._game.hud.hudGroup = localHud;
+            //localHud = new PlayHud();
+            //FlxG._game.hud.hudGroup = localHud;
 
             Console.WriteLine("Level is: " + FlxG.level);
 
@@ -606,25 +609,39 @@ namespace FourChambers
         public void loadCharacters()
         {
 
-            
+            PlayerIndex PL = PlayerIndex.One;
 
             for (int i = 0; i < 4; i++)
             {
+                if (i == 1) PL = PlayerIndex.Two;
+                else if (i == 2) PL = PlayerIndex.Three;
+                else if (i == 3) PL = PlayerIndex.Four;
+
                 FlxObject g = spawnPoints.getRandom();
-                if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 0) buildActor("marksman", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 1) buildActor("succubus", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 2) buildActor("paladin", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 3) buildActor("unicorn", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 4) buildActor("vampire", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 5) buildActor("warlock", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 6) buildActor("corsair", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 7) buildActor("automaton", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 8) buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 9) buildActor("gloom", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 10) buildActor("harvester", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 11) buildActor("mummy", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 12) buildActor("zinger", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+
+                if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 0) buildActor("marksman", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 1) buildActor("succubus", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 2) buildActor("paladin", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 3) buildActor("unicorn", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 4) buildActor("vampire", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 5) buildActor("warlock", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 6) buildActor("corsair", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 7) buildActor("automaton", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 8) buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 9) buildActor("gloom", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 10) buildActor("harvester", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 11) buildActor("mummy", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 12) buildActor("seraphine", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 13) buildActor("mistress", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 14) buildActor("medusa", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 15) buildActor("zombie", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 16) buildActor("tormentor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+
             }
+
+
+
+
 
             //buildActor("marksman", 1, true,(int)g.x,(int)g.y,0,0,"","",0,0,0.0f);
             //marksman.isPlayerControlled = true;
@@ -647,9 +664,24 @@ namespace FourChambers
             FlxU.collide(blood, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
 
-
-
             base.update();
+
+            if (FlxG.keys.justPressed(Keys.Escape))
+            {
+                int i = 0;
+                int l = playerControlledActors.members.Count;
+                while (i < l)
+                {
+                    (playerControlledActors.members[i] as FlxSprite).dead = true;
+                    i++;
+                }
+                Console.WriteLine("Just pressed Escape and killed all player characters.");
+
+                FlxG.state = new MultiPlayerCharacterSelect();
+                return;
+            }
+
+
         }
 
         /// <summary>
@@ -691,7 +723,6 @@ namespace FourChambers
             if (e.Object1 is Marksman && (FlxControl.UPJUSTPRESSED))
             {
                 goToLevel(((Door)(e.Object2)).levelToGoTo);
-
             }
             return true;
         }
@@ -827,21 +858,6 @@ namespace FourChambers
             return true;
         }
 
-        protected bool canNowFly(object Sender, FlxSpriteCollisionEvent e)
-        {
-            FlxG.write("Player can now fly");
-
-            if (marksman.canFly == false)
-            {
-                specialFX.at(e.Object1);
-                specialFX.start(true, 0, 30);
-            }
-
-            FourChambers_Globals.seraphineHasBeenKilled = false;
-
-            marksman.canFly = true;
-            return true;
-        }
         protected bool overlappFireball(object Sender, FlxSpriteCollisionEvent e)
         {
             blood.at(e.Object1);
@@ -863,10 +879,6 @@ namespace FourChambers
         /// <returns></returns>
         protected bool overlapped(object Sender, FlxSpriteCollisionEvent e)
         {
-
-
-
-
             // First reject Actors and their bullets.
             if ((e.Object1 is Warlock) && (e.Object2 is WarlockFireBall)) { }
             else if ((e.Object1 is Marksman) && (e.Object2 is Arrow)) { }
@@ -973,13 +985,13 @@ namespace FourChambers
                     Vector2 p2 = e.Object1.getScreenXY();
 
 
-                    localHud.comboOnScreen.x = p2.X * FlxG.zoom;
-                    localHud.comboOnScreen.y = (p2.Y - 20) * FlxG.zoom;
+                    //localHud.comboOnScreen.x = p2.X * FlxG.zoom;
+                    //localHud.comboOnScreen.y = (p2.Y - 20) * FlxG.zoom;
 
-                    localHud.comboOnScreen.counter = 0;
+                    //localHud.comboOnScreen.counter = 0;
 
-                    localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString();
-                    localHud.comboOnScreen.flyAwayText = zx.actorName + "\n" + (FourChambers_Globals.arrowCombo * zx.score).ToString();
+                    //localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString();
+                    //localHud.comboOnScreen.flyAwayText = zx.actorName + "\n" + (FourChambers_Globals.arrowCombo * zx.score).ToString();
 
                     //Console.WriteLine(localHud.comboOnScreen.x + " " + localHud.comboOnScreen.y + " " + zx.x + " " + zx.y + " " + FlxG.mouse.x + " " + FlxG.scroll.X);
 
@@ -1023,7 +1035,7 @@ namespace FourChambers
 
                 }
 
-                if (!e.Object1.dead) localHud.comboOnScreen.x = -1000;
+                //if (!e.Object1.dead) localHud.comboOnScreen.x = -1000;
 
             }
 
@@ -1470,7 +1482,8 @@ namespace FourChambers
             string PathNodesY = "",
             uint PathType = 0,
             int PathSpeed = 40,
-            float PathCornering = 3.0f)
+            float PathCornering = 3.0f, 
+            PlayerIndex pi = PlayerIndex.One)
         {
             if (ActorType == "door")
             {
@@ -1536,6 +1549,8 @@ namespace FourChambers
                         marksman.hasRangeWeapon = true;
                         marksman.isPlayerControlled = true;
                         marksman.canFly = false;
+                        marksman.playerIndex = pi;
+
                     }
                 }
             }
@@ -1549,7 +1564,11 @@ namespace FourChambers
                     mistress = new Mistress(x, y);
                     actors.add(mistress);
                     bullets.add(mistress.whipHitBox);
-                    if (playerControlled == true) mistress.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        mistress.playerIndex = pi;
+                        mistress.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -1565,7 +1584,11 @@ namespace FourChambers
 
                     warlock = new Warlock(x, y, warlockFireBalls.members);
                     actors.add(warlock);
-                    if (playerControlled == true) warlock.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        warlock.playerIndex = pi;
+                        warlock.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -1599,7 +1622,11 @@ namespace FourChambers
 
                     automaton = new Automaton(x, y);
                     actors.add(automaton);
-                    if (playerControlled == true) automaton.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        automaton.playerIndex = pi;
+                        automaton.isPlayerControlled = true;
+                    }
 
                 }
             }
@@ -1714,6 +1741,11 @@ namespace FourChambers
 
                     corsair = new Corsair(x, y);
                     actors.add(corsair);
+                    if (playerControlled == true)
+                    {
+                        corsair.playerIndex = pi;
+                        corsair.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -1835,6 +1867,12 @@ namespace FourChambers
 
                     executor = new Executor(x, y);
                     actors.add(executor);
+                    if (playerControlled == true)
+                    {
+                        executor.playerIndex = pi;
+                        executor.isPlayerControlled = true;
+                    }
+
                 }
             }
             #endregion
@@ -1890,7 +1928,11 @@ namespace FourChambers
 
                     gloom = new Gloom(x, y);
                     actors.add(gloom);
-                    if (playerControlled == true) gloom.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        gloom.playerIndex = pi;
+                        gloom.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -1979,7 +2021,11 @@ namespace FourChambers
 
                     harvester = new Harvester(x, y);
                     actors.add(harvester);
-                    if (playerControlled == true) harvester.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        harvester.playerIndex = pi;
+                        harvester.isPlayerControlled = true;
+                    }
 
                 }
             }
@@ -2124,6 +2170,11 @@ namespace FourChambers
 
                     mummy = new Mummy(x, y);
                     actors.add(mummy);
+                    if (playerControlled == true)
+                    {
+                        mummy.playerIndex = pi;
+                        mummy.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2168,7 +2219,11 @@ namespace FourChambers
 
                     paladin = new Paladin(x, y);
                     actors.add(paladin);
-                    if (playerControlled == true) paladin.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        paladin.playerIndex = pi;
+                        paladin.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2232,11 +2287,13 @@ namespace FourChambers
             {
                 for (int i = 0; i < NumberOfActors; i++)
                 {
-                    FlxG.write("Making a seraphine" + x + " " + y);
-
-                    seraphine = new Seraphine(x, y);
-                    add(seraphine);
-                    if (playerControlled == true) seraphine.isPlayerControlled = true;
+                    seraphine = new SeraphineMulti(x, y);
+                    actors.add(seraphine);
+                    if (playerControlled == true)
+                    {
+                        seraphine.playerIndex = pi;
+                        seraphine.isPlayerControlled = true;
+                    }
 
                 }
             }
@@ -2315,7 +2372,11 @@ namespace FourChambers
 
                     succubus = new Succubus(x, y);
                     actors.add(succubus);
-                    if (playerControlled == true) succubus.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        succubus.playerIndex = pi;
+                        succubus.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2349,6 +2410,11 @@ namespace FourChambers
 
                     tormentor = new Tormentor(x, y);
                     actors.add(tormentor);
+                    if (playerControlled == true)
+                    {
+                        tormentor.playerIndex = pi;
+                        tormentor.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2382,7 +2448,11 @@ namespace FourChambers
 
                     unicorn = new Unicorn(x, y - 4);
                     actors.add(unicorn);
-                    if (playerControlled == true) unicorn.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        unicorn.playerIndex = pi;
+                        unicorn.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2394,7 +2464,11 @@ namespace FourChambers
 
                     vampire = new Vampire(x, y);
                     actors.add(vampire);
-                    if (playerControlled == true) vampire.isPlayerControlled = true;
+                    if (playerControlled == true)
+                    {
+                        vampire.playerIndex = pi;
+                        vampire.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion
@@ -2438,25 +2512,12 @@ namespace FourChambers
                 {
 
                     zinger = new Zinger(x, y);
-                    zingers.add(zinger);
                     actors.add(zinger);
-
-                    if (PathNodesX != "" && PathNodesY != "")
+                    if (playerControlled == true)
                     {
-                        FlxPath xpath = new FlxPath(null);
-                        xpath.add(x, y);
-                        xpath.addPointsUsingStrings(PathNodesX, PathNodesY);
-                        zinger.followPath(xpath, PathSpeed, PathType, false);
+                        zinger.playerIndex = pi;
+                        zinger.isPlayerControlled = true;
                     }
-
-
-                    if (FourChambers_Globals.PIRATE_COPY)
-                    {
-                        ZingerHoming z = new ZingerHoming(x, y, marksman);
-                        zingers.add(z);
-                        actors.add(z);
-                    }
-
 
 
                 }
@@ -2470,6 +2531,11 @@ namespace FourChambers
 
                     zombie = new Zombie(x, y);
                     actors.add(zombie);
+                    if (playerControlled == true)
+                    {
+                        zombie.playerIndex = pi;
+                        zombie.isPlayerControlled = true;
+                    }
                 }
             }
             #endregion

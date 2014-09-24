@@ -222,6 +222,7 @@
     <Compile Include="FourChambers\Actors\playable\MeleeHitBox.cs" />
     <Compile Include="FourChambers\Actors\playable\Mistress.cs" />
     <Compile Include="FourChambers\Actors\playable\Seraphine.cs" />
+    <Compile Include="FourChambers\Actors\playable\SeraphineMulti.cs" />
     <Compile Include="FourChambers\Actors\playable\Warlock.cs" />
     <Compile Include="FourChambers\Actors\playable\WarlockFireBall.cs" />
     <Compile Include="FourChambers\CharacterSelectionState.cs" />

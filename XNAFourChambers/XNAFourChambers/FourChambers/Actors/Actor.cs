@@ -189,9 +189,13 @@ namespace FourChambers
         {
             PlayerIndex pi;
 
+            //if (playerIndex != PlayerIndex.One)
+            //{
+            //    return;
+            //}
             
             // Running pushes walk speed higher.
-            if (FlxG.gamepads.isButtonDown(Buttons.RightTrigger, FlxG.controllingPlayer, out pi) )
+            if (FlxG.gamepads.isButtonDown(Buttons.RightTrigger, playerIndex, out pi) )
             {
                 lastAttack = "range";
                 maxVelocity.X = runSpeed * 2;
@@ -207,7 +211,7 @@ namespace FourChambers
             acceleration.X = 0;
 
             // Walking left.
-            if ((FlxG.keys.A || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickLeft, FlxG.controllingPlayer, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadLeft) ) && !isClimbingLadder)
+            if (((FlxG.keys.A && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickLeft, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadLeft, playerIndex, out pi)) && !isClimbingLadder)
             {
                 lastAttack = "range";
                 attackingJoystick = false;
@@ -217,7 +221,7 @@ namespace FourChambers
                 attackingMelee = false;
             }
             //Walking right.
-            else if ((FlxG.keys.D || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, FlxG.controllingPlayer, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadRight)) && !isClimbingLadder)
+            else if (((FlxG.keys.D && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadRight, playerIndex, out pi)) && !isClimbingLadder)
             {
                 lastAttack = "range";
                 attackingJoystick = false;
@@ -228,7 +232,7 @@ namespace FourChambers
             }
 
             // ladders
-            if ((FlxG.keys.W || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, FlxG.controllingPlayer, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp) ) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, FlxG.controllingPlayer, out pi))
+            if (((FlxG.keys.W && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi))
             {
                 lastAttack = "range";
                 x = ladderPosX + width;
@@ -239,7 +243,7 @@ namespace FourChambers
 
                 // on a ladder, snap to nearest 16
             }
-            else if ((FlxG.keys.S || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, FlxG.controllingPlayer, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown) ) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, FlxG.controllingPlayer, out pi))
+            else if (((FlxG.keys.S && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi))
             {
                 lastAttack = "range";
                 x = ladderPosX + width;
@@ -254,7 +258,7 @@ namespace FourChambers
             }
 
             // Jumping. 
-            if ((_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && ((FlxG.keys.W && canFly == false && !isClimbingLadder) || FlxG.keys.SPACE || FlxG.gamepads.isButtonDown(Buttons.A, FlxG.controllingPlayer, out pi)))
+            if ((_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && (((FlxG.keys.W && playerIndex == PlayerIndex.One) && canFly == false && !isClimbingLadder) || (FlxG.keys.SPACE && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi)))
             {
                 lastAttack = "range";
                 if (framesSinceLeftGround < 10)
@@ -290,14 +294,14 @@ namespace FourChambers
             //Console.WriteLine("jump= " + _jump + " " + canClimbLadder);
 
             // Attacking
-            if (FlxG.keys.justPressed(Keys.M))
+            if (FlxG.keys.justPressed(Keys.M) && playerIndex == PlayerIndex.One)
             {
                 lastAttack = "range";
 
                 attackingMouse = true;
                 attackingMelee = false;
             }
-            if (hasRangeWeapon && FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder, FlxG.controllingPlayer, out pi))
+            if (hasRangeWeapon && FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder, playerIndex, out pi))
             {
                 lastAttack = "range";
 
@@ -306,14 +310,14 @@ namespace FourChambers
             }
 
 
-            //FlxG.gamepads.isButtonDown(Buttons.X, PlayerIndex.One, out pi)
+            //FlxG.gamepads.isButtonDown(Buttons.X, playerIndex, out pi)
 
-            if (((GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X > DEADZONE ||
-                GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y > DEADZONE ||
-                GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X < DEADZONE * -1.0f ||
-                GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y < DEADZONE * -1.0f) &&
-                
-                FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder)
+            if (((GamePad.GetState(playerIndex).ThumbSticks.Right.X > DEADZONE ||
+                GamePad.GetState(playerIndex).ThumbSticks.Right.Y > DEADZONE ||
+                GamePad.GetState(playerIndex).ThumbSticks.Right.X < DEADZONE * -1.0f ||
+                GamePad.GetState(playerIndex).ThumbSticks.Right.Y < DEADZONE * -1.0f) &&
+
+                FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder, playerIndex, out pi)
 
                 ) && hasRangeWeapon)
             {
@@ -347,14 +351,14 @@ namespace FourChambers
             //    attackingMouse = false;
             //}
 
-            if ( hasMeleeWeapon && (FlxG.keys.O || FlxG.gamepads.isButtonDown(Buttons.X, FlxG.controllingPlayer, out pi) || FlxG.mouse.pressedRightButton()))
+            if (hasMeleeWeapon && ((FlxG.keys.O && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.X, playerIndex, out pi) || FlxG.mouse.pressedRightButton()))
             {
                 lastAttack = "melee";
                 attackingMelee = true;
             }
 
 
-            if (FlxG.keys.C && hasRangeWeapon)
+            if ((FlxG.keys.C && playerIndex == PlayerIndex.One) && hasRangeWeapon)
             {
                 lastAttack = "range";
                 attackingMouse = true;
@@ -362,11 +366,11 @@ namespace FourChambers
             }
 
             // update direction based on attacking direction.
-            if (FlxG.gamepads.isButtonDown(Buttons.RightThumbstickLeft, FlxG.controllingPlayer, out pi))
+            if (FlxG.gamepads.isButtonDown(Buttons.RightThumbstickLeft, playerIndex, out pi))
             {
                 facing = Flx2DFacing.Left;
             }
-            if (FlxG.gamepads.isButtonDown(Buttons.RightThumbstickRight, FlxG.controllingPlayer, out pi))
+            if (FlxG.gamepads.isButtonDown(Buttons.RightThumbstickRight, playerIndex, out pi))
             {
                 facing = Flx2DFacing.Right;
             }

@@ -36,7 +36,11 @@ namespace FourChambers
                 EnemyActor.FR_harvester, 
                 EnemyActor.FR_mummy, 
                 EnemyActor.FR_seraphine, 
-                EnemyActor.FR_zinger};
+                EnemyActor.FR_mistress,
+                EnemyActor.FR_medusa, 
+                EnemyActor.FR_zombie,
+                EnemyActor.FR_tormentor
+            };
             current = new int[] { 0, 0, 0, 0 };
 
             //FourChambers_Globals.MUSIC_LEVEL11;
@@ -85,7 +89,7 @@ namespace FourChambers
         override public void update()
         {
 
-            if (FlxControl.RIGHTJUSTPRESSED)
+            if (FlxG.keys.justPressed(Keys.Right) || FlxG.keys.justPressed(Keys.D))
             {
                 current[0]++;
                 if (current[0] >= selectable.Count)
@@ -94,7 +98,7 @@ namespace FourChambers
                 }
                 ((FlxSprite)(icons.members[0])).frame = selectable[current[0]];
             }
-            if (FlxControl.LEFTJUSTPRESSED)
+            if (FlxG.keys.justPressed(Keys.Left) || FlxG.keys.justPressed(Keys.A))
             {
                 current[0]--;
                 if (current[0] < 0)
@@ -107,29 +111,51 @@ namespace FourChambers
             PlayerIndex pi;
             for (PlayerIndex i = PlayerIndex.One; i <= PlayerIndex.Four; i++)
             {
+                int playerIndexAsInt = 1;
+
+                if (i == PlayerIndex.One) playerIndexAsInt = 0;
+                else if (i == PlayerIndex.Two) playerIndexAsInt = 1;
+                else if (i == PlayerIndex.Three) playerIndexAsInt = 2;
+                else if (i == PlayerIndex.Four) playerIndexAsInt = 3;
+
                 if (FlxG.gamepads.isNewButtonPress(Buttons.DPadLeft, i, out pi))
                 {
-                    Console.WriteLine( "DPad Left " + Convert.ToInt32(i.ToString()) );
+                    Console.WriteLine( "DPad Left ");
+                    current[playerIndexAsInt]--;
+                    if (current[playerIndexAsInt] < 0)
+                    {
+                        current[playerIndexAsInt] = selectable.Count - 1;
+                    }
+                    ((FlxSprite)(icons.members[playerIndexAsInt])).frame = selectable[current[playerIndexAsInt]];
+
+
                 }
                 if (FlxG.gamepads.isNewButtonPress(Buttons.DPadRight, i, out pi))
                 {
-                    Console.WriteLine("DPad Right " + Convert.ToInt32(i.ToString()));
+                    Console.WriteLine("DPad Right " );
+                    current[playerIndexAsInt]++;
+                    if (current[playerIndexAsInt] >= selectable.Count)
+                    {
+                        current[playerIndexAsInt] = 0;
+                    }
+                    ((FlxSprite)(icons.members[playerIndexAsInt])).frame = selectable[current[playerIndexAsInt]];
+
                 }
 
 
             }
 
 
-            if (FlxG.keys.F4)
-            {
-                for (int i = 1; i < 4; i++)
-                {
-                    current[i] = (int)FlxU.random(0, selectable.Count);
-                    ((FlxSprite)(icons.members[i])).frame = selectable[current[i]];
-                }
+            //if (FlxG.keys.F4)
+            //{
+            //    for (int i = 1; i < 4; i++)
+            //    {
+            //        current[i] = (int)FlxU.random(0, selectable.Count);
+            //        ((FlxSprite)(icons.members[i])).frame = selectable[current[i]];
+            //    }
                 
 
-            }
+            //}
 
             if (FlxControl.ACTIONJUSTPRESSED)
             {

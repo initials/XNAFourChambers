@@ -106,6 +106,10 @@ namespace FourChambers
         public const int FR_djinn = 77;
         public const int FR_sphinx = 78;
         public const int FR_chimera = 79;
+        // Row: 10
+
+        public const int FR_mistress = 80;
+        public const int FR_medusa = 81;
         #endregion
         
         public bool readyForHarvester = false;
@@ -145,7 +149,7 @@ namespace FourChambers
 
         public bool customAnimation = false;
 
-        public PlayerIndex playerIndex = PlayerIndex.One;
+        
 
         public enum Recording
         {
@@ -401,18 +405,18 @@ namespace FourChambers
             bool rightShoulderControl = FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder, playerIndex, out pi);
             bool leftControl = (
                 (FlxG.keys.A 
-                || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickLeft, playerIndex, out pi) 
-                || FlxG.gamepads.isButtonDown(Buttons.DPadLeft)) 
+                || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickLeft, playerIndex, out pi)
+                || FlxG.gamepads.isButtonDown(Buttons.DPadLeft, playerIndex, out pi)) 
                 && isClimbingLadder==false
                 );
             bool rightControl = (
                 (FlxG.keys.D 
-                || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, playerIndex, out pi) 
-                || FlxG.gamepads.isButtonDown(Buttons.DPadRight)) 
+                || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, playerIndex, out pi)
+                || FlxG.gamepads.isButtonDown(Buttons.DPadRight, playerIndex, out pi)) 
                 && !isClimbingLadder
                 );
-            bool upControl = (FlxG.keys.W || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
-            bool downControl = (FlxG.keys.S || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
+            bool upControl = (FlxG.keys.W || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
+            bool downControl = (FlxG.keys.S || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
             bool buttonAControl = (_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && ( FlxG.keys.SPACE || FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi));
             bool buttonXControl = FlxG.keys.K || FlxG.gamepads.isButtonDown(Buttons.X, playerIndex, out pi) || FlxG.mouse.pressedRightButton() || mouseRightButton;
             bool mouseLeftControl = FlxG.mouse.justPressedLeftButton();

@@ -149,9 +149,9 @@
     <fireThrower id="36" x="960" y="688" shootEvery="1" angleCounter="0" />
     <fireThrower id="38" x="1280" y="624" shootEvery="1" angleCounter="0" />
     <fireThrower id="39" x="1136" y="624" shootEvery="1" angleCounter="0" />
-    <unicorn id="19" x="1296" y="688" flip="False" />
-    <unicorn id="21" x="1072" y="400" flip="False" />
     <unicorn id="29" x="848" y="208" flip="False" />
     <_event id="20" x="816" y="16" width="32" height="208" event="unicorn" value1="0" value2="0" repeat="1" />
+    <automaton id="19" x="1056" y="400" flip="False" />
+    <zombie id="21" x="1136" y="704" flip="False" />
   </ActorsLayer>
 </level>

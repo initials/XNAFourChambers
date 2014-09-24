@@ -113,5 +113,6 @@
     <door id="12" x="704" y="736" levelToGoTo="19" />
     <_event id="0" x="592" y="368" width="16" height="16" event="throwPowerUps" value1="0" value2="0" repeat="-1" />
     <_event id="5" x="496" y="400" width="224" height="64" event="Are you happy now?" value1="0" value2="0" repeat="-1" />
+    <harvester id="6" x="256" y="448" flip="False" />
   </ActorsLayer>
 </level>
