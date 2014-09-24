@@ -490,19 +490,6 @@ namespace FourChambers
             add(actors);
             add(powerUps);
 
-
-            if (seraphine == null)
-            {
-                FlxG.write("Seraphine is null, making one");
-
-                seraphine = new Seraphine(-100, -100);
-                seraphine.play("fly");
-                add(seraphine);
-            }
-
-            //buildActor("imp", 1);
-            //buildActor("harvester", 1,false,-100,100,0,0,null,null,0,0,0);
-
             blood = new FlxEmitter();
             blood.x = 0;
             blood.y = 0;
@@ -619,14 +606,32 @@ namespace FourChambers
         public void loadCharacters()
         {
 
-            FlxObject g = spawnPoints.getRandom();
+            
 
-            buildActor("marksman", 1, true,(int)g.x,(int)g.y,0,0,"","",0,0,0.0f);
-            marksman.isPlayerControlled = true;
-            marksman.hasRangeWeapon = true;
+            for (int i = 0; i < 4; i++)
+            {
+                FlxObject g = spawnPoints.getRandom();
+                if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 0) buildActor("marksman", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 1) buildActor("succubus", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 2) buildActor("paladin", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 3) buildActor("unicorn", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 4) buildActor("vampire", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 5) buildActor("warlock", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 6) buildActor("corsair", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 7) buildActor("automaton", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 8) buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 9) buildActor("gloom", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 10) buildActor("harvester", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 11) buildActor("mummy", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 12) buildActor("zinger", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+            }
 
-            g = spawnPoints.getRandom();
-            buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
+            //buildActor("marksman", 1, true,(int)g.x,(int)g.y,0,0,"","",0,0,0.0f);
+            //marksman.isPlayerControlled = true;
+            //marksman.hasRangeWeapon = true;
+
+            //g = spawnPoints.getRandom();
+            //buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, 0, 0.0f);
 
 
         }
@@ -1525,7 +1530,13 @@ namespace FourChambers
                     marksman = new Marksman(x, y, arrows.members);
                     actors.add(marksman);
                     bullets.add(marksman.meleeHitBox);
-                    playerControlledActors.add(marksman);
+
+                    if (playerControlled == true)
+                    {
+                        marksman.hasRangeWeapon = true;
+                        marksman.isPlayerControlled = true;
+                        marksman.canFly = false;
+                    }
                 }
             }
             #endregion
@@ -1538,6 +1549,7 @@ namespace FourChambers
                     mistress = new Mistress(x, y);
                     actors.add(mistress);
                     bullets.add(mistress.whipHitBox);
+                    if (playerControlled == true) mistress.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -1553,6 +1565,7 @@ namespace FourChambers
 
                     warlock = new Warlock(x, y, warlockFireBalls.members);
                     actors.add(warlock);
+                    if (playerControlled == true) warlock.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -1586,7 +1599,7 @@ namespace FourChambers
 
                     automaton = new Automaton(x, y);
                     actors.add(automaton);
-
+                    if (playerControlled == true) automaton.isPlayerControlled = true;
 
                 }
             }
@@ -1877,6 +1890,7 @@ namespace FourChambers
 
                     gloom = new Gloom(x, y);
                     actors.add(gloom);
+                    if (playerControlled == true) gloom.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -1965,6 +1979,8 @@ namespace FourChambers
 
                     harvester = new Harvester(x, y);
                     actors.add(harvester);
+                    if (playerControlled == true) harvester.isPlayerControlled = true;
+
                 }
             }
             #endregion
@@ -2152,6 +2168,7 @@ namespace FourChambers
 
                     paladin = new Paladin(x, y);
                     actors.add(paladin);
+                    if (playerControlled == true) paladin.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -2219,6 +2236,8 @@ namespace FourChambers
 
                     seraphine = new Seraphine(x, y);
                     add(seraphine);
+                    if (playerControlled == true) seraphine.isPlayerControlled = true;
+
                 }
             }
             #endregion
@@ -2296,6 +2315,7 @@ namespace FourChambers
 
                     succubus = new Succubus(x, y);
                     actors.add(succubus);
+                    if (playerControlled == true) succubus.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -2362,6 +2382,7 @@ namespace FourChambers
 
                     unicorn = new Unicorn(x, y - 4);
                     actors.add(unicorn);
+                    if (playerControlled == true) unicorn.isPlayerControlled = true;
                 }
             }
             #endregion
@@ -2373,6 +2394,7 @@ namespace FourChambers
 
                     vampire = new Vampire(x, y);
                     actors.add(vampire);
+                    if (playerControlled == true) vampire.isPlayerControlled = true;
                 }
             }
             #endregion

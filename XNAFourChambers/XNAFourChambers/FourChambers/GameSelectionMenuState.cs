@@ -129,7 +129,7 @@ namespace FourChambers
 
             offsetButton = new Vector2(400, -10);
 
-            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
+            FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * FlxG.zoom) + offsetButton.X, (play.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
 
             FlxG.flash.start(Color.Black, 1.5f);
 
@@ -193,25 +193,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 4) + offsetButton.X, (editName.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * FlxG.zoom) + offsetButton.X, (editName.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * FlxG.zoom) + offsetButton.X, (play.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 4) + offsetButton.X, (playProcedural.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * FlxG.zoom) + offsetButton.X, (playProcedural.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 4) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * FlxG.zoom) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
             }
             if (FlxG.keys.justPressed(Keys.Down) || FlxG.gamepads.isNewButtonPress(Buttons.DPadDown) || FlxG.gamepads.isNewButtonPress(Buttons.LeftThumbstickDown))
@@ -221,25 +221,25 @@ namespace FourChambers
                 {
                     setAllButtonsToOff();
                     playProcedural.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * 4) + offsetButton.X, (playProcedural.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playProcedural.getScreenXY().X * FlxG.zoom) + offsetButton.X, (playProcedural.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (playProcedural.on)
                 {
                     setAllButtonsToOff();
                     playMultiPlayer.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * 4) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (playMultiPlayer.getScreenXY().X * FlxG.zoom) + offsetButton.X, (playMultiPlayer.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (playMultiPlayer.on)
                 {
                     setAllButtonsToOff();
                     editName.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * 4) + offsetButton.X, (editName.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (editName.getScreenXY().X * FlxG.zoom) + offsetButton.X, (editName.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
                 else if (editName.on)
                 {
                     setAllButtonsToOff();
                     play.on = true;
-                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * 4) + offsetButton.X, (play.getScreenXY().Y * 4) + offsetButton.Y);
+                    FlxG.setHudGamepadButton(FlxHud.TYPE_XBOX, FlxButton.ControlPadA, (play.getScreenXY().X * FlxG.zoom) + offsetButton.X, (play.getScreenXY().Y * FlxG.zoom) + offsetButton.Y);
                 }
             }
             if (FlxG.gamepads.isNewButtonRelease(Buttons.A) && play._counter > 0.5f)
@@ -310,6 +310,16 @@ namespace FourChambers
 
             }
             if (FlxG.keys.justPressed(Keys.F4))
+            {
+                FlxG.level = 103;
+                FlxG.score = 0;
+                FlxG.hideHud();
+
+                FlxG.state = new MultiPlayerCharacterSelect();
+                return;
+
+            }
+            if (FlxG.keys.justPressed(Keys.F5))
             {
                 FlxG.hideHud();
 
