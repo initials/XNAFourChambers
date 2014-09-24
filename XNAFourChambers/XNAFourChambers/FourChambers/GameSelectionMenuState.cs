@@ -111,9 +111,9 @@ namespace FourChambers
 
             playProcedural = new FlxButton(FlxG.width / 2 - 50, FlxG.height - 80, playGameTutorial, FlxButton.ControlPadA);
             playProcedural.loadGraphic((new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButton"), false, false, 100, 20), (new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButtonPressed"), false, false, 100, 20));
-            playProcedural.loadText(new FlxText(2, 2, 100, "Tutorial"), new FlxText(2, 2, 100, "Tutorial"));
+            playProcedural.loadText(new FlxText(2, 2, 100, "Multiplayer"), new FlxText(2, 2, 100, "Multiplayer!"));
             add(playProcedural);
-            playProcedural.debugName = "tutorial";
+            playProcedural.debugName = "Multiplayer";
 
             editName = new FlxButton(FlxG.width / 2 - 50, FlxG.height - 30, goToDataEntryState, FlxButton.ControlPadA);
             editName.loadGraphic((new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButton"), false, false, 100, 20), (new FlxSprite()).loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/menuButtonPressed"), false, false, 100, 20));
@@ -358,15 +358,26 @@ namespace FourChambers
         //playGameTutorial
         public void playGameTutorial()
         {
-            Console.WriteLine("Play Tutorial");
+            //Console.WriteLine("Play Tutorial");
 
-            FlxG.level = -1;
+            //FlxG.level = -1;
+            //FlxG.score = 0;
+            //FlxG.hideHud();
+
+            ////FlxG.transition.startFadeOut(0.1f,0,120);
+
+            //FlxG.state = new BasePlayStateFromOelTutorial();
+
+
+            FlxG.level = 103;
             FlxG.score = 0;
             FlxG.hideHud();
 
-            //FlxG.transition.startFadeOut(0.1f,0,120);
+            FlxG.state = new MultiPlayerCharacterSelect();
+            return;
 
-            FlxG.state = new BasePlayStateFromOelTutorial();
+
+
 
         }
 
