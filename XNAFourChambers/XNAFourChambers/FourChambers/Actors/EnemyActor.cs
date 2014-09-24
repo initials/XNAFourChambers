@@ -145,6 +145,8 @@ namespace FourChambers
 
         public bool customAnimation = false;
 
+        public PlayerIndex playerIndex;
+
         public enum Recording
         {
             None = 0,
