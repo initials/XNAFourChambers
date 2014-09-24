@@ -168,6 +168,12 @@ Content\fourchambers\logo\FourChambersLogo.xnb
 Content\ui\_sheet_window_18.xnb
 Content\fourchambers\tree.xnb
 Content\fourchambers\bghill.xnb
+Content\fourchambers\sfx\Hit_Hurt5.xnb
+Content\fourchambers\sfx\Pickup_Coin.xnb
+Content\fourchambers\sfx\Pickup_Coin25.xnb
+Content\fourchambers\sfx\Pickup_Coin43.xnb
+Content\fourchambers\sfx\Powerup6.xnb
+Content\fourchambers\sfx\footstep.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
 Content\music\gwd\Dramatic.wma

@@ -1081,6 +1081,10 @@ namespace FourChambers
 
 
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
+
+            FourChambers_Globals.treasuresCollected.Add(x);
+            
+
             if (x == 154 || x == 155 || x == 156 || x == 157)
             {
                 if (marksman != null)
@@ -1089,23 +1093,17 @@ namespace FourChambers
             else if (x == 190)
             {
                 marksman.hasRangeWeapon = true;
-
                 FourChambers_Globals.hasRangeWeapon = true;
-
                 FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
-
             }
             else if (x == 208)
             {
                 marksman.hasMeleeWeapon = true;
-
                 FourChambers_Globals.hasMeleeWeapon = true;
-
             }
             else
             {
 
-                //FlxG.score += 1000;
             }
 
             e.Object1.kill();
@@ -1187,10 +1185,6 @@ namespace FourChambers
         /// <returns></returns>
         protected bool overlapped(object Sender, FlxSpriteCollisionEvent e)
         {
-
-
-
-
             // First reject Actors and their bullets.
             if ((e.Object1 is Warlock) && (e.Object2 is WarlockFireBall)) { }
             else if ((e.Object1 is Marksman) && (e.Object2 is Arrow)) { }

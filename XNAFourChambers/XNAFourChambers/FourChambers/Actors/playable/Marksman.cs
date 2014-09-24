@@ -51,7 +51,7 @@ namespace FourChambers
 
             addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
             addAnimation("idleRange", new int[] { 0 }, 12);
-            //addAnimationCallback(stopAttacking);
+            addAnimationCallback(footstep);
 
             //bounding box tweaks
             width = 5;
@@ -358,6 +358,17 @@ namespace FourChambers
 
             base.update();
 
+        }
+
+        public void footstep(string Name, uint Frame, int FrameIndex)
+        {
+
+            //sfx
+            if (Name.StartsWith("run") && (Frame == 2 || Frame==7))
+            {
+                Console.WriteLine("Footstep F {0} FI {1}", Frame, FrameIndex);
+                FlxG.play("fourchambers/sfx/footstep");
+            }
         }
 
         public override void render(SpriteBatch spriteBatch)

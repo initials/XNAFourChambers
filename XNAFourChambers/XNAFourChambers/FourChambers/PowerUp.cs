@@ -462,6 +462,13 @@ namespace FourChambers
             }
         }
 
+        public override void kill()
+        {
+            FlxG.play("fourchambers/sfx/Pickup_Coin43", 0.25f);
+
+            base.kill();
+        }
+
     }
 }
 
