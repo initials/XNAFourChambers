@@ -1,4 +1,10 @@
-﻿x=960
+﻿x=480
+y=270
+fullscreen=0
+zoom=1
+
+
+x=960
 y=540
 fullscreen=0
 zoom=2

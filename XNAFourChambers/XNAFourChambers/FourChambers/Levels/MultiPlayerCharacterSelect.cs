@@ -15,12 +15,16 @@ namespace FourChambers
         List<int> selectable;
         int[] current = new int[4];
         FlxGroup icons;
+        FlxGroup texts;
+        Dictionary<int, string> names;
 
         override public void create()
         {
             base.create();
 
             icons = new FlxGroup();
+            texts = new FlxGroup();
+
 
             selectable = new List<int> { 
                 EnemyActor.FR_marksman, 
@@ -41,6 +45,27 @@ namespace FourChambers
                 EnemyActor.FR_zombie,
                 EnemyActor.FR_tormentor
             };
+
+
+            names = new Dictionary<int, string>();
+            names.Add(0, "Marksman");
+            names.Add(1, "Succubus");
+            names.Add(2, "Paladin");
+            names.Add(3, "Unicorn");
+            names.Add(4, "Vampire");
+            names.Add(5, "Warlock");
+            names.Add(6, "Corsair");
+            names.Add(7, "Automaton");
+            names.Add(8, "Executor");
+            names.Add(9, "Gloom");
+            names.Add(10, "Harvester");
+            names.Add(11, "Mummy");
+            names.Add(12, "Seraphine");
+            names.Add(13, "Mistress");
+            names.Add(14, "Medusa");
+            names.Add(15, "Zombie");
+            names.Add(16, "Tormentor");
+
             current = new int[] { 0, 0, 0, 0 };
 
             //FourChambers_Globals.MUSIC_LEVEL11;
@@ -72,17 +97,25 @@ namespace FourChambers
                 
                 add(bg);
 
-                FlxSprite e = new FlxSprite((FlxG.width / 4) * i, 130);
+                FlxSprite e = new FlxSprite(20+(FlxG.width / 4) * i, 50);
                 e.loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/allActors"), true, false, 26, 26);
                 e.frame = EnemyActor.FR_marksman;
                 e.scale = 4;
                 icons.add(e);
+
+                FlxText info = new FlxText(20 + (FlxG.width / 4) * i, 125, 1000);
+                info.alignment = FlxJustification.Left;
+                info.scale = 1;
+                info.text = names[current[i]];
+                texts.add(info);
+
 
             }
 
 
 
             add(icons);
+            add(texts);
 
         }
 
@@ -97,6 +130,7 @@ namespace FourChambers
                     current[0] = 0;
                 }
                 ((FlxSprite)(icons.members[0])).frame = selectable[current[0]];
+                ((FlxText)(texts.members[0])).text = names[current[0]];
             }
             if (FlxG.keys.justPressed(Keys.Left) || FlxG.keys.justPressed(Keys.A))
             {
@@ -106,6 +140,7 @@ namespace FourChambers
                     current[0] = selectable.Count - 1;
                 }
                 ((FlxSprite)(icons.members[0])).frame = selectable[current[0]];
+                ((FlxText)(texts.members[0])).text = names[current[0]];
             }
 
             PlayerIndex pi;
@@ -127,6 +162,7 @@ namespace FourChambers
                         current[playerIndexAsInt] = selectable.Count - 1;
                     }
                     ((FlxSprite)(icons.members[playerIndexAsInt])).frame = selectable[current[playerIndexAsInt]];
+                    ((FlxText)(texts.members[playerIndexAsInt])).text = names[current[playerIndexAsInt]];
 
 
                 }
@@ -139,6 +175,7 @@ namespace FourChambers
                         current[playerIndexAsInt] = 0;
                     }
                     ((FlxSprite)(icons.members[playerIndexAsInt])).frame = selectable[current[playerIndexAsInt]];
+                    ((FlxText)(texts.members[playerIndexAsInt])).text = names[current[playerIndexAsInt]];
 
                 }
 
@@ -146,16 +183,18 @@ namespace FourChambers
             }
 
 
-            //if (FlxG.keys.F4)
-            //{
-            //    for (int i = 1; i < 4; i++)
-            //    {
-            //        current[i] = (int)FlxU.random(0, selectable.Count);
-            //        ((FlxSprite)(icons.members[i])).frame = selectable[current[i]];
-            //    }
-                
+            if (FlxG.keys.justPressed(Keys.F1))
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    current[i] = (int)FlxU.random(0, selectable.Count);
+                    ((FlxSprite)(icons.members[i])).frame = selectable[current[i]];
+                    ((FlxText)(texts.members[i])).text = names[current[i]];
 
-            //}
+                }
+            }
+
+
 
             if (FlxControl.ACTIONJUSTPRESSED)
             {

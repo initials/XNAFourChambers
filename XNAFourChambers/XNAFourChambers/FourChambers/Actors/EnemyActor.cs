@@ -401,24 +401,24 @@ namespace FourChambers
 
 
 
-            bool rightTriggerControl = FlxG.gamepads.isButtonDown(Buttons.RightTrigger, playerIndex, out pi) || FlxG.keys.CONTROL ;
+            bool rightTriggerControl = FlxG.gamepads.isButtonDown(Buttons.RightTrigger, playerIndex, out pi) || (FlxG.keys.CONTROL && playerIndex == PlayerIndex.One) ;
             bool rightShoulderControl = FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder, playerIndex, out pi);
             bool leftControl = (
-                (FlxG.keys.A 
+                ((FlxG.keys.A && playerIndex == PlayerIndex.One) 
                 || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickLeft, playerIndex, out pi)
                 || FlxG.gamepads.isButtonDown(Buttons.DPadLeft, playerIndex, out pi)) 
                 && isClimbingLadder==false
                 );
             bool rightControl = (
-                (FlxG.keys.D 
+                ((FlxG.keys.D && playerIndex == PlayerIndex.One) 
                 || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, playerIndex, out pi)
                 || FlxG.gamepads.isButtonDown(Buttons.DPadRight, playerIndex, out pi)) 
                 && !isClimbingLadder
                 );
-            bool upControl = (FlxG.keys.W || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
-            bool downControl = (FlxG.keys.S || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
-            bool buttonAControl = (_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && ( FlxG.keys.SPACE || FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi));
-            bool buttonXControl = FlxG.keys.K || FlxG.gamepads.isButtonDown(Buttons.X, playerIndex, out pi) || FlxG.mouse.pressedRightButton() || mouseRightButton;
+            bool upControl = ((FlxG.keys.W && playerIndex == PlayerIndex.One)  || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickUp, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadUp, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
+            bool downControl = ((FlxG.keys.S && playerIndex == PlayerIndex.One)  || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi);
+            bool buttonAControl = (_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && ((FlxG.keys.SPACE && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi));
+            bool buttonXControl = (FlxG.keys.K && playerIndex == PlayerIndex.One)  || FlxG.gamepads.isButtonDown(Buttons.X, playerIndex, out pi) || FlxG.mouse.pressedRightButton() || mouseRightButton;
             bool mouseLeftControl = FlxG.mouse.justPressedLeftButton();
 
             if (isPlayerControlled == false)
