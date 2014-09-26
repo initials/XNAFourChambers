@@ -40,18 +40,22 @@ namespace FourChambers
             // Required anims:
             // walk, run, idle, attack, death, hurt, jump
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Harvester_ss_14x27"), true, false, 14, 27);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/harvester_50x50"), true, false, 50, 50);
 
             addAnimation("run", new int[] { 2, 3, 4, 5, 6, 7 }, 12);
             addAnimation("walk", new int[] { 2, 3, 4, 5, 6, 7 }, 8);
-            addAnimation("idle", new int[] { 0 }, 12);
-            addAnimation("attack", new int[] { 0,1,2 }, 18);
+            addAnimation("idle", new int[] { 0,16,17,18,19 }, 12);
+            addAnimation("attack", new int[] { 8,9,10,11,12,13,13,13,14,14,14,15,15,15}, 18);
+            addAnimation("death", new int[] { 20,21,22,23,24,25,26,27,28 }, 4, false);
 
             //bounding box tweaks
             width = 8;
             height = 20;
-            offset.X = 3;
-            offset.Y = 7;
+
+            setOffset(21, 30);
+
+            //offset.X = 3;
+            //offset.Y = 7;
 
 
 
