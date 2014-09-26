@@ -41,14 +41,20 @@ namespace FourChambers
             // Load graphic and create animations.
             // Required anims:
             // walk, run, idle, attack, death, hurt, jump
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Unicorn_ss_20x40"), true, false, 20, 40);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Unicorn_50x50"), true, false, 50, 50);
 
             addAnimation("walk", new int[] { 2, 3, 4, 5, 6, 7, 8, 9 }, 10);
+            
             addAnimation("run", new int[] {2, 3, 4, 5, 6, 7,8,9 }, 18);
-            addAnimation("idle", new int[] { 0 }, 12);
-            addAnimation("attack", new int[] { 0 }, 12);
+            
+            addAnimation("idle", new int[] { 0, 18, 19, 18, 19, 18, 19, 18, 19, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 }, 12);
+
+            addAnimation("attack", new int[] { 0,10, }, 12);
+            
             addAnimation("death", new int[] { 10, 11, 12, 13, 14, 14, 14, 14, 14, 14, 13, 14, 11, 12, 13, 14, 14, 14, 14, 14, 14, 13, 14, 15, 15, 14, 14, 15, 15, 14, 14, 15, 15, 14, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 16 }, 12, false);
+            
             addAnimation("hurt", new int[] { 17, 1, 10, 11, 12, 13, 14, 13, 14, 13, 14, 13, 14, 13,14,15,15,15 }, 8, false);
+            
             addAnimation("jump", new int[] { 17, 2,3,4 }, 8,false);
             
             addAnimationCallback(finishedHurt);
@@ -56,8 +62,11 @@ namespace FourChambers
             //bounding box tweaks
             width = 10;
             height = 20;
-            offset.X = 5;
-            offset.Y = 20;
+
+            setOffset(20, 30);
+
+            //offset.X = 5;
+            //offset.Y = 20;
 
             
         }
