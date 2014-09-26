@@ -41,7 +41,7 @@ namespace FourChambers
                 EnemyActor.FR_mummy, 
                 EnemyActor.FR_seraphine, 
                 EnemyActor.FR_mistress,
-                EnemyActor.FR_medusa, 
+                //EnemyActor.FR_medusa, 
                 EnemyActor.FR_zombie,
                 EnemyActor.FR_tormentor
             };
@@ -62,9 +62,9 @@ namespace FourChambers
             names.Add(11, "Mummy");
             names.Add(12, "Seraphine");
             names.Add(13, "Mistress");
-            names.Add(14, "Medusa");
-            names.Add(15, "Zombie");
-            names.Add(16, "Tormentor");
+            //names.Add(14, "Medusa");
+            names.Add(14, "Zombie");
+            names.Add(15, "Tormentor");
 
             current = new int[] { 0, 0, 0, 0 };
 

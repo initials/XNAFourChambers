@@ -664,9 +664,11 @@ namespace FourChambers
             FlxU.collide(blood, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
 
-            FlxU.overlap(actors, actors, overlapActor);
+            
 
             base.update();
+
+            FlxU.overlap(actors, actors, overlapActor);
 
             if (FlxG.keys.justPressed(Keys.Escape))
             {
@@ -873,7 +875,7 @@ namespace FourChambers
 
         protected bool overlapActor(object Sender, FlxSpriteCollisionEvent e)
         {
-
+            //Console.WriteLine("{0} {1}", e.Object1.ToString(), e.Object2.ToString() );
             if (((FlxSprite)(e.Object1))._curAnim.name.StartsWith("attack"))
             {
                 e.Object2.kill();

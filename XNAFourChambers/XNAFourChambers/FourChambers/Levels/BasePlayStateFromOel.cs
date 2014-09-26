@@ -716,7 +716,7 @@ namespace FourChambers
 
                 FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
 
-                FlxG.transition.startFadeIn(0.2f);
+                FlxG.transition.startFadeIn(0.1f);
 
                 FlxG.state = new BasePlayStateFromOel();
 
@@ -729,7 +729,7 @@ namespace FourChambers
 
                 FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
 
-                FlxG.transition.startFadeIn(0.2f);
+                FlxG.transition.startFadeIn(0.1f);
 
                 FlxG.state = new BasePlayStateFromOel();
 
@@ -738,7 +738,7 @@ namespace FourChambers
             else if (FlxG.keys.justPressed(Keys.F8) && FlxG.debug && timeOfDay > 2.0f)
             {
                 FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-                FlxG.transition.startFadeIn(0.2f);
+                FlxG.transition.startFadeIn(0.1f);
                 FlxG.state = new BasePlayStateFromOel();
                 return;
             }
@@ -1002,7 +1002,7 @@ namespace FourChambers
 
             FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
 
-            FlxG.transition.startFadeIn(0.2f);
+            FlxG.transition.startFadeIn(0.1f);
 
             FlxG.state = new BasePlayStateFromOel();
 
@@ -1678,7 +1678,10 @@ namespace FourChambers
             {
                 zombie.startPlayingBack();
             }
-
+            else if (command.StartsWith("bloom"))
+            {
+                FlxG.bloom.Visible = true;
+            }
             else
             {
                 FlxG.setHudText(1, command);
