@@ -357,7 +357,7 @@ namespace FourChambers
             
             for (int i = 0; i < 6; i++)
             {
-                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height));
+                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height/3));
                 cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
                 cloud.setScrollFactors(0.1f, 0.1f);
 
@@ -664,6 +664,8 @@ namespace FourChambers
             FlxU.collide(blood, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
 
+            FlxU.overlap(actors, actors, overlapActor);
+
             base.update();
 
             if (FlxG.keys.justPressed(Keys.Escape))
@@ -869,6 +871,20 @@ namespace FourChambers
             return true;
         }
 
+        protected bool overlapActor(object Sender, FlxSpriteCollisionEvent e)
+        {
+
+            if (((FlxSprite)(e.Object1))._curAnim.name.StartsWith("attack"))
+            {
+                e.Object2.kill();
+            }
+            else if (((FlxSprite)(e.Object2))._curAnim.name.StartsWith("attack"))
+            {
+                e.Object1.kill();
+            }
+
+            return true;
+        }
 
         /// <summary>
         /// e1=actors,
