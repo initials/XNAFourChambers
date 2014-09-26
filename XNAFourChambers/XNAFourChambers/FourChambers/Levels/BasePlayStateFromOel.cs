@@ -638,12 +638,9 @@ namespace FourChambers
             else FlxG.mouse.hide();
 
             localHud = new PlayHud();
-            
+            FlxG._game.hud.hudGroup = localHud;
 
-            if (!FlxG.debug)
-            {
-                FlxG._game.hud.hudGroup = localHud;
-            }
+
 
             Console.WriteLine("Level is: " + FlxG.level);
 

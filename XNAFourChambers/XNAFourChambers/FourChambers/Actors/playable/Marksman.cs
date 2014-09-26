@@ -34,30 +34,33 @@ namespace FourChambers
 
             _bullets = Bullets;
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_ss_31x24"), true, false, 31, 24);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_50x50"), true, false, 50,50);
 
-            addAnimation("run", new int[] { 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 }, 12);
-            addAnimation("idle", new int[] { 30 }, 12);
+            addAnimation("run", new int[] { 38,39,40,41,42,43,44,45,46,47 }, 12);
+            addAnimation("idle", new int[] { 28 }, 12);
             addAnimation("idleMelee", new int[] { 28 }, 12);
             addAnimation("attack", new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, 60 ,true);
-            addAnimation("attackMelee", new int[] { 0, 24, 24, 25, 26, 27, 27, 26, 26, 26, 26, 26, 26 }, 60, true);
+            addAnimation("attackMelee", new int[] { 0, 28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35}, 60, true);
             
             addAnimation("jump", new int[] { 33, 34, 35, 36, 37, 38, 39 }, 3, true);
             addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
-            addAnimation("climb", new int[] { 20, 21 }, 6, true);
+            addAnimation("climb", new int[] { 20, 21,22,23,24,25,24,23,22,21 }, 6, true);
             addAnimation("climbidle", new int[] { 20 }, 0, true);
-            addAnimation("death", new int[] { 22,23 }, 4, false);
-            addAnimation("hurt", new int[] { 22, 23 }, 4, false);
+            addAnimation("death", new int[] { 27,28 }, 4, false);
+            addAnimation("hurt", new int[] { 27, 28 }, 4, false);
 
             addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
-            addAnimation("idleRange", new int[] { 0 }, 12);
+            addAnimation("idleRange", new int[] { 48,49,50,51,52,53,54,55,56 }, 12);
             addAnimationCallback(footstep);
 
             //bounding box tweaks
             width = 5;
             height = 16;
-            offset.X = 13;
-            offset.Y = 8;
+
+            setOffset(21, 34);
+
+            //offset.X = 13;
+            //offset.Y = 8;
 
             //basic player physics
             int runSpeed = 120;

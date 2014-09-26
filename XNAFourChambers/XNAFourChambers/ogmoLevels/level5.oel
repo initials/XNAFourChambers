@@ -114,6 +114,13 @@
     <fallAwayBridge id="8" x="272" y="640" width="80" />
     <seraphine id="11" x="1280" y="608" flip="False" />
     <_event id="12" x="1072" y="464" width="368" height="192" event="bloom" value1="0" value2="0" repeat="-1" />
-    <_event id="13" x="960" y="544" width="112" height="144" event="It's your turn to fly." value1="0" value2="0" repeat="-1" />
+    <_event id="13" x="960" y="544" width="112" height="144" event="&quot;Close your eyes, and take my hand&quot;" value1="0" value2="0" repeat="-1" />
+    <bat id="14" x="144" y="480" flip="False" pathType="HORIZONTAL_ONLY" pathSpeed="100" pathCornering="3">
+      <node x="144" y="592" />
+      <node x="320" y="624" />
+      <node x="432" y="576" />
+      <node x="432" y="544" />
+      <node x="320" y="608" />
+    </bat>
   </ActorsLayer>
 </level>
