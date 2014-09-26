@@ -44,7 +44,7 @@ namespace FourChambers
             
             addAnimation("jump", new int[] { 33, 34, 35, 36, 37, 38, 39 }, 3, true);
             addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
-            addAnimation("climb", new int[] { 20, 21,22,23,24,25,24,23,22,21 }, 6, true);
+            addAnimation("climb", new int[] { 20, 21,22,23,24,25,24,23,22,21 }, 24, true);
             addAnimation("climbidle", new int[] { 20 }, 0, true);
             addAnimation("death", new int[] { 27,28 }, 4, false);
             addAnimation("hurt", new int[] { 27, 28 }, 4, false);
