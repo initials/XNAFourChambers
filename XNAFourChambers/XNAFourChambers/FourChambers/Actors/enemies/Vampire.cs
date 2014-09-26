@@ -41,22 +41,26 @@ namespace FourChambers
             // Required anims:
             // walk, run, idle, attack, death, hurt, jump
 
-            ImgVampire = FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Vampire_ss_14x19");
+            ImgVampire = FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Vampire_50x50");
 
-            loadGraphic(ImgVampire, true, false, 14, 19);
+            loadGraphic(ImgVampire, true, false, 50, 50);
 
             addAnimation("run", new int[] { 0, 1, 2, 3, 4, 5, 6 }, 16);
             addAnimation("walk", new int[] { 0, 1, 2, 3, 4, 5, 6 }, 8);
-            addAnimation("idle", new int[] { 0 }, 16);
-            addAnimation("attack", new int[] { 0, 1, 2 }, 16);
+            addAnimation("idle", new int[] { 0,22,23,24,25,25,25,26,27,0,0,0,0,0,0,0,0,0,0 }, 16);
+            addAnimation("attack", new int[] { 15,16,17,18,19,20,21 }, 16);
+
+            
             addAnimation("hurt", new int[] { 7,0,1,2 }, 8, false);
-            addAnimation("death", new int[] { 7 }, 8, false);
+            addAnimation("death", new int[] { 9,10,11,12,13,14 }, 8, false);
 
             //bounding box tweaks
             width = 6;
             height = 18;
-            offset.X = 4;
-            offset.Y = 1;
+            setOffset(22, 32);
+
+            //offset.X = 4;
+            //offset.Y = 1;
         }
 
         override public void update()
