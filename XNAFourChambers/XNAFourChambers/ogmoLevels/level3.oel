@@ -146,7 +146,6 @@
     <door id="11" x="80" y="736" levelToGoTo="2" />
     <door id="33" x="1216" y="208" levelToGoTo="5" />
     <door id="34" x="1552" y="736" levelToGoTo="4" />
-    <mummy id="35" x="496" y="736" flip="False" />
     <ladder id="36" x="800" y="544" height="208" />
     <harvester id="37" x="624" y="528" flip="False" />
     <_event id="38" x="704" y="448" width="96" height="96" event="harvester" value1="0" value2="0" repeat="1" />

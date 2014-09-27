@@ -1087,8 +1087,10 @@ namespace FourChambers
                 if (marksman != null)
                     marksman.arrowsRemaining += 20;
 
-                FourChambers_Globals.arrowPower += 1;
-                FourChambers_Globals.arrowsToFire += 1;
+                if (x==PowerUp.FR_ArrowsGreen)
+                    FourChambers_Globals.arrowPower += 1;
+                if (x == PowerUp.FR_ArrowsRed)
+                    FourChambers_Globals.arrowsToFire += 1;
             }
             else if (x == 190)
             {
@@ -1318,24 +1320,27 @@ namespace FourChambers
                     blood.start(true, 0, 10);
 
                     // throw out a power up.
-                    FlxObject p = powerUps.getRandom();
-
-                    if (p != null && p.dead == true) //
+                    if (e.Object1.health <= 0)
                     {
-                        p.dead = false;
-                        p.acceleration.Y = FourChambers_Globals.GRAVITY;
-                        p.velocity.X = FlxU.random(-150,150);
-                        p.velocity.Y = -200;
-                        p.exists = true;
-                        p.x = e.Object1.x;
-                        p.y = e.Object1.y;
-                        p.flicker(0.001f);
-                        p.angle = 0;
-                        p.visible = true;
-                    }
-                    else
-                    {
+                        FlxObject p = powerUps.getRandom();
 
+                        if (p != null && p.dead == true) //
+                        {
+                            p.dead = false;
+                            p.acceleration.Y = FourChambers_Globals.GRAVITY;
+                            p.velocity.X = FlxU.random(-150, 150);
+                            p.velocity.Y = -200;
+                            p.exists = true;
+                            p.x = e.Object1.x;
+                            p.y = e.Object1.y;
+                            p.flicker(0.001f);
+                            p.angle = 0;
+                            p.visible = true;
+                        }
+                        else
+                        {
+
+                        }
                     }
 
 
@@ -1728,6 +1733,12 @@ namespace FourChambers
                     mistress.isPlayerControlled = true;
                     marksman.isPlayerControlled = false;
                     FlxG.follow(mistress,1.0f);
+                }
+                else if (FlxGlobal.cheatString.StartsWith("controlharvester"))
+                {
+                    harvester.isPlayerControlled = true;
+                    marksman.isPlayerControlled = false;
+                    FlxG.follow(harvester, 1.0f);
                 }
                 else if (FlxGlobal.cheatString.StartsWith("door"))
                 {

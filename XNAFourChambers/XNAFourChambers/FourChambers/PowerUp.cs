@@ -387,9 +387,25 @@ namespace FourChambers
             else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
             {
                 float rr = FlxU.random();
-                if (rr > 0.01)
+                if (rr > 0.6)
                 {
                     typeOfPowerUp = FR_Arrows;
+
+                    addAnimation("item", new int[] { typeOfPowerUp });
+                    play("item");
+
+                }
+                else if (rr > 0.5)
+                {
+                    typeOfPowerUp = FR_ArrowsGreen;
+
+                    addAnimation("item", new int[] { typeOfPowerUp });
+                    play("item");
+
+                }
+                else if (rr > 0.4)
+                {
+                    typeOfPowerUp = FR_ArrowsRed;
 
                     addAnimation("item", new int[] { typeOfPowerUp });
                     play("item");

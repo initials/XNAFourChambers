@@ -133,7 +133,7 @@ namespace FourChambers
         /// <summary>
         /// Holds the recording of the actions
         /// </summary>
-        private List<bool[]> _history = new List<bool[]>();
+        public List<bool[]> _history = new List<bool[]>();
 
         /// <summary>
         /// Keeps track of where the actor is in the playback.
@@ -143,7 +143,7 @@ namespace FourChambers
         /// <summary>
         /// Keep track of the state.
         /// </summary>
-        private Recording _rec = Recording.None;
+        public Recording _rec = Recording.None;
 
         public FlxBar healthBar;
 
@@ -442,13 +442,6 @@ namespace FourChambers
                 maxVelocity.X = runSpeed;
             }
             acceleration.X = 0;
-
-
-
-
-
-
-
 
             if (buttonLeft || leftControl)
             {
