@@ -154,7 +154,7 @@ namespace FourChambers
 
             FlxG.level = 1;
 
-            health = 3;
+            health = 3;   
 
             FourChambers_Globals.arrowCombo = 0;
             FourChambers_Globals.arrowPower = 1;
