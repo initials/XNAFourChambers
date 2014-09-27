@@ -335,14 +335,22 @@ namespace FourChambers
                 {
                     for (int i = 0; i < FourChambers_Globals.arrowsToFire; i++)
                     {
-                        int yVel = (int)(velocity_y * -600);
+                        int yVel = (int)(velocity_y * (-550 - (FourChambers_Globals.arrowPower* 50)));
                         int yVelAdjusted = yVel - (i * 40);
+                        int xVel = (int)(velocity_x * (-550 - (FourChambers_Globals.arrowPower*50)));
 
-                        ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), (int)(velocity_x *= -600), yVelAdjusted);
-                        arrowsRemaining--;
+
+                        //Console.WriteLine("Y Velocity = {0} {1}", xVel, yVelAdjusted);
+
+                        ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), xVel, yVelAdjusted);
+                        
+
+                        if (++_curArrow >= _bullets.Count)
+                            _curArrow = 0;
+
                     }
                 }
-
+                arrowsRemaining--;
                 if (rightX1 - x < 0)
                 {
                     facing = Flx2DFacing.Left;
@@ -356,8 +364,7 @@ namespace FourChambers
                     //Console.WriteLine("Right");
                 }
 
-                if (++_curArrow >= _bullets.Count)
-                    _curArrow = 0;
+
                 attackingJoystick = false;
                 attackingMouse = false;
                 _curFrame = 0;

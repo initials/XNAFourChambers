@@ -372,7 +372,7 @@ namespace FourChambers
             FlxG.level = 103;
             FlxG.score = 0;
             FlxG.hideHud();
-
+            FourChambers_Globals.startGame();
             FlxG.state = new MultiPlayerCharacterSelect();
             return;
 

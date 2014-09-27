@@ -1087,7 +1087,7 @@ namespace FourChambers
                 if (marksman != null)
                     marksman.arrowsRemaining += 20;
 
-                //FourChambers_Globals.arrowPower += 3;
+                FourChambers_Globals.arrowPower += 1;
                 FourChambers_Globals.arrowsToFire += 1;
             }
             else if (x == 190)

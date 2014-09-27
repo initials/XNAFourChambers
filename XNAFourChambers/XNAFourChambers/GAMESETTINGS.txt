@@ -1,4 +1,19 @@
-﻿x=1280
+﻿x=840
+y=525
+fullscreen=0
+zoom=2
+
+x=1680
+y=1050
+fullscreen=1
+zoom=4
+
+1680 1050
+
+
+
+
+x=1280
 y=720
 fullscreen=0
 zoom=4
