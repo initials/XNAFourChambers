@@ -37,10 +37,10 @@ namespace FourChambers
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_50x50"), true, false, 50,50);
 
             addAnimation("run", new int[] { 38,39,40,41,42,43,44,45,46,47 }, 12);
-            addAnimation("idle", new int[] { 28 }, 12);
-            addAnimation("idleMelee", new int[] { 28 }, 12);
+            addAnimation("idle", new int[] { 38 }, 12);
+            addAnimation("idleMelee", new int[] { 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 73, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57}, 12);
             addAnimation("attack", new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, 60 ,true);
-            addAnimation("attackMelee", new int[] { 0, 28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35}, 60, true);
+            addAnimation("attackMelee", new int[] { 0, 28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35,36,36,36,36,36,36}, 60, true);
             
             addAnimation("jump", new int[] { 33, 34, 35, 36, 37, 38, 39 }, 3, true);
             addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
@@ -116,6 +116,22 @@ namespace FourChambers
                             meleeHitBox.y = y + 3;
                             break;
                         case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                        case 11:
+                        case 12:
+                        case 13:
+                        case 14:
+                        case 15:
+                        case 16:
+                            meleeHitBox.dead = false;
+                            meleeHitBox.width = 10;
+                            meleeHitBox.height = 17;
+                            meleeHitBox.x = x + _curFrame;
+                            meleeHitBox.y = (y - 18) + (_curFrame);
+                            break;
+                        case 30:
                             attackingMelee = false;
                             break;
                         default:
@@ -149,6 +165,22 @@ namespace FourChambers
                             meleeHitBox.y = y + 3;
                             break;
                         case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                        case 11:
+                        case 12:
+                        case 13:
+                        case 14:
+                        case 15:
+                        case 16:
+                            meleeHitBox.dead = false;
+                            meleeHitBox.width = 10;
+                            meleeHitBox.height = 17;
+                            meleeHitBox.x = x - _curFrame;
+                            meleeHitBox.y = (y - 18) +  (_curFrame);
+                            break;
+                        case 30:
                             attackingMelee = false;
                             break;
 

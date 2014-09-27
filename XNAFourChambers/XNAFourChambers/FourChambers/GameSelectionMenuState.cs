@@ -180,7 +180,7 @@ namespace FourChambers
         {
 
             
-            if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+            if ((FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back)) && elapsedInState > 1.0f )
             {
                 FlxG.Game.Exit();
                 return;

@@ -387,7 +387,7 @@ namespace FourChambers
             else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
             {
                 float rr = FlxU.random();
-                if (rr > 0.5)
+                if (rr > 0.01)
                 {
                     typeOfPowerUp = FR_Arrows;
 
@@ -395,6 +395,7 @@ namespace FourChambers
                     play("item");
 
                 }
+                    //Coin.
                 else if (rr > 0.1)
                 {
                     typeOfPowerUp = 308;

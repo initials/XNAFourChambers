@@ -371,7 +371,7 @@ namespace FourChambers
             
             for (int i = 0; i < 6; i++)
             {
-                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height));
+                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height/3));
                 cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
                 cloud.setScrollFactors(0.1f, 0.1f);
                 
@@ -385,19 +385,19 @@ namespace FourChambers
 
 
 
-            //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
-            Hill hill = new Hill(0, 188);
-            hill.color = new Color(0.8f , 0.8f, 0.885f);
-            hill.allowColorFlicker = false;
-            hill.setScrollFactors(0.1f,0.1f);
-            add(hill);
+            ////Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+            //Hill hill = new Hill(0, 188);
+            //hill.color = new Color(0.8f , 0.8f, 0.885f);
+            //hill.allowColorFlicker = false;
+            //hill.setScrollFactors(0.1f,0.1f);
+            //add(hill);
 
-            //Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
-            hill = new Hill(-50, 267);
-            //hill.color = new Color(0.90132f , 0.902f, 0.9025f);
-            hill.allowColorFlicker = false;
-            hill.setScrollFactors(0.2f, 0.2f);
-            add(hill);
+            ////Tree tree = new Tree((int)FlxU.random(0, FlxG.levelWidth), (FlxG.levelHeight - 48 - 96) );
+            //hill = new Hill(-50, 267);
+            ////hill.color = new Color(0.90132f , 0.902f, 0.9025f);
+            //hill.allowColorFlicker = false;
+            //hill.setScrollFactors(0.2f, 0.2f);
+            //add(hill);
 
 
 
@@ -1086,6 +1086,9 @@ namespace FourChambers
             {
                 if (marksman != null)
                     marksman.arrowsRemaining += 20;
+
+                //FourChambers_Globals.arrowPower += 3;
+                FourChambers_Globals.arrowsToFire += 1;
             }
             else if (x == 190)
             {

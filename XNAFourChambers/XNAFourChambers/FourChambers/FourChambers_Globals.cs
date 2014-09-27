@@ -90,9 +90,14 @@ namespace FourChambers
         public static bool canDestroyTerrain = false;
 
         /// <summary>
-        /// 
+        /// The number of arrows fired from the bow
         /// </summary>
         public static int arrowsToFire = 1;
+
+        /// <summary>
+        /// How fast to shoot the arrow.
+        /// </summary>
+        public static int arrowPower = 1;
 
         /// <summary>
         /// A list of available level numbers. 

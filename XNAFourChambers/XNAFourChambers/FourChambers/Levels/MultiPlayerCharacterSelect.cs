@@ -25,6 +25,7 @@ namespace FourChambers
             icons = new FlxGroup();
             texts = new FlxGroup();
 
+            FlxG.colorFlickeringEnabled = false;
 
             selectable = new List<int> { 
                 EnemyActor.FR_marksman, 
@@ -121,7 +122,11 @@ namespace FourChambers
 
         override public void update()
         {
+            if (FlxControl.CANCELJUSTPRESSED)
+            {
+                FlxG.state = new GameSelectionMenuState();
 
+            }
             if (FlxG.keys.justPressed(Keys.Right) || FlxG.keys.justPressed(Keys.D))
             {
                 current[0]++;

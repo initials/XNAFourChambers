@@ -331,7 +331,7 @@ namespace FourChambers
             //}
 
             // Attacking using mouse.
-            if (FlxG.mouse.justPressedLeftButton() && hasRangeWeapon)
+            if ( ( FlxG.mouse.justPressedLeftButton() && playerIndex == PlayerIndex.One)  && hasRangeWeapon)
             {
                 lastAttack = "range";
                 attackingMouse = true;
