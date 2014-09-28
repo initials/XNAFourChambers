@@ -20,14 +20,16 @@ namespace FourChambers
         public Door(int xPos, int yPos)
             : base(xPos, yPos)
         {
-            width = 16;
-            height = 16;
+            //width = 16;
+            //height = 16;
 
             Texture2D Img = FlxG.Content.Load<Texture2D>("fourchambers/door_24x24");
 
-            loadGraphic(Img, false, false, 24, 24);
+            loadGraphic(Img, false, false, 32, 32);
 
             levelToGoTo = 1;
+
+            y -= 8;
 
         }
 

@@ -103,6 +103,15 @@
       </TileSize>
       <TileSep>0</TileSep>
     </Tileset>
+    <Tileset>
+      <Name>auto_surt2_16x16</Name>
+      <FilePath>..\..\XNAFourChambersContent\fourchambers\auto_surt2_16x16.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
   </Tilesets>
   <EntityDefinitions>
     <EntityDefinition Name="_event" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">

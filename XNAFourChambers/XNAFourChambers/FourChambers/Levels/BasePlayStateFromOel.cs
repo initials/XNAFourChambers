@@ -369,18 +369,18 @@ namespace FourChambers
             
 
             
-            for (int i = 0; i < 6; i++)
-            {
-                FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height/3));
-                cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
-                cloud.setScrollFactors(0.1f, 0.1f);
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    FlxSprite cloud = new FlxSprite(FlxU.random(0, FlxG.width), FlxU.random(0, FlxG.height/3));
+            //    cloud.loadGraphic("fourchambers/cloud", false, false, 160, 64);
+            //    cloud.setScrollFactors(0.1f, 0.1f);
                 
-                cloud.setVelocity(FlxU.random(-5, 5), 0);
-                cloud.alpha = 0.9f;
-                add(cloud);
+            //    cloud.setVelocity(FlxU.random(-5, 5), 0);
+            //    cloud.alpha = 0.9f;
+            //    add(cloud);
 
             
-            }
+            //}
 
 
 
