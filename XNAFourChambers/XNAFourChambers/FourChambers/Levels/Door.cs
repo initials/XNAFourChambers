@@ -48,7 +48,7 @@ namespace FourChambers
             }
             if (Name == "pulse" && Frame == 40)
             {
-                Console.WriteLine("Overlapped {0} {1}", Name, Frame);
+                //Console.WriteLine("Overlapped {0} {1}", Name, Frame);
 
                 play("idle");
             }
@@ -56,7 +56,7 @@ namespace FourChambers
 
         public override void overlapped(FlxObject obj)
         {
-            Console.WriteLine("Overlapped {0} {1}", _curAnim.name, _curFrame);
+            //Console.WriteLine("Overlapped {0} {1}", _curAnim.name, _curFrame);
 
             //string overlappedWith = obj.GetType().ToString();
 

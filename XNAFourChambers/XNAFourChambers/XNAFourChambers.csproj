@@ -239,6 +239,7 @@
     <Compile Include="FourChambers\GameSelectionMenuState.cs" />
     <Compile Include="FourChambers\Hud\ImpactText.cs" />
     <Compile Include="FourChambers\Hud\PlayHud.cs" />
+    <Compile Include="FourChambers\Hud\TextBox.cs" />
     <Compile Include="FourChambers\Levels\AllLevels.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="FourChambers\Levels\Hill.cs" />
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
+    <Compile Include="FourChambers\Levels\MapState.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
@@ -398,6 +400,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FourChambers\Overworld\" />
     <Folder Include="FourChambers\Weapons\" />
   </ItemGroup>
   <ItemGroup>
@@ -502,6 +505,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ogmoLevels\ProjectFile.oep">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\worldMap.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -16,7 +16,7 @@
     <Width>3200</Width>
     <Height>3200</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Shane\Documents\Visual Studio 2010\Projects\XNAFourChambers\XNAFourChambers\XNAFourChambers\ogmoLevels\ProjectFile.oep</Filename>
+  <Filename>E:\VisualStudio2010\XNAFourChambers\XNAFourChambers\XNAFourChambers\ogmoLevels\ProjectFile.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>true</CameraEnabled>
   <CameraSize>
@@ -106,6 +106,15 @@
     <Tileset>
       <Name>auto_surt2_16x16</Name>
       <FilePath>..\..\XNAFourChambersContent\fourchambers\auto_surt2_16x16.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>blowharder</Name>
+      <FilePath>..\..\XNAFourChambersContent\fourchambers\blowharder.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>

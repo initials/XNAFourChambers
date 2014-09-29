@@ -327,6 +327,17 @@ namespace FourChambers
                 return;
 
             }
+            if (FlxG.keys.justPressed(Keys.F6))
+            {
+                FlxG.hideHud();
+
+                FlxG.state = new MapState();
+                return;
+
+            }
+
+
+
         }
 
         /// <summary>

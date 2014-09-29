@@ -186,6 +186,7 @@ Content\sfx\Door.xnb
 Content\sfx\bat.xnb
 Content\sfx\harvesterAttack.xnb
 Content\sfx\RatJump.xnb
+Content\fourchambers\blowharder.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
 Content\music\gwd\Dramatic.wma
@@ -330,3 +331,4 @@ ogmoLevels\level9.oel
 ogmoLevels\levelTutorial.oel
 ogmoLevels\PathTesting.oel
 ogmoLevels\ProjectFile.oep
+ogmoLevels\worldMap.oel
