@@ -638,7 +638,9 @@ namespace FourChambers
             else FlxG.mouse.hide();
 
             localHud = new PlayHud();
-            FlxG._game.hud.hudGroup = localHud;
+            
+            if (FlxG.zoom!=1)
+                FlxG._game.hud.hudGroup = localHud;
 
 
 
@@ -1009,6 +1011,8 @@ namespace FourChambers
 
         protected bool openDoor(object Sender, FlxSpriteCollisionEvent e)
         {
+            e.Object2.overlapped(e.Object1);
+
             if (e.Object1 is Marksman && (FlxControl.UPJUSTPRESSED ))
             {
                 goToLevel(((Door)(e.Object2)).levelToGoTo);

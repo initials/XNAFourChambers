@@ -410,7 +410,7 @@ namespace FourChambers
             if (Name.StartsWith("run") && (Frame == 2 || Frame==7))
             {
                 //Console.WriteLine("Footstep F {0} FI {1}", Frame, FrameIndex);
-                FlxG.play("fourchambers/sfx/footstep");
+                FlxG.play("sfx/footstep");
             }
         }
 

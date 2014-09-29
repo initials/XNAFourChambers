@@ -365,37 +365,37 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowHit1.wav">
+    <Compile Include="sfx\arrowHit1.wav">
       <Name>arrowHit1</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowHit2.wav">
+    <Compile Include="sfx\arrowHit2.wav">
       <Name>arrowHit2</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowHit3.wav">
+    <Compile Include="sfx\arrowHit3.wav">
       <Name>arrowHit3</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowShoot1.wav">
+    <Compile Include="sfx\arrowShoot1.wav">
       <Name>arrowShoot1</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowShoot2.wav">
+    <Compile Include="sfx\arrowShoot2.wav">
       <Name>arrowShoot2</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\arrowShoot3.wav">
+    <Compile Include="sfx\arrowShoot3.wav">
       <Name>arrowShoot3</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\horseHurt.wav">
+    <Compile Include="sfx\horseHurt.wav">
       <Name>horseHurt</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -578,36 +578,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fourchambers\sfx\Hit_Hurt5.wav">
+    <Compile Include="sfx\Hit_Hurt5.wav">
       <Name>Hit_Hurt5</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fourchambers\sfx\Pickup_Coin.wav">
+    <Compile Include="sfx\Pickup_Coin.wav">
       <Name>Pickup_Coin</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\Pickup_Coin25.wav">
+    <Compile Include="sfx\Pickup_Coin25.wav">
       <Name>Pickup_Coin25</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\Pickup_Coin43.wav">
+    <Compile Include="sfx\Pickup_Coin43.wav">
       <Name>Pickup_Coin43</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\sfx\Powerup6.wav">
+    <Compile Include="sfx\Powerup6.wav">
       <Name>Powerup6</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fourchambers\sfx\footstep.wav">
+    <Compile Include="sfx\footstep.wav">
       <Name>footstep</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -660,6 +660,37 @@
       <Name>auto_surt2_16x16</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fourchambers\Door_32x32.png">
+      <Name>Door_32x32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sfx\Door.wav">
+      <Name>Door</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sfx\bat.wav">
+      <Name>bat</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\harvesterAttack.wav">
+      <Name>harvesterAttack</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\RatJump.wav">
+      <Name>RatJump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

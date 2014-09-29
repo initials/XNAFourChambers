@@ -117,7 +117,7 @@ namespace FourChambers
             //color = Color.PaleVioletRed;
 
             if (onScreen())
-                FlxG.play("fourchambers/sfx/horseHurt", 1.0f, false);
+                FlxG.play("sfx/horseHurt", 1.0f, false);
 
             base.hurt(Damage);
         }

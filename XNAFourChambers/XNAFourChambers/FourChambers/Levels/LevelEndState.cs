@@ -109,7 +109,7 @@ namespace FourChambers
                 {
 
                     if (((FlxSprite)( powerups.members[current])).color==Color.White) 
-                        FlxG.play("fourchambers/sfx/Pickup_Coin");
+                        FlxG.play("sfx/Pickup_Coin");
 
                     current++;
                     tween.Reset();
