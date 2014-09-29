@@ -877,14 +877,14 @@ namespace FourChambers
         {
 		// DONT FORGET -- RESET NEW COMMIT
             //Console.WriteLine("{0} {1}", e.Object1.ToString(), e.Object2.ToString() );
-            //if (((FlxSprite)(e.Object1))._curAnim.name.StartsWith("attack"))
-            //{
-            //    e.Object2.kill();
-            //}
-            //else if (((FlxSprite)(e.Object2))._curAnim.name.StartsWith("attack"))
-            //{
-            //    e.Object1.kill();
-            //}
+            if (((FlxSprite)(e.Object1))._curAnim.name.StartsWith("attack"))
+            {
+                e.Object2.kill();
+            }
+            else if (((FlxSprite)(e.Object2))._curAnim.name.StartsWith("attack"))
+            {
+                e.Object1.kill();
+            }
 
             return true;
         }
