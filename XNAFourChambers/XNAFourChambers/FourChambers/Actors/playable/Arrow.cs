@@ -15,8 +15,8 @@ namespace FourChambers
 
         private bool hasTouched;
 
-        protected const string SndShoot = "fourchambers/sfx/arrowShoot1";
-        protected const string SndHit = "fourchambers/sfx/arrowHit1";
+        protected const string SndShoot = "sfx/arrowShoot1";
+        protected const string SndHit = "sfx/arrowHit1";
         public FlxSprite _ex;
 
         public bool explodesOnImpact = false;
