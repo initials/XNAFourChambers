@@ -107,5 +107,7 @@
     <_event id="3" x="240" y="128" width="16" height="16" event="level4" value1="4" value2="0" repeat="-1" />
     <_event id="4" x="80" y="176" width="16" height="16" event="This is the road." value1="0" value2="0" repeat="-1" />
     <_event id="5" x="224" y="96" width="16" height="16" event="quake" value1="0" value2="0" repeat="1" />
+    <_event id="6" x="48" y="160" width="16" height="16" event="Credits" value1="0" value2="0" repeat="1" />
+    <_event id="7" x="80" y="80" width="16" height="16" event="Change Name" value1="0" value2="0" repeat="1" />
   </ActorsLayer>
 </level>

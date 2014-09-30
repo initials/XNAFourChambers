@@ -19,11 +19,7 @@ namespace FourChambers
 
         FlxTilemap collisionMap;
 
-        FlxSprite actor;
         MapActor mActor;
-
-
-        FlxTileblock hud;
 
         Tweener tween;
         TextBox t;
@@ -56,13 +52,6 @@ namespace FourChambers
             mActor = new MapActor(64, 64);
             add(mActor);
 
-
-            //actor = new FlxSprite(0, 0);
-            //actor.loadGraphic("fourchambers/blowharder", true, false, 16, 16);
-            //actor.addAnimation("static", new int[] { 742 }, 12, true);
-            //actor.play("static");
-            //add(actor);
-
             FlxG.follow(mActor, 10.0f);
             FlxG.followBounds(0, 0, 5000, 5000);
 
@@ -85,33 +74,8 @@ namespace FourChambers
                 }
             }
 
-
-            /*
-             * 
-             * destructableAttrs = new Dictionary<string, string>();
-            destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/DestructableTerrain");
-             * 
-             * 
-             * destructableTilemap = new FlxTilemap();
-            destructableTilemap.auto = FlxTilemap.STRING;
-            destructableTilemap.loadMap(destructableAttrs["DestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
-            destructableTilemap.boundingBoxOverride = true;
-            allLevelTiles.add(destructableTilemap);
-             */
-
-
-            //foreach (var item in mapAttrs["DestructableTerrain"])
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //hud = new FlxTileblock(32, 8, 160, 32);
-            //hud.auto = FlxTileblock.HUDELEMENT;
-            //hud.loadTiles("ui/_sheet_window_18", 16, 16, 0);
-            //add(hud);
-
-
             t = new TextBox(16, FlxG.height - 32, FlxG.width-32, 32, "...");
+            //t.writeOn = true;
             add(t);
 
             tween = new Tweener(FlxG.height + 32, FlxG.height - 32, 0.75f, XNATweener.Cubic.EaseIn);
@@ -150,13 +114,17 @@ namespace FourChambers
             }
             else if (command.StartsWith("level"))
             {
+                if (t.visible==false)
+                    t.setText("Go to Level " + FlxG.level.ToString());
                 t.visible = true;
-                t.setText("Go to Level " + FlxG.level.ToString());
+                
             }
             else
             {
+                if (t.visible == false)
+                    t.setText(command);
                 t.visible = true;
-                t.setText(command);
+                
 
 
                 //if (!tween.Running)
@@ -171,7 +139,6 @@ namespace FourChambers
         
         protected bool eventCallback(object Sender, FlxSpriteCollisionEvent e)
         {
-             t.visible = true;
             ((EventSprite)e.Object2).runCallback();
 
             FlxG.level = ((EventSprite)e.Object2).value1;
@@ -186,62 +153,9 @@ namespace FourChambers
         {
             t.visible = false;
             FlxU.overlap(mActor, events, eventCallback);
-
             FlxU.collide(mActor, collisionMap);
 
             //int tile = map.getTile((int)(actor.x / 16), (int)(actor.y / 16));
-            //if (tile == 2983 || tile == 2984)
-            //{
-            //    tween.Start();
-            //}
-
-            //if (FlxG.mouse.justPressed())
-            //{
-            //    tween.Reset();
-            //    tween.Start();
-            //}
-            //if (FlxG.mouse.justPressed())
-            //{
-            //    //int tile = map.getTile((int)(actor.x/16), (int)(actor.y/16));
-            //    Console.WriteLine(tile);
-            //    if (tile==2983) FlxG.level = 6;
-            //    FlxG.state = new BasePlayStateFromOel();
-            //}
-
-            //if (FlxControl.UPJUSTPRESSED)
-            //{
-            //    actor.y -= 8;
-            //}
-            //if (FlxControl.DOWNJUSTPRESSED)
-            //{
-            //    actor.y += 8;
-            //}
-            //if (FlxControl.LEFTJUSTPRESSED)
-            //{
-            //    actor.x -= 8;
-            //}
-            //if (FlxControl.RIGHTJUSTPRESSED)
-            //{
-            //    actor.x += 8;
-            //}
-
-
-            //if (FlxControl.UP)
-            //{
-            //    actor.y -= 1;
-            //}
-            //if (FlxControl.DOWN)
-            //{
-            //    actor.y += 1;
-            //}
-            //if (FlxControl.LEFT)
-            //{
-            //    actor.x -= 1;
-            //}
-            //if (FlxControl.RIGHT)
-            //{
-            //    actor.x += 1;
-            //}
 
             if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f)
             {
