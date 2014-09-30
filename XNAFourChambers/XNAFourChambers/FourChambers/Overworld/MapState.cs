@@ -25,7 +25,8 @@ namespace FourChambers
         TextBox t;
         FlxGroup events;
 
-
+        FlxSprite logo;
+        FlxSprite fadeIn;
 
         override public void create()
         {
@@ -83,6 +84,20 @@ namespace FourChambers
 
             tween = new Tweener(FlxG.height + 32, FlxG.height - 32, 0.75f, XNATweener.Cubic.EaseIn);
             tween.Start();
+
+
+            fadeIn = new FlxSprite(0,0);
+            fadeIn.createGraphic(FlxG.width, FlxG.height, Color.Black);
+            add(fadeIn);
+
+
+            logo = new FlxSprite(0, 0);
+            logo.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
+            add(logo);
+
+            //FlxG._game.hud.hudGroup.add(logo);
+
+
 
             
         }
@@ -154,6 +169,11 @@ namespace FourChambers
 
         override public void update()
         {
+
+
+            logo.alpha -= 0.01f;
+            fadeIn.alpha -= 0.005f;
+
             t.visible = false;
             FlxU.overlap(mActor, events, eventCallback);
             FlxU.collide(mActor, collisionMap);
@@ -171,6 +191,12 @@ namespace FourChambers
                 FlxG.state = new BasePlayStateFromOel();
                 return;
             }
+
+            //if (FlxG.keys.justPressed(Keys.D6) && FlxG.debug)
+            //{
+            //    FlxU.openURL("https://twitter.com/intent/tweet?hashtags=fourchambers&original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&text=Four%20Chambers%20of%20the%20Human%20Heart&tw_p=tweetbutton&url=http%3A%2F%2Fwww.initialsgames.com%2Ffourchambers&via=initials_games");
+
+            //}
 
             //t.y = tween.Position;
 
