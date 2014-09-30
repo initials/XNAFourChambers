@@ -32,6 +32,9 @@ namespace FourChambers
         {
             base.create();
 
+            //if (FlxG.debug)
+            //    FourChambers_Globals.writeGameProgressToFile();
+
             FourChambers_Globals.readGameProgressToFile();
 
 
@@ -97,8 +100,7 @@ namespace FourChambers
 
             //FlxG._game.hud.hudGroup.add(logo);
 
-
-
+            FlxG.playMp3("music/ralph/this is the news", 1.0f);
             
         }
 
@@ -132,18 +134,24 @@ namespace FourChambers
             }
             else if (command.StartsWith("level"))
             {
-                if (t.visible==false)
+                if (t.visible == false)
+                {
                     t.setText("Go to Level " + FlxG.level.ToString());
+                    FlxG.play("sfx/Door", 0.75f);
+
+                }
                 t.visible = true;
                 
             }
             else
             {
                 if (t.visible == false)
+                {
                     t.setText(command);
-                t.visible = true;
-                
+                    FlxG.play("sfx/Door", 0.75f);
 
+                }
+                t.visible = true;
 
                 //if (!tween.Running)
                 //{
@@ -169,12 +177,20 @@ namespace FourChambers
 
         override public void update()
         {
+            if (elapsedInState > 1.0f)
+            {
+                if (logo.alpha >= 0.01f)
+                    logo.alpha -= 0.01f;
 
+            }
+            if (elapsedInState > 2.0f)
+            {
 
-            logo.alpha -= 0.01f;
-            fadeIn.alpha -= 0.005f;
+                if (fadeIn.alpha >= 0.005f)
+                    fadeIn.alpha -= 0.005f;
+            }
 
-            t.visible = false;
+            //t.visible = false;
             FlxU.overlap(mActor, events, eventCallback);
             FlxU.collide(mActor, collisionMap);
 
@@ -203,7 +219,5 @@ namespace FourChambers
             tween.Update(FlxG.elapsedAsGameTime);
             base.update();
         }
-
-
     }
 }

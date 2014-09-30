@@ -32,14 +32,40 @@ namespace FourChambers
             powerups = new FlxGroup();
             powerupsUncollected = new FlxGroup();
 
+            // Add random treasures
+            /*
             if (FlxG.debug)
             {
                 for (int i = 0; i < 50; i++)
                 {
-                    FourChambers_Globals.treasuresCollected.Add( (int)FlxU.random(0,304));
+
+                    int rr = (int)FlxU.random(0, 304);
+
+                    //Console.WriteLine("Adding {0}", rr);
+
+                    //FourChambers_Globals.treasuresCollected.Add((int)FlxU.random(0, 304));
+                    if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(rr)==false)
+                    {
+                        
+                        FourChambers_Globals.treasuresCollectedPersistant.Add(rr, 1);
+
+                    }
+                    else if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(rr) == true)
+                    {
+
+                        FourChambers_Globals.treasuresCollectedPersistant[rr] = 1;
+
+                    }
+
+
                 }
 
+                FourChambers_Globals.writeGameProgressToFile();
+
             }
+             */
+
+
 
             int xp = 0;
             int yp = 20;
@@ -55,11 +81,19 @@ namespace FourChambers
                
                 p.allowColorFlicker = false;
 
-                if (FourChambers_Globals.treasuresCollected.Contains(i))
+                if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(i))
                 {
-                    p.scale = 0;
-                    p.color = Color.White;
-                    powerups.add(p);
+                    if (FourChambers_Globals.treasuresCollectedPersistant[i] == 1)
+                    {
+                        p.scale = 0;
+                        p.color = Color.White;
+                        powerups.add(p);
+                    }
+                    else
+                    {
+                        p.color = Color.Black;
+                        powerupsUncollected.add(p);
+                    }
                 }
                 else
                 {
@@ -87,8 +121,6 @@ namespace FourChambers
             t2.text = "Money: $" + FlxG.score + "\nBest Combo: \nTreasures: ";
             t2.alignment = FlxJustification.Left;
             add(t2);
-
-
 
             FlxG.playMp3("music/gwd/SlowedLoop", 1.0f);
 

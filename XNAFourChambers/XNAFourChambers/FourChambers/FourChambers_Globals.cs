@@ -65,6 +65,10 @@ namespace FourChambers
 
         public static List<int> treasuresCollected = new List<int> { };
 
+
+        public static Dictionary<int, int> treasuresCollectedPersistant = new Dictionary<int, int>();
+
+
         public static int[] multiplayerSelectedCharacters = { 0,0,0,0 };
 
 
@@ -171,10 +175,29 @@ namespace FourChambers
 
         public  static  void writeGameProgressToFile()
         {
-            string progress = FlxG.score + "," + FlxG.level;
 
+            string progress = "";
+            for (int i = 0; i < 307; i++)
+            {
+                if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(i))
+                {
+                    if (FourChambers_Globals.treasuresCollectedPersistant[i]==1)
+                        progress += "1,";
+                    else
+                        progress += "0,";
+                }
+                else
+                {
+                    progress += "0,";
+                }
+            }
+            progress += "$" + FlxG.score + "," + FlxG.level;
             FlxU.saveToDevice(progress, "gui.dll");
 
+            //if (FlxG.debug)
+            //    FlxU.saveToDevice(progress, "gui_DEBUG.dll");
+            //else
+            //    FlxU.saveToDevice(progress, "gui.dll");
             
         }
 
@@ -182,11 +205,26 @@ namespace FourChambers
         {
             string progress = FlxU.loadFromDevice("gui.dll");
 
-            string[] elements = progress.Split(',');
+            string[] vsplit = progress.Split('$');
 
-            FlxG.score = Convert.ToInt32(elements[0]);
+            string[] elements0 = vsplit[0].Split(',');
+            string[] elements1 = vsplit[1].Split(',');
 
-            Console.WriteLine("Highest Level available {0}", elements[1]);
+            for (int i = 0; i < 306; i++)
+            {
+                if (elements0[i]=="1")
+                {
+                    FourChambers_Globals.treasuresCollectedPersistant[i] = 1;
+                }
+                else
+                {
+                    FourChambers_Globals.treasuresCollectedPersistant[i] = 0;
+                }
+            }
+
+            FlxG.score = Convert.ToInt32(elements1[0]);
+
+            Console.WriteLine("Highest Level available {0}", elements1[1]);
 
 
         }
