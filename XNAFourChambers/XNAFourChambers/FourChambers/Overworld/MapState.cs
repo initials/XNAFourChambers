@@ -31,6 +31,9 @@ namespace FourChambers
         {
             base.create();
 
+            FourChambers_Globals.readGameProgressToFile();
+
+
             events = new FlxGroup();
             add(events);
 

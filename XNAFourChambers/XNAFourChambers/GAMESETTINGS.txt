@@ -3,14 +3,15 @@ y=180
 fullscreen=0
 zoom=1
 
-
+x=640
+y=320
+fullscreen=0
+zoom=2
 
 x=1280
 y=720
 fullscreen=0
 zoom=4
-
-
 
 //Windowed
 x=840
@@ -24,16 +25,11 @@ y=1050
 fullscreen=1
 zoom=4
 
-
-
 //Gif
 x=1280
 y=720
 fullscreen=0
 zoom=4
-
-
-
 
 x=480
 y=270

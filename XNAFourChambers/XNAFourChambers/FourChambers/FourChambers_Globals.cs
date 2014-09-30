@@ -149,7 +149,7 @@ namespace FourChambers
         public static void startGame()
         {
 
-            FlxG.score = 0;
+            //FlxG.score = 0;
             FourChambers_Globals.seraphineHasBeenKilled = true;
 
             //FlxG.level = 1;
@@ -165,6 +165,28 @@ namespace FourChambers
             //FlxG.level = FourChambers_Globals.availableLevels[newLevel];
             //Console.WriteLine("startGame() " + FourChambers_Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count );
             //FourChambers_Globals.availableLevels.RemoveAt(newLevel);
+
+
+        }
+
+        public  static  void writeGameProgressToFile()
+        {
+            string progress = FlxG.score + "," + FlxG.level;
+
+            FlxU.saveToDevice(progress, "gui.dll");
+
+            
+        }
+
+        public static void readGameProgressToFile()
+        {
+            string progress = FlxU.loadFromDevice("gui.dll");
+
+            string[] elements = progress.Split(',');
+
+            FlxG.score = Convert.ToInt32(elements[0]);
+
+            Console.WriteLine("Highest Level available {0}", elements[1]);
 
 
         }
