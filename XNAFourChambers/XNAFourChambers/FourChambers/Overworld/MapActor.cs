@@ -36,6 +36,10 @@ namespace FourChambers
             play("idle");
 
             setDrags(120, 120);
+
+            width = 8;
+            height = 2;
+            setOffset(4, 14);
         }
 
         override public void update()

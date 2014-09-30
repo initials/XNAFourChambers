@@ -17,6 +17,8 @@ namespace FourChambers
         Dictionary<string, string> mapAttrs;
         FlxTilemap map;
 
+        FlxTilemap collisionMap;
+
         FlxSprite actor;
         MapActor mActor;
 
@@ -44,6 +46,13 @@ namespace FourChambers
             map.loadMap(mapAttrs["DestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             add(map);
 
+            mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/IndestructableTerrain");
+
+            collisionMap = new FlxTilemap();
+            collisionMap.auto = FlxTilemap.STRING;
+            collisionMap.loadMap(mapAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            add(collisionMap);
+
             mActor = new MapActor(64, 64);
             add(mActor);
 
@@ -54,7 +63,7 @@ namespace FourChambers
             //actor.play("static");
             //add(actor);
 
-            FlxG.follow(actor, 10.0f);
+            FlxG.follow(mActor, 10.0f);
             FlxG.followBounds(0, 0, 5000, 5000);
 
             List<Dictionary<string, string>>  actorsAttrs = new List<Dictionary<string, string>>();
@@ -108,7 +117,7 @@ namespace FourChambers
             tween = new Tweener(FlxG.height + 32, FlxG.height - 32, 0.75f, XNATweener.Cubic.EaseIn);
             tween.Start();
 
-
+            
         }
 
         public void buildEvent(int x = 0, int y = 0, int width = 0, int height = 0, int repeat = -1, string eventOrQuote = "", int Value1=0, int Value2=0)
@@ -178,6 +187,8 @@ namespace FourChambers
             t.visible = false;
             FlxU.overlap(mActor, events, eventCallback);
 
+            FlxU.collide(mActor, collisionMap);
+
             //int tile = map.getTile((int)(actor.x / 16), (int)(actor.y / 16));
             //if (tile == 2983 || tile == 2984)
             //{
@@ -232,13 +243,14 @@ namespace FourChambers
             //    actor.x += 1;
             //}
 
-            if (FlxControl.ACTIONJUSTPRESSED)
+            if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f)
             {
                 FlxG.transition.startFadeOut(0.25f, 45, 120);
             }
 
             if (FlxG.transition.complete)
             {
+                FourChambers_Globals.startGame();
                 FlxG.state = new BasePlayStateFromOel();
                 return;
             }

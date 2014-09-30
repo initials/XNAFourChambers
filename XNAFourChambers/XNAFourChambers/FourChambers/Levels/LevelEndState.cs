@@ -127,7 +127,7 @@ namespace FourChambers
 
             if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 2.0f)
             {
-                FlxG.state = new GameSelectionMenuState();
+                FlxG.state = new MapState();
             }
 
             base.update();
