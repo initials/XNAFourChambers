@@ -19,9 +19,15 @@ namespace FourChambers
         public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text)
             : base(xPos, yPos, xWidth, yHeight)
         {
+
+            setScrollFactors(0, 0);
+
             flxText = new FlxText(xPos, yPos, xWidth);
-            flxText.alignment = FlxJustification.Left;
+            flxText.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Center, Color.Black);
+
+            //flxText.alignment = FlxJustification.Center;
             flxText.text = Text;
+            flxText.setScrollFactors(0, 0);
 
             auto = FlxTileblock.HUDELEMENT;
             loadTiles("ui/_sheet_window_18", 16, 16, 0);
@@ -36,6 +42,8 @@ namespace FourChambers
 
         override public void update()
         {
+            flxText.x = x+6;
+            flxText.y = y+2;
 
             flxText.update();
 

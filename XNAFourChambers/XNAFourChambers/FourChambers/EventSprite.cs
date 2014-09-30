@@ -17,7 +17,8 @@ namespace FourChambers
         private EventCallback _callback;
         public int repeats;
         public string command;
-        
+        public int value1;
+        public int value2;
 
 
         public EventSprite(int xPos, int yPos, EventCallback Callback, int Repeats, string Command)

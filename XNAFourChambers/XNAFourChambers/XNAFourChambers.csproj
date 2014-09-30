@@ -248,7 +248,8 @@
     <Compile Include="FourChambers\Levels\Hill.cs" />
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
-    <Compile Include="FourChambers\Levels\MapState.cs" />
+    <Compile Include="FourChambers\Overworld\MapActor.cs" />
+    <Compile Include="FourChambers\Overworld\MapState.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
@@ -400,7 +401,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FourChambers\Overworld\" />
     <Folder Include="FourChambers\Weapons\" />
   </ItemGroup>
   <ItemGroup>
@@ -509,6 +509,7 @@
     </None>
     <None Include="ogmoLevels\worldMap.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

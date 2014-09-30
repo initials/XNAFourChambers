@@ -1003,7 +1003,7 @@ namespace FourChambers
 
             FlxG.transition.startFadeIn(0.1f);
 
-            FlxG.state = new BasePlayStateFromOel();
+            FlxG.state = new MapState();
 
             return true;
         }
