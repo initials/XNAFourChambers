@@ -24,12 +24,12 @@ namespace FourChambers
         public MapActor(int xPos, int yPos)
             : base(xPos, yPos)
         {
-            loadGraphic("fourchambers/blowharder", true, true, 16, 16);
+            loadGraphic("fourchambers/blowharderCharacter", true, true, 16, 16);
 
-            addAnimation("idle", new int[] { 742 }, 12, true);
-            addAnimation("walkDown", new int[] { 742, 743, 742, 744 }, 12, true);
-            addAnimation("walkRight", new int[] { 745, 746, 745, 747 }, 12, true);
-            addAnimation("walkUp", new int[] { 748, 749, 748, 750 }, 12, true);
+            addAnimation("idle", new int[] { 0 }, 12, true);
+            addAnimation("walkDown", new int[] { 0, 1, 2, 1 }, 12, true);
+            addAnimation("walkRight", new int[] { 3,4,5,4 }, 12, true);
+            addAnimation("walkUp", new int[] { 6,7,8,7 }, 12, true);
 
 
 
