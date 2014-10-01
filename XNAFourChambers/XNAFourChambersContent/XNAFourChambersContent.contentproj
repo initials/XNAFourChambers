@@ -701,13 +701,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="fourchambers\characterSpriteSheets\Spider_50x50.png">
       <Name>Spider_50x50</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-=======
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="ui\_sheet_window_01.png">
       <Name>_sheet_window_01</Name>
       <Importer>TextureImporter</Importer>
@@ -810,14 +810,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="sfx\HitGround2.wav">
       <Name>HitGround2</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
->>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -504,21 +504,21 @@ namespace FourChambers
 
                 buildActor(nodes["Name"], 1, pc , Convert.ToInt32(nodes["x"]),Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX,PY,PT,PS, PC);
 
-                if (nodes["Name"] == "_event" && nodes["event"]=="start")
-                {
-                    if (FourChambers_Globals.PLAYER_ACTOR == 1)
-                    {
-                        buildActor("marksman", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
-                    }
-                    if (FourChambers_Globals.PLAYER_ACTOR == 2)
-                    {
-                        buildActor("mistress", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
-                    }
-                    if (FourChambers_Globals.PLAYER_ACTOR == 3)
-                    {
-                        buildActor("warlock", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
-                    }
-                }
+                //if (nodes["Name"] == "_event" && nodes["event"]=="start")
+                //{
+                //    if (FourChambers_Globals.PLAYER_ACTOR == 1)
+                //    {
+                //        buildActor("marksman", 1, true, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                //    }
+                //    if (FourChambers_Globals.PLAYER_ACTOR == 2)
+                //    {
+                //        buildActor("mistress", 1, true, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                //    }
+                //    if (FourChambers_Globals.PLAYER_ACTOR == 3)
+                //    {
+                //        buildActor("warlock", 1, true, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                //    }
+                //}
 
                 if (nodes["Name"] == "_event")
                 {

@@ -131,5 +131,6 @@
     <_event id="12" x="144" y="688" width="32" height="64" event="spider" value1="0" value2="0" repeat="1" />
     <_event id="27" x="64" y="736" width="16" height="16" event="sword" value1="0" value2="0" repeat="1" />
     <_event id="29" x="80" y="736" width="16" height="16" event="bow" value1="0" value2="0" repeat="1" />
+    <_event id="30" x="112" y="736" width="16" height="16" event="start" value1="0" value2="0" repeat="1" />
   </ActorsLayer>
 </level>
