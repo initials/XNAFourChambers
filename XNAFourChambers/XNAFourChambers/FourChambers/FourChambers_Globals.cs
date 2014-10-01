@@ -22,7 +22,7 @@ namespace FourChambers
 
         public static int PLAYER_ACTOR = 1;
 
-        public const int PLAYER_ARCHER = 1;
+        public const int PLAYER_MARKSMAN = 1;
         public const int PLAYER_MISTRESS = 2;
         public const int PLAYER_WARLOCK = 3;
 

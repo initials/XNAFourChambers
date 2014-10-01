@@ -72,10 +72,11 @@ namespace Loader_Four
             {
                 _graphics.ToggleFullScreen();
             }
+
             _graphics.ApplyChanges();
-
+            
             Console.WriteLine("Running Game at Settings: {0}x{1} Fullscreen?:{2} // Preferrred {3} {4}", FlxG.resolutionWidth, FlxG.resolutionHeight, FlxG.fullscreen, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-
+            
             FlxG.Game = this;
 #if !WINDOWS_PHONE
             //Components.Add(new GamerServicesComponent(this));
@@ -105,6 +106,9 @@ namespace Loader_Four
 
     static class Program
     {
+
+
+
         //application entry point
         static void Main(string[] args)
         {

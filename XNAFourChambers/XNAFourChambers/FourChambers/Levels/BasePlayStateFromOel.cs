@@ -504,6 +504,22 @@ namespace FourChambers
 
                 buildActor(nodes["Name"], 1, pc , Convert.ToInt32(nodes["x"]),Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX,PY,PT,PS, PC);
 
+                if (nodes["Name"] == "_event" && nodes["event"]=="start")
+                {
+                    if (FourChambers_Globals.PLAYER_ACTOR == 1)
+                    {
+                        buildActor("marksman", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                    }
+                    if (FourChambers_Globals.PLAYER_ACTOR == 2)
+                    {
+                        buildActor("mistress", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                    }
+                    if (FourChambers_Globals.PLAYER_ACTOR == 3)
+                    {
+                        buildActor("warlock", 1, pc, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+                    }
+                }
+
                 if (nodes["Name"] == "_event")
                 {
                     buildEvent(Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]), Convert.ToInt32(nodes["repeat"]), nodes["event"]);
@@ -1910,17 +1926,17 @@ namespace FourChambers
                     
                     mistress = new Mistress(x, y );
                     actors.add(mistress);
-                    //mistress.flicker(2);
-                    //playerControlledActors.add(mistress);
+                    mistress.flicker(2);
+                    playerControlledActors.add(mistress);
                     bullets.add(mistress.whipHitBox);
 
                 }
 
-                //if (levelAttrs["playerControlled"] == "mistress")
-                //{
-                //    mistress.isPlayerControlled = true;
-                //    FlxG.follow(mistress, FOLLOW_LERP);
-                //}
+                if (playerControlled == true)
+                {
+                    mistress.isPlayerControlled = true;
+                    FlxG.follow(mistress, FOLLOW_LERP);
+                }
             }
             #endregion
             #region Warlock
@@ -1936,13 +1952,13 @@ namespace FourChambers
                     warlock = new Warlock(x, y, warlockFireBalls.members);
                     actors.add(warlock);
                     warlock.flicker(2);
-                    //playerControlledActors.add(warlock);
+                    playerControlledActors.add(warlock);
                 }
-                //if (levelAttrs["playerControlled"] == "warlock")
-                //{
-                //    warlock.isPlayerControlled = true;
-                //    FlxG.follow(warlock, FOLLOW_LERP);
-                //}
+                if (playerControlled == true)
+                {
+                    warlock.isPlayerControlled = true;
+                    FlxG.follow(warlock, FOLLOW_LERP);
+                }
             }
             #endregion
             #region Artist

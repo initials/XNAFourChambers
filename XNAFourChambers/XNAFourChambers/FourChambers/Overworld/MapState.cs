@@ -198,6 +198,11 @@ namespace FourChambers
 
             //int tile = map.getTile((int)(actor.x / 16), (int)(actor.y / 16));
 
+            if (FlxG.keys.ONE) FourChambers_Globals.PLAYER_ACTOR = 1;
+            if (FlxG.keys.TWO) FourChambers_Globals.PLAYER_ACTOR = 2;
+            if (FlxG.keys.THREE) FourChambers_Globals.PLAYER_ACTOR = 3;
+
+
             if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f && t.visible==true)
             {
                 FlxG.transition.startFadeOut(0.25f, 45, 120);
