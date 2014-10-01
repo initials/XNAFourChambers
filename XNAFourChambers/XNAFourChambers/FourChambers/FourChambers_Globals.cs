@@ -22,7 +22,7 @@ namespace FourChambers
 
         public static int PLAYER_ACTOR = 1;
 
-        public const int PLAYER_ARCHER = 1;
+        public const int PLAYER_MARKSMAN = 1;
         public const int PLAYER_MISTRESS = 2;
         public const int PLAYER_WARLOCK = 3;
 
@@ -64,6 +64,10 @@ namespace FourChambers
         //public static int[] collectedTreasures = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
         public static List<int> treasuresCollected = new List<int> { };
+
+
+        public static Dictionary<int, int> treasuresCollectedPersistant = new Dictionary<int, int>();
+
 
         public static int[] multiplayerSelectedCharacters = { 0,0,0,0 };
 
@@ -149,7 +153,7 @@ namespace FourChambers
         public static void startGame()
         {
 
-            FlxG.score = 0;
+            //FlxG.score = 0;
             FourChambers_Globals.seraphineHasBeenKilled = true;
 
             //FlxG.level = 1;
@@ -165,6 +169,62 @@ namespace FourChambers
             //FlxG.level = FourChambers_Globals.availableLevels[newLevel];
             //Console.WriteLine("startGame() " + FourChambers_Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count );
             //FourChambers_Globals.availableLevels.RemoveAt(newLevel);
+
+
+        }
+
+        public  static  void writeGameProgressToFile()
+        {
+
+            string progress = "";
+            for (int i = 0; i < 307; i++)
+            {
+                if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(i))
+                {
+                    if (FourChambers_Globals.treasuresCollectedPersistant[i]==1)
+                        progress += "1,";
+                    else
+                        progress += "0,";
+                }
+                else
+                {
+                    progress += "0,";
+                }
+            }
+            progress += "$" + FlxG.score + "," + FlxG.level;
+            FlxU.saveToDevice(progress, "gui.dll");
+
+            //if (FlxG.debug)
+            //    FlxU.saveToDevice(progress, "gui_DEBUG.dll");
+            //else
+            //    FlxU.saveToDevice(progress, "gui.dll");
+            
+        }
+
+        public static void readGameProgressToFile()
+        {
+            string progress = FlxU.loadFromDevice("gui.dll");
+
+            string[] vsplit = progress.Split('$');
+
+            string[] elements0 = vsplit[0].Split(',');
+            string[] elements1 = vsplit[1].Split(',');
+
+            for (int i = 0; i < 306; i++)
+            {
+                if (elements0[i]=="1")
+                {
+                    FourChambers_Globals.treasuresCollectedPersistant[i] = 1;
+                }
+                else
+                {
+                    FourChambers_Globals.treasuresCollectedPersistant[i] = 0;
+                }
+            }
+
+            FlxG.score = Convert.ToInt32(elements1[0]);
+
+            Console.WriteLine("Highest Level available {0}", elements1[1]);
 
 
         }

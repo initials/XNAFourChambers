@@ -18,6 +18,7 @@
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,7 +31,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -126,6 +126,7 @@
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -248,7 +249,8 @@
     <Compile Include="FourChambers\Levels\Hill.cs" />
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
-    <Compile Include="FourChambers\Levels\MapState.cs" />
+    <Compile Include="FourChambers\Overworld\MapActor.cs" />
+    <Compile Include="FourChambers\Overworld\MapState.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
     <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
@@ -400,7 +402,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FourChambers\Overworld\" />
     <Folder Include="FourChambers\Weapons\" />
   </ItemGroup>
   <ItemGroup>
@@ -509,6 +510,7 @@
     </None>
     <None Include="ogmoLevels\worldMap.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

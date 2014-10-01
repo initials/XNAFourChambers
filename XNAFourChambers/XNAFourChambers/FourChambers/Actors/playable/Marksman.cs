@@ -399,8 +399,23 @@ namespace FourChambers
                 FourChambers_Globals.hasRangeWeapon = true;
             }
 
+            // For just landing.
+            bool wasInAir = false;
+            if (framesSinceLeftGround>1)
+            {
+                wasInAir = true;
+            }
+
             base.update();
 
+            // Just landed.
+            if (wasInAir && framesSinceLeftGround == 0)
+            {
+                FlxG.play("sfx/HitGround2", 1.0f, false);
+
+                //Console.WriteLine("----------------------> WAS IN AIR");
+
+            }
         }
 
         public void footstep(string Name, uint Frame, int FrameIndex)

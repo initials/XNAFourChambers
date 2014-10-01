@@ -16,30 +16,69 @@ namespace FourChambers
 
         public FlxText flxText;
 
-        public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text)
+        public bool writeOn = false;
+        private int writeOnChar = 0;
+
+        public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text, int Style)
             : base(xPos, yPos, xWidth, yHeight)
         {
+
+            setScrollFactors(0, 0);
+
             flxText = new FlxText(xPos, yPos, xWidth);
-            flxText.alignment = FlxJustification.Left;
+            flxText.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Center, Color.Black);
+
+            //flxText.alignment = FlxJustification.Center;
             flxText.text = Text;
+            flxText.setScrollFactors(0, 0);
+
+            string STRstyle = "";
+
+            if (Style <= 9)
+                STRstyle = "0" + Style.ToString();
+            else
+                STRstyle = Style.ToString();
 
             auto = FlxTileblock.HUDELEMENT;
-            loadTiles("ui/_sheet_window_18", 16, 16, 0);
+            loadTiles("ui/_sheet_window_" + STRstyle, 16, 16, 0);
 
+            text = Text;
 
         }
 
         public void setText(string Text)
         {
-            flxText.text = Text;
+            if (writeOn == true)
+            {
+                text = Text;
+                writeOnChar = 0;
+            }
+            else
+            {
+                flxText.text = Text;
+            }
         }
 
         override public void update()
         {
 
+
+
+            flxText.x = x+6;
+            flxText.y = y+2;
+
             flxText.update();
 
             base.update();
+
+            if (writeOn)
+            {
+                if (writeOnChar < text.Length - 1)
+                {
+                    flxText.text = text.Substring(0, writeOnChar);
+                    writeOnChar++;
+                }
+            }
 
         }
 
