@@ -27,9 +27,9 @@ namespace FourChambers
             loadGraphic("fourchambers/blowharder", true, true, 16, 16);
 
             addAnimation("idle", new int[] { 742 }, 12, true);
-            addAnimation("walkDown", new int[] { 742, 743, 744 }, 12, true);
-            addAnimation("walkRight", new int[] { 745, 746, 747 }, 12, true);
-            addAnimation("walkUp", new int[] { 748, 749, 750 }, 12, true);
+            addAnimation("walkDown", new int[] { 742, 743, 742, 744 }, 12, true);
+            addAnimation("walkRight", new int[] { 745, 746, 745, 747 }, 12, true);
+            addAnimation("walkUp", new int[] { 748, 749, 748, 750 }, 12, true);
 
 
 

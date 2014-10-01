@@ -19,8 +19,8 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Tarantulatis";
             score = 250;
-            health = 5;
-            runSpeed = 120;
+            health = 25;
+            runSpeed = 30;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
