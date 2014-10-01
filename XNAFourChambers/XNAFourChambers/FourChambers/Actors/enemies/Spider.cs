@@ -19,7 +19,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Tarantulatis";
             score = 250;
-            health = 5;
+            health = 35;
             runSpeed = 120;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
@@ -40,19 +40,26 @@ namespace FourChambers
             // Required anims:
             // walk, run, idle, attack, death, hurt, jump
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Spider_20x20"), true, false, 20, 20);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Spider_50x50"), true, false, 50, 50);
 
             //addAnimation("run", new int[] { 0, 1, 2, 3, 4, 5, 6, 7 }, 12);
-            addAnimation("idle", new int[] { 0 }, 0);
-            addAnimation("death", new int[] { 1 }, 6, false);
+            addAnimation("idle", generateFrameNumbersBetween(10,20), 12);
+            addAnimation("death", generateFrameNumbersBetween(0,9), 12, false);
+            addAnimation("hurt", generateFrameNumbersBetween(0, 9), 12, false);
+
+            addAnimation("walk", generateFrameNumbersBetween(21,26), 12, false);
+            addAnimation("run", generateFrameNumbersBetween(21, 26), 12, false);
+            
+            addAnimation("attack", generateFrameNumbersBetween(28,32), 6, false);
+
 
             //addAnimation("attack", new int[] { 2, 4 }, 18);
 
             //bounding box tweaks
             width = 20;
             height = 20;
-            offset.X = 3;
-            offset.Y = 6;
+            offset.X = 15;
+            offset.Y = 30;
 
         }
 

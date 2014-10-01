@@ -127,5 +127,9 @@
     <ladder id="17" x="864" y="80" height="128" />
     <unicorn id="10" x="656" y="192" flip="False" />
     <ladder id="28" x="784" y="688" height="64" />
+    <spider id="0" x="368" y="736" flip="False" />
+    <_event id="12" x="144" y="688" width="32" height="64" event="spider" value1="0" value2="0" repeat="1" />
+    <_event id="27" x="64" y="736" width="16" height="16" event="sword" value1="0" value2="0" repeat="1" />
+    <_event id="29" x="80" y="736" width="16" height="16" event="bow" value1="0" value2="0" repeat="1" />
   </ActorsLayer>
 </level>
