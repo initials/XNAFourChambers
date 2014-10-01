@@ -37,6 +37,7 @@ namespace FourChambers
 
             FourChambers_Globals.readGameProgressToFile();
 
+            FlxG.colorFlickeringEnabled = false;
 
             events = new FlxGroup();
             add(events);
@@ -91,12 +92,13 @@ namespace FourChambers
 
             fadeIn = new FlxSprite(0,0);
             fadeIn.createGraphic(FlxG.width, FlxG.height, Color.Black);
+            fadeIn.setScrollFactors(0, 0);
             add(fadeIn);
 
 
-            logo = new FlxSprite(0, 0);
-            logo.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
-            add(logo);
+            //logo = new FlxSprite(0, 0);
+            //logo.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
+            //add(logo);
 
             //FlxG._game.hud.hudGroup.add(logo);
 
@@ -137,7 +139,7 @@ namespace FourChambers
                 if (t.visible == false)
                 {
                     t.setText("Go to Level " + FlxG.level.ToString());
-                    FlxG.play("sfx/Door", 0.75f);
+                    //FlxG.play("sfx/Door", 0.75f);
 
                 }
                 t.visible = true;
@@ -148,7 +150,7 @@ namespace FourChambers
                 if (t.visible == false)
                 {
                     t.setText(command);
-                    FlxG.play("sfx/Door", 0.75f);
+                    //FlxG.play("sfx/Door", 0.75f);
 
                 }
                 t.visible = true;
@@ -177,26 +179,26 @@ namespace FourChambers
 
         override public void update()
         {
-            if (elapsedInState > 1.0f)
+            //if (elapsedInState > 1.0f)
+            //{
+            //    if (logo.alpha >= 0.01f)
+            //        logo.alpha -= 0.01f;
+
+            //}
+            if (elapsedInState > 0.5f)
             {
-                if (logo.alpha >= 0.01f)
-                    logo.alpha -= 0.01f;
 
-            }
-            if (elapsedInState > 2.0f)
-            {
-
-                if (fadeIn.alpha >= 0.005f)
-                    fadeIn.alpha -= 0.005f;
+                if (fadeIn.alpha >= 0.05f)
+                    fadeIn.alpha -= 0.05f;
             }
 
-            //t.visible = false;
+            t.visible = false;
             FlxU.overlap(mActor, events, eventCallback);
             FlxU.collide(mActor, collisionMap);
 
             //int tile = map.getTile((int)(actor.x / 16), (int)(actor.y / 16));
 
-            if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f)
+            if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f && t.visible==true)
             {
                 FlxG.transition.startFadeOut(0.25f, 45, 120);
             }

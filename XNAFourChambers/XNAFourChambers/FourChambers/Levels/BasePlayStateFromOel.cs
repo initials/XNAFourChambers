@@ -1084,7 +1084,9 @@ namespace FourChambers
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
 
             FourChambers_Globals.treasuresCollected.Add(x);
-            FourChambers_Globals.treasuresCollectedPersistant.Add(x, 1);
+
+            if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(x)==false)
+                FourChambers_Globals.treasuresCollectedPersistant.Add(x, 1);
             
 
             if (x == 154 || x == 155 || x == 156 || x == 157)
