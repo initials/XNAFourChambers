@@ -19,7 +19,7 @@ namespace FourChambers
         public bool writeOn = false;
         private int writeOnChar = 0;
 
-        public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text)
+        public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text, int Style)
             : base(xPos, yPos, xWidth, yHeight)
         {
 
@@ -32,8 +32,15 @@ namespace FourChambers
             flxText.text = Text;
             flxText.setScrollFactors(0, 0);
 
+            string STRstyle = "";
+
+            if (Style <= 9)
+                STRstyle = "0" + Style.ToString();
+            else
+                STRstyle = Style.ToString();
+
             auto = FlxTileblock.HUDELEMENT;
-            loadTiles("ui/_sheet_window_18", 16, 16, 0);
+            loadTiles("ui/_sheet_window_" + STRstyle, 16, 16, 0);
 
             text = Text;
 

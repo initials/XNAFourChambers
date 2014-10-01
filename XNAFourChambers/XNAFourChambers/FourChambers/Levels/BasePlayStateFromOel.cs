@@ -219,6 +219,11 @@ namespace FourChambers
         private FlxSprite rightExitBlockerWall;
         private Door door;
         private FlxGroup doors;
+
+        private TextBox textBoxInfo;
+
+
+
         public void test()
         {
             levelAttrs = new Dictionary<string, string>();
@@ -626,10 +631,14 @@ namespace FourChambers
             add(bigEx);
             add(fireBalls);
 
-            LevelBeginText t = new LevelBeginText(0, 50, FlxG.width);
-            t.text = levelAttrs["levelName"];
+            //LevelBeginText t = new LevelBeginText(0, 50, FlxG.width);
+            //t.text = levelAttrs["levelName"];
+            //add(t);
 
-            add(t);
+            textBoxInfo = new TextBox(16, 16, FlxG.width - 32, 32, levelAttrs["levelName"], 8);
+            add(textBoxInfo);
+
+
 
             //if (FlxG.joystickBeingUsed) FlxG.mouse.hide();
             //else FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
@@ -1699,6 +1708,10 @@ namespace FourChambers
                 FlxG.setHudText(1, command);
                 FlxG.setHudTextScale(1, 2);
                 FlxG.setHudTextPosition(1, FlxG._game.hud.p1OriginalPosition.X, 20);
+
+                textBoxInfo.text = command;
+
+
             }
 
             #endregion

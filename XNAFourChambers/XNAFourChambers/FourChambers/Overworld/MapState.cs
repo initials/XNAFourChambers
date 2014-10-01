@@ -82,7 +82,7 @@ namespace FourChambers
                 }
             }
 
-            t = new TextBox(16, FlxG.height - 32, FlxG.width-32, 32, "...");
+            t = new TextBox(16, FlxG.height - 32, FlxG.width-32, 32, "...", 18);
             //t.writeOn = true;
             add(t);
 
