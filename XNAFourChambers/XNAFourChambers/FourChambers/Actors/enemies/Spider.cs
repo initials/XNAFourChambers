@@ -20,7 +20,7 @@ namespace FourChambers
             actorName = "Tarantulatis";
             score = 250;
             health = 35;
-            runSpeed = 120;
+            runSpeed = 25;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
