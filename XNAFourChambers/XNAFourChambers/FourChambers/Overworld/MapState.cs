@@ -57,7 +57,7 @@ namespace FourChambers
             collisionMap.loadMap(mapAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             add(collisionMap);
 
-            mActor = new MapActor(64, 64);
+            mActor = new MapActor((int)FourChambers_Globals.lastMapLocation.X, (int)FourChambers_Globals.lastMapLocation.Y);
             add(mActor);
 
             FlxG.follow(mActor, 10.0f);
@@ -210,6 +210,8 @@ namespace FourChambers
 
             if (FlxG.transition.complete)
             {
+
+                FourChambers_Globals.lastMapLocation = new Vector2(mActor.x, mActor.y);
                 FourChambers_Globals.startGame();
                 FlxG.state = new BasePlayStateFromOel();
                 return;

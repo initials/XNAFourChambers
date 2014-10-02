@@ -34,23 +34,75 @@ namespace FourChambers
 
             _bullets = Bullets;
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_50x50"), true, false, 50,50);
+            if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_MARKSMAN)
+            {
 
-            addAnimation("run", new int[] { 38,39,40,41,42,43,44,45,46,47 }, 12);
-            addAnimation("idle", new int[] { 38 }, 12);
-            addAnimation("idleMelee", new int[] { 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 73, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57}, 12);
-            addAnimation("attack", new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, 60 ,true);
-            addAnimation("attackMelee", new int[] { 0, 28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35,36,36,36,36,36,36}, 60, true);
-            
-            addAnimation("jump", new int[] {  39, 40, 41,42,43,44 }, 3, true);
-            addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
-            addAnimation("climb", new int[] { 20, 21,22,23,24,25,24,23,22,21 }, 24, true);
-            addAnimation("climbidle", new int[] { 20 }, 0, true);
-            addAnimation("death", new int[] { 26,27}, 4, false);
-            addAnimation("hurt", new int[] { 26, 27 }, 4, false);
+                loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_50x50"), true, false, 50, 50);
 
-            addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
-            addAnimation("idleRange", new int[] { 48,49,50,51,52,53,54,55,56 }, 12);
+                addAnimation("run", new int[] { 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 }, 12);
+                addAnimation("idle", new int[] { 38 }, 12);
+                addAnimation("idleMelee", new int[] { 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 73, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57 }, 12);
+                addAnimation("attack", new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }, 60, true);
+                addAnimation("attackMelee", new int[] { 0, 28, 28, 28, 29, 29, 29, 30, 30, 30, 31, 31, 31, 32, 32, 32, 33, 33, 33, 34, 34, 34, 35, 35, 35, 36, 36, 36, 36, 36, 36 }, 60, true);
+
+                addAnimation("jump", new int[] { 39, 40, 41, 42, 43, 44 }, 3, true);
+                addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
+                addAnimation("climb", new int[] { 20, 21, 22, 23, 24, 25, 24, 23, 22, 21 }, 24, true);
+                addAnimation("climbidle", new int[] { 20 }, 0, true);
+                addAnimation("death", new int[] { 26, 27 }, 4, false);
+                addAnimation("hurt", new int[] { 26, 27 }, 4, false);
+
+                addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
+                addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
+            }
+            else if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_MISTRESS)
+            {
+
+                loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Mistress_50x50"), true, false, 50, 50);
+
+                addAnimation("run", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 12);
+                addAnimation("walk", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 8);
+                addAnimation("idle", new int[] { 0 }, 12);
+                addAnimation("attack", new int[] { 0, 1, 2, 3, 4, 5, 6, 6, 6, 0 }, 30, true);
+                addAnimation("hurt", new int[] { 17 }, 12);
+                addAnimation("death", new int[] { 17 }, 12);
+
+
+                // Fix these.
+                addAnimation("idleMelee", new int[] { 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 73, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57 }, 12);
+                addAnimation("attackMelee", new int[] { 0, 28, 28, 28, 29, 29, 29, 30, 30, 30, 31, 31, 31, 32, 32, 32, 33, 33, 33, 34, 34, 34, 35, 35, 35, 36, 36, 36, 36, 36, 36 }, 60, true);
+                addAnimation("jump", new int[] { 39, 40, 41, 42, 43, 44 }, 3, true);
+                addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
+                addAnimation("climb", new int[] { 20, 21, 22, 23, 24, 25, 24, 23, 22, 21 }, 24, true);
+                addAnimation("climbidle", new int[] { 20 }, 0, true);
+                addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
+                addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
+            }
+            else if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_WARLOCK)
+            {
+
+                loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
+
+                addAnimation("run", new int[] { 5, 6, 7, 8, 9 }, 12);
+                addAnimation("walk", new int[] { 5, 6, 7, 8, 9 }, 12);
+                addAnimation("idle", new int[] { 0, 1, 2, 3 }, 12);
+                addAnimation("attack", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 30);
+
+
+                //Fix these...
+                addAnimation("idleMelee", new int[] { 0, 1, 2, 3 }, 12);
+                addAnimation("attackMelee", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 60, true);
+                addAnimation("jump", new int[] { 5,6,7 }, 3, true);
+                addAnimation("jumpRange", new int[] { 5, 6, 7 }, 3, true);
+                addAnimation("climb", new int[] { 0 }, 24, true);
+                addAnimation("climbidle", new int[] { 0 }, 0, true);
+                addAnimation("death", new int[] { 0 }, 4, false);
+                addAnimation("hurt", new int[] { 0 }, 4, false);
+                addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
+                addAnimation("idleRange", new int[] { 0 }, 12);
+            }
+
+
             addAnimationCallback(footstep);
 
             //bounding box tweaks

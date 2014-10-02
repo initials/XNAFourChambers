@@ -802,6 +802,11 @@ namespace FourChambers
             localHud.score.text = "$" + FlxG.score.ToString();
             localHud.healthText.text = playerControlledActors.members[0].health.ToString();
 
+            if (elapsedInState > 3.0f)
+            {
+                textBoxInfo.x++;
+
+            }
 
             if (marksman != null)
             {

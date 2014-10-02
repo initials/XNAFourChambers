@@ -205,11 +205,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="fourchambers\characterSpriteSheets\Spider_20x20.png">
-      <Name>Spider_20x20</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="fourchambers\characterSpriteSheets\Succubus_ss_35x30.png">
       <Name>Succubus_ss_35x30</Name>
       <Importer>TextureImporter</Importer>
@@ -824,9 +819,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="fourchambers\characterSpriteSheets\Spider_50x50.csv">
-      <Name>Spider_50x50</Name>
-    </Resource>
+    <Compile Include="fourchambers\characterSpriteSheets\Mistress_50x50.png">
+      <Name>Mistress_50x50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fourchambers\characterSpriteSheets\Warlock_50x50.png">
+      <Name>Warlock_50x50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fourchambers\Arrow_50x50.png">
+      <Name>Arrow_50x50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

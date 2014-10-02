@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using org.flixel;
-
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 namespace FourChambers
 {
     public class FourChambers_Globals
@@ -122,6 +124,8 @@ namespace FourChambers
         public static float health = 3;
 
         public static bool invincible = false;
+
+        public static Vector2 lastMapLocation = new Vector2(64, 64); 
 
         /// <summary>
         /// Allows the FlxConsole to run commands.
