@@ -9,6 +9,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
+    /* FlxSprite > Base Actor > Actor > Marksman
+     *                        > EnemyActor > Bat
+     * 
+     * 
+     * 
+     * 
+     */ 
     public class BaseActor : FlxSprite
     {
         /// <summary>
