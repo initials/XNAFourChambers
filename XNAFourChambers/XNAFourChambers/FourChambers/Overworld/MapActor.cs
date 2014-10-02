@@ -20,6 +20,7 @@ namespace FourChambers
 {
     class MapActor : FlxSprite
     {
+        float runSpeed;
 
         public MapActor(int xPos, int yPos)
             : base(xPos, yPos)
@@ -35,11 +36,14 @@ namespace FourChambers
 
             play("idle");
 
-            setDrags(120, 120);
+            setDrags(320, 320);
 
             width = 8;
             height = 2;
             setOffset(4, 14);
+
+            runSpeed = 90;
+
         }
 
         override public void update()
@@ -54,23 +58,23 @@ namespace FourChambers
 
             if (FlxControl.UP)
             {
-                this.velocity.Y = -40;
+                this.velocity.Y = runSpeed * -1;
                 play("walkUp");
             }
             else if (FlxControl.DOWN)
             {
-                this.velocity.Y = 40;
+                this.velocity.Y = runSpeed;
                 play("walkDown");
             }
             else if (FlxControl.LEFT)
             {
-                this.velocity.X = -40;
+                this.velocity.X = runSpeed * -1;
                 play("walkRight");
                 facing = Flx2DFacing.Left;
             }
             else if (FlxControl.RIGHT)
             {
-                this.velocity.X = 40;
+                this.velocity.X = runSpeed;
                 play("walkRight");
                 facing = Flx2DFacing.Right;
             }
