@@ -133,12 +133,15 @@ namespace FourChambers
 
 
 
-            ((FlxSprite)(powerups.members[current])).scale = tween.Position;
+            
+
 
             if (tween.hasEnded )
             {
                 if (current < powerups.members.Count - 1)
                 {
+                    ((FlxSprite)(powerups.members[current])).scale = tween.Position;
+                    //Console.WriteLine("Current {0} Count {1}", current, powerups.members.Count);
 
                     if (((FlxSprite)( powerups.members[current])).color==Color.White) 
                         FlxG.play("sfx/Pickup_Coin");

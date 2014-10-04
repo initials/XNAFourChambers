@@ -1,4 +1,10 @@
-﻿x=320
+﻿x=1280
+y=720
+fullscreen=0
+zoom=4
+
+
+x=320
 y=180
 fullscreen=0
 zoom=1

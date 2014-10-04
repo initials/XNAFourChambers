@@ -804,7 +804,7 @@ namespace FourChambers
 
             if (elapsedInState > 3.0f)
             {
-                textBoxInfo.x++;
+                textBoxInfo.y -= 5; ;
 
             }
 
