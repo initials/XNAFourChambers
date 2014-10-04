@@ -1,4 +1,17 @@
-﻿x=1650
+﻿x=320
+y=180
+fullscreen=0
+zoom=1
+
+
+x=//Full Screen
+y=//Full Screen
+fullscreen=1
+zoom=4
+
+
+
+x=1650
 y=1050
 fullscreen=1
 zoom=4
@@ -9,10 +22,7 @@ fullscreen=0
 zoom=4
 
 
-x=320
-y=180
-fullscreen=0
-zoom=1
+
 
 
 

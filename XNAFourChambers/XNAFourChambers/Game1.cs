@@ -36,7 +36,14 @@ namespace Loader_Four
             FlxG.resolutionWidth = Convert.ToInt32(splitter[0].Substring(2));
             FlxG.resolutionHeight = Convert.ToInt32(splitter[1].Substring(2));
             if (splitter[2].Substring(11).StartsWith("1"))
+            {
                 FlxG.fullscreen = true;
+
+                FlxG.resolutionWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+
+                FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+
+            }
             FlxG.zoom = Convert.ToInt32(splitter[3].Substring(5));
 
 
@@ -46,8 +53,8 @@ namespace Loader_Four
 
             if (FlxG.fullscreen)
             {
-                //resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-                //resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+                //int resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+                //int resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
                 if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
                 {
                     //if user has it set to widescreen, let's make sure this
