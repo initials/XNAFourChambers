@@ -133,7 +133,7 @@ namespace FourChambers
 
 
 
-                  c      ((FlxSprite)(powerups.members[current])).scale = tween.Position;
+            ((FlxSprite)(powerups.members[current])).scale = tween.Position;
 
             if (tween.hasEnded )
             {
