@@ -103,11 +103,11 @@
   <ActorsLayer>
     <_event id="0" x="48" y="96" width="16" height="16" event="Change Name" value1="1" value2="0" repeat="-1" />
     <_event id="1" x="112" y="80" width="16" height="16" event="Credits" value1="2" value2="0" repeat="-1" />
-    <_event id="2" x="336" y="144" width="16" height="16" event="level" value1="2" value2="0" repeat="-1" />
-    <_event id="5" x="224" y="96" width="16" height="16" event="level" value1="1" value2="0" repeat="-1" />
+    <_event id="2" x="336" y="128" width="32" height="48" event="level" value1="2" value2="0" repeat="-1" />
+    <_event id="5" x="208" y="80" width="48" height="32" event="level" value1="1" value2="0" repeat="-1" />
     <_event id="7" x="80" y="80" width="16" height="16" event="Multiplayer" value1="0" value2="0" repeat="-1" />
     <_event id="8" x="160" y="176" width="16" height="16" event="quake" value1="0" value2="0" repeat="-1" />
-    <_event id="3" x="480" y="128" width="16" height="16" event="level" value1="3" value2="0" repeat="-1" />
+    <_event id="3" x="464" y="112" width="48" height="32" event="level" value1="3" value2="0" repeat="-1" />
     <_event id="4" x="672" y="192" width="16" height="16" event="level" value1="4" value2="0" repeat="-1" />
     <_event id="6" x="560" y="320" width="16" height="16" event="level" value1="5" value2="0" repeat="-1" />
     <_event id="9" x="416" y="416" width="16" height="16" event="level" value1="6" value2="0" repeat="-1" />
@@ -117,7 +117,7 @@
     <_event id="13" x="576" y="448" width="16" height="16" event="level" value1="10" value2="0" repeat="-1" />
     <_event id="14" x="128" y="544" width="16" height="16" event="level" value1="11" value2="0" repeat="-1" />
     <_event id="15" x="224" y="640" width="16" height="16" event="level" value1="12" value2="0" repeat="-1" />
-    <_event id="16" x="144" y="352" width="16" height="16" event="level" value1="13" value2="0" repeat="-1" />
+    <_event id="16" x="128" y="336" width="48" height="32" event="level" value1="13" value2="0" repeat="-1" />
     <_event id="17" x="672" y="672" width="16" height="16" event="level" value1="14" value2="0" repeat="-1" />
     <_event id="18" x="448" y="528" width="16" height="16" event="level" value1="15" value2="0" repeat="-1" />
     <_event id="19" x="320" y="352" width="16" height="16" event="level" value1="16" value2="0" repeat="-1" />
