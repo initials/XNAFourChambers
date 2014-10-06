@@ -492,21 +492,21 @@ namespace FourChambers
 
             grass.at(this);
             
-            grass.x -= 7;
+            grass.x -= 9;
             grass.y -= 2;
             
             grass.update();
 
             if ((onFloor && Math.Abs(velocity.X) > 0))
             {
-                grass.start(false, 0.01f, 22);
+                grass.start(false, 0.01f, 2);
                 Console.WriteLine("On Floor");
 
                 
             }
             else if (_wasInAir && onFloor)
             {
-                grass.start();
+                grass.start(true, 0.5f, 12);
                 Console.WriteLine("On Floor/Was in Air");
 
 
