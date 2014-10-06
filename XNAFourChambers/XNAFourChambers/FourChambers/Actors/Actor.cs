@@ -159,6 +159,8 @@ namespace FourChambers
 
         public string lastAttack = "range";
 
+        public FlxEmitter grass;
+        private bool _wasInAir = false;
 
         /// <summary>
         /// An actor at x,y
@@ -178,6 +180,15 @@ namespace FourChambers
 
             isPlayerControlled = false;
             health = FourChambers_Globals.health;
+
+            grass = new FlxEmitter(xPos, yPos);
+            grass.createSprites("fourchambers/grassParticles", 50, true, 0.0f, 0.0f);
+            grass.setXSpeed(-10, 10);
+            grass.setYSpeed(-20, 0);
+            grass.start(false, 0.01f,1);
+            grass.setSize(10, 1);
+            grass.gravity = 22;
+
         }
 
         public void stopAttacking(string Name, uint Frame, int FrameIndex)
@@ -479,10 +490,44 @@ namespace FourChambers
             //ANIMATION
             updateAnims();
 
+            grass.at(this);
+            
+            grass.x +=10;
+            grass.y -= 2;
+            
+            grass.update();
+
+            if (onFloor && Math.Abs(velocity.X)>0)
+            {
+                grass.start(false, 0.01f, 2);
+            }
+            else
+            {
+                grass.stop();
+            }
+
+
+
+            
+            if (framesSinceLeftGround > 1)
+            {
+                _wasInAir = true;
+            }
+
+
             base.update();
+
+            if (_wasInAir && framesSinceLeftGround == 0)
+            {
+                grass.start(false, 0.01f, 8);
+
+            }
+            
 
             if (canClimbLadder == false) isClimbingLadder = false;
             canClimbLadder = false;
+
+            _wasInAir = false;
 
         }
 
@@ -537,6 +582,14 @@ namespace FourChambers
 
             //base.kill();
 
+        }
+
+        public override void render(SpriteBatch spriteBatch)
+        {
+            
+
+            base.render(spriteBatch);
+            grass.render(spriteBatch);
         }
 
 
