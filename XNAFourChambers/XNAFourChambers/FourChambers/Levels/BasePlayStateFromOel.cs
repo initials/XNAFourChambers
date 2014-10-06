@@ -222,7 +222,7 @@ namespace FourChambers
 
         private TextBox textBoxInfo;
 
-
+        private FlxGroup dangers;
 
         public void test()
         {
@@ -319,6 +319,7 @@ namespace FourChambers
             eventSprites = new FlxGroup();
             fireBalls = new FlxGroup();
             doors = new FlxGroup();
+            dangers = new FlxGroup();
 
 
             bigEx = new BigExplosion(-1000, -1000);
@@ -592,7 +593,8 @@ namespace FourChambers
             add(doors);
             add(actors);
             add(powerUps);
-            
+            add(dangers);
+
 
             if (seraphine == null)
             {
@@ -917,6 +919,9 @@ namespace FourChambers
             if (seraphine.dead) FlxU.collide(seraphine, allLevelTiles);
             FlxU.collide(fireBalls, allLevelTiles);
 
+            FlxU.overlap(actors, dangers, overlappedWithDanger);
+
+
             if (powerUpThrower != null)
             {
                 PowerUp p = ( (PowerUp)(powerUps.getFirstDead()));
@@ -1223,7 +1228,12 @@ namespace FourChambers
             return true;
         }
 
+        protected bool overlappedWithDanger(object Sender, FlxSpriteCollisionEvent e)
+        {
+            e.Object1.hurt(200000);
 
+            return true;
+        }
         /// <summary>
         /// e1=actors,
         /// e2=bullets
@@ -2944,7 +2954,7 @@ namespace FourChambers
             if (ActorType == "spikes")
             {
                 Spike spike = new Spike(x, y, width,height);
-                add(spike);
+                dangers.add(spike);
 
             }
         }
