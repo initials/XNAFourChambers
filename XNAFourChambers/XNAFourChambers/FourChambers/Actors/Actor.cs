@@ -186,7 +186,7 @@ namespace FourChambers
             grass.setXSpeed(-10, 10);
             grass.setYSpeed(-20, 0);
             grass.start(false, 0.01f,1);
-            grass.setSize(10, 1);
+            grass.setSize(5, 1);
             grass.gravity = 22;
 
         }
@@ -492,14 +492,22 @@ namespace FourChambers
 
             grass.at(this);
             
-            grass.x +=10;
+            grass.x -= 7;
             grass.y -= 2;
             
             grass.update();
 
-            if (onFloor && Math.Abs(velocity.X)>0)
+            if ((onFloor && Math.Abs(velocity.X) > 0))
             {
-                grass.start(false, 0.01f, 2);
+                grass.start(false, 0.01f, 22);
+                
+            }
+            else if (_wasInAir && onFloor)
+            {
+                grass.start(false, 0.01f, 22);
+
+
+                _wasInAir = false;
             }
             else
             {
@@ -508,26 +516,26 @@ namespace FourChambers
 
 
 
-            
+
+
             if (framesSinceLeftGround > 1)
             {
                 _wasInAir = true;
             }
-
-
             base.update();
 
-            if (_wasInAir && framesSinceLeftGround == 0)
-            {
-                grass.start(false, 0.01f, 8);
+            // Just landed.
+            //if (_wasInAir && framesSinceLeftGround == 2)
+            //{
+            //    _wasInAir = false;
 
-            }
+            //}
             
 
             if (canClimbLadder == false) isClimbingLadder = false;
             canClimbLadder = false;
 
-            _wasInAir = false;
+
 
         }
 
