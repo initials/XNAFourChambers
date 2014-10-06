@@ -519,7 +519,12 @@ namespace FourChambers
                 //        buildActor("warlock", 1, true, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
                 //    }
                 //}
+                if (nodes["Name"] == "spikes")
+                {
 
+                    buildActor("spikes", 1, true, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), localWidth, localHeight, PX, PY, PT, PS, PC);
+               
+                }
                 if (nodes["Name"] == "_event")
                 {
                     buildEvent(Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]), Convert.ToInt32(nodes["repeat"]), nodes["event"]);
@@ -2936,7 +2941,12 @@ namespace FourChambers
             }
 
             #endregion
+            if (ActorType == "spikes")
+            {
+                Spike spike = new Spike(x, y, width,height);
+                add(spike);
 
+            }
         }
     }
 }

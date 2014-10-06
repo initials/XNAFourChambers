@@ -232,6 +232,7 @@
     <Compile Include="FourChambers\Cutscenes\CutsceneState.cs" />
     <Compile Include="FourChambers\Dangers\FireBall.cs" />
     <Compile Include="FourChambers\Dangers\FireThrower.cs" />
+    <Compile Include="FourChambers\Dangers\Spike.cs" />
     <Compile Include="FourChambers\DataEntryState.cs" />
     <Compile Include="FourChambers\Environment\Firefly.cs" />
     <Compile Include="FourChambers\EventSprite.cs" />
