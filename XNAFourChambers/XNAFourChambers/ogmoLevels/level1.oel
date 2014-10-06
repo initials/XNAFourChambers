@@ -125,7 +125,7 @@
     <unicorn id="10" x="656" y="192" flip="False" />
     <ladder id="28" x="784" y="688" height="64" />
     <spider id="0" x="368" y="736" flip="False" />
-    <_event id="12" x="320" y="688" width="128" height="64" event="spider" value1="0" value2="0" repeat="1" />
+    <_event id="12" x="240" y="656" width="208" height="96" event="spider" value1="0" value2="0" repeat="1" />
     <_event id="30" x="112" y="736" width="16" height="16" event="start" value1="0" value2="0" repeat="1" />
     <spikes id="1" x="1248" y="448" width="64" height="16" />
     <spikes id="3" x="1376" y="448" width="80" height="16" />
@@ -135,5 +135,7 @@
     <spikes id="31" x="1200" y="736" width="48" height="16" />
     <spikes id="32" x="1296" y="736" width="32" height="16" />
     <fireThrower id="33" x="1264" y="656" shootEvery="1" angleCounter="0" />
+    <_event id="34" x="128" y="688" width="112" height="64" event="You'll need a weapon before you can do any damage." value1="0" value2="0" repeat="-1" />
+    <_event id="35" x="848" y="400" width="32" height="32" event="quake" value1="0" value2="0" repeat="1" />
   </ActorsLayer>
 </level>

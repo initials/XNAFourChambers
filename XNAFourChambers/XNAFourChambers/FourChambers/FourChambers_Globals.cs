@@ -125,7 +125,7 @@ namespace FourChambers
 
         public static bool invincible = false;
 
-        public static Vector2 lastMapLocation = new Vector2(64, 64); 
+        public static Vector2 lastMapLocation = new Vector2(80, 122);
 
         /// <summary>
         /// Allows the FlxConsole to run commands.

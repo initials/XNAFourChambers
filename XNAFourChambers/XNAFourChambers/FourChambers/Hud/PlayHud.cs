@@ -15,6 +15,8 @@ namespace FourChambers
 {
     class PlayHud : FlxGroup
     {
+        public FlxBar bar;
+
         /// <summary>
         /// use setArrowsRemaining(Member)
         /// </summary>
@@ -37,6 +39,8 @@ namespace FourChambers
         private float ypos;
 
         public LevelBeginText comboOnScreen;
+        public FlxSprite hudGraphic;
+
 
         public PlayHud()
         {
@@ -51,7 +55,7 @@ namespace FourChambers
 
 			#endif
 
-            FlxSprite hudGraphic = new FlxSprite(0,0, FlxG.Content.Load<Texture2D>("fourchambers/hudElements"));
+            hudGraphic = new FlxSprite(0,0, FlxG.Content.Load<Texture2D>("fourchambers/hudElements"));
             hudGraphic.scrollFactor.X = 0;
             hudGraphic.scrollFactor.Y = 0;
             hudGraphic.scale = 2;
@@ -110,6 +114,19 @@ namespace FourChambers
             comboOnScreen.limit = 1.2f;
             //comboOnScreen.setScrollFactors(0,0);
             add(comboOnScreen);
+
+            bar = new FlxBar(20, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 4, false);
+            bar.loadCustomEmptyGraphic("ui/bar_01");
+            //bar.loadCustomFilledGraphic("ui/bar_04");
+            bar.emptyBar.setScrollFactors(0, 0);
+            //bar.emptyBar.scale = 3;
+            bar.filledBar.setScrollFactors(0, 0);
+            //bar.filledBar.scale = 3;
+
+
+
+            add(bar);
+
 
 
         }

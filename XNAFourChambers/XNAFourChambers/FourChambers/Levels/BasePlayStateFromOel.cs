@@ -725,6 +725,8 @@ namespace FourChambers
         {
             runCheat();
 
+            localHud.hudGraphic.health = playerControlledActors.members[0].health;
+
             #region debugLevelSkip
             if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug && timeOfDay > 2.0f)
             {
@@ -880,6 +882,10 @@ namespace FourChambers
             if (!ev)
             {
                 FlxG.setHudText(1, "");
+
+
+
+
             }
 
             //collides
@@ -1726,12 +1732,12 @@ namespace FourChambers
             }
             else
             {
-                FlxG.setHudText(1, command);
-                FlxG.setHudTextScale(1, 2);
-                FlxG.setHudTextPosition(1, FlxG._game.hud.p1OriginalPosition.X, 20);
+                //FlxG.setHudText(1, command);
+                //FlxG.setHudTextScale(1, 2);
+                //FlxG.setHudTextPosition(1, FlxG._game.hud.p1OriginalPosition.X, 20);
 
-                textBoxInfo.text = command;
-
+                textBoxInfo.y = 16;
+                textBoxInfo.setText(command);
 
             }
 
