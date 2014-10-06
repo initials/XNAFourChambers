@@ -500,11 +500,14 @@ namespace FourChambers
             if ((onFloor && Math.Abs(velocity.X) > 0))
             {
                 grass.start(false, 0.01f, 22);
+                Console.WriteLine("On Floor");
+
                 
             }
             else if (_wasInAir && onFloor)
             {
-                grass.start(false, 0.01f, 22);
+                grass.start();
+                Console.WriteLine("On Floor/Was in Air");
 
 
                 _wasInAir = false;
