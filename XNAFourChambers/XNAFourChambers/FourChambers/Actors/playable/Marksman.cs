@@ -62,21 +62,20 @@ namespace FourChambers
 
                 addAnimation("run", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 12);
                 addAnimation("walk", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 8);
-                addAnimation("idle", new int[] { 0 }, 12);
-                addAnimation("attack", new int[] { 0, 1, 2, 3, 4, 5, 6, 6, 6, 0 }, 30, true);
-                addAnimation("hurt", new int[] { 17 }, 12);
-                addAnimation("death", new int[] { 17 }, 12);
+                addAnimation("jump", new int[] { 7 }, 12);
 
+                addAnimation("runRange", new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, 12);
+                addAnimation("walkRange", new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, 8);
+                addAnimation("jumpRange", new int[] { 25 }, 12);
 
-                // Fix these.
-                addAnimation("idleMelee", new int[] { 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 73, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57 }, 12);
-                addAnimation("attackMelee", new int[] { 0, 28, 28, 28, 29, 29, 29, 30, 30, 30, 31, 31, 31, 32, 32, 32, 33, 33, 33, 34, 34, 34, 35, 35, 35, 36, 36, 36, 36, 36, 36 }, 60, true);
-                addAnimation("jump", new int[] { 39, 40, 41, 42, 43, 44 }, 3, true);
-                addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
+                addAnimation("idleMelee", new int[] { 0 }, 12);
+                addAnimation("attackMelee", new int[] { 0, 1, 2, 3, 4, 5, 6, 6, 6, 0 }, 30, true);
+                addAnimation("hurt", new int[] { 17, 18, 19, 20, 21, 22, 23, 24 }, 12);
+                addAnimation("death", new int[] { 17, 18, 19, 20, 21, 22, 23, 24 }, 12);
+
                 addAnimation("climb", new int[] { 20, 21, 22, 23, 24, 25, 24, 23, 22, 21 }, 24, true);
                 addAnimation("climbidle", new int[] { 20 }, 0, true);
-                addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
-                addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
+
             }
             else if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_WARLOCK)
             {

@@ -840,14 +840,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ui\BetterPixels.spritefont">
-      <Name>BetterPixels</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <SubType>Designer</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="text\" />
   </ItemGroup>
   <ItemGroup>

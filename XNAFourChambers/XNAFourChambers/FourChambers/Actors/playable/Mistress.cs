@@ -37,22 +37,31 @@ namespace FourChambers
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Mistress_ss_35x22"), true, false, 35, 22);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Mistress_50x50"), true, false, 50, 50);
 
             addAnimation("run", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 12);
             addAnimation("walk", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 8);
+            addAnimation("jump", new int[] { 7 }, 12);
+
+            addAnimation("runRange", new int[] { 25,26,27,28,29,30,31,32,33,34 }, 12);
+            addAnimation("walkRange", new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, 8);
+            addAnimation("jump", new int[] { 25 }, 12);
+
             addAnimation("idle", new int[] { 0 }, 12);
             addAnimation("attack", new int[] { 0, 1, 2, 3, 4, 5, 6, 6,6,0 }, 30, true);
-            addAnimation("hurt", new int[] { 17 }, 12);
-            addAnimation("death", new int[] { 17 }, 12);
+            addAnimation("hurt", new int[] { 17,18,19,20,21,22,23,24 }, 12);
+            addAnimation("death", new int[] { 17, 18, 19, 20, 21, 22, 23, 24 }, 12);
 
             play("idle");
 
             //bounding box tweaks
-            width = 9;
+            width = 10;
             height = 16;
-            offset.X = 13;
-            offset.Y = 6;
+
+            setOffset(20, 34);
+
+            //offset.X = 20;
+            //offset.Y = 6;
 
 
             whipHitBox = new MeleeHitBox(xPos, yPos);
