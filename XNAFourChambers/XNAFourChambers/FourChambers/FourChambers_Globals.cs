@@ -105,6 +105,8 @@ namespace FourChambers
         /// </summary>
         public static int arrowPower = 1;
 
+        public static int swordPower = 1;
+
         /// <summary>
         /// A list of available level numbers. 
         /// Levels are removed as they are played, making the List smaller.

@@ -109,7 +109,6 @@
     <zingernest id="5" x="512" y="592" />
     <zingernest id="6" x="432" y="512" />
     <zingernest id="7" x="176" y="432" />
-    <door id="9" x="464" y="688" levelToGoTo="3" />
     <door id="10" x="624" y="224" levelToGoTo="10" />
     <fallAwayBridge id="8" x="272" y="640" width="80" />
     <seraphine id="11" x="1280" y="608" flip="False" />

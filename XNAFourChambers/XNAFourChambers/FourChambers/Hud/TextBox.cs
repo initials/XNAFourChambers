@@ -48,10 +48,14 @@ namespace FourChambers
 
         public void setText(string Text)
         {
-            if (Text.Length > 20)
+            string newText = Text;
+
+            if (newText.Length > 45)
             {
-                Text.Insert(20, "\n");
+                newText = newText.Insert(45, "\n");
             }
+
+            //Console.WriteLine(newText); 
 
             if (writeOn == true)
             {
@@ -60,7 +64,7 @@ namespace FourChambers
             }
             else
             {
-                flxText.text = Text;
+                flxText.text = newText;
             }
         }
 

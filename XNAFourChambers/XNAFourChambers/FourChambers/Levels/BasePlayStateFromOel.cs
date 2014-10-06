@@ -725,8 +725,6 @@ namespace FourChambers
         {
             runCheat();
 
-            localHud.hudGraphic.health = playerControlledActors.members[0].health;
-
             #region debugLevelSkip
             if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug && timeOfDay > 2.0f)
             {

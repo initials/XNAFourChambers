@@ -15,8 +15,6 @@ namespace FourChambers
 {
     class PlayHud : FlxGroup
     {
-        public FlxBar bar;
-
         /// <summary>
         /// use setArrowsRemaining(Member)
         /// </summary>
@@ -115,17 +113,14 @@ namespace FourChambers
             //comboOnScreen.setScrollFactors(0,0);
             add(comboOnScreen);
 
-            bar = new FlxBar(20, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 4, false);
-            bar.loadCustomEmptyGraphic("ui/bar_01");
-            //bar.loadCustomFilledGraphic("ui/bar_04");
-            bar.emptyBar.setScrollFactors(0, 0);
-            //bar.emptyBar.scale = 3;
-            bar.filledBar.setScrollFactors(0, 0);
-            //bar.filledBar.scale = 3;
-
-
-
-            add(bar);
+            //bar = new FlxBar(20, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 4, false);
+            //bar.loadCustomEmptyGraphic("ui/bar_01");
+            ////bar.loadCustomFilledGraphic("ui/bar_04");
+            //bar.emptyBar.setScrollFactors(0, 0);
+            ////bar.emptyBar.scale = 3;
+            //bar.filledBar.setScrollFactors(0, 0);
+            ////bar.filledBar.scale = 3;
+            //add(bar);
 
 
 

@@ -110,7 +110,6 @@
     <drone id="8" x="304" y="144" flip="False" />
     <drone id="9" x="224" y="528" flip="False" />
     <zinger id="10" x="480" y="640" flip="False" pathType="FORWARD" pathSpeed="100" />
-    <door id="12" x="48" y="736" levelToGoTo="3" />
     <door id="13" x="720" y="736" levelToGoTo="6" />
     <door id="14" x="176" y="112" levelToGoTo="10" />
     <vampire id="6" x="496" y="464" flip="False" />
