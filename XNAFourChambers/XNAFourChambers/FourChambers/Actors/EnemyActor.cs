@@ -168,8 +168,11 @@ namespace FourChambers
             acceleration.Y = FourChambers_Globals.GRAVITY;
             frameCount = 0;
 
-            healthBar = new FlxBar(0, 0, FlxBar.FILL_LEFT_TO_RIGHT, 10, 2, this, "health", 0, health, true);
-            
+            healthBar = new FlxBar(-5, 0, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, this, "health", 0, health, true);
+            healthBar.loadCustomEmptyGraphic("ui/bar_02");
+            healthBar.emptyBar.offset.X = 2;
+            healthBar.emptyBar.offset.Y = 3;
+
         }
 
 
