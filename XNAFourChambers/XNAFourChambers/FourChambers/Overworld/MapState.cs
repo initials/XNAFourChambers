@@ -210,10 +210,34 @@ namespace FourChambers
 
             if (FlxG.transition.complete)
             {
-
                 FourChambers_Globals.lastMapLocation = new Vector2(mActor.x, mActor.y);
                 FourChambers_Globals.startGame();
-                FlxG.state = new BasePlayStateFromOel();
+                if (FlxG.level == -4)
+                {
+                    FlxG.level = 104;
+                    FlxG.score = 0;
+                    FlxG.hideHud();
+                    
+                    FlxG.state = new MultiPlayerCharacterSelect();
+                    
+                }
+                else if (FlxG.level == -5)
+                {
+#if !__ANDROID__
+                    FlxG.transition.resetAndStop();
+                    FlxG.state = new FourChambers.DataEntryState();
+#endif
+                }
+                else if (FlxG.level == -3)
+                {
+                    FlxG.state = new Credits();
+                }
+                else
+                {
+
+
+                    FlxG.state = new BasePlayStateFromOel();
+                }
                 return;
             }
 

@@ -138,7 +138,7 @@ namespace FourChambers
             FlxG.score = 0;
             FlxG.hideHud();
 
-            FlxG.state = new GameSelectionMenuState();
+            FlxG.state = new MapState();
             return;
         }
 

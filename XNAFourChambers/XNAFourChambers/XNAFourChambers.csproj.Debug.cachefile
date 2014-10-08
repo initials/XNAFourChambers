@@ -37,6 +37,8 @@ Content\initials\autotiles_16x16.xnb
 Content\initials\autotiles_alt.xnb
 Content\flixel\autotiles_16x16.xnb
 Content\flixel\autotiles_alt_16x16.xnb
+Content\flixel\vcr\cheat_off.xnb
+Content\surt\spaceship_32x32.xnb
 Content\flixel\beep.xnb
 Content\flixel\flixel.xnb
 Content\initials\initials_empire_tagtone1.xnb
@@ -50,8 +52,6 @@ Content\initials\SpaceMarine.xnb
 Content\fx\BloomCombine.xnb
 Content\fx\BloomExtract.xnb
 Content\fx\GaussianBlur.xnb
-Content\flixel\vcr\cheat_off.xnb
-Content\surt\spaceship_32x32.xnb
 Content\surt\race_or_die.xnb
 Content\initials\crate_80x60.xnb
 Content\initials\initialsLogoGameboy.xnb
@@ -170,6 +170,7 @@ Content\fourchambers\characterSpriteSheets\Vampire_50x50.xnb
 Content\fourchambers\characterSpriteSheets\Marksman_50x50.xnb
 Content\fourchambers\auto_surt2_16x16.xnb
 Content\fourchambers\Door_32x32.xnb
+Content\fourchambers\blowharder.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -187,7 +188,7 @@ Content\sfx\Door.xnb
 Content\sfx\bat.xnb
 Content\sfx\harvesterAttack.xnb
 Content\sfx\RatJump.xnb
-Content\fourchambers\blowharder.xnb
+Content\fourchambers\characterSpriteSheets\Spider_50x50.xnb
 Content\ui\_sheet_window_01.xnb
 Content\ui\_sheet_window_02.xnb
 Content\ui\_sheet_window_03.xnb
@@ -209,7 +210,6 @@ Content\ui\_sheet_window_19.xnb
 Content\ui\_sheet_window_20.xnb
 Content\sfx\HitGround.xnb
 Content\sfx\HitGround2.xnb
-Content\fourchambers\characterSpriteSheets\Spider_50x50.xnb
 Content\fourchambers\blowharderCharacter.xnb
 Content\fourchambers\characterSpriteSheets\Mistress_50x50.xnb
 Content\fourchambers\characterSpriteSheets\Warlock_50x50.xnb
@@ -281,6 +281,10 @@ Content\initials\autotiles_alt.xnb
 Content\flixel\autotiles_16x16.xnb
 Content\flixel\autotiles_alt_16x16.xnb
 Content\flixel\vcr\cheat_off.xnb
+Content\surt\spaceship_32x32.xnb
+Content\surt\race_or_die.xnb
+Content\initials\crate_80x60.xnb
+Content\initials\initialsLogoGameboy.xnb
 Content\flixel\beep.xnb
 Content\flixel\flixel.xnb
 Content\initials\initials_empire_tagtone1.xnb
@@ -291,13 +295,9 @@ Content\initials\FourChambers_IntroTag_03.xnb
 Content\flixel\deffont.xnb
 Content\initials\Munro.xnb
 Content\initials\SpaceMarine.xnb
-Content\surt\spaceship_32x32.xnb
 Content\fx\BloomCombine.xnb
 Content\fx\BloomExtract.xnb
 Content\fx\GaussianBlur.xnb
-Content\surt\race_or_die.xnb
-Content\initials\crate_80x60.xnb
-Content\initials\initialsLogoGameboy.xnb
 Content\oga\GoldCoin.xnb
 Content\buttons\Map360Gameboy.xnb
 Content\buttons\MapOuyaGameboy.xnb
@@ -343,6 +343,7 @@ ogmoLevels\level101.oel
 ogmoLevels\level1012.oel
 ogmoLevels\level102.oel
 ogmoLevels\level103.oel
+ogmoLevels\level104.oel
 ogmoLevels\level11.oel
 ogmoLevels\level12.oel
 ogmoLevels\level13.oel

@@ -429,6 +429,9 @@
     <None Include="ogmoLevels\level103.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="ogmoLevels\level104.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ogmoLevels\level11.oel">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
