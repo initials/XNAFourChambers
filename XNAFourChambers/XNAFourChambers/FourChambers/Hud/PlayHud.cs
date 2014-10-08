@@ -40,9 +40,9 @@ namespace FourChambers
         public FlxSprite hudGraphic;
 
 
-        FlxBar bar1;
-        FlxBar bar2;
-        FlxBar bar3;
+        //FlxBar bar1;
+        //FlxBar bar2;
+        //FlxBar bar3;
 
 
         public PlayHud()
@@ -119,13 +119,13 @@ namespace FourChambers
             //comboOnScreen.setScrollFactors(0,0);
             add(comboOnScreen);
 
-            bar1 = new FlxBar(300, (int)ypos + 130, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 100, false);
-            bar1.loadCustomEmptyGraphic("ui/bar_03");
-            bar1.emptyBar.setScrollFactors(0, 0);
-            bar1.filledBar.setScrollFactors(0, 0);
-            bar1.emptyBar.scale = 2;
-            bar1.emptyBar.setOffset(2, 3);
-            add(bar1);
+            //bar1 = new FlxBar(300, (int)ypos + 130, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 100, false);
+            //bar1.loadCustomEmptyGraphic("ui/bar_03");
+            //bar1.emptyBar.setScrollFactors(0, 0);
+            //bar1.filledBar.setScrollFactors(0, 0);
+            //bar1.emptyBar.scale = 2;
+            //bar1.emptyBar.setOffset(2, 3);
+            //add(bar1);
 
 
 
