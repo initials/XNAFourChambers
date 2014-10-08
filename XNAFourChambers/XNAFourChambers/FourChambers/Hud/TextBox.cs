@@ -25,7 +25,8 @@ namespace FourChambers
 
             setScrollFactors(0, 0);
 
-            flxText = new FlxText(xPos, yPos, xWidth);
+            flxText = new FlxText(xPos, yPos, xWidth, 100, "", Color.White, FlxG.Content.Load<SpriteFont>("initials/Munro"),1,FlxJustification.Left,0);
+
             flxText.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
 
             //flxText.alignment = FlxJustification.Center;
@@ -50,9 +51,9 @@ namespace FourChambers
         {
             string newText = Text;
 
-            if (newText.Length > 45)
+            if (newText.Length > 60)
             {
-                newText = newText.Insert(45, "\n");
+                newText = newText.Insert(60, "\n");
             }
 
             //Console.WriteLine(newText); 

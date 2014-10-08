@@ -40,6 +40,11 @@ namespace FourChambers
         public FlxSprite hudGraphic;
 
 
+        FlxBar bar1;
+        FlxBar bar2;
+        FlxBar bar3;
+
+
         public PlayHud()
         {
 
@@ -60,6 +65,7 @@ namespace FourChambers
             add(hudGraphic);
             hudGraphic.x = hudGraphic.width / 2;
             hudGraphic.y = ypos - hudGraphic.height /2;
+            hudGraphic.health = 100;
 
             //// these are treasures.
             //for (int i = 0; i < 11; i++)
@@ -113,14 +119,13 @@ namespace FourChambers
             //comboOnScreen.setScrollFactors(0,0);
             add(comboOnScreen);
 
-            //bar = new FlxBar(20, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 4, false);
-            //bar.loadCustomEmptyGraphic("ui/bar_01");
-            ////bar.loadCustomFilledGraphic("ui/bar_04");
-            //bar.emptyBar.setScrollFactors(0, 0);
-            ////bar.emptyBar.scale = 3;
-            //bar.filledBar.setScrollFactors(0, 0);
-            ////bar.filledBar.scale = 3;
-            //add(bar);
+            bar1 = new FlxBar(300, (int)ypos + 130, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 100, false);
+            bar1.loadCustomEmptyGraphic("ui/bar_03");
+            bar1.emptyBar.setScrollFactors(0, 0);
+            bar1.filledBar.setScrollFactors(0, 0);
+            bar1.emptyBar.scale = 2;
+            bar1.emptyBar.setOffset(2, 3);
+            add(bar1);
 
 
 
