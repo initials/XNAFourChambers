@@ -887,10 +887,6 @@ namespace FourChambers
             if (!ev)
             {
                 FlxG.setHudText(1, "");
-
-
-
-
             }
 
             //collides
@@ -1122,7 +1118,7 @@ namespace FourChambers
             specialFX.at(e.Object1);
             specialFX.start(true, 0, 30);
 
-            FlxG.score += ((20 + (int)FlxU.random(0, 50)) * (FourChambers_Globals.arrowCombo + 1));
+            FlxG.score += ((2 + (int)FlxU.random(0, 3)) * (FourChambers_Globals.arrowCombo + 1));
 
 
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
