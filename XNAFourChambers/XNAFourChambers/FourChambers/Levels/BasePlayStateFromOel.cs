@@ -806,7 +806,7 @@ namespace FourChambers
             localHud.combo.text = FourChambers_Globals.arrowCombo.ToString() + "x Combo";
             if (FourChambers_Globals.arrowCombo>5) localHud.combo.text += "!";
 
-            localHud.score.text = "$" + FlxG.score.ToString();
+            localHud.score.text = "$" + FlxG.score.ToString() + " - Sword: " + FourChambers_Globals.swordPower + " - Arrow: " + FourChambers_Globals.arrowPower;
             localHud.healthText.text = playerControlledActors.members[0].health.ToString();
 
             if (elapsedInState > 3.0f)
@@ -1144,11 +1144,14 @@ namespace FourChambers
                 marksman.hasRangeWeapon = true;
                 FourChambers_Globals.hasRangeWeapon = true;
                 FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+
+                FourChambers_Globals.arrowPower++;
             }
             else if (x == 208)
             {
                 marksman.hasMeleeWeapon = true;
                 FourChambers_Globals.hasMeleeWeapon = true;
+                FourChambers_Globals.swordPower++;
             }
             else
             {
@@ -1350,7 +1353,7 @@ namespace FourChambers
 
                     localHud.comboOnScreen.counter = 0;
 
-                    localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString() ;
+                    localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString();
                     localHud.comboOnScreen.flyAwayText = zx.actorName+"\n" + (FourChambers_Globals.arrowCombo * zx.score).ToString();
 
                     //Console.WriteLine(localHud.comboOnScreen.x + " " + localHud.comboOnScreen.y + " " + zx.x + " " + zx.y + " " + FlxG.mouse.x + " " + FlxG.scroll.X);
@@ -1367,7 +1370,11 @@ namespace FourChambers
                 // -- 
                 if (!e.Object1.dead && !((FlxSprite)(e.Object1)).colorFlickering())
                 {
-                    e.Object1.hurt(e.Object2.damage);
+                    if (e.Object2 is Arrow)
+                        e.Object1.hurt(e.Object2.damage * FourChambers_Globals.arrowPower);
+                    else if (e.Object2 is MeleeHitBox)
+                        e.Object1.hurt(e.Object2.damage * FourChambers_Globals.swordPower);
+
                     blood.at(e.Object1);
                     blood.start(true, 0, 10);
 
@@ -1802,7 +1809,17 @@ namespace FourChambers
                     marksman.y = doors.members[Convert.ToInt32(FlxGlobal.cheatString.Substring(4))].y;
                 }
                 else if (FlxGlobal.cheatString.StartsWith("next")) marksman.x = FlxG.levelWidth + 3;
+                else if (FlxGlobal.cheatString.StartsWith("violence"))
+                {
+                    marksman.hasMeleeWeapon = true;
+                    marksman.hasRangeWeapon = true;
+                    FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+                    FourChambers_Globals.hasMeleeWeapon = true;
+                    FourChambers_Globals.hasRangeWeapon = true;
+                    FourChambers_Globals.arrowPower++;
+                    FourChambers_Globals.swordPower++;
 
+                }
             }
             //FlxGlobal.cheatString = "";
 

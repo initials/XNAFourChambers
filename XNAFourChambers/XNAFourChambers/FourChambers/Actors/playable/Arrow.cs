@@ -62,7 +62,7 @@ namespace FourChambers
             _fire.gravity = 0;
             _fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
 
-            damage = 5;
+            damage = 1;
 
 
         }

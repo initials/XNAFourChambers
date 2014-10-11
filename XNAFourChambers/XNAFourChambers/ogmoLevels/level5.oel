@@ -121,5 +121,7 @@
       <node x="432" y="544" />
       <node x="320" y="608" />
     </bat>
+    <spikes id="9" x="272" y="736" width="80" height="16" />
+    <spikes id="15" x="544" y="240" width="48" height="16" />
   </ActorsLayer>
 </level>

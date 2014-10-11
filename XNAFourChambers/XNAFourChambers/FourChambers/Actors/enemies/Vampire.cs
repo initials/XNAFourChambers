@@ -20,7 +20,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Count Esperanza";
             score = 250;
-            health = 5;
+            health = 50;
             runSpeed = 40;
             _jumpPower = -210.0f;
             _jumpInitialPower = -310.0f;

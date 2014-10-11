@@ -19,7 +19,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Walkman";
             score = 50;
-            health = 1;
+            health = 10;
             runSpeed = 120;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
@@ -42,12 +42,12 @@ namespace FourChambers
             // Required anims:
             // walk, run, idle, attack, death, hurt, jump
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Rat_20x20"), true, false, 20, 20);
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Rat_50x50"), true, false, 50, 50);
             
-            width = 8;
-            height = 8;
+            width = 10;
+            height = 10;
 
-            setOffset(6, 12);
+            setOffset(20, 40);
 
             addAnimation("run", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
             addAnimation("walk", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
@@ -56,8 +56,8 @@ namespace FourChambers
 
             addAnimation("idle", new int[] { 0 }, 12, true);
             //addAnimation("attack", new int[] { 2, 4 }, 18);
-            addAnimation("death", new int[] { 4 }, 0, true);
-            
+            addAnimation("death", new int[] { 4,5,6,7,8,7,8,7,8,7,8,7,6 }, 12, true);
+            addAnimation("hurt", new int[] { 4, 5, 6, 7, 8, 7, 8, 7, 8, 7, 8, 7, 6 },12, true);
 
             //addAnimationCallback(jump);
 
@@ -91,7 +91,7 @@ namespace FourChambers
 
         override public void update()
         {
-            if (onFloor && !dead)
+            if (onFloor && !dead && !colorFlickering() )
             {
                 if (FlxU.random() > 0.99f)
                 {

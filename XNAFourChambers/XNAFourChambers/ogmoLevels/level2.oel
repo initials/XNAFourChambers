@@ -135,9 +135,8 @@
     <ladder id="24" x="704" y="544" height="208" />
     <ladder id="25" x="656" y="320" height="224" />
     <ladder id="26" x="480" y="528" height="192" />
-    <rat id="31" x="224" y="304" flip="False" />
-    <rat id="32" x="80" y="336" flip="False" />
-    <door id="5" x="16" y="736" levelToGoTo="1" />
+    <rat id="31" x="192" y="736" flip="False" />
+    <rat id="32" x="704" y="208" flip="False" />
     <_event id="3" x="496" y="224" width="16" height="16" event="bow" value1="0" value2="0" repeat="1" />
     <ladder id="4" x="1152" y="224" height="192" />
     <ladder id="7" x="1360" y="416" height="288" />

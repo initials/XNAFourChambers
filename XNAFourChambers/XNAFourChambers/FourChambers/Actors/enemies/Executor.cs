@@ -20,7 +20,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Master Jaymes";
             score = 250;
-            health = 5;
+            health = 75;
             runSpeed = 120;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;

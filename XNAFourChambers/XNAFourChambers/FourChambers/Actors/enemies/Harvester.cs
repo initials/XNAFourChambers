@@ -74,7 +74,7 @@ namespace FourChambers
 
             if (buttonRightShoulder)
             {
-                y -= 40;
+                x -= 4;
             }
 
 
