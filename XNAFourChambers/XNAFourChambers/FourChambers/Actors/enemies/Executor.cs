@@ -43,7 +43,7 @@ namespace FourChambers
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Executor_50x50"), true, false, 50, 50);
 
-            loadAnimationsFromGraphicsGaleCSV("content/fourchambers/characterSpriteSheets/Executor_50x50.csv");
+            loadAnimationsFromGraphicsGaleCSV("content/fourchambers/characterSpriteSheets/Executor_50x50.csv", null, new List<string>() {"hurt"}, true);
 
             //addAnimation("run", new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 12);
             //addAnimation("walk", new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 8);

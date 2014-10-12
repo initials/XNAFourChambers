@@ -42,7 +42,7 @@ namespace FourChambers
             height = 2;
             setOffset(4, 14);
 
-            runSpeed = 90;
+            runSpeed = 150;
 
         }
 

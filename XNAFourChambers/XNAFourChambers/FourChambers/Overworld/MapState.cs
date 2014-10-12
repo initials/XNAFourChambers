@@ -61,7 +61,7 @@ namespace FourChambers
             add(mActor);
 
             FlxG.follow(mActor, 10.0f);
-            FlxG.followBounds(0, 0, 5000, 5000);
+            FlxG.followBounds(0, 0, 800, 800);
 
             List<Dictionary<string, string>>  actorsAttrs = new List<Dictionary<string, string>>();
             actorsAttrs = FlxXMLReader.readNodesFromOelFile("ogmoLevels/worldMap.oel", "level/ActorsLayer");
