@@ -233,7 +233,9 @@ namespace FourChambers
             }
             else if (FlxU.abs(velocity.X) > 70)
             {
-                play("run");
+                //play("run");
+                play("walk");
+
             }
             else if (FlxU.abs(velocity.X) > 1)
             {
