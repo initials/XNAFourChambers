@@ -103,9 +103,9 @@ namespace FourChambers
         /// <summary>
         /// How fast to shoot the arrow.
         /// </summary>
-        public static int arrowPower = 1;
+        public static int arrowPower = 0;
 
-        public static int swordPower = 1;
+        public static int swordPower = 0;
 
         /// <summary>
         /// A list of available level numbers. 
@@ -164,11 +164,11 @@ namespace FourChambers
 
             //FlxG.level = 1;
 
-            health = 3;   
+            //health = 3;   
 
             FourChambers_Globals.arrowCombo = 0;
-            FourChambers_Globals.arrowPower = 1;
-            FourChambers_Globals.arrowsToFire = 1;
+            //FourChambers_Globals.arrowPower = 1;
+            //FourChambers_Globals.arrowsToFire = 1;
 
             //FourChambers_Globals.availableLevels = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
             //int newLevel = (int)FlxU.random(0, FourChambers_Globals.availableLevels.Count);

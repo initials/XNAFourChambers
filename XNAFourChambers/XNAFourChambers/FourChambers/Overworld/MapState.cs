@@ -31,6 +31,7 @@ namespace FourChambers
         override public void create()
         {
             base.create();
+            FlxG.hideHud();
 
             //if (FlxG.debug)
             //    

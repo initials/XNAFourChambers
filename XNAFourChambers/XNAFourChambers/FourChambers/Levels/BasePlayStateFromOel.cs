@@ -1878,16 +1878,16 @@ namespace FourChambers
                 door.levelToGoTo = (int)PathCornering;
                 doors.add(door);
 
-                if (FlxG.debug)
-                {
-                    FlxText t = new FlxText(x, y-54, 100);
-                    t.alignment = FlxJustification.Left;
-                    t.text = door.levelToGoTo.ToString();
-                    t.scale = 2;
-                    add(t);
+                //if (FlxG.debug)
+                //{
+                //    FlxText t = new FlxText(x, y-54, 100);
+                //    t.alignment = FlxJustification.Left;
+                //    t.text = door.levelToGoTo.ToString();
+                //    t.scale = 2;
+                //    add(t);
 
 
-                }
+                //}
 
             }
             //Console.WriteLine("Building actor " + ActorType + " " + NumberOfActors);

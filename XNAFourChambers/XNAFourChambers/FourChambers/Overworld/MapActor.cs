@@ -36,7 +36,7 @@ namespace FourChambers
 
             play("idle");
 
-            setDrags(320, 320);
+            setDrags(1320, 1320);
 
             width = 8;
             height = 2;
