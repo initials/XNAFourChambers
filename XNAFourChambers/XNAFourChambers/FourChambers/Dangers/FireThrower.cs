@@ -20,7 +20,7 @@ namespace FourChambers
         private float shootTimer = 0.0f;
         public float shootEvery = 1.0f;
         private static int fireballCounter = 0;
-
+        private XNATweener.Tweener tween;
 
 
         public FireThrower(int xPos, int yPos, List<FlxObject> Fires)
@@ -32,6 +32,9 @@ namespace FourChambers
             Texture2D Img = FlxG.Content.Load<Texture2D>("fourchambers/fireThrower");
 
             loadGraphic(Img, false, false, 26, 26);
+
+            addAnimation("play", new int[] { 0, 1, 2, 3, 4, 5, 6, 7 , 8}, 24, false);
+            play("play");
 
             _fires = Fires;
 
@@ -56,17 +59,23 @@ namespace FourChambers
 
             angles = anglesx;
 
-
+            tween = new XNATweener.Tweener(-25, 25, FlxU.random(0.8f, 1.2f), XNATweener.Quadratic.EaseInOut);
+            tween.PingPong = true;
+            tween.Start();
 
 
         }
 
         override public void update()
         {
+            velocity.Y = tween.Position;
+
+            tween.Update(FlxG.elapsedAsGameTime);
+
             shootTimer += FlxG.elapsed;
 
-            if (scale > 1.0f) scale -= 0.1f;
-            else scale = 1;
+            //if (scale > 1.0f) scale -= 0.1f;
+            //else scale = 1;
 
             if (shootTimer> shootEvery)
             {
@@ -75,7 +84,7 @@ namespace FourChambers
                 shoot();
                 shootTimer = 0.0f;
 
-                angle += 45;
+                //angle += 45;
             }
             base.update();
 
@@ -83,8 +92,8 @@ namespace FourChambers
 
         public void shoot()
         {
-            scale = 2;
-
+            //scale = 2;
+            play("play", true);
             //Console.WriteLine("Fireball Count =? {0}", fireballCounter);
 
             int t = fireballCounter;

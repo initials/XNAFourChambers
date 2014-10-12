@@ -1,7 +1,7 @@
 ﻿x=1280
 y=720
 fullscreen=0
-zoom=1
+zoom=3
 
 
 

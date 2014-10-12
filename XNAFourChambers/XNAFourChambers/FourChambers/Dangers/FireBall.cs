@@ -17,9 +17,10 @@ namespace FourChambers
             : base(xPos, yPos)
         {
 
-            Texture2D Img = FlxG.Content.Load<Texture2D>("fourchambers/fire");
+            Texture2D Img = FlxG.Content.Load<Texture2D>("fourchambers/fire_wisp");
 
             loadGraphic(Img, false, false, 24, 24);
+            //frame = 8;
 
             scale = 0;
 

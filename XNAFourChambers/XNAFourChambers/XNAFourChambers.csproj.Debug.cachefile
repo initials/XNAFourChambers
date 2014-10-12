@@ -223,6 +223,7 @@ Content\ui\bar_06.xnb
 Content\fourchambers\spike.xnb
 Content\fourchambers\grassParticles.xnb
 Content\fourchambers\characterSpriteSheets\Rat_50x50.xnb
+Content\fourchambers\fire_wisp.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
 Content\music\gwd\Dramatic.wma
@@ -241,6 +242,7 @@ Content\music\ralph\snow song.wma
 Content\music\ralph\stiff run.wma
 Content\music\ralph\this is the news.wma
 Content\fourchambers\characterSpriteSheets\Executor_50x50.csv
+Content\fourchambers\fireThrower.csv
 OgmoEditor2\OgmoEditor2Project.oep
 OgmoEditor2\SportsGround.oel
 Content\flixel\autotiles.xnb
