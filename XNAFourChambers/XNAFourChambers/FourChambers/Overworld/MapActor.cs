@@ -32,8 +32,6 @@ namespace FourChambers
             addAnimation("walkRight", new int[] { 3,4,5,4 }, 12, true);
             addAnimation("walkUp", new int[] { 6,7,8,7 }, 12, true);
 
-
-
             play("idle");
 
             setDrags(1320, 1320);
@@ -52,9 +50,7 @@ namespace FourChambers
             if (velocity.X == 0 && velocity.Y == 0)
             {
                 play("idle");
-                //facing = Flx2DFacing.Left;
             }
-
 
             if (FlxControl.UP)
             {
@@ -79,13 +75,8 @@ namespace FourChambers
                 facing = Flx2DFacing.Right;
             }
 
-
-
-
             base.update();
 
         }
-
-
     }
 }

@@ -16,20 +16,13 @@ namespace FourChambers
         override public void create()
         {
             base.create();
-
-
+            
             ImpactText im = new ImpactText(new String[] { "element", "bang2", "adsf awer", "bang5" });
             add(im);
-
-
         }
 
         override public void update()
         {
-
-
-
-
             base.update();
         }
 

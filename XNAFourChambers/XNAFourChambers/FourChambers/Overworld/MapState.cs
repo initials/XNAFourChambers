@@ -96,13 +96,6 @@ namespace FourChambers
             fadeIn.setScrollFactors(0, 0);
             add(fadeIn);
 
-
-            //logo = new FlxSprite(0, 0);
-            //logo.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
-            //add(logo);
-
-            //FlxG._game.hud.hudGroup.add(logo);
-
             FlxG.playMp3("music/ralph/this is the news", 1.0f);
             
         }
@@ -156,11 +149,6 @@ namespace FourChambers
                 }
                 t.visible = true;
 
-                //if (!tween.Running)
-                //{
-                //    tween.Reset();
-                //    tween.Start();
-                //}
             }
 
             #endregion
@@ -180,12 +168,7 @@ namespace FourChambers
 
         override public void update()
         {
-            //if (elapsedInState > 1.0f)
-            //{
-            //    if (logo.alpha >= 0.01f)
-            //        logo.alpha -= 0.01f;
-
-            //}
+            
             if (elapsedInState > 0.5f)
             {
 
@@ -235,8 +218,6 @@ namespace FourChambers
                 }
                 else
                 {
-
-
                     FlxG.state = new BasePlayStateFromOel();
                 }
                 return;
