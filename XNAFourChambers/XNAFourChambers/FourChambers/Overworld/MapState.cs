@@ -35,8 +35,16 @@ namespace FourChambers
 
             //if (FlxG.debug)
             //    
-            FourChambers_Globals.writeGameProgressToFile();
-            FourChambers_Globals.readGameProgressToFile();
+
+            try
+            {
+                FourChambers_Globals.readGameProgressToFile();
+            }
+            catch (Exception)
+            {
+                FourChambers_Globals.writeGameProgressToFile();
+            }
+            
 
             FlxG.colorFlickeringEnabled = false;
 
