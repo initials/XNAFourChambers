@@ -69,41 +69,13 @@ namespace FourChambers
             //hudGraphic.y = ypos - hudGraphic.height /2;
             hudGraphic.health = 100;
 
-            heart = new Heart(1, (int)ypos);
+            heart = new Heart(2, (int)ypos);
             add(heart);
-
-
-
-
-
-
-
-
-
-            //// these are treasures.
-            //for (int i = 0; i < 11; i++)
-            //{
-            //    hudGraphic = new FlxSprite(100 + ((i * 16) + 1), ypos, null);
-            //    hudGraphic.loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/treasures_16x16"), true, false, 16, 16);
-            //    hudGraphic.width = 16;
-            //    hudGraphic.height = 16;
-            //    hudGraphic.addAnimation("off", new int[] { i*2 });
-            //    hudGraphic.addAnimation("on", new int[] { i*2+1 });
-            //    hudGraphic.play("off");
-            //    hudGraphic.scrollFactor.X = 0;
-            //    hudGraphic.scrollFactor.Y = 0;
-            //    add(hudGraphic);
-            //}
 
             arrowsRemaining = new FlxText(65, ypos-5, 100);
             arrowsRemaining.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
             arrowsRemaining.text = "00";
             add(arrowsRemaining);
-
-            //healthText = new FlxText(30, ypos - 5, 100);
-            //healthText.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-            //healthText.text = "00";
-            //add(healthText);
 
             combo = new FlxText(140, ypos - 10, 100);
             combo.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
@@ -174,10 +146,6 @@ namespace FourChambers
 
                 i2++;
             }
-
-
-
-
 
             base.update();
         }
