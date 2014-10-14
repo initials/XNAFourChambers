@@ -230,7 +230,7 @@ namespace FourChambers
 
             FlxG.score = Convert.ToInt32(elements1[0]);
 
-            Console.WriteLine("Highest Level available {0}", elements1[1]);
+            Console.WriteLine("Highest Level available {0} -- Money == ${1}", elements1[1], elements1[0]);
 
 
         }

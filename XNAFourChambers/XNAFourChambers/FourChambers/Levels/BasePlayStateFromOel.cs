@@ -670,9 +670,11 @@ namespace FourChambers
             else FlxG.mouse.hide();
 
             localHud = new PlayHud();
+            add(localHud);
+
             
-            if (FlxG.zoom!=1)
-                FlxG._game.hud.hudGroup = localHud;
+            //if (FlxG.zoom!=1)
+            //    FlxG._game.hud.hudGroup = localHud;
 
 
 
@@ -784,6 +786,15 @@ namespace FourChambers
 
 
             }
+            else if (FlxG.keys.justPressed(Keys.F3) && FlxG.debug && timeOfDay > 2.0f)
+            {
+                FlxObject dor = doors.members[((int)(FlxU.random() * doors.members.Count))];
+                playerControlledActors.members[0].x = dor.x;
+                playerControlledActors.members[0].y = dor.y;
+
+                FlxG.score += 100;
+            }
+
 
             // Allow editing of terrain if SHIFT + Mouse is pressed.
             if (FlxG.mouse.pressedRightButton() && FlxG.keys.SHIFT)
@@ -807,7 +818,11 @@ namespace FourChambers
             if (FourChambers_Globals.arrowCombo>5) localHud.combo.text += "!";
 
             localHud.score.text = "$" + FlxG.score.ToString() + " - Sword: " + FourChambers_Globals.swordPower + " - Arrow: " + FourChambers_Globals.arrowPower;
-            localHud.healthText.text = playerControlledActors.members[0].health.ToString();
+            
+            
+            //instead of sending health to text, send it to the Heart() of the hud
+            //localHud.healthText.text = playerControlledActors.members[0].health.ToString();
+            localHud.heart.health =  playerControlledActors.members[0].health;
 
             if (elapsedInState > 3.0f)
             {
@@ -1035,6 +1050,8 @@ namespace FourChambers
 
         protected bool goToLevel(int Level)
         {
+            FourChambers_Globals.writeGameProgressToFile();
+
             FourChambers_Globals.previousLevel = FlxG.level;
 
             FlxG.level = Level;

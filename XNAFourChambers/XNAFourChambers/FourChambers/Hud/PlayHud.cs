@@ -39,8 +39,9 @@ namespace FourChambers
         public LevelBeginText comboOnScreen;
         public FlxSprite hudGraphic;
 
+        public Heart heart;
 
-        //FlxBar bar1;
+        FlxBar bar1;
         //FlxBar bar2;
         //FlxBar bar3;
 
@@ -62,10 +63,22 @@ namespace FourChambers
             hudGraphic.scrollFactor.X = 0;
             hudGraphic.scrollFactor.Y = 0;
             hudGraphic.scale = 2;
-            add(hudGraphic);
+            //add(hudGraphic);
+
             hudGraphic.x = hudGraphic.width / 2;
-            hudGraphic.y = ypos - hudGraphic.height /2;
+            //hudGraphic.y = ypos - hudGraphic.height /2;
             hudGraphic.health = 100;
+
+            heart = new Heart(1, (int)ypos);
+            add(heart);
+
+
+
+
+
+
+
+
 
             //// these are treasures.
             //for (int i = 0; i < 11; i++)
