@@ -134,6 +134,7 @@ namespace FourChambers
             hasMeleeWeapon = FourChambers_Globals.hasMeleeWeapon;
             hasRangeWeapon = FourChambers_Globals.hasRangeWeapon;
 
+            health = 4;
 
         }
 

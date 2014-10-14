@@ -20,7 +20,7 @@ namespace FourChambers
         /// </summary>
         public FlxText arrowsRemaining;
 
-        public FlxText healthText;
+        //public FlxText healthText;
         /// <summary>
         /// Use score.text = "" to set the score.
         /// </summary>
@@ -41,7 +41,7 @@ namespace FourChambers
 
         public Heart heart;
 
-        FlxBar bar1;
+        public FlxBar bar1;
         //FlxBar bar2;
         //FlxBar bar3;
 
@@ -100,10 +100,10 @@ namespace FourChambers
             arrowsRemaining.text = "00";
             add(arrowsRemaining);
 
-            healthText = new FlxText(30, ypos - 5, 100);
-            healthText.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-            healthText.text = "00";
-            add(healthText);
+            //healthText = new FlxText(30, ypos - 5, 100);
+            //healthText.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
+            //healthText.text = "00";
+            //add(healthText);
 
             combo = new FlxText(140, ypos - 10, 100);
             combo.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);

@@ -12,6 +12,7 @@ namespace FourChambers
 {
     class Heart : FlxSprite
     {
+        private float _previousHealth;
 
         public Heart(int xPos, int yPos)
             : base(xPos, yPos)
@@ -23,10 +24,21 @@ namespace FourChambers
             loadAnimationsFromGraphicsGaleCSV("content/fourchambers/heart_16x16.csv", null, null, false);
 
             play("full");
+
+            _previousHealth = health;
+
         }
 
         override public void update()
         {
+
+            if (health != _previousHealth)
+            {
+                scale = 2;
+            }
+
+            if (scale > 1) scale -= 0.05f;
+            else scale = 1;
 
             if (health >= 4) play("full");
             else if (health == 3) play("threequarter");
@@ -36,6 +48,8 @@ namespace FourChambers
 
             base.update();
 
+
+            _previousHealth = health;
         }
 
 
