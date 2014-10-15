@@ -199,7 +199,7 @@ namespace FourChambers
             }
             progress += "$" + FlxG.score + "," + FlxG.level;
             FlxU.saveToDevice(progress, "gui.dll");
-
+            FlxU.saveToDevice(progress, "gui.txt");
             //if (FlxG.debug)
             //    FlxU.saveToDevice(progress, "gui_DEBUG.dll");
             //else

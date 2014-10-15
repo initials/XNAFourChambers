@@ -207,7 +207,7 @@ namespace FourChambers
                 if (FlxG.level == -4)
                 {
                     FlxG.level = 104;
-                    FlxG.score = 0;
+                    //FlxG.score = 0;
                     FlxG.hideHud();
                     
                     FlxG.state = new MultiPlayerCharacterSelect();

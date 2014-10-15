@@ -44,6 +44,9 @@ namespace FourChambers
         public FlxBar swordPowerBar;
         public FlxBar arrowPowerBar;
 
+        public FlxSprite swordPower;
+        public FlxSprite arrowPower;
+
 
         //FlxBar bar2;
         //FlxBar bar3;
@@ -54,7 +57,7 @@ namespace FourChambers
 
             currentAnimatedObj = new FlxSprite();
 
-            ypos = FlxG.height * FlxG.zoom-30;
+            ypos = FlxG.height - 30; //* FlxG.zoom
 
 			#if __ANDROID__
 
@@ -62,79 +65,79 @@ namespace FourChambers
 
 			#endif
 
-            hudGraphic = new FlxSprite(0,0, FlxG.Content.Load<Texture2D>("fourchambers/hudElements"));
-            hudGraphic.scrollFactor.X = 0;
-            hudGraphic.scrollFactor.Y = 0;
-            hudGraphic.scale = 2;
+            //hudGraphic = new FlxSprite(0,0, FlxG.Content.Load<Texture2D>("fourchambers/hudElements"));
+            //hudGraphic.scrollFactor.X = 0;
+            //hudGraphic.scrollFactor.Y = 0;
+            //hudGraphic.scale = 2;
             //add(hudGraphic);
 
-            hudGraphic.x = hudGraphic.width / 2;
-            //hudGraphic.y = ypos - hudGraphic.height /2;
-            hudGraphic.health = 100;
+            //hudGraphic.x = hudGraphic.width / 2;
+            ////hudGraphic.y = ypos - hudGraphic.height /2;
+            //hudGraphic.health = 100;
 
             heart = new Heart(2, (int)ypos);
             add(heart);
 
-            arrowsRemaining = new FlxText(65, ypos-5, 100);
-            arrowsRemaining.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-            arrowsRemaining.text = "00";
-            add(arrowsRemaining);
+            //arrowsRemaining = new FlxText(65, ypos-5, 100);
+            //arrowsRemaining.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
+            //arrowsRemaining.text = "00";
+            //add(arrowsRemaining);
 
-            combo = new FlxText(140, ypos - 10, 100);
-            combo.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-            combo.text = "Combo: 0x";
-            add(combo);
+            //combo = new FlxText(140, ypos - 10, 100);
+            //combo.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
+            //combo.text = "Combo: 0x";
+            //add(combo);
 
-            score = new FlxText(320, ypos - 10, 100);
-            score.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
+            score = new FlxText(0, ypos - 10, FlxG.width-10);
+            score.setFormat(null, 2, Color.White, FlxJustification.Right, Color.Black);
             score.text = "Score: 000000";
             add(score);
 
-            nestsRemaining = new FlxText(520, ypos - 10, 100);
-            nestsRemaining.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-			nestsRemaining.text = "";
-            add(nestsRemaining);
-
-            tweenScale = new Tweener(10, 1, TimeSpan.FromSeconds(1.0f), Linear.EaseOut);
-            
-            tweenPos = new Tweener(100, ypos, TimeSpan.FromSeconds(2.0f), Bounce.EaseOut);
-
-            comboOnScreen = new LevelBeginText(200, 200, 100);
-            comboOnScreen.setFormat(null, 2, Color.White, FlxJustification.Left, Color.Black);
-            comboOnScreen.text = "0";
-            comboOnScreen.style = "up";
-            comboOnScreen.limit = 1.2f;
-            //comboOnScreen.setScrollFactors(0,0);
-            add(comboOnScreen);
-
-            swordPowerBar = new FlxBar(40, (int)ypos , FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, "s", 0, 12, false);
-            swordPowerBar.loadCustomEmptyGraphic("ui/bar_03");
+            swordPowerBar = new FlxBar(20, (int)ypos+10 , FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, " ", 0, 12, false);
+            swordPowerBar.loadCustomEmptyGraphic("ui/bar_01");
             swordPowerBar.emptyBar.setScrollFactors(0, 0);
             swordPowerBar.filledBar.setScrollFactors(0, 0);
             swordPowerBar.emptyBar.setOffset(2, 3);
             add(swordPowerBar);
 
-            arrowPowerBar = new FlxBar(140, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, "a", 0, 12, false);
-            arrowPowerBar.loadCustomEmptyGraphic("ui/bar_03");
+            swordPower = new FlxSprite((int)swordPowerBar.emptyBar.x, (int)swordPowerBar.emptyBar.y-16);
+            swordPower.loadGraphic("fourchambers/pickups_16x16", false, false, 16, 16);
+            //swordPower.x = (int)swordPowerBar.x;
+            //swordPower.y = (int)swordPowerBar.y;
+            swordPower.frame = (PowerUp.FR_Sword);
+            swordPower.setScrollFactors(0, 0);
+            add(swordPower);
+
+
+
+
+            arrowPowerBar = new FlxBar(50, (int)ypos+10, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, " ", 0, 12, false);
+            arrowPowerBar.loadCustomEmptyGraphic("ui/bar_01");
             arrowPowerBar.emptyBar.setScrollFactors(0, 0);
             arrowPowerBar.filledBar.setScrollFactors(0, 0);
             arrowPowerBar.emptyBar.setOffset(2, 3);
             add(arrowPowerBar);
 
-
+            arrowPower = new FlxSprite((int)arrowPowerBar.emptyBar.x, (int)arrowPowerBar.emptyBar.y-16);
+            arrowPower.loadGraphic("fourchambers/pickups_16x16", false, false, 16, 16);
+            //arrowPower.x = (int)arrowPowerBar.x;
+            //arrowPower.y = (int)arrowPowerBar.y;
+            arrowPower.frame = (PowerUp.FR_Arrows);
+            arrowPower.setScrollFactors(0, 0);
+            add(arrowPower);
 
         }
 
         public override void update()
         {
-            tweenScale.Update(FlxG.elapsedAsGameTime);
-            tweenPos.Update(FlxG.elapsedAsGameTime);
+            //tweenScale.Update(FlxG.elapsedAsGameTime);
+            //tweenPos.Update(FlxG.elapsedAsGameTime);
             
-            if (currentAnimatedObj != null)
-            {
-                currentAnimatedObj.scale = tweenScale.Position;
-                currentAnimatedObj.y = tweenPos.Position;
-            }
+            //if (currentAnimatedObj != null)
+            //{
+            //    currentAnimatedObj.scale = tweenScale.Position;
+            //    currentAnimatedObj.y = tweenPos.Position;
+            //}
 
             int i2 = 0;
             int l2 = this.members.Count;
@@ -176,29 +179,29 @@ namespace FourChambers
         //    tweenPos.Delay = 2.0f;
         //}
 
-        public void setArrowsRemaining(int ArrowsRemaining)
-        {
-            if (ArrowsRemaining <= 4)
-            {
-                arrowsRemaining.color = Color.Red;
-                arrowsRemaining.text = "0" + ArrowsRemaining.ToString();
-            }
-            else if (ArrowsRemaining <= 9)
-            {
-                arrowsRemaining.color = Color.Orange;
-                arrowsRemaining.text = "0"+ ArrowsRemaining.ToString();
-            }
-            else if (ArrowsRemaining <= 99)
-            {
-                arrowsRemaining.color = Color.White;
-                arrowsRemaining.text = ArrowsRemaining.ToString();
-            }
-            else
-            {
-                arrowsRemaining.color = Color.White;
-                arrowsRemaining.text = "99+";
-            }
-        }
+        //public void setArrowsRemaining(int ArrowsRemaining)
+        //{
+        //    if (ArrowsRemaining <= 4)
+        //    {
+        //        arrowsRemaining.color = Color.Red;
+        //        arrowsRemaining.text = "0" + ArrowsRemaining.ToString();
+        //    }
+        //    else if (ArrowsRemaining <= 9)
+        //    {
+        //        arrowsRemaining.color = Color.Orange;
+        //        arrowsRemaining.text = "0"+ ArrowsRemaining.ToString();
+        //    }
+        //    else if (ArrowsRemaining <= 99)
+        //    {
+        //        arrowsRemaining.color = Color.White;
+        //        arrowsRemaining.text = ArrowsRemaining.ToString();
+        //    }
+        //    else
+        //    {
+        //        arrowsRemaining.color = Color.White;
+        //        arrowsRemaining.text = "99+";
+        //    }
+        //}
 
 
 

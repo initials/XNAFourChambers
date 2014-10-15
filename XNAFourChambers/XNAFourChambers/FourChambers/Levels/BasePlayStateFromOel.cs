@@ -814,17 +814,29 @@ namespace FourChambers
 
             #endregion
 
-            localHud.combo.text = FourChambers_Globals.arrowCombo.ToString() + "x Combo";
-            if (FourChambers_Globals.arrowCombo>5) localHud.combo.text += "!";
+            //localHud.combo.text = FourChambers_Globals.arrowCombo.ToString() + "x Combo";
 
-            localHud.score.text = "$" + FlxG.score.ToString() + " - Sword: " + FourChambers_Globals.swordPower + " - Arrow: " + FourChambers_Globals.arrowPower;
+            //if (FourChambers_Globals.arrowCombo>5) localHud.combo.text += "!";
+            if (marksman != null)
+            {
+                //localHud.setArrowsRemaining(marksman.arrowsRemaining);
+                FlxG.setHudTextPosition(3, localHud.arrowPower.x + 22, localHud.arrowPower.y + 14);
+                FlxG.setHudText(3, marksman.arrowsRemaining.ToString());
+                FlxG.setHudTextScale(3, 2);
+
+                //localHud.nestsRemaining.text = "Unicorns Left: " + actors.countLivingOfType("FourChambers.Unicorn").ToString();
+            }
+
+            localHud.score.text = "$" + FlxG.score.ToString();
             
             
             //instead of sending health to text, send it to the Heart() of the hud
             //localHud.healthText.text = playerControlledActors.members[0].health.ToString();
             localHud.heart.health =  playerControlledActors.members[0].health;
-            localHud.arrowPowerBar.health = FourChambers_Globals.arrowPower;
-            localHud.swordPowerBar.health = FourChambers_Globals.swordPower;
+
+
+            localHud.arrowPowerBar.setValue( FourChambers_Globals.arrowPower);
+            localHud.swordPowerBar.setValue( FourChambers_Globals.swordPower);
 
 
 
@@ -834,12 +846,7 @@ namespace FourChambers
 
             }
 
-            if (marksman != null)
-            {
-                localHud.setArrowsRemaining(marksman.arrowsRemaining);
 
-				//localHud.nestsRemaining.text = "Unicorns Left: " + actors.countLivingOfType("FourChambers.Unicorn").ToString();
-            }
             //if (actors.countLivingOfType("FourChambers.Unicorn") <= 0)
             //{
 
@@ -1063,6 +1070,8 @@ namespace FourChambers
             FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
 
             FlxG.transition.startFadeIn(0.1f);
+
+            //FourChambers_Globals.writeGameProgressToFile();
 
             FlxG.state = new MapState();
 
@@ -1304,7 +1313,7 @@ namespace FourChambers
                 FlxObject z = zingers.getFirstDead();
                 if (z != null)
                 {
-                    localHud.nestsRemaining.scale = 4;
+                    //localHud.nestsRemaining.scale = 4;
 
                     z.dead = false;
                     z.exists = true;
@@ -1369,13 +1378,13 @@ namespace FourChambers
                     Vector2 p2 = e.Object1.getScreenXY();
 
 
-                    localHud.comboOnScreen.x = p2.X * FlxG.zoom;
-                    localHud.comboOnScreen.y = (p2.Y - 20) * FlxG.zoom;
+                    //localHud.comboOnScreen.x = p2.X * FlxG.zoom;
+                    //localHud.comboOnScreen.y = (p2.Y - 20) * FlxG.zoom;
 
-                    localHud.comboOnScreen.counter = 0;
+                    //localHud.comboOnScreen.counter = 0;
 
-                    localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString();
-                    localHud.comboOnScreen.flyAwayText = zx.actorName+"\n" + (FourChambers_Globals.arrowCombo * zx.score).ToString();
+                    //localHud.comboOnScreen.text = zx.actorName + "\n" + FourChambers_Globals.arrowCombo + " x " + zx.score.ToString();
+                    //localHud.comboOnScreen.flyAwayText = zx.actorName+"\n" + (FourChambers_Globals.arrowCombo * zx.score).ToString();
 
                     //Console.WriteLine(localHud.comboOnScreen.x + " " + localHud.comboOnScreen.y + " " + zx.x + " " + zx.y + " " + FlxG.mouse.x + " " + FlxG.scroll.X);
 
@@ -1426,7 +1435,7 @@ namespace FourChambers
 
                 }
 
-                if (!e.Object1.dead) localHud.comboOnScreen.x = -1000;
+                //if (!e.Object1.dead) localHud.comboOnScreen.x = -1000;
 
             }
 

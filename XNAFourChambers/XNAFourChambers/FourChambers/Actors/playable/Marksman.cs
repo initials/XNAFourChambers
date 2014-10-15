@@ -120,7 +120,7 @@ namespace FourChambers
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 1000;
 
-            arrowsRemaining = 20;
+            arrowsRemaining = 0;
 
             meleeHitBox = new MeleeHitBox(xPos, yPos);
             meleeHitBox.width = 5;
