@@ -41,7 +41,10 @@ namespace FourChambers
 
         public Heart heart;
 
-        public FlxBar bar1;
+        public FlxBar swordPowerBar;
+        public FlxBar arrowPowerBar;
+
+
         //FlxBar bar2;
         //FlxBar bar3;
 
@@ -104,13 +107,19 @@ namespace FourChambers
             //comboOnScreen.setScrollFactors(0,0);
             add(comboOnScreen);
 
-            //bar1 = new FlxBar(300, (int)ypos + 130, FlxBar.FILL_LEFT_TO_RIGHT, 24, 8, hudGraphic, "HEALTH", 0, 100, false);
-            //bar1.loadCustomEmptyGraphic("ui/bar_03");
-            //bar1.emptyBar.setScrollFactors(0, 0);
-            //bar1.filledBar.setScrollFactors(0, 0);
-            //bar1.emptyBar.scale = 2;
-            //bar1.emptyBar.setOffset(2, 3);
-            //add(bar1);
+            swordPowerBar = new FlxBar(40, (int)ypos , FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, "s", 0, 12, false);
+            swordPowerBar.loadCustomEmptyGraphic("ui/bar_03");
+            swordPowerBar.emptyBar.setScrollFactors(0, 0);
+            swordPowerBar.filledBar.setScrollFactors(0, 0);
+            swordPowerBar.emptyBar.setOffset(2, 3);
+            add(swordPowerBar);
+
+            arrowPowerBar = new FlxBar(140, (int)ypos, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, "a", 0, 12, false);
+            arrowPowerBar.loadCustomEmptyGraphic("ui/bar_03");
+            arrowPowerBar.emptyBar.setScrollFactors(0, 0);
+            arrowPowerBar.filledBar.setScrollFactors(0, 0);
+            arrowPowerBar.emptyBar.setOffset(2, 3);
+            add(arrowPowerBar);
 
 
 

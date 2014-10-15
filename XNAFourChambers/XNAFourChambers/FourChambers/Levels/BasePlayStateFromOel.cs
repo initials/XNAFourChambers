@@ -823,6 +823,10 @@ namespace FourChambers
             //instead of sending health to text, send it to the Heart() of the hud
             //localHud.healthText.text = playerControlledActors.members[0].health.ToString();
             localHud.heart.health =  playerControlledActors.members[0].health;
+            localHud.arrowPowerBar.health = FourChambers_Globals.arrowPower;
+            localHud.swordPowerBar.health = FourChambers_Globals.swordPower;
+
+
 
             if (elapsedInState > 3.0f)
             {
