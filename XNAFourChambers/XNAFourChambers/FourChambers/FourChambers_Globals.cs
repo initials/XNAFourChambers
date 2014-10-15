@@ -198,6 +198,9 @@ namespace FourChambers
                 }
             }
             progress += "$" + FlxG.score + "," + FlxG.level;
+
+            Console.WriteLine("Writing Game Progress to File: {0}", FlxG.score);
+
             FlxU.saveToDevice(progress, "gui.dll");
             FlxU.saveToDevice(progress, "gui.txt");
             //if (FlxG.debug)
@@ -230,7 +233,7 @@ namespace FourChambers
 
             FlxG.score = Convert.ToInt32(elements1[0]);
 
-            Console.WriteLine("Highest Level available {0} -- Money == ${1}", elements1[1], elements1[0]);
+            Console.WriteLine("Reading Game Progress - Highest Level available {0} -- Money == ${1}", elements1[1], elements1[0]);
 
 
         }

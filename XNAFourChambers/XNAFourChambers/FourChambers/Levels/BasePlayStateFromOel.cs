@@ -1035,7 +1035,7 @@ namespace FourChambers
                  * */
 
 
-
+                FourChambers_Globals.writeGameProgressToFile();
                 FlxG.state = new LevelEndState();
                 return;
             }
@@ -1061,7 +1061,7 @@ namespace FourChambers
 
         protected bool goToLevel(int Level)
         {
-            FourChambers_Globals.writeGameProgressToFile();
+            
 
             FourChambers_Globals.previousLevel = FlxG.level;
 
