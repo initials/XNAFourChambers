@@ -1839,15 +1839,16 @@ namespace FourChambers
                     marksman.y = doors.members[Convert.ToInt32(FlxGlobal.cheatString.Substring(4))].y;
                 }
                 else if (FlxGlobal.cheatString.StartsWith("next")) marksman.x = FlxG.levelWidth + 3;
-                else if (FlxGlobal.cheatString.StartsWith("violence"))
+                else if (FlxGlobal.cheatString.StartsWith("carnagehall"))
                 {
                     marksman.hasMeleeWeapon = true;
                     marksman.hasRangeWeapon = true;
                     FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
                     FourChambers_Globals.hasMeleeWeapon = true;
                     FourChambers_Globals.hasRangeWeapon = true;
-                    FourChambers_Globals.arrowPower++;
-                    FourChambers_Globals.swordPower++;
+                    FourChambers_Globals.arrowPower+=10;
+                    FourChambers_Globals.swordPower+=10;
+                    marksman.arrowsRemaining += 100;
 
                 }
             }
