@@ -202,7 +202,7 @@ namespace FourChambers
             Console.WriteLine("Writing Game Progress to File: {0}", FlxG.score);
 
             FlxU.saveToDevice(progress, "gui.dll");
-            FlxU.saveToDevice(progress, "gui.txt");
+            //FlxU.saveToDevice(progress, "gui.txt");
             //if (FlxG.debug)
             //    FlxU.saveToDevice(progress, "gui_DEBUG.dll");
             //else
