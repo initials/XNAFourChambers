@@ -109,6 +109,13 @@ namespace FourChambers
             fireballCounter++;
             if (angleCount > angles.Length - 1) angleCount = 0;
             if (fireballCounter > 19) fireballCounter = 0;
+
+            //sound
+            if (onScreen())
+                FlxG.play("sfx/sony/whooshes/whoosh_wobble-001", 0.75f);
+
+
+
         }
 
 

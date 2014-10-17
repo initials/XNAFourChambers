@@ -463,7 +463,7 @@ namespace FourChambers
             // Just landed.
             if (wasInAir && framesSinceLeftGround == 0)
             {
-                FlxG.play("sfx/HitGround2", 1.0f, false);
+                FlxG.play("sfx/sony/footsteps/footstep_grass_boots_jog-001", 1.0f, false);
 
                 //Console.WriteLine("----------------------> WAS IN AIR");
 
@@ -477,7 +477,7 @@ namespace FourChambers
             if (Name.StartsWith("run") && (Frame == 2 || Frame==7))
             {
                 //Console.WriteLine("Footstep F {0} FI {1}", Frame, FrameIndex);
-                FlxG.play("sfx/footstep");
+                FlxG.play("sfx/sony/footsteps/footstep_grass_boots_jog-00" + ((int)FlxU.random(1, 10)).ToString(), 0.75f);
             }
         }
 

@@ -910,6 +910,351 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-001.wav">
+      <Name>footstep_grass_boots_jog-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-002.wav">
+      <Name>footstep_grass_boots_jog-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-003.wav">
+      <Name>footstep_grass_boots_jog-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-004.wav">
+      <Name>footstep_grass_boots_jog-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-005.wav">
+      <Name>footstep_grass_boots_jog-005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-006.wav">
+      <Name>footstep_grass_boots_jog-006</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-007.wav">
+      <Name>footstep_grass_boots_jog-007</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-008.wav">
+      <Name>footstep_grass_boots_jog-008</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-009.wav">
+      <Name>footstep_grass_boots_jog-009</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-010.wav">
+      <Name>footstep_grass_boots_jog-010</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-011.wav">
+      <Name>footstep_grass_boots_jog-011</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_grass_boots_jog-012.wav">
+      <Name>footstep_grass_boots_jog-012</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-001.wav">
+      <Name>footstep_snow_ice_crunch_run-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-002.wav">
+      <Name>footstep_snow_ice_crunch_run-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-003.wav">
+      <Name>footstep_snow_ice_crunch_run-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-004.wav">
+      <Name>footstep_snow_ice_crunch_run-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-005.wav">
+      <Name>footstep_snow_ice_crunch_run-005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-006.wav">
+      <Name>footstep_snow_ice_crunch_run-006</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-007.wav">
+      <Name>footstep_snow_ice_crunch_run-007</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-008.wav">
+      <Name>footstep_snow_ice_crunch_run-008</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-009.wav">
+      <Name>footstep_snow_ice_crunch_run-009</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-010.wav">
+      <Name>footstep_snow_ice_crunch_run-010</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-011.wav">
+      <Name>footstep_snow_ice_crunch_run-011</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_run-012.wav">
+      <Name>footstep_snow_ice_crunch_run-012</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-001.wav">
+      <Name>footstep_snow_ice_crunch_walk-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-002.wav">
+      <Name>footstep_snow_ice_crunch_walk-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-003.wav">
+      <Name>footstep_snow_ice_crunch_walk-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-004.wav">
+      <Name>footstep_snow_ice_crunch_walk-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-005.wav">
+      <Name>footstep_snow_ice_crunch_walk-005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-006.wav">
+      <Name>footstep_snow_ice_crunch_walk-006</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\footsteps\footstep_snow_ice_crunch_walk-007.wav">
+      <Name>footstep_snow_ice_crunch_walk-007</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-001.wav">
+      <Name>whoosh-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-002.wav">
+      <Name>whoosh-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-003.wav">
+      <Name>whoosh-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-004.wav">
+      <Name>whoosh-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-005.wav">
+      <Name>whoosh-005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-006.wav">
+      <Name>whoosh-006</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-007.wav">
+      <Name>whoosh-007</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-008.wav">
+      <Name>whoosh-008</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-009.wav">
+      <Name>whoosh-009</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-010.wav">
+      <Name>whoosh-010</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-011.wav">
+      <Name>whoosh-011</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh-012.wav">
+      <Name>whoosh-012</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_heavy-001.wav">
+      <Name>whoosh_heavy-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_heavy-002.wav">
+      <Name>whoosh_heavy-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_passby_fast-001s.wav">
+      <Name>whoosh_passby_fast-001s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_passby_fast-002s.wav">
+      <Name>whoosh_passby_fast-002s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_passby_fast-003s.wav">
+      <Name>whoosh_passby_fast-003s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-001m.wav">
+      <Name>whoosh_racecar_passby_fast-001m</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-002m.wav">
+      <Name>whoosh_racecar_passby_fast-002m</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-003m.wav">
+      <Name>whoosh_racecar_passby_fast-003m</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-004s.wav">
+      <Name>whoosh_racecar_passby_fast-004s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-005s.wav">
+      <Name>whoosh_racecar_passby_fast-005s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-006s.wav">
+      <Name>whoosh_racecar_passby_fast-006s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-007s.wav">
+      <Name>whoosh_racecar_passby_fast-007s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_racecar_passby_fast-008s.wav">
+      <Name>whoosh_racecar_passby_fast-008s</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_small_short-001.wav">
+      <Name>whoosh_small_short-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_small_short-002.wav">
+      <Name>whoosh_small_short-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_small_short-003.wav">
+      <Name>whoosh_small_short-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_throw_rotating-001.wav">
+      <Name>whoosh_throw_rotating-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_throw_rotating-002.wav">
+      <Name>whoosh_throw_rotating-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_throw_rotating-003.wav">
+      <Name>whoosh_throw_rotating-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_throw_rotating-004.wav">
+      <Name>whoosh_throw_rotating-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_throw_rotating-005.wav">
+      <Name>whoosh_throw_rotating-005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_twirling-001.wav">
+      <Name>whoosh_twirling-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_wobble-001.wav">
+      <Name>whoosh_wobble-001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_wobble-002.wav">
+      <Name>whoosh_wobble-002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_wobble-003.wav">
+      <Name>whoosh_wobble-003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sfx\sony\whooshes\whoosh_wobble-004.wav">
+      <Name>whoosh_wobble-004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fourchambers\characterSpriteSheets\Seraphine_50x50.png">
