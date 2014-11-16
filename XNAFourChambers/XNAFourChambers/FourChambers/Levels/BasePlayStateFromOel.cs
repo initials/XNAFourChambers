@@ -779,10 +779,14 @@ namespace FourChambers
             if (marksman != null)
             {
                 //localHud.setArrowsRemaining(marksman.arrowsRemaining);
-                FlxG.setHudTextPosition(3, localHud.arrowPower.x + 22, localHud.arrowPower.y + 14);
-                FlxG.setHudText(3, marksman.arrowsRemaining.ToString());
-                FlxG.setHudTextScale(3, 2);
-                //localHud.nestsRemaining.text = "Unicorns Left: " + actors.countLivingOfType("FourChambers.Unicorn").ToString();
+
+                if (!FlxG.debug)
+                {
+                    FlxG.setHudTextPosition(3, localHud.arrowPower.x + 22, localHud.arrowPower.y + 14);
+                    FlxG.setHudText(3, marksman.arrowsRemaining.ToString());
+                    FlxG.setHudTextScale(3, 2);
+                    //localHud.nestsRemaining.text = "Unicorns Left: " + actors.countLivingOfType("FourChambers.Unicorn").ToString();
+                }
             }
 
             localHud.score.text = "$" + FlxG.score.ToString();

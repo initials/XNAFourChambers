@@ -91,7 +91,9 @@ namespace FourChambers
             score = new FlxText(0, ypos - 10, FlxG.width-10);
             score.setFormat(null, 2, Color.White, FlxJustification.Right, Color.Black);
             score.text = "Score: 000000";
-            add(score);
+
+            if (!FlxG.debug)
+                add(score);
 
             swordPowerBar = new FlxBar(20, (int)ypos+10 , FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, " ", 0, 12, false);
             swordPowerBar.loadCustomEmptyGraphic("ui/bar_01");
@@ -107,9 +109,6 @@ namespace FourChambers
             swordPower.frame = (PowerUp.FR_Sword);
             swordPower.setScrollFactors(0, 0);
             add(swordPower);
-
-
-
 
             arrowPowerBar = new FlxBar(50, (int)ypos+10, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, null, " ", 0, 12, false);
             arrowPowerBar.loadCustomEmptyGraphic("ui/bar_01");
