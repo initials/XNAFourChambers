@@ -86,12 +86,12 @@ namespace FourChambers
 
             }
 
-            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("flixel/initials/crosshair"));
             FlxG.mouse.cursor.offset.X = 5;
             FlxG.mouse.cursor.offset.Y = 5;
             
             _menuItems = new FlxText(0, 10, FlxG.width);
-            _menuItems.setFormat(FlxG.Content.Load<SpriteFont>("initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
+            _menuItems.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
             //_menuItems.text = "Four Chambers\n\nEnter name, use @ symbol to specify Twitter handle.\nPress enter when complete.";
             _menuItems.text = " ";
             _menuItems.shadow = Color.Black;

@@ -25,9 +25,9 @@ namespace FourChambers
 
             setScrollFactors(0, 0);
 
-            flxText = new FlxText(xPos, yPos, xWidth, 100, "", Color.White, FlxG.Content.Load<SpriteFont>("initials/Munro"),1,FlxJustification.Left,0);
+            flxText = new FlxText(xPos, yPos, xWidth, 100, "", Color.White, FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"),1,FlxJustification.Left,0);
 
-            flxText.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
+            flxText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
 
             //flxText.alignment = FlxJustification.Center;
             flxText.text = Text;

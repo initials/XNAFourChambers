@@ -56,10 +56,10 @@ namespace Loader_Four
             FourChambers_Globals.PIRATE_COPY = false;
 #endif
 #if PIRATE
-            FourChambers_Globals.PIRATE_COPY = true;
+            FourChambers.FourChambers_Globals.PIRATE_COPY = true;
 #endif
 #if PRESS
-            FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_PRESS;
+            FourChambers.FourChambers_Globals.BUILD_TYPE = FourChambers_Globals.BUILD_TYPE_PRESS;
 #endif
 #if MAKEGIF
             FourChambers.FourChambers_Globals.gif = true;

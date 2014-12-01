@@ -114,13 +114,13 @@ namespace FourChambers
 
 
             t = new FlxText(10, 10, FlxG.width);
-            t.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
+            t.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
 
             t.text = "PLACEHOLDER DEATH SCREEN\n";
             add(t);
 
             t2 = new FlxText(10, 110, FlxG.width);
-            t2.setFormat(FlxG.Content.Load<SpriteFont>("initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
+            t2.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
             t2.text = "Money: $" + FlxG.score + "\nBest Combo: \nTreasures: ";
             t2.alignment = FlxJustification.Left;
             add(t2);

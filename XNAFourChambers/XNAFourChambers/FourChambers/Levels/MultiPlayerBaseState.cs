@@ -803,7 +803,7 @@ namespace FourChambers
 
                 FourChambers_Globals.hasRangeWeapon = true;
 
-                FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+                FlxG.mouse.show(FlxG.Content.Load<Texture2D>("flixel/initials/crosshair"));
 
             }
             else if (x == 208)

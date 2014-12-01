@@ -25,7 +25,7 @@ namespace FourChambers
 
                 FlxText localText = new FlxText(0, 10 + (count * 30), FlxG.width);
                 localText.text = t;
-                localText.setFormat(FlxG.Content.Load<SpriteFont>("initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
+                localText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/SpaceMarine"), 1, Color.White, FlxJustification.Center, Color.White);
 
                 add(localText);
 

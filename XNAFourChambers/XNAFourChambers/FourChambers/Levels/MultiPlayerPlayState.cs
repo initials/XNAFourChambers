@@ -24,7 +24,7 @@ namespace FourChambers
             marksman.canFly = false;
             marksman.hasMeleeWeapon = true;
             marksman.hasRangeWeapon = true;
-            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
+            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("flixel/initials/crosshair"));
 
             //mistress = new Mistress(30, 30);
 
