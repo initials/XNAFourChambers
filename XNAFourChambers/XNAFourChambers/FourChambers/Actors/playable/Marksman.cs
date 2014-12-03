@@ -340,9 +340,6 @@ namespace FourChambers
                             ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), (int)(rightX * 600), yVelAdjusted);
                         }
 
-
-
-
                         if (rightX < 0)
                         {
                             ((Arrow)(_bullets[_curArrow])).facing = Flx2DFacing.Left;
@@ -358,6 +355,7 @@ namespace FourChambers
                     arrowsRemaining--;
                 }
 
+                if (arrowsRemaining < 0) arrowsRemaining = 0;
 
                 attackingJoystick = false;
                 attackingMouse = false;
