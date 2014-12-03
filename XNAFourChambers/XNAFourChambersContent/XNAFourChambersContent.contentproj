@@ -1255,6 +1255,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
+    <Compile Include="fourchambers\spike8x16.png">
+      <Name>spike8x16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fourchambers\characterSpriteSheets\Seraphine_50x50.png">

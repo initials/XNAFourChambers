@@ -566,12 +566,13 @@ namespace FourChambers
             FlxG.followBounds(0, 0, Convert.ToInt32(levelAttrs["width"]) , Convert.ToInt32(levelAttrs["height"]) );
             
             add(bullets);
+            add(dangers);
             add(allLevelTiles);
             add(ladders);
             add(doors);
             add(actors);
             add(powerUps);
-            add(dangers);
+            
 
 
             if (seraphine == null)
@@ -2924,7 +2925,7 @@ namespace FourChambers
             #endregion
             if (ActorType == "spikes")
             {
-                Spike spike = new Spike(x, y, width,height);
+                Spike spike = new Spike(x, y+6, width, height);
                 dangers.add(spike);
 
             }
