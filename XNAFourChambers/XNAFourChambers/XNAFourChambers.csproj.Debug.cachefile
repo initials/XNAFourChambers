@@ -24,10 +24,10 @@ Content\flixel\vcr\stop.xnb
 Content\flixel\vcr\cheat_on.xnb
 Content\flixel\autotiles_16x16.xnb
 Content\flixel\autotiles_alt_16x16.xnb
-Content\flixel\vcr\cheat_off.xnb
 Content\flixel\beep.xnb
 Content\flixel\flixel.xnb
 Content\flixel\deffont.xnb
+Content\flixel\vcr\cheat_off.xnb
 Content\flixel\autotilesIsland_16x16.xnb
 Content\flixel\autotilesIsland.xnb
 Content\flixel\transitionBlack_40x40.xnb
@@ -55,6 +55,8 @@ Content\flixel\buttons\MapWhiteGameboy.xnb
 Content\flixel\initials\boats.xnb
 Content\flixel\initials\healthBar.xnb
 Content\flixel\buttons\gameIcons.xnb
+Content\flixel\diagnostic\checkerboard.xnb
+Content\flixel\pixel.xnb
 Content\flixel\initials\initials_empire_tagtone1.xnb
 Content\flixel\initials\initials_empire_tagtone2.xnb
 Content\flixel\initials\initials_empire_tagtone3.xnb
@@ -172,7 +174,6 @@ Content\fourchambers\characterSpriteSheets\Vampire_50x50.xnb
 Content\fourchambers\characterSpriteSheets\Marksman_50x50.xnb
 Content\fourchambers\auto_surt2_16x16.xnb
 Content\fourchambers\Door_32x32.xnb
-Content\fourchambers\blowharder.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -190,7 +191,7 @@ Content\sfx\Door.xnb
 Content\sfx\bat.xnb
 Content\sfx\harvesterAttack.xnb
 Content\sfx\RatJump.xnb
-Content\fourchambers\characterSpriteSheets\Spider_50x50.xnb
+Content\fourchambers\blowharder.xnb
 Content\ui\_sheet_window_01.xnb
 Content\ui\_sheet_window_02.xnb
 Content\ui\_sheet_window_03.xnb
@@ -212,6 +213,7 @@ Content\ui\_sheet_window_19.xnb
 Content\ui\_sheet_window_20.xnb
 Content\sfx\HitGround.xnb
 Content\sfx\HitGround2.xnb
+Content\fourchambers\characterSpriteSheets\Spider_50x50.xnb
 Content\fourchambers\blowharderCharacter.xnb
 Content\fourchambers\characterSpriteSheets\Mistress_50x50.xnb
 Content\fourchambers\characterSpriteSheets\Warlock_50x50.xnb
@@ -388,6 +390,8 @@ Content\flixel\fx\BloomCombine.xnb
 Content\flixel\fx\BloomExtract.xnb
 Content\flixel\fx\GaussianBlur.xnb
 Content\flixel\buttons\gameIcons.xnb
+Content\flixel\diagnostic\checkerboard.xnb
+Content\flixel\pixel.xnb
 FourChambers\ActorRecording\automaton.txt
 FourChambers\ActorRecording\chicken.txt
 FourChambers\ActorRecording\corsair.txt
