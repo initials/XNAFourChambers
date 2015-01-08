@@ -21,7 +21,7 @@ namespace FourChambers
 
             loadGraphic("fourchambers/heart_16x16", true, false, 16, 16);
 
-            loadAnimationsFromGraphicsGaleCSV("content/fourchambers/heart_16x16.csv", null, null, false);
+            addAnimationsFromGraphicsGaleCSV("content/fourchambers/heart_16x16.csv", null, null, false);
 
             play("full");
 
