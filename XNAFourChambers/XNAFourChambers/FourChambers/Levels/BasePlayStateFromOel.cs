@@ -654,7 +654,7 @@ namespace FourChambers
             //if (FlxG.zoom!=1)
             //    FlxG._game.hud.hudGroup = localHud;
 
-            FlxG.playMp3("music/" + levelAttrs["music"], 1.0f);
+            FlxG.playMp3("music/" + levelAttrs["music"], 0.250f);
 
             // Exit the game and open up a webpage for buying the game, if it's a pirate copy.
             if (FourChambers_Globals.PIRATE_COPY && FlxG.level >= 4)
