@@ -68,6 +68,10 @@ Content\flixel\initials\SMALL_PIXEL.xnb
 Content\flixel\fx\BloomCombine.xnb
 Content\flixel\fx\BloomExtract.xnb
 Content\flixel\fx\GaussianBlur.xnb
+Content\flixel\fx\pixel\composite.xnb
+Content\flixel\fx\pixel\ntsc.xnb
+Content\flixel\fx\pixel\screen.xnb
+Content\flixel\fx\pixel\crtDistortion.xnb
 Content\fourchambers\allActors.xnb
 Content\fourchambers\Ambience.xnb
 Content\fourchambers\arrowSparkles.xnb
@@ -392,6 +396,10 @@ Content\flixel\fx\GaussianBlur.xnb
 Content\flixel\buttons\gameIcons.xnb
 Content\flixel\diagnostic\checkerboard.xnb
 Content\flixel\pixel.xnb
+Content\flixel\fx\pixel\composite.xnb
+Content\flixel\fx\pixel\ntsc.xnb
+Content\flixel\fx\pixel\screen.xnb
+Content\flixel\fx\pixel\crtDistortion.xnb
 FourChambers\ActorRecording\automaton.txt
 FourChambers\ActorRecording\chicken.txt
 FourChambers\ActorRecording\corsair.txt

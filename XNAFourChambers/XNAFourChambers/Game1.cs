@@ -28,25 +28,19 @@ namespace Loader_Four
         public FlxFactory()
         {
             //Read the GAMESETTINGS.txt file
-
             string gameSettings = File.ReadAllText("GAMESETTINGS.txt");
             string[] splitter = gameSettings.Split('\n');
-            //Console.WriteLine(splitter[0]);
 
             FlxG.resolutionWidth = Convert.ToInt32(splitter[0].Substring(2));
             FlxG.resolutionHeight = Convert.ToInt32(splitter[1].Substring(2));
             if (splitter[2].Substring(11).StartsWith("1"))
             {
                 FlxG.fullscreen = true;
-
                 FlxG.resolutionWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-
                 FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-
             }
             FlxG.zoom = Convert.ToInt32(splitter[3].Substring(5));
-
-
+            
             //set up the graphics device and the content manager
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -106,16 +100,12 @@ namespace Loader_Four
 
             base.Initialize();
         }
-
     }
 
     #region Application entry point
 
     static class Program
     {
-
-
-
         //application entry point
         static void Main(string[] args)
         {
