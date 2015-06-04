@@ -474,7 +474,7 @@ namespace FourChambers
             //sfx
             if (Name.StartsWith("run") && (Frame == 2 || Frame==7))
             {
-                Console.WriteLine("Footstep F {0} FI {1}", Frame, FrameIndex);
+                //Console.WriteLine("Footstep F {0} FI {1}", Frame, FrameIndex);
                 FlxG.play("sfx/sony/footsteps/footstep_grass_boots_jog-00" + ((int)FlxU.random(1, 10)).ToString(), 1.0f);
             }
         }
