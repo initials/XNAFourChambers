@@ -181,8 +181,10 @@ namespace FourChambers
             
             base.render(spriteBatch);
             //healthBar.outline.render(spriteBatch);
-            healthBar.emptyBar.render(spriteBatch);
-            healthBar.filledBar.render(spriteBatch);
+
+
+            //healthBar.emptyBar.render(spriteBatch);
+            //healthBar.filledBar.render(spriteBatch);
             
 
         }
