@@ -152,11 +152,12 @@ namespace FourChambers
                 FlxG.setHudTextScale(3, 2);
             }
 
-            FlxSprite robot = new FlxSprite(220, 30);
-            robot.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
-            //add(robot);
+            FlxSprite logo = new FlxSprite(20, 30);
+            logo.loadGraphic("fourchambers/logo/FourChambersLogo", true, false, 800, 173);
+            logo.scale = 0.25f;
+            add(logo);
 
-            FlxG._game.hud.hudGroup.add(robot);
+            //FlxG._game.hud.hudGroup.add(logo);
 
 
 

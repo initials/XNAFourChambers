@@ -31,7 +31,7 @@ namespace Loader_Four
             int w = FlxG.resolutionWidth / FlxG.zoom;
             int h = FlxG.resolutionHeight / FlxG.zoom;
 
-            initGame(w, h, new FourChambers.MapState(), new Color(15, 15, 15), true, new Color(5, 5, 5));
+            initGame(w, h, new FourChambers.GameSelectionMenuState(), new Color(15, 15, 15), true, new Color(5, 5, 5));
 
             FlxG.debug = false;
             //FlxG.zoom = 1280 / w;
