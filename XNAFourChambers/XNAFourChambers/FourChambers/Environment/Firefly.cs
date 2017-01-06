@@ -44,7 +44,7 @@ namespace FourChambers
 
             if (targetTimer > 2.0f)
             {
-                alpha += FlxU.random(-0.05f, 0.05f);
+                //alpha += FlxU.random(-0.05f, 0.05f);
 
                 thrust += FlxU.random(-60, 60);
 

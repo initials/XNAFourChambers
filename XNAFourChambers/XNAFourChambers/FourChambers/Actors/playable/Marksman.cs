@@ -114,13 +114,13 @@ namespace FourChambers
             //offset.Y = 8;
 
             //basic player physics
-            int runSpeed = 120;
+            int runSpeed = 80;
             drag.X = runSpeed * 4;
             acceleration.Y = FourChambers_Globals.GRAVITY;
             maxVelocity.X = runSpeed;
-            maxVelocity.Y = 1000;
+            maxVelocity.Y = 700;
 
-            arrowsRemaining = 0;
+            arrowsRemaining = 100;
 
             meleeHitBox = new MeleeHitBox(xPos, yPos);
             meleeHitBox.width = 5;

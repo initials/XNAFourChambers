@@ -48,7 +48,9 @@ namespace FourChambers
 
             play("normal");
 
-            drag.X = 200;
+            drag.X = 600;
+            drag.Y = 600;
+
             acceleration.Y = 820;
             maxVelocity.X = 1000;
             maxVelocity.Y = 1000;
