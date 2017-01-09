@@ -2774,6 +2774,7 @@ namespace FourChambers
                     
                     unicorn = new Unicorn(x, y-4);
                     actors.add(unicorn);
+
                 }
             }
             #endregion

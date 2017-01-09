@@ -481,7 +481,7 @@ namespace FourChambers
                 isClimbingLadder = true;
                 attackingMelee = false;
 
-                // on a ladder, snap to nearest 16
+            // on a ladder, snap to nearest 16
             }
             else if (buttonDown || downControl)
             {

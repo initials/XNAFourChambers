@@ -30,10 +30,22 @@ namespace Loader_Four
             int div = 3;
             FlxG.zoom = 1;
 
+            FlxG.resolutionWidth = 480;
+            FlxG.resolutionHeight = 320;
+
+
+            int newZoom = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / FlxG.resolutionWidth;
+            int newW = newZoom * FlxG.resolutionWidth;
+            int newH = newZoom * FlxG.resolutionHeight;
+            Console.WriteLine("Will scale to : {0}x{1}", newW, newH);
+
+
 #if ! DEBUG
-            FlxG.zoom = 4;
-            div = 1;
+            FlxG.zoom = newZoom;
+
             FlxG.fullscreen = true;
+            FlxG.resolutionWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width ;
+            FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
 #endif
             /*
@@ -41,20 +53,13 @@ namespace Loader_Four
             FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / div;
             */
 
-            FlxG.resolutionWidth = 480;
-            FlxG.resolutionHeight = 320;
-
-
-            int scaledUpW = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / FlxG.resolutionWidth;
-            int newW = scaledUpW * FlxG.resolutionWidth;
-            int newH = scaledUpW * FlxG.resolutionHeight;
 
             //int scaledUpH = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / FlxG.resolutionHeight;
             
 
 
 
-            Console.WriteLine("Will scale to : {0}x{1}", newW, newH);
+
 
 
             //set up the graphics device and the content manager
