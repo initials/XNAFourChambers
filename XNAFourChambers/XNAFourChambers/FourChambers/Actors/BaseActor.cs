@@ -80,6 +80,13 @@ namespace FourChambers
 
         }
 
+        public override void hurt(float Damage)
+        {
+            Console.WriteLine("Health of {0} - {1}", actorType, health);
+
+            base.hurt(Damage);
+        }
+
         override public void update()
         {
             hurtTimer += FlxG.elapsed;

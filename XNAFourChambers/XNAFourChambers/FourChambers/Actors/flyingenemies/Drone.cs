@@ -38,6 +38,7 @@ namespace FourChambers
 
             speedOfWingFlapVelocity = FlxU.random(-30.0f, -20.0f);
 
+            health = 1;
             
         }
 
@@ -82,6 +83,12 @@ namespace FourChambers
 
 
             base.update();
+        }
+
+        public override void hurt(float Damage)
+        {
+            
+            base.hurt(Damage);
         }
     }
 }

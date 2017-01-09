@@ -48,10 +48,10 @@ namespace FourChambers
 
             play("normal");
 
-            drag.X = 600;
-            drag.Y = 600;
+            drag.X = 0;
+            drag.Y = 0;
 
-            acceleration.Y = 820;
+            acceleration.Y = 0;
             maxVelocity.X = 1000;
             maxVelocity.Y = 1000;
 
@@ -64,7 +64,7 @@ namespace FourChambers
             _fire.gravity = 0;
             _fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
 
-            damage = 1;
+            damage = 15;
 
 
         }
@@ -184,9 +184,6 @@ namespace FourChambers
             FlxG.play(SndHit, 0.5f, false);
             _fire.stop();
 
-
-
-
             visible = false;
 
             if (dead) return;
@@ -196,10 +193,6 @@ namespace FourChambers
             
             play("explode");
             dead = true;
-
-
-
-
 
             //base.kill();
             

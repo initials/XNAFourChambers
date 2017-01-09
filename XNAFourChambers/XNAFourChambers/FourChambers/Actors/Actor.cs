@@ -129,8 +129,8 @@ namespace FourChambers
 
         public bool attackingMelee = false;
 
-        public bool hasRangeWeapon = false;
-        public bool hasMeleeWeapon = false;
+        public bool hasRangeWeapon = true;
+        public bool hasMeleeWeapon = true;
 
         /// <summary>
         /// used for tracking the amount of time dead for restarts.

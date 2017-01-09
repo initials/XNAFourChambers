@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
-    class LevelBeginText : FlxText
+    class LevelName : FlxText
     {
         public float counter;
         public string style = "right";
@@ -18,7 +18,9 @@ namespace FourChambers
         public string flyAwayText = "";
         public int flyAwayScore = 0;
 
-        public LevelBeginText(int xPos, int yPos, int Width)
+
+
+        public LevelName(int xPos, int yPos, int Width)
             : base(xPos, yPos, Width)
         {
             counter = 0;
@@ -26,13 +28,13 @@ namespace FourChambers
 
         override public void update()
         {
-            if (counter < 5.0f)
+            if (counter < 51.0f)
                 counter += FlxG.elapsed;
 
 
             if (counter > limit)
             {
-                if (style=="right")
+                if (style == "right")
                     x += 5;
                 if (style == "up")
                 {

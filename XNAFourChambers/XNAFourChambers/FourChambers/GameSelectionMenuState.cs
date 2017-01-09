@@ -42,8 +42,7 @@ namespace FourChambers
             //FlxG.playMusic("music/" + FourChambers_Globals.MUSIC_MENU, 1.0f);
 
             FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[2]; //6 is the super bright.
-            FourChambers_Globals.hasMeleeWeapon = false;
-            FourChambers_Globals.hasRangeWeapon = false;
+
 
             FlxG.backColor = new Color(0.2f, 0.2f, 0.2f);
 

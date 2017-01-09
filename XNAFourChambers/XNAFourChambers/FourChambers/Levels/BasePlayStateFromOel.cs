@@ -633,9 +633,20 @@ namespace FourChambers
             add(bigEx);
             add(fireBalls);
 
-            //LevelBeginText t = new LevelBeginText(0, 50, FlxG.width);
-            //t.text = levelAttrs["levelName"];
-            //add(t);
+            string[] words = levelAttrs["levelName"].Split(' ');
+
+            int counterForWords = 0;
+
+            foreach (var item in words)
+            {
+                LevelName t = new LevelName(0, 50 + (counterForWords * 24), FlxG.width);
+                t.text = item;
+                add(t);
+                counterForWords++;
+                t.limit = 2.5f + (counterForWords/4.0f);
+
+            }
+
 
             textBoxInfo = new TextBox(16, 16, FlxG.width - 32, 32, levelAttrs["levelName"], 8);
             add(textBoxInfo);
@@ -685,12 +696,12 @@ namespace FourChambers
             }
 
             //plots down some clusters of fireflies.
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 int xp = (int)FlxU.random(0, FlxG.levelWidth);
                 int yp = (int)FlxU.random(0, FlxG.levelHeight);
 
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     Firefly f = new Firefly(xp + (int)FlxU.random(-30, 30), yp - (int)FlxU.random(-30, 30));
                     add(f);
@@ -1753,13 +1764,13 @@ namespace FourChambers
                 {
                     mistress.isPlayerControlled = true;
                     marksman.isPlayerControlled = false;
-                    FlxG.follow(mistress,1.0f);
+                    //FlxG.follow(mistress,1.0f);
                 }
                 else if (FlxGlobal.cheatString.StartsWith("controlharvester"))
                 {
                     harvester.isPlayerControlled = true;
                     marksman.isPlayerControlled = false;
-                    FlxG.follow(harvester, 1.0f);
+                    //FlxG.follow(harvester, 1.0f);
                 }
                 else if (FlxGlobal.cheatString.StartsWith("door"))
                 {
@@ -1910,7 +1921,7 @@ namespace FourChambers
                 if (playerControlled == true) //levelAttrs["playerControlled"] == "marksman" ||
                 {
                     marksman.isPlayerControlled = true;
-                    FlxG.follow(marksman, FOLLOW_LERP);
+                    //FlxG.follow(marksman, FOLLOW_LERP);
                 }
             }
             #endregion
@@ -1931,7 +1942,7 @@ namespace FourChambers
                 if (playerControlled == true)
                 {
                     mistress.isPlayerControlled = true;
-                    FlxG.follow(mistress, FOLLOW_LERP);
+                    //FlxG.follow(mistress, FOLLOW_LERP);
                 }
             }
             #endregion
@@ -1953,7 +1964,7 @@ namespace FourChambers
                 if (playerControlled == true)
                 {
                     warlock.isPlayerControlled = true;
-                    FlxG.follow(warlock, FOLLOW_LERP);
+                    //FlxG.follow(warlock, FOLLOW_LERP);
                 }
             }
             #endregion

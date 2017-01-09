@@ -241,6 +241,7 @@
     <Compile Include="FourChambers\GameSelectionMenuState.cs" />
     <Compile Include="FourChambers\Hud\Heart.cs" />
     <Compile Include="FourChambers\Hud\ImpactText.cs" />
+    <Compile Include="FourChambers\Hud\LevelName.cs" />
     <Compile Include="FourChambers\Hud\PlayHud.cs" />
     <Compile Include="FourChambers\Hud\TextBox.cs" />
     <Compile Include="FourChambers\Levels\AllLevels.cs" />

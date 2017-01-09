@@ -28,7 +28,7 @@ namespace Loader_Four
         public FlxFactory()
         {
             int div = 3;
-            FlxG.zoom = 3;
+            FlxG.zoom = 1;
 
 #if ! DEBUG
             FlxG.zoom = 4;
@@ -36,10 +36,25 @@ namespace Loader_Four
             FlxG.fullscreen = true;
 
 #endif
+            /*
             FlxG.resolutionWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / div;
             FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / div;
+            */
+
+            FlxG.resolutionWidth = 480;
+            FlxG.resolutionHeight = 320;
 
 
+            int scaledUpW = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / FlxG.resolutionWidth;
+            int newW = scaledUpW * FlxG.resolutionWidth;
+            int newH = scaledUpW * FlxG.resolutionHeight;
+
+            //int scaledUpH = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / FlxG.resolutionHeight;
+            
+
+
+
+            Console.WriteLine("Will scale to : {0}x{1}", newW, newH);
 
 
             //set up the graphics device and the content manager
