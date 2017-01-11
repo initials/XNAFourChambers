@@ -51,7 +51,7 @@ namespace FourChambers
 
                 try
                 {
-                    var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"])-4);
+                    var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"])-16);
                     add(myObject);
                 }
                 catch (Exception)
