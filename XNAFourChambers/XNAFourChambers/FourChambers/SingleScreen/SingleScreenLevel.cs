@@ -22,11 +22,9 @@ namespace FourChambers
             FourChambers_Globals.getLevelFileName();
 
             indestructableTilemap = new LevelTiles();
+            add(indestructableTilemap);
             indestructableTilemap.collideMin = 0;
             indestructableTilemap.collideMax = 21;
-
-            add(indestructableTilemap);
-
             FlxG.showBounds = !FlxG.showBounds;
 
 
@@ -41,12 +39,8 @@ namespace FourChambers
 
         override public void update()
         {
-            
-            base.update();
             FlxU.collide(actorsGrp, indestructableTilemap);
-
-            Console.WriteLine(indestructableTilemap.collideMax);
-
+            base.update();
 
         }
 
