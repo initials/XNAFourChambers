@@ -36,23 +36,26 @@ namespace FourChambers
                 float PC = 0.0f;
                 //print nodes;
 
-                foreach (KeyValuePair<string, string> kvp in nodes)
-                {
-                    Console.Write("Key = {0}, Value = {1}, ",
-                        kvp.Key, kvp.Value);
-                }
-                Console.Write("\r\n");
+                //foreach (KeyValuePair<string, string> kvp in nodes)
+                //{
+                //    Console.Write("Key = {0}, Value = {1}, ",
+                //        kvp.Key, kvp.Value);
+                //}
+                //Console.Write("\r\n");
 
                 string nameOfNewActor = "FourChambers." + FlxU.firstLetterToUpper( nodes["Name"] );
 
                 var type = Type.GetType(nameOfNewActor);
 
-                Console.WriteLine(nodes["Name"]);
+                //Console.WriteLine(nodes["Name"]);
 
                 try
                 {
-                    var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"])-4);
-                    add(myObject);
+                    //if (nodes["Name"] == "marksman")
+                    //{
+                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 40);
+                        add(myObject);
+                    //}
                 }
                 catch (Exception)
                 {

@@ -18,18 +18,17 @@ namespace FourChambers
         {
 
             // Set up the stats for this actor.
-            actorName = "Master Jaymes";
+            actorName = "Jaymes";
             score = 250;
             health = 75;
-            runSpeed = 120;
+            runSpeed = 9;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
             _jumpInitialTime = 0.045f;
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
-            drag.X = runSpeed * 4;
-            drag.Y = runSpeed * 4;
+            
             playbackFile = "FourChambers/ActorRecording/executor.txt";
             timeDownAfterHurt = 2.5f;
             actorType = "executor";
@@ -64,6 +63,7 @@ namespace FourChambers
             //offset.X = 7;
             //offset.Y = 1;
 
+            
         }
 
         override public void update()

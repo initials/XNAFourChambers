@@ -22,7 +22,7 @@ namespace FourChambers
             actorName = "Fabulous Diamond Joe";
             score = 250;
             health = 1; //25
-            runSpeed = 50;
+            runSpeed = 15;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
@@ -33,8 +33,7 @@ namespace FourChambers
             //drag.X = runSpeed * 4;
             //drag.Y = runSpeed * 4;
 
-            drag.X = 0;
-            drag.Y = 0;
+
 
 
             playbackFile = "FourChambers/ActorRecording/unicorn.txt";
@@ -73,14 +72,15 @@ namespace FourChambers
 
             //offset.X = 5;
             //offset.Y = 20;
+
             
         }
+
+        
 
         public void finishedHurt(string Name, uint Frame, int FrameIndex) 
         {
             //Console.WriteLine("Callback {0} {1} {2}", Name, Frame, FrameIndex);
-
-            Console.WriteLine("Unicorn finished hurt");
 
 
             //if (Name == "hurt" && Frame == 0)

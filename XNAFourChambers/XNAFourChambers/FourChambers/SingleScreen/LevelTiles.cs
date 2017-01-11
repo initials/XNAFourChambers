@@ -21,29 +21,13 @@ namespace FourChambers
             : base()
         {
             Console.WriteLine("Creating a custom LevelTiles tilemap");
-            /*
-            string levelFile;
-            if (FlxG.level >= 1)
-            {
-                levelFile = "ogmoLevels/level" + FlxG.level.ToString() + ".oel";
-            }
-            else if (FlxG.level == -1)
-            {
-                levelFile = "ogmoLevels/levelTutorial.oel";
-            }
-            else
-            {
-                Console.WriteLine("Unknown level, loading level : " + FlxG.level.ToString());
 
-                levelFile = "ogmoLevels/level" + FlxG.level.ToString() + ".oel";
-            }
-
-            Console.WriteLine("Loading BasePlayStateFromOel Level: " + levelFile);
-            */
-
+            
 
             collideMin = 0;
             collideMax = 21;
+            collideIndex = 1;
+
             boundingBoxOverride = true;
 
             indestructableAttrs = new Dictionary<string, string>();

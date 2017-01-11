@@ -175,7 +175,18 @@ namespace FourChambers
 
             isPlayerControlled = false;
 
+            drag.X = 0;
+            drag.Y = 0;
+            velocity.X = runSpeed;
+
+
         }
+
+        //protected virtual void setSpeed()
+        //{
+            
+        //}
+
 
 
         public override void render(SpriteBatch spriteBatch)
@@ -197,7 +208,15 @@ namespace FourChambers
         }
         override public void update()
         {
-
+            if (!onScreen())
+            {
+                x = 45;
+                y = 45;
+                if (velocity.X < 0)
+                {
+                    velocity.X *= -1;
+                }
+            }
             if (hurtTimer >= timeDownAfterHurt && !dead )
             {
                 //if (actorType=="unicorn") FlxG.write("Setting colorFlickerValues");

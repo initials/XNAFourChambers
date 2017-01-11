@@ -47,5 +47,9 @@
     <drone id="5" x="24" y="24" flip="False" />
     <unicorn id="16" x="16" y="80" flip="False" />
     <ladder id="25" x="288" y="144" height="112" />
+    <succubus id="0" x="112" y="256" flip="False" />
+    <paladin id="1" x="208" y="224" flip="False" />
+    <executor id="2" x="160" y="240" flip="False" />
+    <warlock id="3" x="64" y="272" flip="False" />
   </ActorsLayer>
 </level>

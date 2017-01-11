@@ -1907,16 +1907,16 @@ namespace FourChambers
                 }
                 bullets.add(arrows);
 
-                //for (int i = 0; i < NumberOfActors; i++)
-                //{
-                //    marksman = new Marksman(x, y, arrows.members);
-                //    marksman.flicker(2);
-                //    actors.add(marksman);
-                //    bullets.add(marksman.meleeHitBox);
-                //    playerControlledActors.add(marksman);
-                //    //marksman.color 
+                for (int i = 0; i < NumberOfActors; i++)
+                {
+                    marksman = new Marksman(x, y);
+                    marksman.flicker(2);
+                    actors.add(marksman);
+                    bullets.add(marksman.meleeHitBox);
+                    playerControlledActors.add(marksman);
+                    //marksman.color 
 
-                //}
+                }
 
                 if (playerControlled == true) //levelAttrs["playerControlled"] == "marksman" ||
                 {

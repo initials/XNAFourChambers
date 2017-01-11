@@ -21,11 +21,20 @@ namespace FourChambers
 
             FourChambers_Globals.getLevelFileName();
 
+            Dictionary<string, string> levelAttrs = new Dictionary<string, string>();
+
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level");
+
+            FlxG.levelWidth = Convert.ToInt32(levelAttrs["width"]);
+            FlxG.levelHeight = Convert.ToInt32(levelAttrs["height"]);
+
+            Console.WriteLine("Level Width: " + FlxG.levelWidth + " Level Height: " + FlxG.levelHeight);
+
             indestructableTilemap = new LevelTiles();
             add(indestructableTilemap);
-            indestructableTilemap.collideMin = 0;
-            indestructableTilemap.collideMax = 21;
-            FlxG.showBounds = !FlxG.showBounds;
+
+
+            //FlxG.showBounds = !FlxG.showBounds;
 
 
             actorsGrp = new ActorsGroup();
@@ -40,7 +49,9 @@ namespace FourChambers
         override public void update()
         {
             FlxU.collide(actorsGrp, indestructableTilemap);
+            
             base.update();
+
 
         }
 
