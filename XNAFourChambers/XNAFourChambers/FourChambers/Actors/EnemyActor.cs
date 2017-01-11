@@ -173,6 +173,8 @@ namespace FourChambers
             healthBar.emptyBar.offset.X = 2;
             healthBar.emptyBar.offset.Y = 3;
 
+            isPlayerControlled = false;
+
         }
 
 
@@ -247,13 +249,15 @@ namespace FourChambers
             {
                 play("idle");
             }
-            //if (isPlayerControlled)
-            //{
-               
-            //    updateInputs();
-            //}
             
-            updateInputs();
+            if (isPlayerControlled)
+            {   
+                updateInputs();
+            }
+            
+
+
+            //updateInputs();
 
             //if (actorType=="unicorn") Console.WriteLine("hurtTimer : " + hurtTimer + " " + _colorFlickerTimer);
 
@@ -388,12 +392,6 @@ namespace FourChambers
         public void updateInputs()
         {
             PlayerIndex pi;
-
-            
-            
-            
-
-
 
             bool buttonLeft = ((_rec == Recording.Playback || _rec == Recording.Reverse) && _history[frameCount][(int)FlxRecord.ButtonMap.Left]);
             bool buttonRight = ((_rec == Recording.Playback || _rec == Recording.Reverse) && _history[frameCount][(int)FlxRecord.ButtonMap.Right]);

@@ -31,16 +31,22 @@ namespace Loader_Four
             int w = FlxG.resolutionWidth / FlxG.zoom;
             int h = FlxG.resolutionHeight / FlxG.zoom;
 
-            initGame(w, h, new FourChambers.GameSelectionMenuState(), new Color(15, 15, 15), true, new Color(5, 5, 5));
+
+
+            FourChambers.FourChambers_Globals.startGame();
+
+
+            initGame(w, h, new FourChambers.SingleScreenLevel(), new Color(15, 15, 15), true, new Color(5, 5, 5));
 
             FlxG.debug = false;
-            //FlxG.zoom = 1280 / w;
-            FlxG.level = -1;
 
             FourChambers.FourChambers_Globals.gif = true;
             FourChambers.FourChambers_Globals.BUILD_TYPE = FourChambers.FourChambers_Globals.BUILD_TYPE_RELEASE;
             FourChambers.FourChambers_Globals.DEMO_VERSION = false;
             FourChambers.FourChambers_Globals.PIRATE_COPY = false;
+            FlxG.level = 1;
+            FlxG.score = 0;
+
 
 #if DEBUG
             FlxG.debug = true;

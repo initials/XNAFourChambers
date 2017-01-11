@@ -1907,16 +1907,16 @@ namespace FourChambers
                 }
                 bullets.add(arrows);
 
-                for (int i = 0; i < NumberOfActors; i++)
-                {
-                    marksman = new Marksman(x, y, arrows.members);
-                    marksman.flicker(2);
-                    actors.add(marksman);
-                    bullets.add(marksman.meleeHitBox);
-                    playerControlledActors.add(marksman);
-                    //marksman.color 
+                //for (int i = 0; i < NumberOfActors; i++)
+                //{
+                //    marksman = new Marksman(x, y, arrows.members);
+                //    marksman.flicker(2);
+                //    actors.add(marksman);
+                //    bullets.add(marksman.meleeHitBox);
+                //    playerControlledActors.add(marksman);
+                //    //marksman.color 
 
-                }
+                //}
 
                 if (playerControlled == true) //levelAttrs["playerControlled"] == "marksman" ||
                 {
@@ -2771,10 +2771,11 @@ namespace FourChambers
             {
                 for (int i = 0; i < NumberOfActors; i++)
                 {
-                    
-                    unicorn = new Unicorn(x, y-4);
-                    actors.add(unicorn);
 
+			        unicorn = new Unicorn(x, y-4);
+                    actors.add(unicorn);
+                    unicorn.velocity.X = FlxU.random(25, 50);
+			    
                 }
             }
             #endregion

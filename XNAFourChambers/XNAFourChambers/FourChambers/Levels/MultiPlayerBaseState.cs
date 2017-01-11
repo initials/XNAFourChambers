@@ -1557,21 +1557,21 @@ namespace FourChambers
                 }
                 bullets.add(arrows);
 
-                for (int i = 0; i < NumberOfActors; i++)
-                {
-                    marksman = new Marksman(x, y, arrows.members);
-                    actors.add(marksman);
-                    bullets.add(marksman.meleeHitBox);
+                //for (int i = 0; i < NumberOfActors; i++)
+                //{
+                //    marksman = new Marksman(x, y, arrows.members);
+                //    actors.add(marksman);
+                //    bullets.add(marksman.meleeHitBox);
 
-                    if (playerControlled == true)
-                    {
-                        marksman.hasRangeWeapon = true;
-                        marksman.isPlayerControlled = true;
-                        marksman.canFly = false;
-                        marksman.playerIndex = pi;
+                //    if (playerControlled == true)
+                //    {
+                //        marksman.hasRangeWeapon = true;
+                //        marksman.isPlayerControlled = true;
+                //        marksman.canFly = false;
+                //        marksman.playerIndex = pi;
 
-                    }
-                }
+                //    }
+                //}
             }
             #endregion
             #region Mistress

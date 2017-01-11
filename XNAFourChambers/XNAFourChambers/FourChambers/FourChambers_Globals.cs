@@ -69,6 +69,8 @@ namespace FourChambers
 
         public static bool canDestroyTerrain = false;
 
+        public static string levelFile;
+
         /// <summary>
         /// The number of arrows fired from the bow
         /// </summary>
@@ -230,6 +232,30 @@ namespace FourChambers
                 Console.WriteLine("advanceToNextLevel() " + FourChambers_Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count);
                 FourChambers_Globals.availableLevels.RemoveAt(newLevel);
             }
+        }
+
+        public static void getLevelFileName()
+        {
+            string levelFile;
+            if (FlxG.level >= 1)
+            {
+                levelFile = "ogmoLevels/level" + FlxG.level.ToString() + ".oel";
+            }
+            else if (FlxG.level == -1)
+            {
+                levelFile = "ogmoLevels/levelTutorial.oel";
+            }
+            else
+            {
+                Console.WriteLine("Unknown level, loading level : " + FlxG.level.ToString());
+
+                levelFile = "ogmoLevels/level" + FlxG.level.ToString() + ".oel";
+            }
+
+            Console.WriteLine("Loading BasePlayStateFromOel Level: " + levelFile);
+
+            FourChambers_Globals.levelFile = levelFile;
+
         }
     }
 }

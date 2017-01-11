@@ -27,12 +27,10 @@ namespace FourChambers
 
         private Vector2 lastJoystickDirection;
 
-        public Marksman(int xPos, int yPos, List<FlxObject> Bullets)
+        public Marksman(int xPos, int yPos)
             : base(xPos, yPos)
         {
             actorName = "Marqu";
-
-            _bullets = Bullets;
 
             if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_MARKSMAN)
             {
@@ -130,11 +128,12 @@ namespace FourChambers
 
             timeDownAfterHurt = 1.5f;
 
-
             hasMeleeWeapon = FourChambers_Globals.hasMeleeWeapon;
             hasRangeWeapon = FourChambers_Globals.hasRangeWeapon;
 
             health = 4;
+
+            isPlayerControlled = true;
 
         }
 
@@ -381,7 +380,7 @@ namespace FourChambers
                 double velocity_x = Math.Cos((float)radians);
                 double velocity_y = Math.Sin((float)radians);
 
-                if (arrowsRemaining >= 1)
+                if (arrowsRemaining >= 1 && _bullets != null)
                 {
                     for (int i = 0; i < FourChambers_Globals.arrowsToFire; i++)
                     {

@@ -252,6 +252,9 @@
     <Compile Include="FourChambers\Levels\Hill.cs" />
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
+    <Compile Include="FourChambers\SingleScreen\ActorsGroup.cs" />
+    <Compile Include="FourChambers\SingleScreen\LevelTiles.cs" />
+    <Compile Include="FourChambers\SingleScreen\SingleScreenLevel.cs" />
     <Compile Include="FourChambers\Overworld\MapActor.cs" />
     <Compile Include="FourChambers\Overworld\MapState.cs" />
     <Compile Include="FourChambers\Levels\MovingPlatform.cs" />

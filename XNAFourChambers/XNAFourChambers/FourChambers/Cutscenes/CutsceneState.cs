@@ -66,9 +66,9 @@ namespace FourChambers
             add(bgSprite);
             bgSprite.color = Color.DimGray;
 
-            marksman = new Marksman(110,95,null);
-            marksman.isPlayerControlled = false;
-            add(marksman);
+            //marksman = new Marksman(110,95,null);
+            //marksman.isPlayerControlled = false;
+            //add(marksman);
 
             mistress = new Mistress(130, 95);
             mistress.isPlayerControlled = false;
