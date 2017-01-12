@@ -50,7 +50,6 @@
     <paladin id="1" x="208" y="224" flip="False" />
     <executor id="2" x="160" y="240" flip="False" />
     <warlock id="3" x="64" y="272" flip="False" />
-    <warlock id="6" x="32" y="80" flip="False" />
     <automaton id="7" x="48" y="96" flip="False" />
     <bat id="8" x="64" y="64" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="10" x="80" y="48" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
