@@ -64,5 +64,11 @@
     <zombie id="21" x="336" y="112" flip="False" />
     <mummy id="22" x="304" y="240" flip="False" />
     <door id="14" x="400" y="272" levelToGoTo="1" />
+    <fireThrower id="19" x="160" y="48" shootEvery="1" angleCounter="0" />
+    <fireThrower id="23" x="304" y="48" shootEvery="1" angleCounter="0" />
+    <fallAwayBridge id="24" x="144" y="128" width="48" />
+    <fallAwayBridge id="26" x="224" y="128" width="32" />
+    <spikes id="27" x="416" y="160" width="64" height="16" />
+    <spikes id="28" x="0" y="160" width="64" height="16" />
   </ActorsLayer>
 </level>

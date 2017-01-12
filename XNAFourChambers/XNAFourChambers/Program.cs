@@ -37,7 +37,7 @@ namespace Loader_Four
 
 
             initGame(w, h, new FourChambers.SingleScreenLevel(), new Color(15, 15, 15), true, new Color(5, 5, 5));
-            //initGame(w, h, new FourChambers.BasePlayStateFromOel(), new Color(15, 15, 15), true, new Color(5, 5, 5));
+            //initGame(w, h, new FourChambers.BasePlayStateFromOel(), new Color(15, 15, 66), true, new Color(5, 5, 66));
 
 
             FlxG.debug = false;

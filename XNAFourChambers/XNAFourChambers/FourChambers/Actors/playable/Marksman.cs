@@ -271,6 +271,7 @@ namespace FourChambers
 
         override public void update()
         {
+            //Console.WriteLine("x:{0}-y:{1}", x,y);
 
             adjustMeleeBox();
 

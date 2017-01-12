@@ -36,7 +36,7 @@ namespace FourChambers
 
             play("idle");
 
-            y -= 8;
+            //y -= 12;
 
         }
         public void pulse(string Name, uint Frame, int FrameIndex)

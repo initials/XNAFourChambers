@@ -236,6 +236,7 @@
     <Compile Include="FourChambers\Dangers\Spike.cs" />
     <Compile Include="FourChambers\DataEntryState.cs" />
     <Compile Include="FourChambers\Environment\Firefly.cs" />
+    <Compile Include="FourChambers\Environment\FireflyGroup.cs" />
     <Compile Include="FourChambers\EventSprite.cs" />
     <Compile Include="FourChambers\FourChambers_Globals.cs" />
     <Compile Include="FourChambers\GameProgress.cs" />

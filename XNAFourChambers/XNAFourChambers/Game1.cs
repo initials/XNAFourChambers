@@ -27,17 +27,25 @@ namespace Loader_Four
         //nothing much to see here, typical XNA initialization code
         public FlxFactory()
         {
-            int div = 3;
-            FlxG.zoom = 1;
+            FlxG.zoom = 2;
 
-            FlxG.resolutionWidth = 480;
-            FlxG.resolutionHeight = 320;
+            FlxG.resolutionWidth = 480 * FlxG.zoom;
+            FlxG.resolutionHeight = 320 * FlxG.zoom;
 
 
             int newZoom = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / FlxG.resolutionWidth;
+
+            int borderW = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width % FlxG.resolutionWidth;
+            int borderH = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height % FlxG.resolutionHeight;
+
+
+
             int newW = newZoom * FlxG.resolutionWidth;
             int newH = newZoom * FlxG.resolutionHeight;
             Console.WriteLine("Will scale to : {0}x{1}", newW, newH);
+
+
+
 
 
 #if ! DEBUG
@@ -68,6 +76,11 @@ namespace Loader_Four
 
             if (FlxG.fullscreen)
             {
+                FlxG.borderWidth = borderW/2;
+                FlxG.borderHeight = borderH/2;
+
+                Console.WriteLine("BORDER WIDTH x:{0}-y:{1}", FlxG.borderWidth, FlxG.borderHeight);
+
                 //resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
                 //resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
                 if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
