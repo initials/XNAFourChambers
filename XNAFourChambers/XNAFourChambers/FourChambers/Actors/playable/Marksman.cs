@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
 namespace FourChambers
 {
     public class Marksman : Actor
@@ -26,6 +25,8 @@ namespace FourChambers
         private double _degrees;
 
         private Vector2 lastJoystickDirection;
+
+        protected FlxGroup arrows;
 
         public Marksman(int xPos, int yPos)
             : base(xPos, yPos)
@@ -135,6 +136,17 @@ namespace FourChambers
             health = 4;
 
             isPlayerControlled = true;
+
+            arrows = new FlxGroup();
+
+            for (int i = 0; i < arrowsRemaining; i++)
+            {
+                Arrow arrow = new Arrow(-1000, 1000);
+                arrows.add(arrow);
+
+            }
+
+            _bullets = arrows.members;
 
 
         }
@@ -390,11 +402,7 @@ namespace FourChambers
                         int yVelAdjusted = yVel - (i * 40);
                         int xVel = (int)(velocity_x * (-550 - (FourChambers_Globals.arrowPower*50)));
 
-
-                        //Console.WriteLine("Y Velocity = {0} {1}", xVel, yVelAdjusted);
-
                         ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), xVel, yVelAdjusted);
-                        
 
                         if (++_curArrow >= _bullets.Count)
                             _curArrow = 0;
@@ -405,14 +413,10 @@ namespace FourChambers
                 if (rightX1 - x < 0)
                 {
                     facing = Flx2DFacing.Left;
-
-                    //Console.WriteLine("Left");
                 }
                 else
                 {
                     facing = Flx2DFacing.Right;
-
-                    //Console.WriteLine("Right");
                 }
 
 
@@ -431,7 +435,6 @@ namespace FourChambers
                     velocity.Y = -100;
                     //FlxG.bloom.Visible = true;
                     flying = true;
-
                 }
                 else
                 {

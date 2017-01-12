@@ -219,6 +219,7 @@
     <Compile Include="FourChambers\Actors\nonanimated\Wizard.cs" />
     <Compile Include="FourChambers\Actors\playable\Arrow.cs" />
     <Compile Include="FourChambers\Actors\playable\BigExplosion.cs" />
+    <Compile Include="FourChambers\Actors\playable\BulletGroup.cs" />
     <Compile Include="FourChambers\Actors\playable\Marksman.cs" />
     <Compile Include="FourChambers\Actors\playable\MeleeHitBox.cs" />
     <Compile Include="FourChambers\Actors\playable\Mistress.cs" />
