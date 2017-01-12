@@ -1956,7 +1956,7 @@ namespace FourChambers
                 for (int i = 0; i < NumberOfActors; i++)
                 {
 
-                    warlock = new Warlock(x, y, warlockFireBalls.members);
+                    warlock = new Warlock(x, y);
                     actors.add(warlock);
                     warlock.flicker(2);
                     playerControlledActors.add(warlock);

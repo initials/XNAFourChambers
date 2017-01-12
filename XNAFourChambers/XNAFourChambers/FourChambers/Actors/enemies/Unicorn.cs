@@ -30,8 +30,8 @@ namespace FourChambers
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
             
-            //drag.X = runSpeed * 4;
-            //drag.Y = runSpeed * 4;
+            ////drag.X = runSpeed * 4;
+            ////drag.Y = runSpeed * 4;
 
 
 

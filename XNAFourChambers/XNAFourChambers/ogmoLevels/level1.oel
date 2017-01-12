@@ -17,7 +17,7 @@
 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,29,29,182,29,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,172,102,6,14,14,14,14,12,80,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 130,131,-1,-1,-1,-1,-1,-1,102,6,14,14,18,20,16,16,18,15,14,14,12,80,-1,-1,-1,-1,-1,-1,132,-1
-151,152,29,29,29,102,6,14,14,16,20,20,15,17,18,20,18,15,20,16,20,14,14,12,80,28,29,29,153,-1
+151,152,29,29,29,102,6,14,14,16,20,20,15,17,18,20,18,15,20,16,20,14,14,12,80,28,-1,29,153,-1
 14,14,14,14,14,14,17,18,18,16,20,17,18,16,20,17,17,19,15,20,16,16,18,19,14,14,14,14,14,14
 19,18,17,17,19,17,19,20,15,16,17,15,20,17,19,17,19,18,16,17,20,19,18,16,15,20,17,16,15,18</DestructableTerrain>
   <IndestructableTerrain tileset="auto_surt2_16x16" exportMode="CSV">-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
@@ -43,7 +43,6 @@
   <ActorsLayer>
     <marksman id="4" x="32" y="272" flip="False" isPlayerControlled="True" />
     <drone id="9" x="160" y="176" flip="False" />
-    <door id="19" x="416" y="272" levelToGoTo="2" />
     <drone id="5" x="24" y="24" flip="False" />
     <unicorn id="16" x="16" y="80" flip="False" />
     <ladder id="25" x="288" y="144" height="112" />
@@ -51,5 +50,18 @@
     <paladin id="1" x="208" y="224" flip="False" />
     <executor id="2" x="160" y="240" flip="False" />
     <warlock id="3" x="64" y="272" flip="False" />
+    <warlock id="6" x="32" y="80" flip="False" />
+    <automaton id="7" x="48" y="96" flip="False" />
+    <bat id="8" x="64" y="64" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="10" x="80" y="48" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="11" x="96" y="64" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <corsair id="12" x="64" y="96" flip="False" />
+    <gloom id="13" x="80" y="96" flip="False" />
+    <spider id="15" x="352" y="112" flip="False" />
+    <tormentor id="17" x="384" y="96" flip="False" />
+    <succubus id="18" x="416" y="96" flip="False" />
+    <vampire id="20" x="400" y="96" flip="False" />
+    <zombie id="21" x="336" y="112" flip="False" />
+    <mummy id="22" x="304" y="240" flip="False" />
   </ActorsLayer>
 </level>

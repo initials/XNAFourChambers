@@ -36,7 +36,7 @@ namespace FourChambers
 
             //basic player physics
             int runSpeed = 30;
-            //drag.X = runSpeed * 4;
+            ////drag.X = runSpeed * 4;
             acceleration.Y = 50;
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 1000;

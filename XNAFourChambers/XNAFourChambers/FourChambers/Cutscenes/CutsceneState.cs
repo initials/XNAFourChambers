@@ -74,7 +74,7 @@ namespace FourChambers
             mistress.isPlayerControlled = false;
             add(mistress);
 
-            warlock = new Warlock(150, 95,null);
+            warlock = new Warlock(150, 95);
             warlock.isPlayerControlled = false;
             add(warlock);
 

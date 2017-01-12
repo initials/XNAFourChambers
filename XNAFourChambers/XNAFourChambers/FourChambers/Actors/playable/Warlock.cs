@@ -13,14 +13,12 @@ namespace FourChambers
     {
         private Texture2D ImgWarlock;
 
-        public Warlock(int xPos, int yPos, List<FlxObject> Bullets)
+        public Warlock(int xPos, int yPos)
             : base(xPos, yPos)
         {
             actorName = "Terry";
 
-            _bullets = Bullets;
-
-            isPlayerControlled = false;
+            isPlayerControlled = true;
 
             ImgWarlock = FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_ss_29x29");
 
@@ -37,6 +35,8 @@ namespace FourChambers
             addAnimation("run", new int[] { 5, 6, 7, 8, 9 }, 12);
             addAnimation("idle", new int[] { 0, 1, 2, 3 }, 12);
             addAnimation("attack", new int[] { 11,12,13,14,15,16 }, 14);
+
+            playerIndex = PlayerIndex.One;
 
 
         }

@@ -210,12 +210,28 @@ namespace FourChambers
         {
             if (!onScreen())
             {
-                x = 45;
-                y = 45;
-                if (velocity.X < 0)
+                if (FlxU.random() > 0.5f)
                 {
-                    velocity.X *= -1;
+                    x = 0;
+                    y = 72;
+
+                    if (velocity.X < 0)
+                    {
+                        velocity.X *= -1;
+                    }
                 }
+                else 
+                {
+                    x = 464;
+                    y = 72;
+
+                    if (velocity.X > 0)
+                    {
+                        velocity.X *= -1;
+                    }
+                }
+
+
             }
             if (hurtTimer >= timeDownAfterHurt && !dead )
             {

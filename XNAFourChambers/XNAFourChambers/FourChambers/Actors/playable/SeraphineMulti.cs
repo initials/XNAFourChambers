@@ -32,7 +32,7 @@ namespace FourChambers
 
             //basic player physics
             runSpeed = 120;
-            drag.X = runSpeed * 4;
+            //drag.X = runSpeed * 4;
             acceleration.Y = FourChambers_Globals.GRAVITY;
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 1000;

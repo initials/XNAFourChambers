@@ -21,7 +21,7 @@ namespace FourChambers
             actorName = "Jaymes";
             score = 250;
             health = 75;
-            runSpeed = 9;
+            runSpeed = 5;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
