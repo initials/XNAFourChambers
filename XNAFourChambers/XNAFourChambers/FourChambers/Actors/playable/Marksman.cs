@@ -461,6 +461,7 @@ namespace FourChambers
             }
 
             base.update();
+            arrows.update();
 
             // Just landed.
             if (wasInAir && framesSinceLeftGround == 0)
@@ -484,6 +485,8 @@ namespace FourChambers
         {
             base.render(spriteBatch);
             meleeHitBox.render(spriteBatch);
+            arrows.render(spriteBatch);
+
         }
     }
 }
