@@ -46,6 +46,14 @@ namespace FourChambers
         override public void update()
         {
             FlxU.collide(actorsGrp, indestructableTilemap);
+
+            //foreach (var item in actorsGrp.members)
+            //{
+            //    if (item == "marksman")
+            //    {
+
+            //    }
+            //}
             
             base.update();
 
