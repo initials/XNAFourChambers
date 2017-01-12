@@ -1902,7 +1902,7 @@ namespace FourChambers
             {
                 for (int i = 0; i < BULLETS_PER_ACTOR; i++)
                 {
-                    arrow = new Arrow(-1000, 1000, bigEx);
+                    arrow = new Arrow(-1000, 1000);
                     arrows.add(arrow);
                 }
                 bullets.add(arrows);

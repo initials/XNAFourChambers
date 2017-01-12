@@ -53,7 +53,7 @@ namespace FourChambers
                 {
                     //if (nodes["Name"] == "marksman")
                     //{
-                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 40);
+                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
                         add(myObject);
                     //}
                 }

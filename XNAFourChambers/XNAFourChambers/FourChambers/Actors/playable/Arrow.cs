@@ -23,12 +23,12 @@ namespace FourChambers
 
         protected FlxEmitter _fire;
 
-        public Arrow(int xPos, int yPos, FlxSprite exp)
+        public Arrow(int xPos, int yPos)
             : base(xPos, yPos)
         {
 
 
-            _ex = exp;
+            //_ex = exp;
 
             ImgBullet = FlxG.Content.Load<Texture2D>("fourchambers/arrow_8x1");
 

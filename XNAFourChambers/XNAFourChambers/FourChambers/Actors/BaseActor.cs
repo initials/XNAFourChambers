@@ -73,16 +73,11 @@ namespace FourChambers
             actorName="BaseActor";
             actorType = "BaseActor";
             acceleration.Y = FourChambers_Globals.GRAVITY;
-            //FlxG.write("1 New BASE ACTOR");
-
-
-
-
         }
 
         public override void hurt(float Damage)
         {
-            Console.WriteLine("Health of {0} - {1}", actorType, health);
+            //Console.WriteLine("Health of {0} - {1}", actorType, health);
 
             base.hurt(Damage);
         }
@@ -90,8 +85,7 @@ namespace FourChambers
         override public void update()
         {
             hurtTimer += FlxG.elapsed;
-
-
+            
             base.update();
 
             if (FlxGlobal.cheatString != null)

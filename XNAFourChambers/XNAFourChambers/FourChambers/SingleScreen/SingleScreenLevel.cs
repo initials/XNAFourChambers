@@ -33,12 +33,9 @@ namespace FourChambers
             indestructableTilemap = new LevelTiles();
             add(indestructableTilemap);
 
-
-            //FlxG.showBounds = !FlxG.showBounds;
-
-
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
+
 
 
         }

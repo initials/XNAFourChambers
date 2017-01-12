@@ -17,7 +17,7 @@ namespace FourChambers
         /// <summary>
         /// arrows left
         /// </summary>
-        public int arrowsRemaining = 0;
+        public int arrowsRemaining = 20;
 
         public MeleeHitBox meleeHitBox;
 
@@ -135,6 +135,7 @@ namespace FourChambers
             health = 4;
 
             isPlayerControlled = true;
+
 
         }
 
@@ -462,9 +463,6 @@ namespace FourChambers
             if (wasInAir && framesSinceLeftGround == 0)
             {
                 FlxG.play("sfx/sony/footsteps/footstep_grass_boots_jog-001", 1.0f, false);
-
-                //Console.WriteLine("----------------------> WAS IN AIR");
-
             }
         }
 

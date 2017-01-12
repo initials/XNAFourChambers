@@ -38,8 +38,6 @@ namespace FourChambers
             addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
             addAnimation("walkRange", new int[] { 5, 6, 7, 8, 9 }, 12);
 
-
-
             addAnimation("idle", new int[] { 0, 1, 2, 3 }, 12);
             addAnimation("attack", new int[] { 11,12,13,14,15,16 }, 14);
 
@@ -49,7 +47,6 @@ namespace FourChambers
 
             drag.X = runSpeed * 4;
             drag.Y = runSpeed * 4;
-
 
         }
 
