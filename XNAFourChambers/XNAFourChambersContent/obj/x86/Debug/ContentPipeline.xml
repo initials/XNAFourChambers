@@ -2106,6 +2106,15 @@
       <Extra>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\music\ralph\this is the news.wma</Extra>
       <Time>2016-04-23T16:04:38.7230764+10:00</Time>
     </Item>
+    <Item>
+      <Source>fourchambers\bg.png</Source>
+      <Name>fourchambers\bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\bg.xnb</Output>
+      <Time>2017-01-13T18:09:50.6736158+11:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

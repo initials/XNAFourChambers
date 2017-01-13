@@ -50,9 +50,21 @@ namespace FourChambers
 
         }
 
-        public void reSpawn(int X, int Y)
+        public override void reset(float X, float Y)
         {
+            //Console.WriteLine("Resetting a Zinger");
 
+            velocity.X = 100;
+
+            visible = true;
+
+            play("fly");
+
+            base.reset(X, Y);
+
+            acceleration.Y = 50;
+
+            //Console.WriteLine(exists);
         }
 
         override public void update()
@@ -83,8 +95,22 @@ namespace FourChambers
                 facing = Flx2DFacing.Left;
             }
 
-            if (x > FlxG.levelWidth) x = 1;
-            if (x < 0) x = FlxG.levelWidth - 1;
+            if (x > FlxG.levelWidth)
+            {
+                x = 1;
+                //Console.WriteLine(x.ToString() );
+
+            }
+            if (x < 0)
+            {
+                x = FlxG.levelWidth - 1;
+                //Console.WriteLine(x.ToString());
+            }
+            if (y < 0)
+            {
+                velocity.Y = 95;
+                //Console.WriteLine(x.ToString());
+            }
 
         }
         public override void kill()
@@ -119,8 +145,8 @@ namespace FourChambers
                     //Marksman picks up a point!
 
                     FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
-                    x = -100;
-                    y = -100;
+
+                    exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
                 }

@@ -19,6 +19,8 @@ namespace FourChambers
         {
             base.create();
 
+            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
+
             // set level details
 
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;

@@ -82,6 +82,8 @@ namespace FourChambers
             base.hurt(Damage);
         }
 
+     
+
         override public void update()
         {
             hurtTimer += FlxG.elapsed;

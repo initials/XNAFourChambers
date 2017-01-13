@@ -83,19 +83,15 @@ namespace FourChambers
 
         override public void update()
         {
-
-            foreach (var item in members)
+            if (FlxU.random() < 0.00251f * FlxG.elapsedTotal)
             {
-                if (item.dead && !item.onScreen())
+                foreach (var item in members)
                 {
-                    //Respawn based on chance of respawn
-                    //Console.WriteLine("Found a dead bee");
-                    //dead = false;
-                    //item.x = 68;
-                    //item.y = 68;
-                    //visible = true;
-                    //((FlxSprite)item).play("fly");
-                    //item.velocity.X = ((Zinger)item).runSpeed;
+                    if (item.dead && !item.exists)
+                    {
+                        //Respawn based on chance of respawn
+                        item.reset(8, 64);
+                    }
                 }
             }
 
