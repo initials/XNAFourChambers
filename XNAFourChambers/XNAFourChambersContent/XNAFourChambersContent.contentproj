@@ -896,6 +896,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fourchambers\bg.png">
+      <Name>bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="fourchambers\characterSpriteSheets\Executor_50x50.csv">
       <Name>Executor_50x50</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

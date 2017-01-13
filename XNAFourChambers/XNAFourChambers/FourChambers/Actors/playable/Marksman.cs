@@ -26,7 +26,7 @@ namespace FourChambers
 
         private Vector2 lastJoystickDirection;
 
-        protected FlxGroup arrows;
+        public FlxGroup arrows;
 
         public Marksman(int xPos, int yPos)
             : base(xPos, yPos)

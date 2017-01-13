@@ -47,8 +47,8 @@ namespace FourChambers
             addAnimation("death", generateFrameNumbersBetween(0,9), 12, false);
             addAnimation("hurt", generateFrameNumbersBetween(0, 9), 12, false);
 
-            addAnimation("walk", generateFrameNumbersBetween(21,26), 12, false);
-            addAnimation("run", generateFrameNumbersBetween(21, 26), 12, false);
+            addAnimation("walk", generateFrameNumbersBetween(21,26), 12);
+            addAnimation("run", generateFrameNumbersBetween(21, 26), 12);
             
             addAnimation("attack", generateFrameNumbersBetween(28,32), 6, false);
 

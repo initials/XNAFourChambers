@@ -47,18 +47,33 @@ namespace FourChambers
         {
             FlxU.collide(actorsGrp, indestructableTilemap);
 
-            //foreach (var item in actorsGrp.members)
-            //{
-            //    if (item == "marksman")
-            //    {
-
-            //    }
-            //}
+            collideArrows();
             
             base.update();
 
 
         }
+
+        private void collideArrows()
+        {
+            foreach (var item in actorsGrp.members)
+            {
+                if (item is Marksman)
+                {
+                    FlxU.overlap(((Marksman)(item)).arrows, actorsGrp, eventCallback);
+                }
+            }
+        }
+
+        protected bool eventCallback(object Sender, FlxSpriteCollisionEvent e)
+        {
+
+            //((Arrow)e.Object1).kill();
+            //((FlxSprite)e.Object2).hurt(1);
+
+            return true;
+        }
+
 
     }
 }

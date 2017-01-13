@@ -16,13 +16,16 @@ namespace FourChambers
     class LevelTiles : FlxTilemap
     {
         private Dictionary<string, string> indestructableAttrs;
+        private FlxTilemap bgTiles;
+        private FlxSprite bg;
 
         public LevelTiles()
             : base()
         {
             Console.WriteLine("Creating a custom LevelTiles tilemap");
 
-            
+            bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
+            bg.alpha = 0.25f;
 
             collideMin = 0;
             collideMax = 21;
@@ -40,7 +43,19 @@ namespace FourChambers
                 FourChambers_Globals.TILE_SIZE_X, 
                 FourChambers_Globals.TILE_SIZE_Y);
 
-            
+
+            indestructableAttrs = new Dictionary<string, string>();
+            indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/IndestructableTerrain");
+
+            bgTiles = new FlxTilemap();
+            bgTiles.auto = FlxTilemap.STRING;
+
+            bgTiles.loadMap(indestructableAttrs["IndestructableTerrain"],
+                FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]),
+                FourChambers_Globals.TILE_SIZE_X,
+                FourChambers_Globals.TILE_SIZE_Y);
+            bgTiles.alpha = 0.5f;
+
 
 
 
@@ -52,6 +67,13 @@ namespace FourChambers
         override public void update()
         {
             base.update();
+        }
+
+        public override void render(SpriteBatch spriteBatch)
+        {
+            bg.render(spriteBatch);
+            bgTiles.render(spriteBatch);
+            base.render(spriteBatch);
         }
 
         
