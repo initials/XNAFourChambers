@@ -83,17 +83,23 @@ namespace FourChambers
 
         override public void update()
         {
-            if (FlxU.random() < 0.00251f * FlxG.elapsedTotal)
+            float chance = 0.00251f;
+            if (FlxG.elapsedTotal > 15) chance = 0.0251f;
+            if (FlxG.elapsedTotal > 30) chance = 0.0551f;
+            if (FlxG.elapsedTotal > 45) chance = 0.1551f;
+            
+            foreach (var item in members)
             {
-                foreach (var item in members)
+                if (item.dead && !item.exists)
                 {
-                    if (item.dead && !item.exists)
+                    if (FlxU.random() < chance)
                     {
                         //Respawn based on chance of respawn
                         item.reset(8, 64);
                     }
                 }
             }
+            
 
             base.update();
         }
