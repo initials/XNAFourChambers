@@ -20,7 +20,7 @@ namespace FourChambers
             actorName = "Creeping Death";
             score = 50000;
             health = 100;
-            runSpeed = 120;
+            runSpeed = 7;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;

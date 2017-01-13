@@ -82,7 +82,11 @@ namespace FourChambers
             base.hurt(Damage);
         }
 
-     
+        public override void reset(float X, float Y)
+        {
+            velocity.X = runSpeed;
+            base.reset(X, Y);
+        }
 
         override public void update()
         {

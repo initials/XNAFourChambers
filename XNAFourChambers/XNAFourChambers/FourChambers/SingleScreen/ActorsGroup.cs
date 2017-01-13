@@ -66,6 +66,15 @@ namespace FourChambers
                     //{
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
                         add(myObject);
+                        if (Convert.ToInt32(nodes["y"])==0)
+                        {
+                            //myObject.dead = true;
+                            //myObject.x = -100;
+                            //myObject.y = -100;
+
+                        }
+
+
                     //}
                     }
                 }
@@ -73,20 +82,16 @@ namespace FourChambers
                 {
                     
                 }
-
-
-
-
-
             }
         }
 
         override public void update()
         {
             float chance = 0.00251f;
+
             if (FlxG.elapsedTotal > 15) chance = 0.0251f;
-            if (FlxG.elapsedTotal > 30) chance = 0.0551f;
-            if (FlxG.elapsedTotal > 45) chance = 0.1551f;
+            if (FlxG.elapsedTotal > 30) chance = 0.0451f;
+            if (FlxG.elapsedTotal > 45) chance = 0.0851f;
             
             foreach (var item in members)
             {
@@ -100,7 +105,6 @@ namespace FourChambers
                 }
             }
             
-
             base.update();
         }
 
