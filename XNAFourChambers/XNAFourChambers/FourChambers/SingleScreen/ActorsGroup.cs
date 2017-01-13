@@ -51,11 +51,23 @@ namespace FourChambers
 
                 try
                 {
+                    if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
+                    {
+                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));
+                        add(myObject);
+                    }
+                    else if (nodes.ContainsKey("height"))
+                    {
+                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), 16, Convert.ToInt32(nodes["height"]));
+                        add(myObject);
+                    }
+                    else {
                     //if (nodes["Name"] == "marksman")
                     //{
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
                         add(myObject);
                     //}
+                    }
                 }
                 catch (Exception)
                 {
@@ -71,6 +83,22 @@ namespace FourChambers
 
         override public void update()
         {
+
+            foreach (var item in members)
+            {
+                if (item.dead && !item.onScreen())
+                {
+                    //Respawn based on chance of respawn
+                    //Console.WriteLine("Found a dead bee");
+                    //dead = false;
+                    //item.x = 68;
+                    //item.y = 68;
+                    //visible = true;
+                    //((FlxSprite)item).play("fly");
+                    //item.velocity.X = ((Zinger)item).runSpeed;
+                }
+            }
+
             base.update();
         }
 

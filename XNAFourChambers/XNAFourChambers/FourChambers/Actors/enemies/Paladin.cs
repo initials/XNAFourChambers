@@ -20,7 +20,7 @@ namespace FourChambers
             actorName = "Johnny Football Hero";
             score = 250;
             health = 15;
-            runSpeed = 12;
+            runSpeed = 6;
             _jumpPower = -150.0f;
             _jumpInitialPower = -150.0f;
             _jumpMaxTime = 0.10f;

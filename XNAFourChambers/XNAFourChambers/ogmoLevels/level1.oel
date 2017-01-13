@@ -43,32 +43,40 @@
   <ActorsLayer>
     <marksman id="4" x="32" y="272" flip="False" isPlayerControlled="True" />
     <drone id="9" x="160" y="176" flip="False" />
-    <drone id="5" x="24" y="24" flip="False" />
-    <unicorn id="16" x="16" y="80" flip="False" />
-    <ladder id="25" x="288" y="144" height="112" />
-    <succubus id="0" x="112" y="256" flip="False" />
-    <paladin id="1" x="208" y="224" flip="False" />
-    <executor id="2" x="160" y="240" flip="False" />
-    <warlock id="3" x="64" y="272" flip="False" />
-    <warlock id="6" x="32" y="80" flip="False" />
-    <automaton id="7" x="48" y="96" flip="False" />
     <bat id="8" x="64" y="64" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
-    <bat id="10" x="80" y="48" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="11" x="96" y="64" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
-    <corsair id="12" x="64" y="96" flip="False" />
-    <gloom id="13" x="80" y="96" flip="False" />
-    <spider id="15" x="352" y="112" flip="False" />
-    <tormentor id="17" x="384" y="96" flip="False" />
-    <succubus id="18" x="416" y="96" flip="False" />
-    <vampire id="20" x="400" y="96" flip="False" />
-    <zombie id="21" x="336" y="112" flip="False" />
-    <mummy id="22" x="304" y="240" flip="False" />
     <door id="14" x="400" y="272" levelToGoTo="1" />
     <fireThrower id="19" x="160" y="48" shootEvery="1" angleCounter="0" />
     <fireThrower id="23" x="304" y="48" shootEvery="1" angleCounter="0" />
-    <fallAwayBridge id="24" x="144" y="128" width="48" />
     <fallAwayBridge id="26" x="224" y="128" width="32" />
-    <spikes id="27" x="416" y="160" width="64" height="16" />
-    <spikes id="28" x="0" y="160" width="64" height="16" />
+    <ladder id="25" x="288" y="144" height="112" />
+    <drone id="0" x="160" y="80" flip="False" />
+    <drone id="1" x="320" y="64" flip="False" />
+    <drone id="2" x="384" y="208" flip="False" />
+    <zinger id="3" x="64" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="5" x="368" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="6" x="384" y="32" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="7" x="112" y="32" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="10" x="256" y="-16" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <rat id="12" x="16" y="80" flip="False" />
+    <rat id="13" x="448" y="80" flip="True" />
+    <rat id="15" x="400" y="96" flip="True" />
+    <zinger id="16" x="48" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="17" x="80" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="18" x="112" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="20" x="112" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="21" x="96" y="160" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="22" x="96" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="24" x="112" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="27" x="80" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="28" x="80" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="29" x="48" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="30" x="48" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="31" x="64" y="176" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="32" x="64" y="192" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="33" x="64" y="192" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="34" x="80" y="192" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="35" x="80" y="192" flip="False" pathType="FORWARD" pathSpeed="100" />
+    <zinger id="36" x="96" y="192" flip="False" pathType="FORWARD" pathSpeed="100" />
   </ActorsLayer>
 </level>

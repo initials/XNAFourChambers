@@ -19,6 +19,12 @@ namespace FourChambers
         {
             base.create();
 
+            // set level details
+
+            FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
+
+            FlxG.showHud();
+
             FourChambers_Globals.getLevelFileName();
 
             Dictionary<string, string> levelAttrs = new Dictionary<string, string>();
@@ -46,10 +52,13 @@ namespace FourChambers
         override public void update()
         {
             FlxU.collide(actorsGrp, indestructableTilemap);
+            FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
 
             collideArrows();
             
             base.update();
+
+            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Enemies To Kill: " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() );
 
 
         }
@@ -65,11 +74,19 @@ namespace FourChambers
             }
         }
 
+        protected bool overlapCallback(object Sender, FlxSpriteCollisionEvent e)
+        {
+            ((FlxSprite)e.Object1).overlapped(((FlxSprite)e.Object2));
+            ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
+
+            return true;
+        }
+
         protected bool eventCallback(object Sender, FlxSpriteCollisionEvent e)
         {
 
             //((Arrow)e.Object1).kill();
-            //((FlxSprite)e.Object2).hurt(1);
+            ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
             return true;
         }

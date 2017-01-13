@@ -24,8 +24,8 @@ namespace FourChambers
 
             //play("animation");
 
-            maxVelocity.X = 20;
-            maxVelocity.Y = 20;
+            maxVelocity.X = FlxU.random(10, 30);
+            maxVelocity.Y = FlxU.random(10, 30);
             maxAngular = 10;
             angularDrag = 50;
             maxThrust = 20;
@@ -33,7 +33,7 @@ namespace FourChambers
             drag.Y = 60;
             angularAcceleration = FlxU.random(-230, 230);
             angle = FlxU.random(-360, 360);
-
+            alpha = 0.15f;
         }
 
 

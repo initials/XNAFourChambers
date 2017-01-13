@@ -50,6 +50,11 @@ namespace FourChambers
 
         }
 
+        public void reSpawn(int X, int Y)
+        {
+
+        }
+
         override public void update()
         {
 
@@ -96,6 +101,36 @@ namespace FourChambers
         override public void hitSide(FlxObject Contact, float Velocity)
         {
             velocity.X = velocity.X * -1;
+        }
+        public override void overlapped(FlxObject obj)
+        {
+            if (obj.GetType().ToString() == "FourChambers.Arrow")
+            {
+                if (!dead)
+                {
+                    ((Arrow)obj).kill();
+                    hurt(1);
+                }
+            }
+            if (obj.GetType().ToString() == "FourChambers.Marksman")
+            {
+                if (dead)
+                {
+                    //Marksman picks up a point!
+
+                    FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
+                    x = -100;
+                    y = -100;
+
+                    FlxG.play("sfx/Pickup_Coin25", 0.75f);
+                }
+                else
+                {
+                    ((Marksman)obj).hurt(1);
+                }
+            }
+            
+            base.overlapped(obj);
         }
     }
 }

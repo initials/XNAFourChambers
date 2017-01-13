@@ -20,10 +20,10 @@ namespace FourChambers
             actorName = "Walkman";
             score = 50;
             health = 10;
-            runSpeed = 120;
+            runSpeed = 5;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
-            _jumpMaxTime = 0.15f;
+            _jumpMaxTime = 0.09f;
             _jumpInitialTime = 0.045f;
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
@@ -34,7 +34,6 @@ namespace FourChambers
             actorType = "rat";
 
  
-
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
 
@@ -49,8 +48,8 @@ namespace FourChambers
 
             setOffset(20, 40);
 
-            addAnimation("run", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
-            addAnimation("walk", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
+            addAnimation("run", new int[] { 0, 1, 1, 1, 2, 3, 2 }, 24);
+            addAnimation("walk", new int[] { 0, 1, 1, 1, 2, 3, 2 }, 12);
             addAnimation("jump", new int[] { 0, 1, 1, 1, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 24);
 
 

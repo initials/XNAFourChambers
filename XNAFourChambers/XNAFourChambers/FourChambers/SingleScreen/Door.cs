@@ -58,12 +58,15 @@ namespace FourChambers
         {
             //Console.WriteLine("Overlapped {0} {1}", _curAnim.name, _curFrame);
 
-            //string overlappedWith = obj.GetType().ToString();
+            string overlappedWith = obj.GetType().ToString();
 
-            //if (overlappedWith == "FourChambers.Marksman")
-
-            play("pulse");
-
+            if (overlappedWith == "FourChambers.Marksman")
+            {
+                if (FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
+                {
+                    play("pulse");
+                }
+            }
 
             base.overlapped(obj);
         }

@@ -18,6 +18,8 @@ namespace FourChambers
         private Dictionary<string, string> indestructableAttrs;
         private FlxTilemap bgTiles;
         private FlxSprite bg;
+        private FireflyGroup fireflyGroup;
+
 
         public LevelTiles()
             : base()
@@ -56,8 +58,8 @@ namespace FourChambers
                 FourChambers_Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
 
-
-
+            fireflyGroup = new FireflyGroup();
+            
 
         }
 
@@ -67,6 +69,8 @@ namespace FourChambers
         override public void update()
         {
             base.update();
+            fireflyGroup.update();
+
         }
 
         public override void render(SpriteBatch spriteBatch)
@@ -74,6 +78,7 @@ namespace FourChambers
             bg.render(spriteBatch);
             bgTiles.render(spriteBatch);
             base.render(spriteBatch);
+            fireflyGroup.render(spriteBatch);
         }
 
         

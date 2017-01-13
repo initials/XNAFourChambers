@@ -105,6 +105,9 @@ namespace FourChambers
 
         public static Vector2 lastMapLocation = new Vector2(80, 122);
 
+        public static int numberOfEnemiesToKillBeforeLevelOver;
+
+
         /// <summary>
         /// Allows the FlxConsole to run commands.
         /// </summary>
