@@ -27,10 +27,7 @@ namespace FourChambers
 
         private FlxSprite bgSprite2;
 
-
         private Tweener tween;
-
-
 
         private ColorTweener colTween;
 

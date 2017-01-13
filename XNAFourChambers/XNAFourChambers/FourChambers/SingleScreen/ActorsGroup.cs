@@ -55,7 +55,7 @@ namespace FourChambers
                     {
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));
                         add(myObject);
-                    }
+                    } 
                     else if (nodes.ContainsKey("height"))
                     {
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), 16, Convert.ToInt32(nodes["height"]));
@@ -68,9 +68,10 @@ namespace FourChambers
                         add(myObject);
                         if (Convert.ToInt32(nodes["y"])==0)
                         {
-                            //myObject.dead = true;
-                            //myObject.x = -100;
-                            //myObject.y = -100;
+                            myObject.dead = true;
+                            myObject.exists = false;
+                            myObject.x = -100;
+                            myObject.y = -100;
 
                         }
 

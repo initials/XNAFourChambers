@@ -12,7 +12,7 @@ namespace FourChambers
 {
     public class SingleScreenLevel : FlxState
     {
-        private LevelTiles indestructableTilemap;
+        private LevelTiles levelTilemap;
         private ActorsGroup actorsGrp;
 
         override public void create()
@@ -38,8 +38,8 @@ namespace FourChambers
 
             Console.WriteLine("Level Width: " + FlxG.levelWidth + " Level Height: " + FlxG.levelHeight);
 
-            indestructableTilemap = new LevelTiles();
-            add(indestructableTilemap);
+            levelTilemap = new LevelTiles();
+            add(levelTilemap);
 
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
@@ -53,14 +53,15 @@ namespace FourChambers
 
         override public void update()
         {
-            FlxU.collide(actorsGrp, indestructableTilemap);
+            FlxU.collide(actorsGrp, levelTilemap);
             FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
+            
 
             collideArrows();
             
             base.update();
 
-            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Enemies To Kill: " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() );
+            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests" );
 
 
         }
@@ -71,9 +72,24 @@ namespace FourChambers
             {
                 if (item is Marksman)
                 {
-                    FlxU.overlap(((Marksman)(item)).arrows, actorsGrp, eventCallback);
+                    FlxU.overlap(((Marksman)(item)).arrows, actorsGrp, runOverlapOnObject2);
+                    FlxU.collide(((Marksman)(item)).arrows, levelTilemap);
+
                 }
             }
+        }
+
+        protected bool overlapWithLadder(object Sender, FlxSpriteCollisionEvent e)
+        {
+            if (e.Object1 is BaseActor)
+            {
+                if (!((BaseActor)(e.Object1)).flying)
+                {
+                    ((BaseActor)(e.Object1)).ladderPosX = e.Object2.x;
+                    ((BaseActor)(e.Object1)).canClimbLadder = true;
+                }
+            }
+            return true;
         }
 
         protected bool overlapCallback(object Sender, FlxSpriteCollisionEvent e)
@@ -81,10 +97,18 @@ namespace FourChambers
             ((FlxSprite)e.Object1).overlapped(((FlxSprite)e.Object2));
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
+            //if can climb ladder and ladder
+
+            if ((e.Object1 is Marksman) && (e.Object2 is Ladder))
+            {
+                overlapWithLadder(Sender, e);
+            }
+
             return true;
         }
 
-        protected bool eventCallback(object Sender, FlxSpriteCollisionEvent e)
+
+        protected bool runOverlapOnObject2(object Sender, FlxSpriteCollisionEvent e)
         {
 
             //((Arrow)e.Object1).kill();

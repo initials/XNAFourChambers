@@ -88,6 +88,13 @@ namespace FourChambers
             base.reset(X, Y);
         }
 
+        public override void overlapped(FlxObject obj)
+        {
+            
+
+            base.overlapped(obj);
+        }
+
         override public void update()
         {
             hurtTimer += FlxG.elapsed;
