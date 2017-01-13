@@ -47,40 +47,12 @@ namespace FourChambers
 
             play("fly");
 
+            itemsThatCanKill = new List<string> () {"FourChambers.Arrow"};
 
 
         }
 
-        public override void overlapped(FlxObject obj)
-        {
-            if (obj.GetType().ToString() == "FourChambers.Arrow")
-            {
-                if (!dead)
-                {
-                    ((Arrow)obj).kill();
-                    hurt(1);
-                }
-            }
-            if (obj.GetType().ToString() == "FourChambers.Marksman")
-            {
-                if (dead)
-                {
-                    //Marksman picks up a point!
-
-                    FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
-
-                    exists = false;
-
-                    FlxG.play("sfx/Pickup_Coin25", 0.75f);
-                }
-                else
-                {
-                    ((Marksman)obj).hurt(1);
-                }
-            }
-
-            base.overlapped(obj);
-        }
+        
        
         override public void update()
         {

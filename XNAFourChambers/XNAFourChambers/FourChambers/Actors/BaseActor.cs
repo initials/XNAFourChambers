@@ -60,6 +60,8 @@ namespace FourChambers
 
         public PlayerIndex playerIndex = PlayerIndex.One;
 
+        public List<string> itemsThatCanKill;
+
 
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
@@ -73,6 +75,7 @@ namespace FourChambers
             actorName="BaseActor";
             actorType = "BaseActor";
             acceleration.Y = FourChambers_Globals.GRAVITY;
+            itemsThatCanKill = new List<string>();
         }
 
         public override void hurt(float Damage)
@@ -90,11 +93,18 @@ namespace FourChambers
 
         public override void overlapped(FlxObject obj)
         {
+            if (itemsThatCanKill.Contains( obj.GetType().ToString() ))
+            {
+                if (!dead)
+                {
+                    ((Arrow)obj).kill();
+                    hurt(1);
+                }
+            }
             
 
             base.overlapped(obj);
         }
-
         override public void update()
         {
             hurtTimer += FlxG.elapsed;
