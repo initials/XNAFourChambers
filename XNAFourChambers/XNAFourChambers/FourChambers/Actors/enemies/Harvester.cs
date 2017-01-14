@@ -19,8 +19,8 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Creeping Death";
             score = 50000;
-            health = 100;
-            runSpeed = 7;
+            health = 1;
+            runSpeed = 14;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
@@ -60,7 +60,8 @@ namespace FourChambers
             //offset.X = 3;
             //offset.Y = 7;
 
-
+           
+             itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
 
         }
 
@@ -70,6 +71,8 @@ namespace FourChambers
 
 
             base.update();
+
+
             bool buttonRightShoulder = ((_rec == Recording.Playback || _rec == Recording.Reverse) && _history[frameCount][(int)FlxRecord.ButtonMap.RightShoulder]);
 
             if (buttonRightShoulder)

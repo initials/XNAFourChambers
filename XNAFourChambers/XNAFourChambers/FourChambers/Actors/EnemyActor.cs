@@ -179,6 +179,7 @@ namespace FourChambers
             drag.Y = 0;
             velocity.X = runSpeed;
 
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
         }
 
@@ -310,6 +311,8 @@ namespace FourChambers
 
         public override void hurt(float Damage)
         {
+            Console.WriteLine(GetType().ToString() + " health: " + health.ToString() );
+
             if (!colorFlickering())
             {
                 setColorFlickerValues(0.98f, 0.98f, 0.98f, 0.99f, 0.99f, 0.99f);

@@ -19,7 +19,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Walkman";
             score = 50;
-            health = 10;
+            health = 1;
             runSpeed = 5;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
@@ -55,10 +55,13 @@ namespace FourChambers
 
             addAnimation("idle", new int[] { 0 }, 12, true);
             //addAnimation("attack", new int[] { 2, 4 }, 18);
-            addAnimation("death", new int[] { 4,5,6,7,8,7,8,7,8,7,8,7,6 }, 12, true);
-            addAnimation("hurt", new int[] { 4, 5, 6, 7, 8, 7, 8, 7, 8, 7, 8, 7, 6 },12, true);
+            addAnimation("death", new int[] { 4,5,6,7,8,7,8,7,8,7,8,7,6 }, 12, false);
+            addAnimation("hurt", new int[] { 4, 5, 6, 7, 8, 7, 8, 7, 8, 7, 8, 7, 6 },12, false);
 
             //addAnimationCallback(jump);
+
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+
 
         }
 

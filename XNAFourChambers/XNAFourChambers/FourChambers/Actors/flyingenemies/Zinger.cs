@@ -64,7 +64,11 @@ namespace FourChambers
 
             acceleration.Y = 50;
 
-            //Console.WriteLine(exists);
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
+
         }
 
         override public void update()
@@ -130,31 +134,24 @@ namespace FourChambers
         }
         public override void overlapped(FlxObject obj)
         {
-            if (obj.GetType().ToString() == "FourChambers.Arrow")
-            {
-                if (!dead)
-                {
-                    ((Arrow)obj).kill();
-                    hurt(1);
-                }
-            }
-            if (obj.GetType().ToString() == "FourChambers.Marksman")
-            {
-                if (dead)
-                {
-                    //Marksman picks up a point!
+            
+            //if (obj.GetType().ToString() == "FourChambers.Marksman")
+            //{
+            //    if (dead)
+            //    {
+            //        //Marksman picks up a point!
 
-                    FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
+            //        FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
 
-                    exists = false;
+            //        exists = false;
 
-                    FlxG.play("sfx/Pickup_Coin25", 0.75f);
-                }
-                else
-                {
-                    ((Marksman)obj).hurt(1);
-                }
-            }
+            //        FlxG.play("sfx/Pickup_Coin25", 0.75f);
+            //    }
+            //    else
+            //    {
+            //        ((Marksman)obj).hurt(1);
+            //    }
+            //}
             
             base.overlapped(obj);
         }

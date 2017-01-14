@@ -62,6 +62,10 @@ namespace FourChambers
 
         public List<string> itemsThatCanKill;
 
+        public List<string> actorsThatCanCollectWhenDead;
+
+
+
 
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
@@ -75,7 +79,10 @@ namespace FourChambers
             actorName="BaseActor";
             actorType = "BaseActor";
             acceleration.Y = FourChambers_Globals.GRAVITY;
+
             itemsThatCanKill = new List<string>();
+            actorsThatCanCollectWhenDead = new List<string>();
+
         }
 
         public override void hurt(float Damage)
@@ -101,6 +108,22 @@ namespace FourChambers
                     hurt(1);
                 }
             }
+            if (actorsThatCanCollectWhenDead.Contains( obj.GetType().ToString()))
+            {
+                if (dead)
+                {
+                    FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
+
+                    exists = false;
+
+                    FlxG.play("sfx/Pickup_Coin25", 0.75f);
+                }
+                else
+                {
+                    ((FlxSprite)obj).hurt(1);
+                }
+            }
+
             
 
             base.overlapped(obj);
