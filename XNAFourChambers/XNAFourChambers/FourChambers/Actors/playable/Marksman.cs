@@ -146,9 +146,12 @@ namespace FourChambers
                 //arrow.explodesOnImpact = true;
 
             }
-
+            
             _bullets = arrows.members;
 
+            allProjectiles = new FlxGroup();
+            allProjectiles.add(arrows);
+            allProjectiles.add(meleeHitBox);
 
         }
 
