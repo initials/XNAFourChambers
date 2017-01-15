@@ -19,7 +19,7 @@ namespace FourChambers
             // Set up the stats for this actor.
             actorName = "Tarantulatis";
             score = 250;
-            health = 15;
+            health = 1;
             runSpeed = 12;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
@@ -30,8 +30,10 @@ namespace FourChambers
             //drag.X = runSpeed * 4;
             //drag.Y = runSpeed * 4;
             playbackFile = "FourChambers/ActorRecording/spider.txt";
-            timeDownAfterHurt = 2.5f;
+            //timeDownAfterHurt = 0.25f;
+            
             actorType = "spider";
+
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
@@ -60,6 +62,10 @@ namespace FourChambers
             height = 20;
             offset.X = 15;
             offset.Y = 30;
+
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
         }
 

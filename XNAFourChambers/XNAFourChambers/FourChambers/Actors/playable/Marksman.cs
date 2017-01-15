@@ -143,6 +143,7 @@ namespace FourChambers
             {
                 Arrow arrow = new Arrow(-1000, 1000);
                 arrows.add(arrow);
+                //arrow.explodesOnImpact = true;
 
             }
 

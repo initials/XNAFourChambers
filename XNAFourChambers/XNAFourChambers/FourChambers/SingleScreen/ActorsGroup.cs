@@ -66,7 +66,7 @@ namespace FourChambers
                     //{
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
                         add(myObject);
-                        if (Convert.ToInt32(nodes["y"])==0)
+                        if (!myObject.onScreen())
                         {
                             myObject.dead = true;
                             myObject.exists = false;
@@ -84,15 +84,26 @@ namespace FourChambers
                     
                 }
             }
+
+            // return a sorted list of members based on render order
+
+            //int i = 0;
+            //FlxObject o;
+            //int ml = members.Count;
+
+
+            //// sort members by y to draw correctly.
+            //members = members.OrderBy(d => d.renderOrder).ToList();
+
         }
 
         override public void update()
         {
             float chance = 0.00251f;
 
-            if (FlxG.elapsedTotal > 15) chance = 0.0251f;
-            if (FlxG.elapsedTotal > 30) chance = 0.0451f;
-            if (FlxG.elapsedTotal > 45) chance = 0.0851f;
+            if (FlxG.elapsedTotal < 15) chance = 0.000251f;
+            else if (FlxG.elapsedTotal < 30) chance = 0.000451f;
+            else if (FlxG.elapsedTotal < 45) chance = 0.001651f;
             
             foreach (var item in members)
             {
@@ -107,6 +118,13 @@ namespace FourChambers
             }
             
             base.update();
+        }
+
+        public override void render(SpriteBatch spriteBatch)
+        {
+            
+
+            base.render(spriteBatch);
         }
 
     }

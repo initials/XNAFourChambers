@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
-    class BigExplosion : FlxSprite
+    public class BigExplosion : FlxSprite
     {
 
         public BigExplosion(int xPos, int yPos)

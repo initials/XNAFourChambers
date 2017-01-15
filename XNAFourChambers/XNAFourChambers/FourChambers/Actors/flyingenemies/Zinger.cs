@@ -48,6 +48,10 @@ namespace FourChambers
             maxVelocity.Y = 1000;
             velocity.X = 100;
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
         }
 
         public override void reset(float X, float Y)
@@ -64,9 +68,7 @@ namespace FourChambers
 
             acceleration.Y = 50;
 
-            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
 
-            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
 
         }

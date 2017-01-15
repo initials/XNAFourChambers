@@ -55,6 +55,10 @@ namespace FourChambers
             offset.X = 2;
             offset.Y = 4;
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
         }
 
         override public void update()

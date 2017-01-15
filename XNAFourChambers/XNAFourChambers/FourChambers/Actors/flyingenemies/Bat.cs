@@ -47,8 +47,9 @@ namespace FourChambers
 
             play("fly");
 
-            itemsThatCanKill = new List<string> () {"FourChambers.Arrow"};
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
 
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
         }
 

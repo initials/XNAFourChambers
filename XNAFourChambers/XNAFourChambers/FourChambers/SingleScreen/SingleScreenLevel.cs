@@ -21,6 +21,8 @@ namespace FourChambers
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
+            FlxG.elapsedTotal = 0;
+
             // set level details
 
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
@@ -44,7 +46,7 @@ namespace FourChambers
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
 
-
+            
 
         }
 
@@ -56,13 +58,29 @@ namespace FourChambers
             FlxU.collide(actorsGrp, levelTilemap);
             FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
             
-
             collideArrows();
             
             base.update();
 
             FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests" );
 
+            if (FlxG.keys.R)
+            {
+                FlxG.level = 1;
+                FlxG.state = new SingleScreenLevel();
+                return;
+            }
+            if (FlxG.keys.P)
+            {
+                FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
+                foreach (var item in actorsGrp.members)
+                {
+                    if (!(item is Marksman))
+                    {
+                        item.dead = true;
+                    }
+                }
+            }
 
         }
 
@@ -103,6 +121,32 @@ namespace FourChambers
             {
                 overlapWithLadder(Sender, e);
             }
+            if ((e.Object1 is Marksman) && (e.Object2 is Door))
+            {
+                //prepare for next level
+                //overlapWithLadder(Sender, e);
+                //FlxG.level++;
+
+                //FlxG.state = new SingleScreenLevel();
+                
+                //return;
+                foreach (var item in ((Door)(e.Object2)).sparkles.members)
+                {
+                    ((FlxSprite)(item)).scale+= FlxU.random();
+                    ((FlxSprite)(item)).angle+=FlxU.random();
+                    if (((FlxSprite)(item)).scale > 30)
+                    {
+                        FlxG.level++;
+
+                        FlxG.state = new SingleScreenLevel();
+                        break;
+                    }
+
+                }
+                
+
+            }
+
 
             return true;
         }

@@ -17,16 +17,19 @@ namespace FourChambers
 
         protected const string SndShoot = "sfx/arrowShoot1";
         protected const string SndHit = "sfx/arrowHit1";
-        public FlxSprite _ex;
+       // public FlxSprite _ex;
 
         public bool explodesOnImpact = false;
 
         protected FlxEmitter _fire;
+        public BigExplosion _ex;
+
 
         public Arrow(int xPos, int yPos)
             : base(xPos, yPos)
         {
 
+            //_ex = new BigExplosion(0, 0);
 
             //_ex = exp;
 
@@ -71,6 +74,7 @@ namespace FourChambers
 
         override public void render(SpriteBatch spriteBatch)
         {
+            //_ex.render(spriteBatch);
             _fire.render(spriteBatch);
             base.render(spriteBatch);
         }
@@ -100,6 +104,7 @@ namespace FourChambers
             if (dead && finished) exists = false;
             else
             {
+                //_ex.update();
                 _fire.at(this);
                 _fire.update();
                 base.update();
@@ -118,6 +123,7 @@ namespace FourChambers
                 _ex.play("explode", true);
             }
             _fire.stop();
+
             FourChambers_Globals.arrowCombo = 0;
             hasTouched= true;
             kill(); 
@@ -218,5 +224,6 @@ namespace FourChambers
             dead = false;
 
         }
+
     }
 }

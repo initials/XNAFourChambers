@@ -117,6 +117,10 @@ namespace FourChambers
                     exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
+
+                    FlxG.quake.start(0.008f, ((20 - FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver) * 0.1f) * 0.2f);
+
+
                 }
                 else
                 {
@@ -130,6 +134,11 @@ namespace FourChambers
         }
         override public void update()
         {
+            if (dead)
+            {
+                color = Color.Red;
+            }
+
             hurtTimer += FlxG.elapsed;
             
             base.update();

@@ -149,8 +149,6 @@ namespace FourChambers
 
         public bool customAnimation = false;
 
-        
-
         public enum Recording
         {
             None = 0,
@@ -533,8 +531,6 @@ namespace FourChambers
                 //isClimbingLadder = false;
             }
 
-            
-
             // Jumping.
             if ( (buttonA && color == Color.White) || buttonAControl)
             {
@@ -604,8 +600,6 @@ namespace FourChambers
             //    attackingMelee = false;
             //}
 
-            
-
             // Attacking using mouse.
             if (mouseLeftControl || mouseLeftButton)
             {
@@ -614,18 +608,11 @@ namespace FourChambers
                 attackingMelee = false;
             }
 
-
-
             if (buttonXControl || buttonX)
             {
                 lastAttack = "melee";
                 attackingMelee = true;
             }
-
-
-            
         }
-
-
     }
 }
