@@ -23,7 +23,7 @@ namespace FourChambers
             if (FlxG.debug)
             {
                 visible = true;
-                alpha = 0.0175f;
+                alpha = 0.00000001f;
             }
             else
             {
@@ -46,6 +46,11 @@ namespace FourChambers
             //base.kill();
         }
 
+        public override void overlapped(FlxObject obj)
+        {
+            Console.WriteLine("Melee Hit Box Overlapped");
+            base.overlapped(obj);
+        }
 
     }
 }

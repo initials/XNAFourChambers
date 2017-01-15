@@ -61,7 +61,7 @@ namespace FourChambers
             //offset.Y = 7;
 
            
-             itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
         }
 

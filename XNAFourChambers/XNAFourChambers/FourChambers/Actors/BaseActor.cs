@@ -106,7 +106,7 @@ namespace FourChambers
             {
                 if (!dead)
                 {
-                    ((Arrow)obj).kill();
+                    ((FlxSprite)obj).kill();
                     hurt(1);
                 }
             }

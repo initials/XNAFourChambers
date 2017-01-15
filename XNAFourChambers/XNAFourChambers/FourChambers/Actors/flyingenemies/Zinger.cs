@@ -48,7 +48,7 @@ namespace FourChambers
             maxVelocity.Y = 1000;
             velocity.X = 100;
 
-            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 

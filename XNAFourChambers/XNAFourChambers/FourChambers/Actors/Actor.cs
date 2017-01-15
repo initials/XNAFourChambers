@@ -115,6 +115,9 @@ namespace FourChambers
         //public int runSpeed = 120;
 
         public List<FlxObject> _bullets;
+
+        public FlxGroup allProjectiles;
+
         public int _curBullet;
         /// <summary>
         /// Tells the Actor whether to play the attack animation

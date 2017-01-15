@@ -60,7 +60,7 @@ namespace FourChambers
 
             //addAnimationCallback(jump);
 
-            itemsThatCanKill = new List<string>() { "FourChambers.Arrow" };
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 

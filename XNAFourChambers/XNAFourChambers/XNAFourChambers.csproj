@@ -424,7 +424,9 @@
     <None Include="ogmoLevels\level4.oel">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ogmoLevels\ProjectFile.oep" />
+    <None Include="ogmoLevels\ProjectFile.oep">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

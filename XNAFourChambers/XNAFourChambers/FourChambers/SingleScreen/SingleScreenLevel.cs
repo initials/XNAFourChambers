@@ -95,8 +95,8 @@ namespace FourChambers
             {
                 if (item is Marksman)
                 {
-                    FlxU.overlap(((Marksman)(item)).arrows, actorsGrp, runOverlapOnObject2);
-                    FlxU.collide(((Marksman)(item)).arrows, levelTilemap);
+                    FlxU.overlap(((Marksman)(item)).allProjectiles, actorsGrp, runOverlapOnObject2);
+                    FlxU.collide(((Marksman)(item)).allProjectiles, levelTilemap);
 
                 }
             }

@@ -37,7 +37,7 @@ namespace FourChambers
 
 
             playbackFile = "FourChambers/ActorRecording/unicorn.txt";
-            timeDownAfterHurt = 2.5f;
+            //timeDownAfterHurt = 2.5f;
             actorType = "unicorn";
 
             //Set the health bar max from here now that we know our health starting point.
@@ -72,7 +72,9 @@ namespace FourChambers
 
             //offset.X = 5;
             //offset.Y = 20;
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
             
         }
 
