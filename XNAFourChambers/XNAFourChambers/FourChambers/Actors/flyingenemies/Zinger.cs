@@ -31,10 +31,10 @@ namespace FourChambers
             play("fly");
 
             //bounding box tweaks
-            width = 10;
-            height = 10;
-            offset.X = 1;
-            offset.Y = 4;
+            //width = 10;
+            //height = 10;
+            //offset.X = 1;
+            //offset.Y = 4;
 
             chanceOfWingFlap += FlxU.random(0.005, 0.009);
             speedOfWingFlapVelocity += FlxU.random(0,3);

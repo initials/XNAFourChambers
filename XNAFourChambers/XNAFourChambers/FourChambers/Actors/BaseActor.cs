@@ -94,8 +94,10 @@ namespace FourChambers
 
         public override void reset(float X, float Y)
         {
+            color = Color.White;
             velocity.X = runSpeed;
             base.reset(X, Y);
+            health = 1;
         }
 
         public override void overlapped(FlxObject obj)

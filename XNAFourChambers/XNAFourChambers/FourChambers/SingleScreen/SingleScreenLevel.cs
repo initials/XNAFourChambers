@@ -46,12 +46,7 @@ namespace FourChambers
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
 
-            
-
         }
-
-
-
 
         override public void update()
         {
@@ -62,7 +57,7 @@ namespace FourChambers
             
             base.update();
 
-            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests" );
+            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + FourChambers_Globals.arrowCombo );
 
             if (FlxG.keys.R)
             {
@@ -121,7 +116,7 @@ namespace FourChambers
             {
                 overlapWithLadder(Sender, e);
             }
-            if ((e.Object1 is Marksman) && (e.Object2 is Door))
+            if ((e.Object1 is Marksman) && (e.Object2 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver<=0)
             {
                 //prepare for next level
                 //overlapWithLadder(Sender, e);
@@ -154,7 +149,7 @@ namespace FourChambers
 
         protected bool runOverlapOnObject2(object Sender, FlxSpriteCollisionEvent e)
         {
-
+            FourChambers_Globals.arrowCombo++;
             //((Arrow)e.Object1).kill();
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
