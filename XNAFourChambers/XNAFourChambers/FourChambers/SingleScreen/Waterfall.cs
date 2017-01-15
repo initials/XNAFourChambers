@@ -33,8 +33,6 @@ namespace FourChambers
             start(false, 0.0075f, 0);
             renderOrder = 1;
 
-            Console.WriteLine("Created a waterfall");
-
             collider = new FlxSprite(x, y + colliderHeight);
             collider.createGraphic(32, 16, Color.Red);
             collider.@fixed = true;
@@ -51,18 +49,7 @@ namespace FourChambers
         /// </summary>
         override public void update()
         {
-            //FlxObject o;
-            //int i = 0;
-            //int l = members.Count;
-            //while (i < l)
-            //{
-            //    o = members[i++] as FlxObject;
-            //    if ((o != null) && o.exists && o.active && o.y > 240)
-            //    {
-            //        velocity.Y = 1350;
-            //    }
-
-            //}
+            
             collider.update();
             FlxU.collide(this, collider);
 
