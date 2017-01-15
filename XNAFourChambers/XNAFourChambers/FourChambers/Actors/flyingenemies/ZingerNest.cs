@@ -12,7 +12,7 @@ namespace FourChambers
     class ZingerNest : BaseActor
     {
 
-        public ZingerNest(int xPos, int yPos, FlxGroup zingers)
+        public ZingerNest(int xPos, int yPos)
             : base(xPos, yPos)
         {
 

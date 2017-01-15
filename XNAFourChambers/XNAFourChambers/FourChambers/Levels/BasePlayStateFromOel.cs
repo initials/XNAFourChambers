@@ -2870,7 +2870,7 @@ namespace FourChambers
             {
                 for (int i = 0; i < NumberOfActors; i++)
                 {
-                    zingerNest = new ZingerNest(x,y, zingers);
+                    zingerNest = new ZingerNest(x,y);
                     actors.add(zingerNest);
 
                     powerUp = new PowerUp(x,y);

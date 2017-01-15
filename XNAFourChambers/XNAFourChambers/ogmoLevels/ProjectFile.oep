@@ -885,7 +885,7 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="true" Limit="-1" DrawMode="Circuit" Ghost="true" />
     </EntityDefinition>
-    <EntityDefinition Name="zingernest" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+    <EntityDefinition Name="zingerNest" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
         <Width>16</Width>
         <Height>16</Height>
