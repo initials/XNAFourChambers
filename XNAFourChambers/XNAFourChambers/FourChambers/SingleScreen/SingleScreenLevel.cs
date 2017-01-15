@@ -159,7 +159,6 @@ namespace FourChambers
 
         protected bool runOverlapOnObject2(object Sender, FlxSpriteCollisionEvent e)
         {
-            FourChambers_Globals.arrowCombo++;
             //((Arrow)e.Object1).kill();
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 

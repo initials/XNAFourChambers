@@ -122,8 +122,13 @@ namespace FourChambers
                 {
                     if (FlxU.random() < chance)
                     {
+                        // Get list of respawn Point
+                        List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
+
+                        FlxObject randomPosition = spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+
                         //Respawn based on chance of respawn
-                        item.reset(8, 64);
+                        item.reset(randomPosition.x, randomPosition.y);
                     }
                 }
             }

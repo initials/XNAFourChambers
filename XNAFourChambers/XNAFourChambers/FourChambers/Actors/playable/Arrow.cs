@@ -109,6 +109,12 @@ namespace FourChambers
                 _fire.update();
                 base.update();
             }
+            //if (base.onScreen() == false)
+            //{
+            //    FourChambers_Globals.arrowCombo = 0;
+            //    kill();
+            //}
+
         }
 
         override public void hitSide(FlxObject Contact, float Velocity) 

@@ -37,22 +37,22 @@ namespace FourChambers
                 string levelFile = "ogmoLevels/level" + i.ToString() + ".oel";
 
                 Dictionary<string, string>  destructableAttrs = new Dictionary<string, string>();
-                destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/DestructableTerrain");
+                destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/collide");
 
                 destructableTilemap = new FlxTilemap();
                 destructableTilemap.auto = FlxTilemap.STRING;
-                destructableTilemap.loadMap(destructableAttrs["DestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 16,16);
+                destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 16,16);
                 destructableTilemap.boundingBoxOverride = true;
                 g.add(destructableTilemap);
                 destructableTilemap.visible = false;
                 //lastLength += destructableTilemap.widthInTiles;
 
 
-                destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/IndestructableTerrain");
+                destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/Incollide");
 
                 destructableTilemap = new FlxTilemap();
                 destructableTilemap.auto = FlxTilemap.STRING;
-                destructableTilemap.loadMap(destructableAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 16, 16);
+                destructableTilemap.loadMap(destructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 16, 16);
                 destructableTilemap.boundingBoxOverride = true;
                 g2.add(destructableTilemap);
                 destructableTilemap.visible = false;

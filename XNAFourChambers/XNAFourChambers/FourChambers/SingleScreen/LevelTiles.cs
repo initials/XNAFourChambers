@@ -15,8 +15,10 @@ namespace FourChambers
 {
     class LevelTiles : FlxTilemap
     {
-        private Dictionary<string, string> indestructableAttrs;
+        private Dictionary<string, string> levelAttrs;
         private FlxTilemap bgTiles;
+        private FlxTilemap fgTiles;
+
         private FlxSprite bg;
         private FireflyGroup fireflyGroup;
 
@@ -35,28 +37,42 @@ namespace FourChambers
 
             boundingBoxOverride = true;
 
-            indestructableAttrs = new Dictionary<string, string>();
-            indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/DestructableTerrain");
+            levelAttrs = new Dictionary<string, string>();
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/collide");
 
             auto = FlxTilemap.STRING;
 
-            loadMap(indestructableAttrs["DestructableTerrain"], 
-                FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), 
+            loadMap(levelAttrs["collide"], 
+                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]), 
                 FourChambers_Globals.TILE_SIZE_X, 
                 FourChambers_Globals.TILE_SIZE_Y);
 
 
-            indestructableAttrs = new Dictionary<string, string>();
-            indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/IndestructableTerrain");
+            levelAttrs = new Dictionary<string, string>();
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/bg");
 
             bgTiles = new FlxTilemap();
             bgTiles.auto = FlxTilemap.STRING;
 
-            bgTiles.loadMap(indestructableAttrs["IndestructableTerrain"],
-                FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]),
+            bgTiles.loadMap(levelAttrs["bg"],
+                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
                 FourChambers_Globals.TILE_SIZE_X,
                 FourChambers_Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
+
+
+            levelAttrs = new Dictionary<string, string>();
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/fg");
+            fgTiles = new FlxTilemap();
+            fgTiles.auto = FlxTilemap.STRING;
+
+            fgTiles.loadMap(levelAttrs["fg"],
+                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
+                FourChambers_Globals.TILE_SIZE_X,
+                FourChambers_Globals.TILE_SIZE_Y);
+            
+
+
 
             fireflyGroup = new FireflyGroup();
             
@@ -78,6 +94,7 @@ namespace FourChambers
             bg.render(spriteBatch);
             bgTiles.render(spriteBatch);
             base.render(spriteBatch);
+            fgTiles.render(spriteBatch);
             fireflyGroup.render(spriteBatch);
         }
 

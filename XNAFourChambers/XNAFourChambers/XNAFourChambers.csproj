@@ -269,6 +269,7 @@
     <Compile Include="FourChambers\PowerUp.cs" />
     <Compile Include="FourChambers\PowerUpProgress.cs" />
     <Compile Include="FourChambers\PowerUpThrower.cs" />
+    <Compile Include="FourChambers\SingleScreen\SpawnPoint.cs" />
     <Compile Include="FourChambers\SingleScreen\Timer.cs" />
     <Compile Include="FourChambers\SingleScreen\Waterfall.cs" />
     <Compile Include="FourChambers\TestStates\TextTestState.cs" />

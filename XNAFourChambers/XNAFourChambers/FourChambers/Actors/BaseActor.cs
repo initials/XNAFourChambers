@@ -95,7 +95,10 @@ namespace FourChambers
         public override void reset(float X, float Y)
         {
             color = Color.White;
-            velocity.X = runSpeed;
+            if (X>FlxG.width/2)
+                velocity.X = maxVelocity.X * -1;
+            else
+                velocity.X = maxVelocity.X;
             base.reset(X, Y);
             health = 1;
         }
@@ -106,6 +109,8 @@ namespace FourChambers
             {
                 if (!dead)
                 {
+                    FourChambers_Globals.arrowCombo++;
+
                     ((FlxSprite)obj).kill();
                     hurt(1);
                 }
@@ -115,6 +120,7 @@ namespace FourChambers
                 if (dead)
                 {
                     FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
+                    
 
                     exists = false;
 

@@ -368,24 +368,24 @@ namespace FourChambers
             }
 
             destructableAttrs = new Dictionary<string, string>();
-            destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/DestructableTerrain");
+            destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/collide");
 
             destructableTilemap = new FlxTilemap();
             destructableTilemap.auto = FlxTilemap.STRING;
-            destructableTilemap.loadMap(destructableAttrs["DestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             destructableTilemap.boundingBoxOverride = true;
             allLevelTiles.add(destructableTilemap);
             destructableTilemap.collideMin = 0;
             destructableTilemap.collideMax = 21;
 
             indestructableAttrs = new Dictionary<string, string>();
-            indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/IndestructableTerrain");
+            indestructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/Incollide");
 
             indestructableTilemap = new FlxTilemap();
             indestructableTilemap.collideMin = 0;
             indestructableTilemap.collideMax = 21;
             indestructableTilemap.auto = FlxTilemap.STRING;
-            indestructableTilemap.loadMap(indestructableAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            indestructableTilemap.loadMap(indestructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             indestructableTilemap.boundingBoxOverride = true;
 
             allLevelTiles.add(indestructableTilemap);
@@ -394,7 +394,7 @@ namespace FourChambers
             actorsAttrs = new List<Dictionary<string, string>>();
             actorsAttrs = FlxXMLReader.readNodesFromOelFile(levelFile, "level/ActorsLayer");
 
-            string addedMap = destructableAttrs["DestructableTerrain"];
+            string addedMap = destructableAttrs["collide"];
 
             for (int i = 0; i < 20; i++)
             {
@@ -457,7 +457,7 @@ namespace FourChambers
                     //caveExt.printCave(tiles);
                     string newMap = caveExt.convertMultiArrayStringToString(tiles);
 
-                    addedMap = caveExt.addStrings(destructableAttrs["DestructableTerrain"], newMap, Convert.ToInt32(nodes["x"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X);
+                    addedMap = caveExt.addStrings(destructableAttrs["collide"], newMap, Convert.ToInt32(nodes["x"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X);
                 }
 
             }

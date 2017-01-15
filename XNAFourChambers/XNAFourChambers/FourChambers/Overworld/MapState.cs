@@ -52,18 +52,18 @@ namespace FourChambers
             add(events);
 
             mapAttrs = new Dictionary<string, string>();
-            mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/DestructableTerrain");
+            mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/collide");
 
             map = new FlxTilemap();
             map.auto = FlxTilemap.STRING;
-            map.loadMap(mapAttrs["DestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            map.loadMap(mapAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             add(map);
 
-            mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/IndestructableTerrain");
+            mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/Incollide");
 
             collisionMap = new FlxTilemap();
             collisionMap.auto = FlxTilemap.STRING;
-            collisionMap.loadMap(mapAttrs["IndestructableTerrain"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            collisionMap.loadMap(mapAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
             add(collisionMap);
 
             mActor = new MapActor((int)FourChambers_Globals.lastMapLocation.X, (int)FourChambers_Globals.lastMapLocation.Y);
