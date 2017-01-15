@@ -68,12 +68,22 @@ namespace FourChambers
             if (FlxG.keys.P)
             {
                 FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
+
+                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x;
+                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").y;
+
+
+
                 foreach (var item in actorsGrp.members)
                 {
+                    
+
                     if (!(item is Marksman))
                     {
                         item.dead = true;
                     }
+                    
+
                 }
             }
 

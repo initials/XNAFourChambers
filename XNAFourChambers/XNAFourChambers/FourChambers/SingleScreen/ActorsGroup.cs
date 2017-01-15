@@ -51,7 +51,18 @@ namespace FourChambers
 
                 try
                 {
-                    if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
+                    if (nodes.ContainsKey("event"))
+                    {
+                        var myObject = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
+                        add(myObject);
+                        if (nodes["event"] == "waterfall")
+                        {
+                            ((Waterfall)(myObject)).colliderHeight = Convert.ToInt32(nodes["height"]);
+                            ((Waterfall)(myObject)).collider.y += Convert.ToInt32(nodes["height"]);
+                        }
+                        
+                    }
+                    else if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
                         var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));
                         add(myObject);

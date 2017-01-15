@@ -1265,6 +1265,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="fourchambers\waterFallSparkle.png">
+      <Name>waterFallSparkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fourchambers\characterSpriteSheets\Seraphine_50x50.png">
