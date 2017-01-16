@@ -101,5 +101,6 @@
     <_event id="37" x="0" y="80" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
     <_event id="38" x="464" y="80" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
     <_event id="39" x="464" y="272" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
+    <zingerNest id="40" x="112" y="160" />
   </ActorsLayer>
 </level>

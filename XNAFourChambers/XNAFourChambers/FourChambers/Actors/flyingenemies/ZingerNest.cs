@@ -26,26 +26,29 @@ namespace FourChambers
 
             //actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
+            drag.X = drag.Y = 0;
+            acceleration.Y = 0;
+            health = 10;
 
         }
 
         override public void update()
         {
-
-            acceleration.Y = 0;
-
+            
             base.update();
 
         }
 
         public override void overlapped(FlxObject obj)
         {
-            Console.WriteLine("Zinger Nest has been hit, accel: {0}", acceleration.Y);
+            //acceleration.Y = FourChambers_Globals.GRAVITY;
+
+            //Console.WriteLine("Zinger Nest has been hit, accel: {0}", acceleration.Y);
             if (itemsThatCanKill.Contains(obj.GetType().ToString()))
             {
                 acceleration.Y = FourChambers_Globals.GRAVITY;
                 @fixed = false;
-                y += 25;
+
             }
 
             base.overlapped(obj);
@@ -53,18 +56,23 @@ namespace FourChambers
 
         public override void kill()
         {
-            acceleration.Y = FourChambers_Globals.GRAVITY;
-            //base.kill();
+            //acceleration.Y = FourChambers_Globals.GRAVITY;
+            base.kill();
         }
 
         public override void hitBottom(FlxObject Contact, float Velocity)
         {
-            if (acceleration.Y == FourChambers_Globals.GRAVITY)
-            {
-                exists = false;
-                visible = false;
-                dead = true;
-            }
+            debugName = "readyToPop";
+
+            //if (acceleration.Y == FourChambers_Globals.GRAVITY)
+            //{
+            //    exists = false;
+            //    visible = false;
+            //    dead = true;
+            //}
+
+            //kill();
+
             base.hitBottom(Contact, Velocity);
         }
 

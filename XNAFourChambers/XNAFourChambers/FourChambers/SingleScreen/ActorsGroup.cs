@@ -131,6 +131,16 @@ namespace FourChambers
                         item.reset(randomPosition.x, randomPosition.y);
                     }
                 }
+                if (item is ZingerNest && item.debugName=="readyToPop"  && !item.dead)
+                {
+                    List<FlxObject> zingers = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
+                    for (int i = 0; i < zingers.Count; i++)
+                    {
+                        if (((Zinger)(zingers[i])).dead == true)
+                            ((Zinger)(zingers[i])).reset(item.x, item.y);
+                    }
+                    item.kill();
+                }
             }
             
             base.update();

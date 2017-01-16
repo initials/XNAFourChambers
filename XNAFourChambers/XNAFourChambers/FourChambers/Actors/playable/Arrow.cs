@@ -207,7 +207,7 @@ namespace FourChambers
             play("explode");
             dead = true;
 
-            //base.kill();
+            base.kill();
             
         }
 

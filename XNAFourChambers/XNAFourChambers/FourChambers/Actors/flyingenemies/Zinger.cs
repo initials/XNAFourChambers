@@ -42,9 +42,9 @@ namespace FourChambers
             originalPosition.X = xPos;
             originalPosition.Y = yPos;
 
-            int runSpeed = 30;
+            runSpeed = 30;
             acceleration.Y = 50;
-            maxVelocity.X = runSpeed;
+            maxVelocity.X = FlxU.random(20,50);
             maxVelocity.Y = 1000;
             velocity.X = 100;
 
@@ -56,9 +56,11 @@ namespace FourChambers
 
         public override void reset(float X, float Y)
         {
-            //Console.WriteLine("Resetting a Zinger");
+            Console.WriteLine("Resetting a Zinger");
 
-            velocity.X = 100;
+            velocity.X = FlxU.random(0, maxVelocity.X);
+            velocity.Y = FlxU.random(0, maxVelocity.Y);
+
 
             visible = true;
 
@@ -136,25 +138,6 @@ namespace FourChambers
         }
         public override void overlapped(FlxObject obj)
         {
-            
-            //if (obj.GetType().ToString() == "FourChambers.Marksman")
-            //{
-            //    if (dead)
-            //    {
-            //        //Marksman picks up a point!
-
-            //        FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
-
-            //        exists = false;
-
-            //        FlxG.play("sfx/Pickup_Coin25", 0.75f);
-            //    }
-            //    else
-            //    {
-            //        ((Marksman)obj).hurt(1);
-            //    }
-            //}
-            
             base.overlapped(obj);
         }
     }
