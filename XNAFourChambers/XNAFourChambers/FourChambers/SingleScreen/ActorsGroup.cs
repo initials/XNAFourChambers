@@ -53,36 +53,36 @@ namespace FourChambers
                 {
                     if (nodes.ContainsKey("event"))
                     {
-                        var myObject = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
-                        add(myObject);
+                        var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
+                        add(sprite);
                         if (nodes["event"] == "waterfall")
                         {
-                            ((Waterfall)(myObject)).colliderHeight = Convert.ToInt32(nodes["height"]);
-                            ((Waterfall)(myObject)).collider.y += Convert.ToInt32(nodes["height"]);
+                            ((Waterfall)(sprite)).colliderHeight = Convert.ToInt32(nodes["height"]);
+                            ((Waterfall)(sprite)).collider.y += Convert.ToInt32(nodes["height"]);
                         }
                         
                     }
                     else if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
-                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));
-                        add(myObject);
+                        var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));
+                        add(sprite);
                     } 
                     else if (nodes.ContainsKey("height"))
                     {
-                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), 16, Convert.ToInt32(nodes["height"]));
-                        add(myObject);
+                        var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), 16, Convert.ToInt32(nodes["height"]));
+                        add(sprite);
                     }
                     else {
                     //if (nodes["Name"] == "marksman")
                     //{
-                        var myObject = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
-                        add(myObject);
-                        if (!myObject.onScreen())
+                        var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
+                        add(sprite);
+                        if (!sprite.onScreen())
                         {
-                            myObject.dead = true;
-                            myObject.exists = false;
-                            myObject.x = -100;
-                            myObject.y = -100;
+                            sprite.dead = true;
+                            sprite.exists = false;
+                            sprite.x = -100;
+                            sprite.y = -100;
 
                         }
 

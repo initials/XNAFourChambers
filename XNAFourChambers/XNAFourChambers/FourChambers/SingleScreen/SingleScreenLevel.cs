@@ -68,25 +68,19 @@ namespace FourChambers
             if (FlxG.keys.P)
             {
                 FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
+                FourChambers_Globals.arrowCombo = 20;
 
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x;
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").y;
 
-
-
                 foreach (var item in actorsGrp.members)
                 {
-                    
-
                     if (!(item is Marksman))
                     {
                         item.dead = true;
                     }
-                    
-
                 }
             }
-
         }
 
         private void collideArrows()
@@ -117,6 +111,8 @@ namespace FourChambers
 
         protected bool overlapCallback(object Sender, FlxSpriteCollisionEvent e)
         {
+            
+
             ((FlxSprite)e.Object1).overlapped(((FlxSprite)e.Object2));
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
@@ -128,6 +124,8 @@ namespace FourChambers
             }
             if ((e.Object1 is Marksman) && (e.Object2 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver<=0)
             {
+                Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
+
                 //prepare for next level
                 //overlapWithLadder(Sender, e);
                 //FlxG.level++;

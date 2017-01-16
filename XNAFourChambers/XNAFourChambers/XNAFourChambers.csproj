@@ -364,9 +364,7 @@
     </Content>
     <Content Include="FourChambers\Text\script.txt" />
     <Content Include="Game.ico" />
-    <Content Include="GAMESETTINGS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="GAMESETTINGS.txt" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
