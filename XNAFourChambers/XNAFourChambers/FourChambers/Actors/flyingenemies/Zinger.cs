@@ -113,16 +113,14 @@ namespace FourChambers
                 if (velocity.Y < targetVel.Y) velocity.Y += FlxU.randomInt(0, 40);
                 if (velocity.Y > targetVel.Y) velocity.Y -= FlxU.randomInt(0, 40);
             }
+
+            if (velocity.X > 0)
+            {
+                facing = Flx2DFacing.Right;
+            }
             else
             {
-                if (velocity.X > 0)
-                {
-                    facing = Flx2DFacing.Right;
-                }
-                else
-                {
-                    facing = Flx2DFacing.Left;
-                }
+                facing = Flx2DFacing.Left;
             }
 
             if (x > FlxG.levelWidth)
@@ -145,6 +143,8 @@ namespace FourChambers
         }
         public override void kill()
         {
+            homing = false;
+            homingTarget = null;
             //FlxG.score += score * FourChambers_Globals.arrowCombo;
 
             play("death");

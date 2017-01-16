@@ -27,9 +27,9 @@ namespace FourChambers
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
             gravity = 98;
-            createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 300, true, 1, FlxU.random(0.02f,0.45f) );
+            createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 150, true, 1, FlxU.random(0.02f,0.45f) );
 
-            start(false, 0.0075f, 0);
+            start(false, 0.05f, 0);
             renderOrder = 1;
 
             collider = new FlxSprite(xPos, yPos + Height);
@@ -38,7 +38,7 @@ namespace FourChambers
 
             foreach (var item in members)
             {
-                ((FlxParticle)(item))._bounce = FlxU.random(0.02f, 0.45f);
+                ((FlxParticle)(item))._bounce = FlxU.random(0.02f, 0.35f);
 
                 if (FlxU.random() > 0.9f)
                 {

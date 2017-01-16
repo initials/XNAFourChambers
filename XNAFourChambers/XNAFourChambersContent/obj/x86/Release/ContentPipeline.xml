@@ -791,7 +791,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\auto_surt2_16x16.xnb</Output>
-      <Time>2016-04-23T16:04:38.0950404+10:00</Time>
+      <Time>2017-01-15T17:53:18.6345919+11:00</Time>
     </Item>
     <Item>
       <Source>fourchambers\Door_32x32.png</Source>
@@ -2105,6 +2105,33 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\music\ralph\this is the news.xnb</Output>
       <Extra>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\music\ralph\this is the news.wma</Extra>
       <Time>2016-04-23T16:04:38.7230764+10:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\bg.png</Source>
+      <Name>fourchambers\bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\bg.xnb</Output>
+      <Time>2017-01-15T19:30:07.4618378+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\waterFallSparkle.png</Source>
+      <Name>fourchambers\waterFallSparkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\waterFallSparkle.xnb</Output>
+      <Time>2017-01-16T19:28:33.4828497+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\doorSparkles.png</Source>
+      <Name>fourchambers\doorSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles.xnb</Output>
+      <Time>2017-01-15T12:17:53.4785228+11:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
