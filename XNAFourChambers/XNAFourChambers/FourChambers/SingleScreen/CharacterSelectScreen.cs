@@ -28,6 +28,7 @@ namespace FourChambers
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
+            FlxG.setHudTextScale(1, FlxG.zoom);
 
             FourChambers_Globals.levelFile = "ogmoLevels/characterSelect.oel";
 
