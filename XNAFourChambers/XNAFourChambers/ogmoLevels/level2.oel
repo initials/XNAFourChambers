@@ -1,4 +1,4 @@
-<level width="480" height="320" levelName="The First Chamber Of The Human Heart" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="gwd/OffKilterLoop_haspercus" fireflyColor="#FFFF80" bgColor="#000000">
+<level width="480" height="320" levelName="The First Chamber Of The Human Heart" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="gwd/ColdMoody" fireflyColor="#FFFF80" bgColor="#000000">
   <camera x="32" y="256" />
   <bg tileset="auto_surt2_16x16" exportMode="CSV">-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
@@ -103,8 +103,8 @@
     <_event id="35" x="416" y="192" width="32" height="80" event="waterfall" value1="0" value2="0" repeat="1" />
     <_event id="40" x="448" y="128" width="32" height="144" event="waterfall" value1="0" value2="0" repeat="1" />
     <ladder id="41" x="80" y="112" height="160" />
-    <_event id="42" x="0" y="64" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
-    <_event id="43" x="464" y="64" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
-    <_event id="44" x="0" y="256" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
+    <spawnPoint id="42" x="0" y="64" />
+    <spawnPoint id="43" x="0" y="256" />
+    <spawnPoint id="44" x="464" y="64" />
   </ActorsLayer>
 </level>

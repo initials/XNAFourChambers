@@ -97,10 +97,10 @@
     <bat id="33" x="-112" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="34" x="-96" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <ladder id="35" x="288" y="144" height="112" />
-    <_event id="36" x="0" y="272" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
-    <_event id="37" x="0" y="80" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
-    <_event id="38" x="464" y="80" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
-    <_event id="39" x="464" y="272" width="16" height="16" event="spawnPoint" value1="0" value2="0" repeat="1" />
     <zingerNest id="40" x="112" y="160" />
+    <spawnPoint id="36" x="0" y="80" />
+    <spawnPoint id="37" x="0" y="272" />
+    <spawnPoint id="38" x="464" y="80" />
+    <spawnPoint id="39" x="464" y="272" />
   </ActorsLayer>
 </level>

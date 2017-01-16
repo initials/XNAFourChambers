@@ -17,13 +17,12 @@ namespace FourChambers
 
         public FlxSprite collider;
 
-        public int colliderHeight;
 
 
-        public Waterfall(int xPos, int yPos)
+        public Waterfall(int xPos, int yPos, int Width, int Height)
             : base(xPos, yPos)
         {
-            setSize(32, 16);
+            setSize(Width, 16);
             setRotation();
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
@@ -33,13 +32,20 @@ namespace FourChambers
             start(false, 0.0075f, 0);
             renderOrder = 1;
 
-            collider = new FlxSprite(x, y + colliderHeight);
+            collider = new FlxSprite(xPos, yPos + Height);
             collider.createGraphic(32, 16, Color.Red);
             collider.@fixed = true;
 
             foreach (var item in members)
             {
                 ((FlxParticle)(item))._bounce = FlxU.random(0.02f, 0.45f);
+
+                if (FlxU.random() > 0.9f)
+                {
+                    FlxSprite p = emitParticleAndReturnSprite();
+                    p.y += FlxU.randomInt(0, Height);
+                    p.velocity.Y = FlxU.random(20, 98);
+                }
             }
 
         }
@@ -58,7 +64,10 @@ namespace FourChambers
             foreach (var item in members)
             {
                 if (item.velocity.Y < 0)
+                {
                     ((FlxParticle)(item)).frame = 11;
+                    //((FlxParticle)(item)).velocity.X = FlxU.random(-5,5);
+                }
             }
         }
 
@@ -68,11 +77,7 @@ namespace FourChambers
 
             base.render(spriteBatch);
         }
-        //public override void emitParticle()
-        //{
-        //    velocity.Y = 0;
-        //    base.emitParticle();
-        //}
+
     }
 }
 

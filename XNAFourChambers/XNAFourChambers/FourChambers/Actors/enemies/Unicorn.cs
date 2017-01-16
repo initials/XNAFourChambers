@@ -111,15 +111,29 @@ namespace FourChambers
 
         override public void update()
         {
-            
-
             base.update();
         }
+        
+        public override void overlapped(FlxObject obj)
+        {
+            string overlappedWith = obj.GetType().ToString();
+
+            if (overlappedWith == "FourChambers.Zinger")
+            {
+                
+                //Turn it into an embersteed
+                if (color!=Color.Green)
+                    hurt(0);
+                color = Color.Green;
+
+            }
+
+            base.overlapped(obj);
+        }
+
 
         public override void hurt(float Damage)
         {
-
-            startPlayingBack();
 
             play("hurt");
 

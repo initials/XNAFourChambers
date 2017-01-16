@@ -153,6 +153,9 @@ namespace FourChambers
             allProjectiles.add(arrows);
             allProjectiles.add(meleeHitBox);
 
+            price = 0.0f;
+            lockedForSelection = false;
+
         }
 
         public void adjustMeleeBox()

@@ -74,6 +74,8 @@ namespace FourChambers
 
             hurtTimer = 10000;
 
+            price = 1.99f;
+
         }
 
         override public void update()

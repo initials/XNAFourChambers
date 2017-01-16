@@ -35,6 +35,8 @@ namespace FourChambers
 
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level");
 
+            FlxG.playMp3("music/" + levelAttrs["music"], 0.550f);
+
             FlxG.levelWidth = Convert.ToInt32(levelAttrs["width"]);
             FlxG.levelHeight = Convert.ToInt32(levelAttrs["height"]);
 

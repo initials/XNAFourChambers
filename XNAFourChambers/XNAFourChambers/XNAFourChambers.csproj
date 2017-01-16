@@ -249,6 +249,7 @@
     <Compile Include="FourChambers\Levels\AllLevels.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
     <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
+    <Compile Include="FourChambers\SingleScreen\CharacterSelectScreen.cs" />
     <Compile Include="FourChambers\SingleScreen\Door.cs" />
     <Compile Include="FourChambers\Levels\FallAwayBridgeBlock.cs" />
     <Compile Include="FourChambers\Levels\Hill.cs" />
@@ -410,6 +411,9 @@
     <Folder Include="FourChambers\Weapons\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ogmoLevels\characterSelect.oel">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ogmoLevels\level1.oel">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

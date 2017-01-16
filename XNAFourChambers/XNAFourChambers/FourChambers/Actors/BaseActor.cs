@@ -64,7 +64,8 @@ namespace FourChambers
 
         public List<string> actorsThatCanCollectWhenDead;
 
-
+        public float price;
+        public bool lockedForSelection;
 
 
         /// <summary>
@@ -82,6 +83,9 @@ namespace FourChambers
 
             itemsThatCanKill = new List<string>();
             actorsThatCanCollectWhenDead = new List<string>();
+
+            price = 0.99f;
+            lockedForSelection = true;
 
         }
 

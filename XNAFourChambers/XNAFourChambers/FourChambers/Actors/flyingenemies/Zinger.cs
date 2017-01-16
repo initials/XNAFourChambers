@@ -16,6 +16,9 @@ namespace FourChambers
 
         protected float speedOfWingFlapVelocity = -40;
 
+        public bool homing = false;
+        public FlxSprite homingTarget;
+
         public Zinger(int xPos, int yPos)
             : base(xPos, yPos)
         {
@@ -56,11 +59,11 @@ namespace FourChambers
 
         public override void reset(float X, float Y)
         {
-            Console.WriteLine("Resetting a Zinger");
+            //Console.WriteLine("Resetting a Zinger");
+            homing = false;
 
             velocity.X = FlxU.random(0, maxVelocity.X);
             velocity.Y = FlxU.random(0, maxVelocity.Y);
-
 
             visible = true;
 
@@ -69,10 +72,6 @@ namespace FourChambers
             base.reset(X, Y);
 
             acceleration.Y = 50;
-
-
-
-
         }
 
         override public void update()
@@ -85,22 +84,45 @@ namespace FourChambers
                     velocity.Y = speedOfWingFlapVelocity;
                 }
             }
-            //else
-            //{
-            //    acceleration.Y = FourChambers_Globals.GRAVITY;
-            //    velocity.X = 0;
-
-            //}
 
             base.update();
 
-            if (velocity.X > 0)
+            if (homing && homingTarget != null)
             {
-                facing = Flx2DFacing.Right;
+                float rightX1 = homingTarget.x;
+                float rightY1 = homingTarget.y;
+
+                float xDiff = x - rightX1;
+                float yDiff = y - rightY1;
+
+                double degrees = Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
+
+                double radians = Math.PI / 180 * degrees;
+
+                double velocity_x = Math.Cos((float)radians);
+                double velocity_y = Math.Sin((float)radians);
+
+                // original
+                //velocity.X = (float)velocity_x * -400;
+                //velocity.Y = (float)velocity_y * -400;
+
+                Vector2 targetVel = new Vector2((float)velocity_x * -400, (float)velocity_y * -400);
+
+                if (velocity.X < targetVel.X) velocity.X += FlxU.randomInt(0,40);
+                if (velocity.X > targetVel.X) velocity.X -= FlxU.randomInt(0, 40);
+                if (velocity.Y < targetVel.Y) velocity.Y += FlxU.randomInt(0, 40);
+                if (velocity.Y > targetVel.Y) velocity.Y -= FlxU.randomInt(0, 40);
             }
             else
             {
-                facing = Flx2DFacing.Left;
+                if (velocity.X > 0)
+                {
+                    facing = Flx2DFacing.Right;
+                }
+                else
+                {
+                    facing = Flx2DFacing.Left;
+                }
             }
 
             if (x > FlxG.levelWidth)

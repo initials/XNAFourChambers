@@ -56,6 +56,7 @@ namespace FourChambers
 
         public override void kill()
         {
+            FlxG.play("sfx/harvesterAttack", 0.5f, false);
             //acceleration.Y = FourChambers_Globals.GRAVITY;
             base.kill();
         }

@@ -51,16 +51,27 @@ namespace FourChambers
 
                 try
                 {
-                    if (nodes.ContainsKey("event"))
+                    
+                    if (nodes.ContainsKey("event") && nodes.ContainsKey("height") && nodes.ContainsKey("width"))
+                    {
+                        var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), 
+                            Convert.ToInt32(nodes["x"]), 
+                            Convert.ToInt32(nodes["y"]),
+                            Convert.ToInt32(nodes["width"]), 
+                            Convert.ToInt32(nodes["height"]));
+
+                        add(sprite);
+                    }
+                    else if (nodes.ContainsKey("event"))
                     {
                         var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
                         add(sprite);
-                        if (nodes["event"] == "waterfall")
-                        {
-                            ((Waterfall)(sprite)).colliderHeight = Convert.ToInt32(nodes["height"]);
-                            ((Waterfall)(sprite)).collider.y += Convert.ToInt32(nodes["height"]);
-                        }
-                        
+                        //if (nodes["event"] == "waterfall")
+                        //{
+                        //    ((Waterfall)(sprite)).colliderHeight = Convert.ToInt32(nodes["height"]);
+                        //    ((Waterfall)(sprite)).collider.y += Convert.ToInt32(nodes["height"]);
+                        //}
+
                     }
                     else if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
@@ -137,7 +148,12 @@ namespace FourChambers
                     for (int i = 0; i < zingers.Count; i++)
                     {
                         if (((Zinger)(zingers[i])).dead == true)
+                        {
                             ((Zinger)(zingers[i])).reset(item.x, item.y);
+                            ((Zinger)(zingers[i])).homing = true;
+                            ((Zinger)(zingers[i])).homingTarget = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Marksman");
+
+                        }
                     }
                     item.kill();
                 }
