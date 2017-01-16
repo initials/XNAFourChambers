@@ -28,7 +28,7 @@ namespace FourChambers
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
-            FlxG.setHudTextScale(1, FlxG.zoom);
+            
 
             FourChambers_Globals.levelFile = "ogmoLevels/characterSelect.oel";
 
@@ -62,6 +62,9 @@ namespace FourChambers
             add(prism);
 
             actorsGrp.members = actorsGrp.members.OrderBy(d => d.x).ToList();
+
+            FlxG.setHudTextScale(1, FlxG.zoom);
+            FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
         }
 
         override public void update()
@@ -76,8 +79,17 @@ namespace FourChambers
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal>0.5f)
             {
-                FlxG.state = new SingleScreenLevel();
-                return;
+                if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
+                {
+                    FlxG.state = new SingleScreenLevel();
+                    return;
+                }
+                else
+                {
+                    FlxG.log("Go to Steam in game purchase");
+                    FlxG.quake.start(0.025f, 0.7f);
+
+                }
             }
 
             FlxU.collide(actorsGrp, levelTilemap);

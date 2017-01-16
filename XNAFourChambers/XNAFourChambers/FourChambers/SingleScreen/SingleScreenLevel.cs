@@ -27,7 +27,9 @@ namespace FourChambers
 
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
-            //FlxG.showHud();
+            FlxG.showHud();
+            FlxG.setHudTextScale(1, FlxG.zoom);
+            FlxG.setHudTextPosition(1, 16, 8);
 
             FourChambers_Globals.getLevelFileName();
 
@@ -72,14 +74,14 @@ namespace FourChambers
                 FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
                 FourChambers_Globals.arrowCombo = 20;
 
-                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x;
+                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x-60;
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").y;
 
                 foreach (var item in actorsGrp.members)
                 {
                     if (!(item is Marksman))
                     {
-                        item.dead = true;
+                        //item.dead = true;
                     }
                 }
             }
@@ -124,6 +126,9 @@ namespace FourChambers
             {
                 overlapWithLadder(Sender, e);
             }
+            //duplicate code.
+
+            /*
             if ((e.Object1 is Marksman) && (e.Object2 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver<=0)
             {
                 Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
@@ -158,6 +163,7 @@ namespace FourChambers
                     }
                 }
             }
+            */
 
             return true;
         }

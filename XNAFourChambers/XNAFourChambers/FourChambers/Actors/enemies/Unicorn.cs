@@ -116,17 +116,17 @@ namespace FourChambers
         
         public override void overlapped(FlxObject obj)
         {
-            string overlappedWith = obj.GetType().ToString();
+            //string overlappedWith = obj.GetType().ToString();
 
-            if (overlappedWith == "FourChambers.Zinger")
-            {
+            //if (overlappedWith == "FourChambers.Zinger")
+            //{
                 
-                //Turn it into an embersteed
-                if (color!=Color.Green)
-                    hurt(0);
-                color = Color.Green;
+            //    //Turn it into an embersteed
+            //    if (color!=Color.Green)
+            //        hurt(0);
+            //    color = Color.Green;
 
-            }
+            //}
 
             base.overlapped(obj);
         }

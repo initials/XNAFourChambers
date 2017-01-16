@@ -27,9 +27,11 @@ namespace FourChambers
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
             gravity = 98;
-            createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 150, true, 1, FlxU.random(0.02f,0.45f) );
+            createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 170, true, 1, FlxU.random(0.02f,0.45f) );
 
-            start(false, 0.05f, 0);
+            //start(false, 0.05f, 0);
+            start(false, 0.015f, 0);
+
             renderOrder = 1;
 
             collider = new FlxSprite(xPos, yPos + Height);

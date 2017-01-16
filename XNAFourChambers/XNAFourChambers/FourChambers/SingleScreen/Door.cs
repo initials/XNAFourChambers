@@ -83,6 +83,9 @@ namespace FourChambers
                 if (FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
                 {
                     play("pulse");
+                    FlxG.level++;
+                    FlxG.state = new SingleScreenLevel();
+                    return;
                 }
             }
 
@@ -94,7 +97,7 @@ namespace FourChambers
             if (FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
             {
                 play("pulse");
-                sparkles.start(false, 0.01f, 0);
+                //sparkles.start(false, 0.01f, 0);
                 
             }
 

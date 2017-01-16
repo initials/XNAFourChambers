@@ -98,6 +98,9 @@ namespace FourChambers
 
         public override void reset(float X, float Y)
         {
+            dead = false;
+            visible = true;
+            exists = true;
             color = Color.White;
             if (X>FlxG.width/2)
                 velocity.X = maxVelocity.X * -1;
@@ -113,6 +116,8 @@ namespace FourChambers
             {
                 if (!dead)
                 {
+                    //Console.WriteLine("I am a {0} itemsThatCanKill Not dead, obj: {1}", GetType().ToString() ,obj.GetType().ToString());
+
                     FourChambers_Globals.arrowCombo++;
 
                     ((FlxSprite)obj).kill();
@@ -123,19 +128,20 @@ namespace FourChambers
             {
                 if (dead)
                 {
+                    //Console.WriteLine("I am a {0} actorsThatCanCollectWhenDead Dead, obj: {1}", GetType().ToString(), obj.GetType().ToString());
+
                     FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
-                    
 
                     exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
 
                     FlxG.quake.start(0.008f, ((20 - FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver) * 0.1f) * 0.2f);
-
-
                 }
                 else
                 {
+                    //Console.WriteLine("I am a {0} actorsThatCanCollectWhenDead Not dead, obj: {1}", GetType().ToString(), obj.GetType().ToString());
+
                     ((FlxSprite)obj).hurt(1);
                 }
             }

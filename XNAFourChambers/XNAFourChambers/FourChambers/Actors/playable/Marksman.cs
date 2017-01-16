@@ -269,8 +269,8 @@ namespace FourChambers
             else
             {
                 meleeHitBox.dead = true;
-                meleeHitBox.x = x;
-                meleeHitBox.y = y;
+                meleeHitBox.x = -1000;
+                meleeHitBox.y = -1000;
                 meleeHitBox.width = 0;
                 meleeHitBox.height = 0;
             }

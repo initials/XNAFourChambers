@@ -48,7 +48,7 @@ namespace FourChambers
             runSpeed = 30;
             acceleration.Y = 50;
             maxVelocity.X = FlxU.random(20,50);
-            maxVelocity.Y = 1000;
+            maxVelocity.Y = FlxU.random(20, 50);
             velocity.X = 100;
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
@@ -66,6 +66,7 @@ namespace FourChambers
             velocity.Y = FlxU.random(0, maxVelocity.Y);
 
             visible = true;
+            dead = false;
 
             play("fly");
 
@@ -90,7 +91,7 @@ namespace FourChambers
             if (homing && homingTarget != null)
             {
                 float rightX1 = homingTarget.x;
-                float rightY1 = homingTarget.y;
+                float rightY1 = homingTarget.y - (FlxU.random()*40);
 
                 float xDiff = x - rightX1;
                 float yDiff = y - rightY1;
@@ -102,17 +103,26 @@ namespace FourChambers
                 double velocity_x = Math.Cos((float)radians);
                 double velocity_y = Math.Sin((float)radians);
 
+                //if (FlxU.random() > 0.5f)
+                //    velocity_x = 0;
+
                 // original
                 //velocity.X = (float)velocity_x * -400;
                 //velocity.Y = (float)velocity_y * -400;
 
-                Vector2 targetVel = new Vector2((float)velocity_x * -400, (float)velocity_y * -400);
+                Vector2 targetVel = new Vector2((float)velocity_x * FlxU.randomInt(-400, -200), (float)velocity_y * FlxU.randomInt(-400, -200));
 
                 if (velocity.X < targetVel.X) velocity.X += FlxU.randomInt(0,40);
                 if (velocity.X > targetVel.X) velocity.X -= FlxU.randomInt(0, 40);
                 if (velocity.Y < targetVel.Y) velocity.Y += FlxU.randomInt(0, 40);
                 if (velocity.Y > targetVel.Y) velocity.Y -= FlxU.randomInt(0, 40);
+
+                if (homingTarget.dead == true)
+                {
+                    homingTarget = null;
+                }
             }
+
 
             if (velocity.X > 0)
             {
@@ -151,6 +161,7 @@ namespace FourChambers
             dead = true;
             acceleration.Y = FourChambers_Globals.GRAVITY;
             velocity.X = 0;
+            maxVelocity.Y = 1000;
 
             //base.kill();
         }
