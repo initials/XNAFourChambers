@@ -27,7 +27,7 @@ namespace FourChambers
 
             FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
-            FlxG.showHud();
+            //FlxG.showHud();
 
             FourChambers_Globals.getLevelFileName();
 
@@ -126,13 +126,6 @@ namespace FourChambers
             {
                 Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
 
-                //prepare for next level
-                //overlapWithLadder(Sender, e);
-                //FlxG.level++;
-
-                //FlxG.state = new SingleScreenLevel();
-                
-                //return;
                 foreach (var item in ((Door)(e.Object2)).sparkles.members)
                 {
                     ((FlxSprite)(item)).scale+= FlxU.random();
@@ -144,12 +137,25 @@ namespace FourChambers
                         FlxG.state = new SingleScreenLevel();
                         break;
                     }
-
                 }
-                
-
             }
+            if ((e.Object2 is Marksman) && (e.Object1 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
+            {
+                Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
 
+                foreach (var item in ((Door)(e.Object1)).sparkles.members)
+                {
+                    ((FlxSprite)(item)).scale += FlxU.random();
+                    ((FlxSprite)(item)).angle += FlxU.random();
+                    if (((FlxSprite)(item)).scale > 30)
+                    {
+                        FlxG.level++;
+
+                        FlxG.state = new SingleScreenLevel();
+                        break;
+                    }
+                }
+            }
 
             return true;
         }
