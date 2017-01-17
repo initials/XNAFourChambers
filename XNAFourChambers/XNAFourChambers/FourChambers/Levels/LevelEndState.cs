@@ -81,9 +81,9 @@ namespace FourChambers
                
                 p.allowColorFlicker = false;
 
-                if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(i))
+                if (Globals.treasuresCollectedPersistant.ContainsKey(i))
                 {
-                    if (FourChambers_Globals.treasuresCollectedPersistant[i] == 1)
+                    if (Globals.treasuresCollectedPersistant[i] == 1)
                     {
                         p.scale = 0;
                         p.color = Color.White;

@@ -80,7 +80,7 @@ namespace FourChambers
 
             if (overlappedWith == "FourChambers.Marksman")
             {
-                if (FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
+                if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
                 {
                     play("pulse");
                     FlxG.level++;
@@ -94,7 +94,7 @@ namespace FourChambers
 
         override public void update()
         {
-            if (FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
+            if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
             {
                 play("pulse");
                 //sparkles.start(false, 0.01f, 0);

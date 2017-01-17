@@ -38,38 +38,38 @@ namespace FourChambers
             boundingBoxOverride = true;
 
             levelAttrs = new Dictionary<string, string>();
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/collide");
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/collide");
 
             auto = FlxTilemap.STRING;
 
             loadMap(levelAttrs["collide"], 
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]), 
-                FourChambers_Globals.TILE_SIZE_X, 
-                FourChambers_Globals.TILE_SIZE_Y);
+                Globals.TILE_SIZE_X, 
+                Globals.TILE_SIZE_Y);
 
 
             levelAttrs = new Dictionary<string, string>();
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/bg");
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
 
             bgTiles = new FlxTilemap();
             bgTiles.auto = FlxTilemap.STRING;
 
             bgTiles.loadMap(levelAttrs["bg"],
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
-                FourChambers_Globals.TILE_SIZE_X,
-                FourChambers_Globals.TILE_SIZE_Y);
+                Globals.TILE_SIZE_X,
+                Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
 
 
             levelAttrs = new Dictionary<string, string>();
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level/fg");
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/fg");
             fgTiles = new FlxTilemap();
             fgTiles.auto = FlxTilemap.STRING;
 
             fgTiles.loadMap(levelAttrs["fg"],
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
-                FourChambers_Globals.TILE_SIZE_X,
-                FourChambers_Globals.TILE_SIZE_Y);
+                Globals.TILE_SIZE_X,
+                Globals.TILE_SIZE_Y);
             
 
 
@@ -88,7 +88,7 @@ namespace FourChambers
             fireflyGroup.update();
             if (transition >= 0)
             {
-                for (int i = 0; i < FlxG.levelWidth / FourChambers_Globals.TILE_SIZE_X; i++)
+                for (int i = 0; i < FlxG.levelWidth / Globals.TILE_SIZE_X; i++)
                 {
                     fgTiles.setTile(i, (int)transition, FlxU.randomInt(0,250));
                 }

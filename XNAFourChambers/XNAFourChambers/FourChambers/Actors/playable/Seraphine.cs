@@ -36,7 +36,7 @@ namespace FourChambers
             //basic player physics
             runSpeed = 120;
             //drag.X = runSpeed * 4;
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 1000;
 
@@ -86,7 +86,7 @@ namespace FourChambers
 
         public override void kill()
         {
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             dead = true;
             //base.kill();
         }

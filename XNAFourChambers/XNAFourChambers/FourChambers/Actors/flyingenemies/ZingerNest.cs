@@ -46,7 +46,7 @@ namespace FourChambers
             //Console.WriteLine("Zinger Nest has been hit, accel: {0}", acceleration.Y);
             if (itemsThatCanKill.Contains(obj.GetType().ToString()))
             {
-                acceleration.Y = FourChambers_Globals.GRAVITY;
+                acceleration.Y = Globals.GRAVITY;
                 @fixed = false;
 
             }

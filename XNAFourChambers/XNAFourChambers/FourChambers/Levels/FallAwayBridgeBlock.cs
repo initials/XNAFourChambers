@@ -52,7 +52,7 @@ namespace FourChambers
             if (delayCounter > delay)
             {
                 @fixed = false;
-                acceleration.Y = FourChambers_Globals.GRAVITY;
+                acceleration.Y = Globals.GRAVITY;
                 if (alpha >= 0)
                     alpha -= 0.05f;
 

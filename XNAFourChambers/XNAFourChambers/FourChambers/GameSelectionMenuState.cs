@@ -354,7 +354,7 @@ namespace FourChambers
             //{
             //    FourChambers_Globals.startGame();
             //}
-            FourChambers_Globals.startGame();
+            Globals.startGame();
 
             FlxG.state = new BasePlayStateFromOel();
 
@@ -380,7 +380,7 @@ namespace FourChambers
             FlxG.level = 103;
             FlxG.score = 0;
             FlxG.hideHud();
-            FourChambers_Globals.startGame();
+            Globals.startGame();
             FlxG.state = new MultiPlayerCharacterSelect();
             return;
 

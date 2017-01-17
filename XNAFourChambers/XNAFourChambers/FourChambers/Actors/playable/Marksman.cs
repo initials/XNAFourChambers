@@ -33,7 +33,7 @@ namespace FourChambers
         {
             actorName = "Marqu";
 
-            if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_MARKSMAN)
+            if (Globals.PLAYER_ACTOR == Globals.PLAYER_MARKSMAN)
             {
 
                 loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Marksman_50x50"), true, false, 50, 50);
@@ -54,7 +54,7 @@ namespace FourChambers
                 addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
                 addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
             }
-            else if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_MISTRESS)
+            else if (Globals.PLAYER_ACTOR == Globals.PLAYER_MISTRESS)
             {
 
                 loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Mistress_50x50"), true, false, 50, 50);
@@ -76,7 +76,7 @@ namespace FourChambers
                 addAnimation("climbidle", new int[] { 20 }, 0, true);
 
             }
-            else if (FourChambers_Globals.PLAYER_ACTOR == FourChambers_Globals.PLAYER_WARLOCK)
+            else if (Globals.PLAYER_ACTOR == Globals.PLAYER_WARLOCK)
             {
 
                 loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
@@ -116,7 +116,7 @@ namespace FourChambers
             int runSpeed = 80;
             drag.X = runSpeed * 4;
 
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 700;
 
@@ -130,8 +130,8 @@ namespace FourChambers
 
             timeDownAfterHurt = 1.5f;
 
-            hasMeleeWeapon = FourChambers_Globals.hasMeleeWeapon;
-            hasRangeWeapon = FourChambers_Globals.hasRangeWeapon;
+            hasMeleeWeapon = Globals.hasMeleeWeapon;
+            hasRangeWeapon = Globals.hasRangeWeapon;
 
             health = 4;
 
@@ -336,7 +336,7 @@ namespace FourChambers
                 // No Right Stick so do a generic shoot...
                 if (arrowsRemaining >= 1)
                 {
-                    for (int i = 0; i < FourChambers_Globals.arrowsToFire; i++)
+                    for (int i = 0; i < Globals.arrowsToFire; i++)
                     {
                         if (rightX == 0 && rightY == 0)
                         {
@@ -404,11 +404,11 @@ namespace FourChambers
 
                 if (arrowsRemaining >= 1 && _bullets != null)
                 {
-                    for (int i = 0; i < FourChambers_Globals.arrowsToFire; i++)
+                    for (int i = 0; i < Globals.arrowsToFire; i++)
                     {
-                        int yVel = (int)(velocity_y * (-550 - (FourChambers_Globals.arrowPower* 50)));
+                        int yVel = (int)(velocity_y * (-550 - (Globals.arrowPower* 50)));
                         int yVelAdjusted = yVel - (i * 40);
-                        int xVel = (int)(velocity_x * (-550 - (FourChambers_Globals.arrowPower*50)));
+                        int xVel = (int)(velocity_x * (-550 - (Globals.arrowPower*50)));
 
                         ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), xVel, yVelAdjusted);
 
@@ -436,7 +436,7 @@ namespace FourChambers
 
             PlayerIndex pi;
 
-            if (FourChambers_Globals.seraphineHasBeenKilled == false && canFly)
+            if (Globals.seraphineHasBeenKilled == false && canFly)
             {
                 if (FlxG.gamepads.isButtonDown(Buttons.Y, playerIndex, out pi) || FlxG.keys.W)
                 {
@@ -457,8 +457,8 @@ namespace FourChambers
                 hasMeleeWeapon = true;
                 hasRangeWeapon = true;
 
-                FourChambers_Globals.hasMeleeWeapon = true;
-                FourChambers_Globals.hasRangeWeapon = true;
+                Globals.hasMeleeWeapon = true;
+                Globals.hasRangeWeapon = true;
             }
 
             // For just landing.

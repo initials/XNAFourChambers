@@ -21,7 +21,7 @@ namespace FourChambers
         {
 
             auto = FlxTileblock.RANDOM;
-            loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y, 0);
+            loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y, 0);
 
             renderOrder = 1;
         }

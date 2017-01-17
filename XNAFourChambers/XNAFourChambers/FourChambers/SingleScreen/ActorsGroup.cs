@@ -22,7 +22,7 @@ namespace FourChambers
         {
 
             actorsAttrs = new List<Dictionary<string, string>>();
-            actorsAttrs = FlxXMLReader.readNodesFromOelFile(FourChambers_Globals.levelFile, "level/ActorsLayer");
+            actorsAttrs = FlxXMLReader.readNodesFromOelFile(Globals.levelFile, "level/ActorsLayer");
 
             foreach (Dictionary<string, string> nodes in actorsAttrs)
             {

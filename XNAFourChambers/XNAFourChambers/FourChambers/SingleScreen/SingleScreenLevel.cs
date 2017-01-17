@@ -25,17 +25,17 @@ namespace FourChambers
 
             // set level details
 
-            FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
+            Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
             FlxG.setHudTextScale(1, FlxG.zoom);
             FlxG.setHudTextPosition(1, 16, 8);
 
-            FourChambers_Globals.getLevelFileName();
+            Globals.getLevelFileName();
 
             Dictionary<string, string> levelAttrs = new Dictionary<string, string>();
 
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level");
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level");
 
             FlxG.playMp3("music/" + levelAttrs["music"], 0.550f);
 
@@ -61,7 +61,7 @@ namespace FourChambers
             
             base.update();
 
-            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + FourChambers_Globals.arrowCombo );
+            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo );
 
             if (FlxG.keys.R)
             {
@@ -71,8 +71,8 @@ namespace FourChambers
             }
             if (FlxG.keys.P)
             {
-                FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
-                FourChambers_Globals.arrowCombo = 20;
+                Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
+                Globals.arrowCombo = 20;
 
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x-60;
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").y;

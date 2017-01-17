@@ -25,16 +25,16 @@ namespace FourChambers
 
             FlxG.elapsedTotal = 0;
 
-            FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
+            Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
             
 
-            FourChambers_Globals.levelFile = "ogmoLevels/characterSelect.oel";
+            Globals.levelFile = "ogmoLevels/characterSelect.oel";
 
             Dictionary<string, string> levelAttrs = new Dictionary<string, string>();
 
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(FourChambers_Globals.levelFile, "level");
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level");
 
             FlxG.playMp3("music/" + levelAttrs["music"], 0.250f);
 

@@ -29,7 +29,7 @@ namespace FourChambers
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Zinger_ss_12x14"), true, false, 12, 14);
 
-            addAnimation("fly", new int[] { 0, 1 }, 30);
+            addAnimation("fly", new int[] { 0, 1 }, FlxU.randomInt(15,30) );
             addAnimation("death", new int[] { 2,3,4 }, 8, false);
             play("fly");
 
@@ -159,7 +159,7 @@ namespace FourChambers
 
             play("death");
             dead = true;
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             velocity.X = 0;
             maxVelocity.Y = 1000;
 

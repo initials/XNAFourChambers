@@ -112,7 +112,7 @@ namespace FourChambers
 
             if (onScreen() == false && !dead)
             {
-                FourChambers_Globals.arrowCombo = 0;
+                Globals.arrowCombo = 0;
                 kill();
             }
 
@@ -131,7 +131,7 @@ namespace FourChambers
             }
             _fire.stop();
 
-            FourChambers_Globals.arrowCombo = 0;
+            Globals.arrowCombo = 0;
             hasTouched= true;
             kill(); 
         }
@@ -142,7 +142,7 @@ namespace FourChambers
             _fire.setYSpeed(50, 100);
             _fire.start(true, 0.01f, 0);
 
-            FourChambers_Globals.arrowCombo = 0;
+            Globals.arrowCombo = 0;
             base.hitLeft(Contact, Velocity);
         }
 
@@ -152,7 +152,7 @@ namespace FourChambers
             _fire.setYSpeed(50, 100);
             _fire.start(true, 0.01f, 0);
 
-            FourChambers_Globals.arrowCombo = 0;
+            Globals.arrowCombo = 0;
             base.hitRight(Contact, Velocity);
         }
 
@@ -172,7 +172,7 @@ namespace FourChambers
             hasTouched = true;
             dead = true;
             solid = false;
-            FourChambers_Globals.arrowCombo = 0;
+            Globals.arrowCombo = 0;
             kill(); 
         }
         override public void hitTop(FlxObject Contact, float Velocity) 
@@ -189,7 +189,7 @@ namespace FourChambers
             }
             _fire.stop();
             hasTouched = true;
-            FourChambers_Globals.arrowCombo = 0;
+            Globals.arrowCombo = 0;
             kill(); 
         }
         override public void kill()
@@ -216,7 +216,7 @@ namespace FourChambers
             _fire.start(false, 0.01f, 0);
             
             // Global counter for arrows fired.
-            FourChambers_Globals.arrowsFired++;
+            Globals.arrowsFired++;
 
             visible = true;
             FlxG.play(SndShoot, 1.0f, false);

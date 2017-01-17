@@ -79,7 +79,7 @@ namespace FourChambers
             score = 0;
             actorName="BaseActor";
             actorType = "BaseActor";
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
 
             itemsThatCanKill = new List<string>();
             actorsThatCanCollectWhenDead = new List<string>();
@@ -118,7 +118,7 @@ namespace FourChambers
                 {
                     //Console.WriteLine("I am a {0} itemsThatCanKill Not dead, obj: {1}", GetType().ToString() ,obj.GetType().ToString());
 
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowCombo++;
 
                     ((FlxSprite)obj).kill();
                     hurt(1);
@@ -130,13 +130,13 @@ namespace FourChambers
                 {
                     //Console.WriteLine("I am a {0} actorsThatCanCollectWhenDead Dead, obj: {1}", GetType().ToString(), obj.GetType().ToString());
 
-                    FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver--;
+                    Globals.numberOfEnemiesToKillBeforeLevelOver--;
 
                     exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
 
-                    FlxG.quake.start(0.008f, ((20 - FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver) * 0.1f) * 0.2f);
+                    FlxG.quake.start(0.008f, ((20 - Globals.numberOfEnemiesToKillBeforeLevelOver) * 0.1f) * 0.2f);
                 }
                 else
                 {

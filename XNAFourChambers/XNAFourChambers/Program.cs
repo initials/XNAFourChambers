@@ -33,7 +33,7 @@ namespace Loader_Four
 
 
 
-            FourChambers.FourChambers_Globals.startGame();
+            FourChambers.Globals.startGame();
 
 
             initGame(w, h, new FourChambers.CharacterSelectScreen(), new Color(15, 15, 15), true, new Color(5, 5, 5));
@@ -42,10 +42,10 @@ namespace Loader_Four
 
             FlxG.debug = false;
 
-            FourChambers.FourChambers_Globals.gif = true;
-            FourChambers.FourChambers_Globals.BUILD_TYPE = FourChambers.FourChambers_Globals.BUILD_TYPE_RELEASE;
-            FourChambers.FourChambers_Globals.DEMO_VERSION = false;
-            FourChambers.FourChambers_Globals.PIRATE_COPY = false;
+            FourChambers.Globals.gif = true;
+            FourChambers.Globals.BUILD_TYPE = FourChambers.Globals.BUILD_TYPE_RELEASE;
+            FourChambers.Globals.DEMO_VERSION = false;
+            FourChambers.Globals.PIRATE_COPY = false;
             FlxG.level = 1;
             FlxG.score = 0;
 

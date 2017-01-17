@@ -372,7 +372,7 @@ namespace FourChambers
 
             destructableTilemap = new FlxTilemap();
             destructableTilemap.auto = FlxTilemap.STRING;
-            destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             destructableTilemap.boundingBoxOverride = true;
             allLevelTiles.add(destructableTilemap);
             destructableTilemap.collideMin = 0;
@@ -385,7 +385,7 @@ namespace FourChambers
             indestructableTilemap.collideMin = 0;
             indestructableTilemap.collideMax = 21;
             indestructableTilemap.auto = FlxTilemap.STRING;
-            indestructableTilemap.loadMap(indestructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            indestructableTilemap.loadMap(indestructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             indestructableTilemap.boundingBoxOverride = true;
 
             allLevelTiles.add(indestructableTilemap);
@@ -450,20 +450,20 @@ namespace FourChambers
                 {
                     //Console.WriteLine(" PROCE GENE {0}, {1}", Convert.ToInt32(nodes["width"]) ,Convert.ToInt32(nodes["height"]));
 
-                    FlxCaveGeneratorExt caveExt = new FlxCaveGeneratorExt(Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X);
+                    FlxCaveGeneratorExt caveExt = new FlxCaveGeneratorExt(Convert.ToInt32(nodes["height"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / Globals.TILE_SIZE_X);
                     caveExt.numSmoothingIterations = 5;
                     caveExt.initWallRatio = 0.55f;
                     string[,] tiles = caveExt.generateCaveLevel();
                     //caveExt.printCave(tiles);
                     string newMap = caveExt.convertMultiArrayStringToString(tiles);
 
-                    addedMap = caveExt.addStrings(destructableAttrs["collide"], newMap, Convert.ToInt32(nodes["x"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X);
+                    addedMap = caveExt.addStrings(destructableAttrs["collide"], newMap, Convert.ToInt32(nodes["x"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / Globals.TILE_SIZE_X);
                 }
 
             }
 
             //reload the map
-            destructableTilemap.loadMap(addedMap, FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            destructableTilemap.loadMap(addedMap, FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
 
 
             eventsAttrs = new List<Dictionary<string, string>>();
@@ -502,7 +502,7 @@ namespace FourChambers
             blood.setXSpeed(-152, 152);
             blood.setYSpeed(-250, -50);
             blood.setRotation(0, 0);
-            blood.gravity = FourChambers_Globals.GRAVITY;
+            blood.gravity = Globals.GRAVITY;
             blood.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/blood"), 1500, true, 1.0f, 0.1f);
             add(blood);
 
@@ -516,7 +516,7 @@ namespace FourChambers
             tilesExplode.setXSpeed(-50, 50);
             tilesExplode.setYSpeed(-150, -50);
             tilesExplode.setRotation(0, 0);
-            tilesExplode.gravity = FourChambers_Globals.GRAVITY;
+            tilesExplode.gravity = Globals.GRAVITY;
             tilesExplode.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 100, true, 1.0f, 0.1f);
             add(tilesExplode);
             tilesExplode.setScale(0.5f);
@@ -531,7 +531,7 @@ namespace FourChambers
             specialFX.setXSpeed(-50, 50);
             specialFX.setYSpeed(-850, 0);
             specialFX.setRotation(0, 360);
-            specialFX.gravity = FourChambers_Globals.GRAVITY;
+            specialFX.gravity = Globals.GRAVITY;
             specialFX.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/sparkles_small"), 20, true, 1.0f, 0.1f);
             add(specialFX);
 
@@ -558,7 +558,7 @@ namespace FourChambers
             FlxG.playMp3("music/" + levelAttrs["music"], 1.0f);
 
             // Exit the game and open up a webpage for buying the game, if it's a pirate copy.
-            if (FourChambers_Globals.PIRATE_COPY && FlxG.level >= 4)
+            if (Globals.PIRATE_COPY && FlxG.level >= 4)
             {
                 FlxU.openURL("http://initialsgames.com/fourchambers/purchasecopy.php");
 
@@ -579,7 +579,7 @@ namespace FourChambers
 
             foreach (Door d in doors.members)
             {
-                if (d.levelToGoTo == FourChambers_Globals.previousLevel)
+                if (d.levelToGoTo == Globals.previousLevel)
                 {
                     marksman.x = d.x + door.width + 5;
                     marksman.y = d.y;
@@ -619,23 +619,23 @@ namespace FourChambers
 
                 FlxObject g = spawnPoints.getRandom();
 
-                if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 0) buildActor("marksman", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 1) buildActor("succubus", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 2) buildActor("paladin", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 3) buildActor("unicorn", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 4) buildActor("vampire", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 5) buildActor("warlock", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 6) buildActor("corsair", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 7) buildActor("automaton", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 8) buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 9) buildActor("gloom", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 10) buildActor("harvester", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 11) buildActor("mummy", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 12) buildActor("seraphine", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 13) buildActor("mistress", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 14) buildActor("medusa", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 15) buildActor("zombie", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
-                else if (FourChambers_Globals.multiplayerSelectedCharacters[i] == 16) buildActor("tormentor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                if (Globals.multiplayerSelectedCharacters[i] == 0) buildActor("marksman", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 1) buildActor("succubus", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 2) buildActor("paladin", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 3) buildActor("unicorn", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 4) buildActor("vampire", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 5) buildActor("warlock", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 6) buildActor("corsair", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 7) buildActor("automaton", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 8) buildActor("executor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 9) buildActor("gloom", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 10) buildActor("harvester", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 11) buildActor("mummy", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 12) buildActor("seraphine", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 13) buildActor("mistress", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 14) buildActor("medusa", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 15) buildActor("zombie", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
+                else if (Globals.multiplayerSelectedCharacters[i] == 16) buildActor("tormentor", 1, true, (int)g.x, (int)g.y, 0, 0, "", "", 0, i, 0.0f, PL);
 
             }
 
@@ -693,8 +693,8 @@ namespace FourChambers
         /// </summary>
         private void restart()
         {
-            FourChambers_Globals.seraphineHasBeenKilled = false;
-            FourChambers_Globals.startGame();
+            Globals.seraphineHasBeenKilled = false;
+            Globals.startGame();
             FlxG.state = new BasePlayStateFromOel();
         }
 
@@ -708,7 +708,7 @@ namespace FourChambers
 
         protected bool goToLevel(int Level)
         {
-            FourChambers_Globals.previousLevel = FlxG.level;
+            Globals.previousLevel = FlxG.level;
 
             FlxG.level = Level;
 
@@ -754,27 +754,27 @@ namespace FourChambers
 
         protected bool destroyTileAtMelee(object Sender, FlxSpriteCollisionEvent e)
         {
-            if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) > destructableTilemap.collideMin &&
-                destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) <= destructableTilemap.collideMax)
+            if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) > destructableTilemap.collideMin &&
+                destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) <= destructableTilemap.collideMax)
             {
-                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) - 1) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) - 1) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) - 1, 0, true);
+                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) - 1, 0, true);
                 }
-                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) + 1) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) + 1) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) + 1, 0, true);
+                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) + 1, 0, true);
                 }
-                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) - 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) - 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) - 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y), 0, true);
+                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) - 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y), 0, true);
                 }
-                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y), 0, true);
+                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y), 0, true);
                 }
 
-                destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y, 0, true);
+                destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y, 0, true);
 
                 tilesExplode.x = (int)marksman.meleeHitBox.x;
                 tilesExplode.y = (int)marksman.meleeHitBox.y;
@@ -788,7 +788,7 @@ namespace FourChambers
             specialFX.at(e.Object1);
             specialFX.start(true, 0, 30);
 
-            FlxG.score += ((20 + (int)FlxU.random(0, 50)) * (FourChambers_Globals.arrowCombo + 1));
+            FlxG.score += ((20 + (int)FlxU.random(0, 50)) * (Globals.arrowCombo + 1));
 
 
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
@@ -801,7 +801,7 @@ namespace FourChambers
             {
                 marksman.hasRangeWeapon = true;
 
-                FourChambers_Globals.hasRangeWeapon = true;
+                Globals.hasRangeWeapon = true;
 
                 FlxG.mouse.show(FlxG.Content.Load<Texture2D>("flixel/initials/crosshair"));
 
@@ -810,7 +810,7 @@ namespace FourChambers
             {
                 marksman.hasMeleeWeapon = true;
 
-                FourChambers_Globals.hasMeleeWeapon = true;
+                Globals.hasMeleeWeapon = true;
 
             }
             else
@@ -926,8 +926,8 @@ namespace FourChambers
             {
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
                 }
                 bigEx.x = e.Object1.x;
                 bigEx.y = e.Object1.y;
@@ -964,12 +964,12 @@ namespace FourChambers
             }
             else if ((e.Object1 is Seraphine) && (e.Object2 is Arrow))
             {
-                FourChambers_Globals.seraphineHasBeenKilled = true;
+                Globals.seraphineHasBeenKilled = true;
 
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
                 }
                 e.Object1.velocity.X = e.Object2.velocity.X;
                 e.Object1.velocity.Y = e.Object2.velocity.Y;
@@ -989,8 +989,8 @@ namespace FourChambers
             {
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
 
                     //comboInfo.x = e.Object1.x + 20;
                     //comboInfo.y = e.Object1.y;
@@ -1036,7 +1036,7 @@ namespace FourChambers
                     if (p != null && p.dead == true) //
                     {
                         p.dead = false;
-                        p.acceleration.Y = FourChambers_Globals.GRAVITY;
+                        p.acceleration.Y = Globals.GRAVITY;
                         p.velocity.X = FlxU.random(-150, 150);
                         p.velocity.Y = -200;
                         p.exists = true;
@@ -2568,7 +2568,7 @@ namespace FourChambers
                     powerUp.visible = false;
                     powerUps.add(powerUp);
 
-                    if (FourChambers_Globals.PIRATE_COPY == true)
+                    if (Globals.PIRATE_COPY == true)
                     {
                         ZingerHoming z = new ZingerHoming(x, y, marksman);
                         zingers.add(z);
@@ -2596,7 +2596,7 @@ namespace FourChambers
                 {
                     ladder = new FlxTileblock(x, y, 16, height);
                     ladder.auto = FlxTileblock.RANDOM;
-                    ladder.loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y, 0);
+                    ladder.loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y, 0);
                     ladders.add(ladder);
                 }
             }
@@ -2615,9 +2615,9 @@ namespace FourChambers
                     }
                     else
                     {
-                        for (int e = 0; e < width / FourChambers_Globals.TILE_SIZE_X; e++)
+                        for (int e = 0; e < width / Globals.TILE_SIZE_X; e++)
                         {
-                            f = new FallAwayBridgeBlock(x + e * FourChambers_Globals.TILE_SIZE_X, y + FourChambers_Globals.TILE_SIZE_Y);
+                            f = new FallAwayBridgeBlock(x + e * Globals.TILE_SIZE_X, y + Globals.TILE_SIZE_Y);
                             allLevelTiles.add(f);
                         }
                     }

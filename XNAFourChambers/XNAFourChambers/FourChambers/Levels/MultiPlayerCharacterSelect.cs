@@ -207,7 +207,7 @@ namespace FourChambers
                 int co = 0;
                 foreach (var item in icons.members)
                 {
-                    FourChambers_Globals.multiplayerSelectedCharacters[co] = current[co];
+                    Globals.multiplayerSelectedCharacters[co] = current[co];
                     co++;
                 }
 

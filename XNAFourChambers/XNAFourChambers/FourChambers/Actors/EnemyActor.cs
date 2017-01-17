@@ -163,7 +163,7 @@ namespace FourChambers
         {
             //FlxG.write("2 New enemy ACTOR");
 
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             frameCount = 0;
 
             healthBar = new FlxBar(-5, 0, FlxBar.FILL_LEFT_TO_RIGHT, 20, 2, this, "health", 0, health, true);

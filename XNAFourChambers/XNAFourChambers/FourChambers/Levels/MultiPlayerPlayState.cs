@@ -19,7 +19,7 @@ namespace FourChambers
             //FlxG.playMusic("music/" + FourChambers_Globals.MUSIC_TUTORIAL, 1.0f);
 
             FlxG.hideHud();
-            FourChambers_Globals.seraphineHasBeenKilled = true;
+            Globals.seraphineHasBeenKilled = true;
 
             marksman.canFly = false;
             marksman.hasMeleeWeapon = true;

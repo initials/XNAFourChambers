@@ -357,7 +357,7 @@ namespace FourChambers
 
             //22x14
 
-            if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_PRESS)
+            if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_PRESS)
             {
                 if (FlxU.random() > 0.5)
                 {
@@ -384,7 +384,7 @@ namespace FourChambers
                     typeOfPowerUp = (int)FlxU.random(0, 22 * 14);
                 }
             }
-            else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
+            else if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_RELEASE)
             {
                 float rr = FlxU.random();
                 if (rr > 0.6)
@@ -461,7 +461,7 @@ namespace FourChambers
         {
             if (this.typeOfPowerUp == FR_SwordFlame || this.typeOfPowerUp == FR_SwordGold)
             {
-                FourChambers_Globals.canDestroyTerrain = true;
+                Globals.canDestroyTerrain = true;
             }
 
             base.overlapped(obj);
@@ -469,11 +469,11 @@ namespace FourChambers
 
         public void powerUpType(int setToType)
         {
-            if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_PRESS)
+            if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_PRESS)
             {
 
             }
-            else if (FourChambers_Globals.BUILD_TYPE == FourChambers_Globals.BUILD_TYPE_RELEASE)
+            else if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_RELEASE)
             {
 
             }

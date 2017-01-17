@@ -373,7 +373,7 @@ namespace FourChambers
             add(bgSprite);
             if (FlxG.debug) bgSprite.scale = 100;
 
-            if (!FourChambers_Globals.gif)
+            if (!Globals.gif)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -417,7 +417,7 @@ namespace FourChambers
             destructableAttrs = FlxXMLReader.readAttributesFromOelFile(levelFile, "level/collide");
             destructableTilemap = new FlxTilemap();
             destructableTilemap.auto = FlxTilemap.STRING;
-            destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            destructableTilemap.loadMap(destructableAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             destructableTilemap.boundingBoxOverride = true;
             allLevelTiles.add(destructableTilemap);
             destructableTilemap.collideMin = 0;
@@ -428,7 +428,7 @@ namespace FourChambers
 
             indestructableTilemap = new FlxTilemap();
             indestructableTilemap.auto = FlxTilemap.STRING;
-            indestructableTilemap.loadMap(indestructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            indestructableTilemap.loadMap(indestructableAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + indestructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             indestructableTilemap.boundingBoxOverride = true;
 
             allLevelTiles.add(indestructableTilemap);
@@ -513,14 +513,14 @@ namespace FourChambers
                 {
                     //Console.WriteLine(" PROCE GENE {0}, {1}", Convert.ToInt32(nodes["width"]) ,Convert.ToInt32(nodes["height"]));
 
-                    FlxCaveGeneratorExt caveExt = new FlxCaveGeneratorExt(Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X);
+                    FlxCaveGeneratorExt caveExt = new FlxCaveGeneratorExt(Convert.ToInt32(nodes["height"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / Globals.TILE_SIZE_X);
                     caveExt.numSmoothingIterations = 5;
                     caveExt.initWallRatio = 0.55f;
                     string[,] tiles = caveExt.generateCaveLevel();
                     //caveExt.printCave(tiles);
                     string newMap = caveExt.convertMultiArrayStringToString(tiles);
 
-                    addedMap = caveExt.addStrings(destructableAttrs["collide"], newMap, Convert.ToInt32(nodes["x"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / FourChambers_Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / FourChambers_Globals.TILE_SIZE_X );
+                    addedMap = caveExt.addStrings(destructableAttrs["collide"], newMap, Convert.ToInt32(nodes["x"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["y"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["width"]) / Globals.TILE_SIZE_X, Convert.ToInt32(nodes["height"]) / Globals.TILE_SIZE_X );
                 }
 
                 //foreach (KeyValuePair<string, string> kvp in nodes)
@@ -532,7 +532,7 @@ namespace FourChambers
             }
 
             //reload the map
-            destructableTilemap.loadMap(addedMap, FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            destructableTilemap.loadMap(addedMap, FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             
 
             eventsAttrs = new List<Dictionary<string, string>>();
@@ -596,7 +596,7 @@ namespace FourChambers
             blood.setXSpeed(-152, 152);
             blood.setYSpeed(-250, -50);
             blood.setRotation(0, 0);
-            blood.gravity = FourChambers_Globals.GRAVITY;
+            blood.gravity = Globals.GRAVITY;
             blood.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/blood"), 1500, true, 1.0f, 0.1f);
             add(blood);
 
@@ -610,7 +610,7 @@ namespace FourChambers
             tilesExplode.setXSpeed(-50, 50);
             tilesExplode.setYSpeed(-150, -50);
             tilesExplode.setRotation(0, 0);
-            tilesExplode.gravity = FourChambers_Globals.GRAVITY;
+            tilesExplode.gravity = Globals.GRAVITY;
             tilesExplode.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/" + destructableAttrs["tileset"]), 100, true, 1.0f, 0.1f);
             add(tilesExplode);
             tilesExplode.setScale(0.5f);
@@ -625,7 +625,7 @@ namespace FourChambers
             specialFX.setXSpeed(-50, 50);
             specialFX.setYSpeed(-850, 0);
             specialFX.setRotation(0, 360);
-            specialFX.gravity = FourChambers_Globals.GRAVITY ;
+            specialFX.gravity = Globals.GRAVITY ;
             specialFX.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/sparkles_small"), 20, true, 1.0f, 0.1f);
             add(specialFX);
 
@@ -668,7 +668,7 @@ namespace FourChambers
             FlxG.playMp3("music/" + levelAttrs["music"], 0.250f);
 
             // Exit the game and open up a webpage for buying the game, if it's a pirate copy.
-            if (FourChambers_Globals.PIRATE_COPY && FlxG.level >= 4)
+            if (Globals.PIRATE_COPY && FlxG.level >= 4)
             {
                 FlxU.openURL("http://initialsgames.com/fourchambers/purchasecopy.php");
                 FlxG.Game.Exit();
@@ -688,7 +688,7 @@ namespace FourChambers
 
             foreach (Door d in doors.members)
             {
-                if (d.levelToGoTo == FourChambers_Globals.previousLevel)
+                if (d.levelToGoTo == Globals.previousLevel)
                 {
                     marksman.x = d.x+door.width + 5;
                     marksman.y = d.y;
@@ -773,11 +773,11 @@ namespace FourChambers
             // Allow editing of terrain if SHIFT + Mouse is pressed.
             if (FlxG.mouse.pressedRightButton() && FlxG.keys.SHIFT)
             {
-                destructableTilemap.setTile((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X, (int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y, 0, true);
+                destructableTilemap.setTile((int)FlxG.mouse.x / Globals.TILE_SIZE_X, (int)FlxG.mouse.y / Globals.TILE_SIZE_Y, 0, true);
             }
             if (FlxG.mouse.pressedLeftButton() && FlxG.keys.SHIFT)
             {
-                destructableTilemap.setTile((int)FlxG.mouse.x / FourChambers_Globals.TILE_SIZE_X, (int)FlxG.mouse.y / FourChambers_Globals.TILE_SIZE_Y, 1, true);
+                destructableTilemap.setTile((int)FlxG.mouse.x / Globals.TILE_SIZE_X, (int)FlxG.mouse.y / Globals.TILE_SIZE_Y, 1, true);
             }
 
             if (FlxG.keys.justPressed(Microsoft.Xna.Framework.Input.Keys.B) && FlxG.debug)
@@ -808,15 +808,15 @@ namespace FourChambers
             localHud.heart.health =  playerControlledActors.members[0].health;
 
 
-            localHud.arrowPowerBar.setValue( FourChambers_Globals.arrowPower);
-            localHud.swordPowerBar.setValue( FourChambers_Globals.swordPower);
+            localHud.arrowPowerBar.setValue( Globals.arrowPower);
+            localHud.swordPowerBar.setValue( Globals.swordPower);
 
             if (elapsedInState > 3.0f)
             {
                 textBoxInfo.y -= 5; ;
             }
 
-            if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && FourChambers_Globals.seraphineHasBeenKilled == false)
+            if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && Globals.seraphineHasBeenKilled == false)
             {
                 //Console.WriteLine("SEREAPHINE");
 
@@ -829,7 +829,7 @@ namespace FourChambers
                 seraphine.facing = marksman.facing;
 
             }
-            else if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && FourChambers_Globals.seraphineHasBeenKilled == true)
+            else if ((FlxG.gamepads.isButtonDown(Buttons.Y) || FlxG.keys.W) && Globals.seraphineHasBeenKilled == true)
             {
                 //imp.x = marksman.x - 30;
                 //imp.y = marksman.y - marksman.height;
@@ -837,7 +837,7 @@ namespace FourChambers
             }
             else if (seraphine.dead == true)
             {
-                seraphine.acceleration.Y = FourChambers_Globals.GRAVITY;
+                seraphine.acceleration.Y = Globals.GRAVITY;
             }
             else if (marksman.canFly && playerControlledActors.getFirstAlive()!=null)
             {
@@ -854,7 +854,7 @@ namespace FourChambers
             if (timeOfDay > 239.99f) timeOfDay = 0.0f;
 
             //calculate time of day.
-            if (FourChambers_Globals.gif == false && FlxG.level >= 1 && FlxG.level <= 100)
+            if (Globals.gif == false && FlxG.level >= 1 && FlxG.level <= 100)
             {
                 // color whole game.
                 //FlxG.color(FlxU.getColorFromBitmapAtPoint(paletteTexture, (int)timeOfDay, ((FlxG.level-1) * 10) + 5 ));
@@ -881,7 +881,7 @@ namespace FourChambers
 
             FlxU.overlap(actors, ladders, overlapWithLadder);
 
-            if (FourChambers_Globals.canDestroyTerrain)
+            if (Globals.canDestroyTerrain)
             {
                 FlxU.overlap(marksman.meleeHitBox, destructableTilemap, destroyTileAtMelee);
             }
@@ -975,13 +975,13 @@ namespace FourChambers
                 {
                     if (FlxControl.ACTION)
                     {
-                        FourChambers_Globals.writeGameProgressToFile();
+                        Globals.writeGameProgressToFile();
                         FlxG.state = new MapState();
                         return;
                     }
                     if (FlxControl.CANCEL)
                     {
-                        FourChambers_Globals.writeGameProgressToFile();
+                        Globals.writeGameProgressToFile();
                         FlxG.state = new LevelEndState();
                         return;
                     }
@@ -994,8 +994,8 @@ namespace FourChambers
         /// </summary>
         private void restart()
         {
-            FourChambers_Globals.seraphineHasBeenKilled = false;
-            FourChambers_Globals.startGame();
+            Globals.seraphineHasBeenKilled = false;
+            Globals.startGame();
             FlxG.state = new BasePlayStateFromOel();
         }
 
@@ -1009,7 +1009,7 @@ namespace FourChambers
 
         protected bool goToLevel(int Level)
         {
-            FourChambers_Globals.previousLevel = FlxG.level;
+            Globals.previousLevel = FlxG.level;
             FlxG.level = Level;
             FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
             FlxG.transition.startFadeIn(0.1f);
@@ -1053,27 +1053,27 @@ namespace FourChambers
 
         protected bool destroyTileAtMelee(object Sender, FlxSpriteCollisionEvent e)
         {
-            if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) > destructableTilemap.collideMin &&
-                destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) <= destructableTilemap.collideMax)
+            if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) > destructableTilemap.collideMin &&
+                destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) <= destructableTilemap.collideMax)
             {
-                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) - 1) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) - 1) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) - 1, 0, true);
+                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) - 1, 0, true);
                 }
-                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) + 1) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) + 1) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y) + 1, 0, true);
+                    destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y) + 1, 0, true);
                 }
-                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X)-1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X)-1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X)-1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y), 0, true);
+                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X)-1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y), 0, true);
                 }
-                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
+                if (destructableTilemap.getTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y)) > destructableTilemap.collideMax)
                 {
-                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y), 0, true);
+                    destructableTilemap.setTile((int)(marksman.meleeHitBox.x / Globals.TILE_SIZE_X) + 1, (int)(marksman.meleeHitBox.y / Globals.TILE_SIZE_Y), 0, true);
                 }
 
-                destructableTilemap.setTile((int)marksman.meleeHitBox.x / FourChambers_Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / FourChambers_Globals.TILE_SIZE_Y, 0, true);
+                destructableTilemap.setTile((int)marksman.meleeHitBox.x / Globals.TILE_SIZE_X, (int)marksman.meleeHitBox.y / Globals.TILE_SIZE_Y, 0, true);
 
                 tilesExplode.x = (int)marksman.meleeHitBox.x;
                 tilesExplode.y = (int)marksman.meleeHitBox.y;
@@ -1087,15 +1087,15 @@ namespace FourChambers
             specialFX.at(e.Object1);
             specialFX.start(true, 0, 30);
 
-            FlxG.score += ((2 + (int)FlxU.random(0, 3)) * (FourChambers_Globals.arrowCombo + 1));
+            FlxG.score += ((2 + (int)FlxU.random(0, 3)) * (Globals.arrowCombo + 1));
 
 
             int x = ((PowerUp)e.Object1).typeOfPowerUp;
 
-            FourChambers_Globals.treasuresCollected.Add(x);
+            Globals.treasuresCollected.Add(x);
 
-            if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(x)==false)
-                FourChambers_Globals.treasuresCollectedPersistant.Add(x, 1);
+            if (Globals.treasuresCollectedPersistant.ContainsKey(x)==false)
+                Globals.treasuresCollectedPersistant.Add(x, 1);
             
 
             if (x == 154 || x == 155 || x == 156 || x == 157)
@@ -1104,23 +1104,23 @@ namespace FourChambers
                     marksman.arrowsRemaining += 20;
 
                 if (x==PowerUp.FR_ArrowsGreen)
-                    FourChambers_Globals.arrowPower += 1;
+                    Globals.arrowPower += 1;
                 if (x == PowerUp.FR_ArrowsRed)
-                    FourChambers_Globals.arrowsToFire += 1;
+                    Globals.arrowsToFire += 1;
             }
             else if (x == 190)
             {
                 marksman.hasRangeWeapon = true;
-                FourChambers_Globals.hasRangeWeapon = true;
+                Globals.hasRangeWeapon = true;
                 FlxG.mouse.show(FlxG.Content.Load<Texture2D>("flixel/initials/crosshair"));
 
-                FourChambers_Globals.arrowPower++;
+                Globals.arrowPower++;
             }
             else if (x == 208)
             {
                 marksman.hasMeleeWeapon = true;
-                FourChambers_Globals.hasMeleeWeapon = true;
-                FourChambers_Globals.swordPower++;
+                Globals.hasMeleeWeapon = true;
+                Globals.swordPower++;
             }
             else
             {
@@ -1180,7 +1180,7 @@ namespace FourChambers
                 specialFX.start(true, 0, 30);
             }
 
-            FourChambers_Globals.seraphineHasBeenKilled = false;
+            Globals.seraphineHasBeenKilled = false;
 
             marksman.canFly = true;
             return true;
@@ -1239,8 +1239,8 @@ namespace FourChambers
             {
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
                 }
                 bigEx.x = e.Object1.x;
                 bigEx.y = e.Object1.y;
@@ -1277,12 +1277,12 @@ namespace FourChambers
             }
             else if ((e.Object1 is Seraphine) && (e.Object2 is Arrow))
             {
-                FourChambers_Globals.seraphineHasBeenKilled = true;
+                Globals.seraphineHasBeenKilled = true;
 
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
                 }
                 e.Object1.velocity.X = e.Object2.velocity.X;
                 e.Object1.velocity.Y = e.Object2.velocity.Y;
@@ -1302,8 +1302,8 @@ namespace FourChambers
             {
                 if (e.Object2 is Arrow)
                 {
-                    FourChambers_Globals.arrowsHitTarget++;
-                    FourChambers_Globals.arrowCombo++;
+                    Globals.arrowsHitTarget++;
+                    Globals.arrowCombo++;
 
                     //comboInfo.x = e.Object1.x + 20;
                     //comboInfo.y = e.Object1.y;
@@ -1340,9 +1340,9 @@ namespace FourChambers
                 if (!e.Object1.dead && !((FlxSprite)(e.Object1)).colorFlickering())
                 {
                     if (e.Object2 is Arrow)
-                        e.Object1.hurt(e.Object2.damage * FourChambers_Globals.arrowPower);
+                        e.Object1.hurt(e.Object2.damage * Globals.arrowPower);
                     else if (e.Object2 is MeleeHitBox)
-                        e.Object1.hurt(e.Object2.damage * FourChambers_Globals.swordPower);
+                        e.Object1.hurt(e.Object2.damage * Globals.swordPower);
 
                     blood.at(e.Object1);
                     blood.start(true, 0, 10);
@@ -1355,7 +1355,7 @@ namespace FourChambers
                         if (p != null && p.dead == true) //
                         {
                             p.dead = false;
-                            p.acceleration.Y = FourChambers_Globals.GRAVITY;
+                            p.acceleration.Y = Globals.GRAVITY;
                             p.velocity.X = FlxU.random(-150, 150);
                             p.velocity.Y = -200;
                             p.exists = true;
@@ -1780,10 +1780,10 @@ namespace FourChambers
                     marksman.hasMeleeWeapon = true;
                     marksman.hasRangeWeapon = true;
                     FlxG.mouse.show(FlxG.Content.Load<Texture2D>("initials/crosshair"));
-                    FourChambers_Globals.hasMeleeWeapon = true;
-                    FourChambers_Globals.hasRangeWeapon = true;
-                    FourChambers_Globals.arrowPower+=10;
-                    FourChambers_Globals.swordPower+=10;
+                    Globals.hasMeleeWeapon = true;
+                    Globals.hasRangeWeapon = true;
+                    Globals.arrowPower+=10;
+                    Globals.swordPower+=10;
                     marksman.arrowsRemaining += 100;
 
                 }
@@ -2839,7 +2839,7 @@ namespace FourChambers
                     }
 
 
-                    if (FourChambers_Globals.PIRATE_COPY)
+                    if (Globals.PIRATE_COPY)
                     {
                         ZingerHoming z = new ZingerHoming(x, y, marksman);
                         zingers.add(z);
@@ -2875,7 +2875,7 @@ namespace FourChambers
                     powerUp.visible = false;
                     powerUps.add(powerUp);
 
-                    if (FourChambers_Globals.PIRATE_COPY == true)
+                    if (Globals.PIRATE_COPY == true)
                     {
                         ZingerHoming z = new ZingerHoming(x, y, marksman);
                         zingers.add(z);
@@ -2903,7 +2903,7 @@ namespace FourChambers
                 {
                     ladder = new FlxTileblock(x,y,16, height );
                     ladder.auto = FlxTileblock.RANDOM;
-                    ladder.loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y, 0);
+                    ladder.loadTiles(FlxG.Content.Load<Texture2D>("fourchambers/ladderTiles_16x16"), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y, 0);
                     ladders.add(ladder);
                 }
             }
@@ -2921,9 +2921,9 @@ namespace FourChambers
                     }
                     else
                     {
-                        for (int e = 0; e < width / FourChambers_Globals.TILE_SIZE_X; e++)
+                        for (int e = 0; e < width / Globals.TILE_SIZE_X; e++)
                         {
-                            f = new FallAwayBridgeBlock(x + e * FourChambers_Globals.TILE_SIZE_X, y + FourChambers_Globals.TILE_SIZE_Y);
+                            f = new FallAwayBridgeBlock(x + e * Globals.TILE_SIZE_X, y + Globals.TILE_SIZE_Y);
                             allLevelTiles.add(f);
                         }
                     }

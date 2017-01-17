@@ -110,6 +110,11 @@ namespace FourChambers
         
         public override void overlapped(FlxObject obj)
         {
+
+            if (obj.GetType().ToString() == "FourChambers.Marksman")
+            {
+                drag.X = 500;
+            }
             //string overlappedWith = obj.GetType().ToString();
 
             //if (overlappedWith == "FourChambers.Zinger")

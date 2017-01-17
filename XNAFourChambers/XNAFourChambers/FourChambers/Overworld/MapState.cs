@@ -38,11 +38,11 @@ namespace FourChambers
 
             try
             {
-                FourChambers_Globals.readGameProgressToFile();
+                Globals.readGameProgressToFile();
             }
             catch (Exception)
             {
-                FourChambers_Globals.writeGameProgressToFile();
+                Globals.writeGameProgressToFile();
             }
             
 
@@ -56,17 +56,17 @@ namespace FourChambers
 
             map = new FlxTilemap();
             map.auto = FlxTilemap.STRING;
-            map.loadMap(mapAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            map.loadMap(mapAttrs["collide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             add(map);
 
             mapAttrs = FlxXMLReader.readAttributesFromOelFile("ogmoLevels/worldMap.oel", "level/Incollide");
 
             collisionMap = new FlxTilemap();
             collisionMap.auto = FlxTilemap.STRING;
-            collisionMap.loadMap(mapAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), FourChambers_Globals.TILE_SIZE_X, FourChambers_Globals.TILE_SIZE_Y);
+            collisionMap.loadMap(mapAttrs["Incollide"], FlxG.Content.Load<Texture2D>("fourchambers/" + mapAttrs["tileset"]), Globals.TILE_SIZE_X, Globals.TILE_SIZE_Y);
             add(collisionMap);
 
-            mActor = new MapActor((int)FourChambers_Globals.lastMapLocation.X, (int)FourChambers_Globals.lastMapLocation.Y);
+            mActor = new MapActor((int)Globals.lastMapLocation.X, (int)Globals.lastMapLocation.Y);
             add(mActor);
 
             FlxG.follow(mActor, 10.0f);
@@ -190,9 +190,9 @@ namespace FourChambers
 
             //int tile = map.getTile((int)(actor.x / 16), (int)(actor.y / 16));
 
-            if (FlxG.keys.ONE) FourChambers_Globals.PLAYER_ACTOR = 1;
-            if (FlxG.keys.TWO) FourChambers_Globals.PLAYER_ACTOR = 2;
-            if (FlxG.keys.THREE) FourChambers_Globals.PLAYER_ACTOR = 3;
+            if (FlxG.keys.ONE) Globals.PLAYER_ACTOR = 1;
+            if (FlxG.keys.TWO) Globals.PLAYER_ACTOR = 2;
+            if (FlxG.keys.THREE) Globals.PLAYER_ACTOR = 3;
 
 
             if (FlxControl.ACTIONJUSTPRESSED && elapsedInState > 1.0f && t.visible==true)
@@ -202,8 +202,8 @@ namespace FourChambers
 
             if (FlxG.transition.complete)
             {
-                FourChambers_Globals.lastMapLocation = new Vector2(mActor.x, mActor.y);
-                FourChambers_Globals.startGame();
+                Globals.lastMapLocation = new Vector2(mActor.x, mActor.y);
+                Globals.startGame();
                 if (FlxG.level == -4)
                 {
                     FlxG.level = 104;

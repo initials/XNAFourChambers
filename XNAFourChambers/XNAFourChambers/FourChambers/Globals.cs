@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 namespace FourChambers
 {
-    public class FourChambers_Globals
+    public class Globals
     {
         public const int TILE_SIZE_X = 16;
         public const int TILE_SIZE_Y = 16;
@@ -114,19 +114,19 @@ namespace FourChambers
         /// <param name="Cheat">Name of the cheat you want to run.</param>
         public static void runCheat(string Cheat)
         {
-            if (Cheat == "arrows") FlxG.log("Current Arrows to Fire: " + FourChambers_Globals.arrowsToFire);
-            else if (Cheat.StartsWith("arrows")) FourChambers_Globals.arrowsToFire = Convert.ToInt32(Cheat[Cheat.Length - 1].ToString());
+            if (Cheat == "arrows") FlxG.log("Current Arrows to Fire: " + Globals.arrowsToFire);
+            else if (Cheat.StartsWith("arrows")) Globals.arrowsToFire = Convert.ToInt32(Cheat[Cheat.Length - 1].ToString());
             else if (Cheat.StartsWith("whatisgame")) FlxG.log("Four Chambers");
-            else if (Cheat.StartsWith("liketheangels")) FourChambers_Globals.seraphineHasBeenKilled = false;
+            else if (Cheat.StartsWith("liketheangels")) Globals.seraphineHasBeenKilled = false;
             else if (Cheat.StartsWith("bigmoney")) FlxG.score += 20000;
             else if (Cheat.StartsWith("nobugs")) FlxG.debug = false;
             else if (Cheat == "bounds") FlxG.showBounds = true;
             else if (Cheat == "nobounds") FlxG.showBounds = false;
             else if (Cheat.StartsWith("level"))
             {
-                FourChambers_Globals.arrowsToFire = Convert.ToInt32(Cheat[Cheat.Length - 1].ToString());
+                Globals.arrowsToFire = Convert.ToInt32(Cheat[Cheat.Length - 1].ToString());
             }
-            else if (Cheat == "nouse") FourChambers_Globals.invincible = true;
+            else if (Cheat == "nouse") Globals.invincible = true;
             FlxGlobal.cheatString = Cheat;
 
         }
@@ -139,14 +139,14 @@ namespace FourChambers
         {
 
             //FlxG.score = 0;
-            FourChambers_Globals.seraphineHasBeenKilled = true;
+            Globals.seraphineHasBeenKilled = true;
 
             //FlxG.level = 1;
 
             //health = 3;   
 
-            FourChambers_Globals.arrowCombo = 0;
-            FourChambers_Globals.arrowPower = 1;
+            Globals.arrowCombo = 0;
+            Globals.arrowPower = 1;
             //FourChambers_Globals.arrowsToFire = 1;
 
             //FourChambers_Globals.availableLevels = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
@@ -164,9 +164,9 @@ namespace FourChambers
             string progress = "";
             for (int i = 0; i < 307; i++)
             {
-                if (FourChambers_Globals.treasuresCollectedPersistant.ContainsKey(i))
+                if (Globals.treasuresCollectedPersistant.ContainsKey(i))
                 {
-                    if (FourChambers_Globals.treasuresCollectedPersistant[i]==1)
+                    if (Globals.treasuresCollectedPersistant[i]==1)
                         progress += "1,";
                     else
                         progress += "0,";
@@ -202,11 +202,11 @@ namespace FourChambers
             {
                 if (elements0[i]=="1")
                 {
-                    FourChambers_Globals.treasuresCollectedPersistant[i] = 1;
+                    Globals.treasuresCollectedPersistant[i] = 1;
                 }
                 else
                 {
-                    FourChambers_Globals.treasuresCollectedPersistant[i] = 0;
+                    Globals.treasuresCollectedPersistant[i] = 0;
                 }
             }
 
@@ -219,21 +219,21 @@ namespace FourChambers
 
         public static void advanceToNextLevel()
         {
-            FourChambers_Globals.seraphineHasBeenKilled = false;
+            Globals.seraphineHasBeenKilled = false;
 
             if (availableLevels.Count == 0)
             {
-                FourChambers_Globals.availableLevels = new List<int>() { 21, 22, 23, 24, 25, 26, 27 };
+                Globals.availableLevels = new List<int>() { 21, 22, 23, 24, 25, 26, 27 };
 
                 FlxG.level = 1000;
                 Console.WriteLine("advanceToNextLevel() ");
             }
             else
             {
-                int newLevel = (int)FlxU.random(0, FourChambers_Globals.availableLevels.Count);
-                FlxG.level = FourChambers_Globals.availableLevels[newLevel];
-                Console.WriteLine("advanceToNextLevel() " + FourChambers_Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count);
-                FourChambers_Globals.availableLevels.RemoveAt(newLevel);
+                int newLevel = (int)FlxU.random(0, Globals.availableLevels.Count);
+                FlxG.level = Globals.availableLevels[newLevel];
+                Console.WriteLine("advanceToNextLevel() " + Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count);
+                Globals.availableLevels.RemoveAt(newLevel);
             }
         }
 
@@ -257,7 +257,7 @@ namespace FourChambers
 
             Console.WriteLine("Loading BasePlayStateFromOel Level: " + levelFile);
 
-            FourChambers_Globals.levelFile = levelFile;
+            Globals.levelFile = levelFile;
 
         }
     }

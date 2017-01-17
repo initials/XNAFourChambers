@@ -177,12 +177,12 @@ namespace FourChambers
             
             //drag.X = runSpeed * 4;
             //drag.Y = runSpeed * 4;
-            acceleration.Y = FourChambers_Globals.GRAVITY;
+            acceleration.Y = Globals.GRAVITY;
             maxVelocity.X = runSpeed;
             maxVelocity.Y = 1000;
 
             isPlayerControlled = false;
-            health = FourChambers_Globals.health;
+            health = Globals.health;
 
             grass = new FlxEmitter(xPos, yPos);
             grass.createSprites("fourchambers/grassParticles", 50, true, 0.0f, 0.0f);
@@ -451,7 +451,7 @@ namespace FourChambers
             if (dead) timeDead += FlxG.elapsed;
             else timeDead = 0;
 
-            FourChambers_Globals.health = health;
+            Globals.health = health;
 
             // Calculate how many frames since the player left the ground
 
@@ -470,7 +470,7 @@ namespace FourChambers
             }
             else
             {
-                acceleration.Y = FourChambers_Globals.GRAVITY;
+                acceleration.Y = Globals.GRAVITY;
             }
 
             //MOVEMENT
@@ -564,7 +564,7 @@ namespace FourChambers
 
         public override void hurt(float Damage)
         {
-            if (FourChambers_Globals.invincible==false)
+            if (Globals.invincible==false)
             {
                 velocity.X = 0;
 
