@@ -21,7 +21,7 @@ namespace FourChambers
 
         private FlxSprite bg;
         private FireflyGroup fireflyGroup;
-
+        public float transition = -1.0f;
 
         public LevelTiles()
             : base()
@@ -86,7 +86,16 @@ namespace FourChambers
         {
             base.update();
             fireflyGroup.update();
+            if (transition >= 0)
+            {
+                for (int i = 0; i < FlxG.levelWidth / FourChambers_Globals.TILE_SIZE_X; i++)
+                {
+                    fgTiles.setTile(i, (int)transition, FlxU.randomInt(0,250));
+                }
+                transition+=0.25f;
+                
 
+            }
         }
 
         public override void render(SpriteBatch spriteBatch)

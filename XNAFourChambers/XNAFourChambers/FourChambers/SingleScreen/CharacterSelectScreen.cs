@@ -94,9 +94,11 @@ namespace FourChambers
                 if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
                 {
                     prism.play("wrap");
+
                     FlxG.fade.start(Color.Black, 1.5f);
                     FlxG.play("sfx/Door");
                     FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
+                    levelTilemap.transition = 0;
                 }
                 else
                 {
