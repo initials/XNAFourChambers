@@ -1301,10 +1301,7 @@ namespace FourChambers
             {
                 priest.startPlayingBack();
             }
-            else if (command.StartsWith("prism"))
-            {
-                prism.startPlayingBack();
-            }
+
             else if (command.StartsWith("rat"))
             {
                 rat.startPlayingBack();

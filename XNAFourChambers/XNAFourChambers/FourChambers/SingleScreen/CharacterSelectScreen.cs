@@ -79,6 +79,7 @@ namespace FourChambers
                 if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
                 {
                     prism.play("wrap");
+                    FlxG.fade.start(Color.Black, 1.5f);
                 }
                 else
                 {
