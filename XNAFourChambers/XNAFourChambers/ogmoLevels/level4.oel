@@ -62,7 +62,7 @@
 -1,-1,-1,-1,-1,-1,-1,-1,16,219,466,467,466,256,466,467,466,277,277,467,218,16,-1,20,-1,-1,-1,-1,-1,-1</fg>
   <ActorsLayer>
     <door id="2" x="432" y="96" levelToGoTo="1" />
-    <marksman id="3" x="32" y="256" flip="False" isPlayerControlled="True" />
+    <marksman id="3" x="128" y="240" flip="False" isPlayerControlled="True" />
     <unicorn id="4" x="-64" y="48" flip="False" />
     <zinger id="5" x="-128" y="80" flip="False" pathType="FORWARD" pathSpeed="100" />
     <zinger id="6" x="-112" y="80" flip="False" pathType="FORWARD" pathSpeed="100" />

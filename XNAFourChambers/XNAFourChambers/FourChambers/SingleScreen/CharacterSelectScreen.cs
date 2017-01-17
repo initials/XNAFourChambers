@@ -64,15 +64,30 @@ namespace FourChambers
             FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
         }
 
+        public static int LimitToRange(int value, int inclusiveMinimum, int inclusiveMaximum)
+        {
+            if (value < inclusiveMinimum) { return inclusiveMinimum; }
+            if (value > inclusiveMaximum) { return inclusiveMaximum; }
+            return value;
+        }
+
+
         override public void update()
         {
             prism.x = actorsGrp.members[currentCharacterSelected].x;
             prism.y = actorsGrp.members[currentCharacterSelected].y - 24;
 
             if (FlxControl.LEFTJUSTPRESSED)
+            {
                 currentCharacterSelected--;
+                FlxG.play("sfx/Pickup_Coin");
+            }
             if (FlxControl.RIGHTJUSTPRESSED)
+            {
                 currentCharacterSelected++;
+                FlxG.play("sfx/Pickup_Coin");
+            }
+            currentCharacterSelected = LimitToRange(currentCharacterSelected, 0, actorsGrp.members.Count-1);
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal>0.5f)
             {
@@ -80,11 +95,14 @@ namespace FourChambers
                 {
                     prism.play("wrap");
                     FlxG.fade.start(Color.Black, 1.5f);
+                    FlxG.play("sfx/Door");
+                    FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
                 }
                 else
                 {
                     FlxG.log("Go to Steam in game purchase");
                     FlxG.quake.start(0.025f, 0.7f);
+                    FlxG.play("sfx/Hit_Hurt5");
 
                 }
             }
@@ -104,7 +122,6 @@ namespace FourChambers
             else
                 FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED], $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " to unlock");
 
-            //FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
 
         }
 

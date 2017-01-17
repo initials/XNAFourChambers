@@ -64,7 +64,7 @@
     <ladder id="0" x="64" y="80" height="96" />
     <ladder id="1" x="448" y="144" height="128" />
     <door id="2" x="400" y="256" levelToGoTo="1" />
-    <marksman id="3" x="16" y="160" flip="False" isPlayerControlled="True" />
+    <marksman id="3" x="240" y="64" flip="False" isPlayerControlled="True" />
     <unicorn id="4" x="-64" y="48" flip="False" />
     <zinger id="5" x="-128" y="80" flip="False" pathType="FORWARD" pathSpeed="100" />
     <zinger id="6" x="-112" y="80" flip="False" pathType="FORWARD" pathSpeed="100" />
