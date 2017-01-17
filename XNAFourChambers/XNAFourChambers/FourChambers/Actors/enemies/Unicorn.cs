@@ -27,14 +27,8 @@ namespace FourChambers
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
             _jumpInitialTime = 0.045f;
-            maxVelocity.X = runSpeed * 4;
+            maxVelocity.X = FlxU.random(runSpeed * 2, runSpeed * 6); 
             maxVelocity.Y = 1000;
-            
-            ////drag.X = runSpeed * 4;
-            ////drag.Y = runSpeed * 4;
-
-
-
 
             playbackFile = "FourChambers/ActorRecording/unicorn.txt";
             //timeDownAfterHurt = 2.5f;
