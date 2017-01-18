@@ -16,8 +16,10 @@ namespace FourChambers
     class LevelTiles : FlxGroup
     {
         private Dictionary<string, string> levelAttrs;
+
         private FlxTilemap bgTiles;
         private FlxTilemap fgTiles;
+        public FlxTilemap levelTiles;
 
         private FlxSprite bg;
         private FireflyGroup fireflyGroup;
@@ -31,23 +33,22 @@ namespace FourChambers
 
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
             bg.alpha = 0.25f;
-
-            collideMin = 0;
-            collideMax = 21;
-            collideIndex = 1;
-
-            boundingBoxOverride = true;
+            add(bg);
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/collide");
 
-            auto = FlxTilemap.STRING;
-
-            loadMap(levelAttrs["collide"], 
+            levelTiles = new FlxTilemap();
+            levelTiles.collideMin = 0;
+            levelTiles.collideMax = 21;
+            levelTiles.collideIndex = 1;
+            levelTiles.boundingBoxOverride = true;
+            levelTiles.auto = FlxTilemap.STRING;
+            levelTiles.loadMap(levelAttrs["collide"], 
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]), 
                 Globals.TILE_SIZE_X, 
                 Globals.TILE_SIZE_Y);
-
+            add(levelTiles);
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
@@ -60,7 +61,7 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
-
+            add(bgTiles);
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/fg");
@@ -71,7 +72,7 @@ namespace FourChambers
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
-            
+            add(fgTiles);
 
 
 
@@ -101,15 +102,7 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
-<<<<<<< HEAD
             base.render(spriteBatch);
-=======
-            bg.render(spriteBatch);
-            bgTiles.render(spriteBatch);
-            base.render(spriteBatch);
-            fgTiles.render(spriteBatch);
-            fireflyGroup.render(spriteBatch);
->>>>>>> parent of 62ff5c4... x
         }
     }
 }
