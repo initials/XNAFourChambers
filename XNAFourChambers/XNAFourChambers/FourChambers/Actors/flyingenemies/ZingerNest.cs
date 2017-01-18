@@ -43,7 +43,7 @@ namespace FourChambers
         {
             //acceleration.Y = FourChambers_Globals.GRAVITY;
 
-            //Console.WriteLine("Zinger Nest has been hit, accel: {0}", acceleration.Y);
+            Console.WriteLine("Zinger Nest has been overlapped, by: {0}", obj.GetType().ToString());
             if (itemsThatCanKill.Contains(obj.GetType().ToString()))
             {
                 acceleration.Y = Globals.GRAVITY;
@@ -56,6 +56,8 @@ namespace FourChambers
 
         public override void kill()
         {
+            Console.WriteLine("Zinger Nest kill: {0}", acceleration.Y);
+
             FlxG.play("sfx/harvesterAttack", 0.5f, false);
             //acceleration.Y = FourChambers_Globals.GRAVITY;
             base.kill();
