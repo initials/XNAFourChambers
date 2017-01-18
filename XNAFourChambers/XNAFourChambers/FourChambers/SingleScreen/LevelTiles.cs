@@ -15,17 +15,10 @@ namespace FourChambers
 {
     class LevelTiles : FlxTilemap
     {
+        public FlxTilemap levelTiles;
         private Dictionary<string, string> levelAttrs;
         private FlxTilemap bgTiles;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        public FlxTilemap levelTiles;
->>>>>>> woohoo
-=======
->>>>>>> parent of 62ff5c4... x
         private FlxTilemap fgTiles;
-
         private FlxSprite bg;
         private FireflyGroup fireflyGroup;
         public float transition = -1.0f;
