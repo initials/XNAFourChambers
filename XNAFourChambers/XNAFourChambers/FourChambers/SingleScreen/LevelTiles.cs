@@ -13,11 +13,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
-    public class LevelTiles : FlxGroup
+    class LevelTiles : FlxTilemap
     {
         private Dictionary<string, string> levelAttrs;
         private FlxTilemap bgTiles;
-        private FlxTilemap levelTiles;
         private FlxTilemap fgTiles;
 
         private FlxSprite bg;
@@ -29,28 +28,31 @@ namespace FourChambers
         {
             Console.WriteLine("Creating a custom LevelTiles tilemap");
 
+            bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
+            bg.alpha = 0.25f;
+
+            collideMin = 0;
+            collideMax = 21;
+            collideIndex = 1;
+
+            boundingBoxOverride = true;
+
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/collide");
 
-            bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
-            bg.alpha = 0.50f;
-            bg.@fixed = true;
-            add(bg);
+            auto = FlxTilemap.STRING;
 
-            levelTiles = new FlxTilemap();
-            levelTiles.collideMin = 0;
-            levelTiles.collideMax = 21;
-            levelTiles.collideIndex = 1;
-
-            levelTiles.boundingBoxOverride = true;
-
-            levelTiles.auto = FlxTilemap.STRING;
-
+<<<<<<< HEAD
             levelTiles.loadMap(levelAttrs["collide"],
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
                 Globals.TILE_SIZE_X,
+=======
+            loadMap(levelAttrs["collide"], 
+                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]), 
+                Globals.TILE_SIZE_X, 
+>>>>>>> parent of 62ff5c4... x
                 Globals.TILE_SIZE_Y);
-            add(levelTiles);
+
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
@@ -63,7 +65,7 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
-            add(bgTiles);
+
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/fg");
@@ -74,12 +76,12 @@ namespace FourChambers
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
-            add(fgTiles);
+            
 
 
 
             fireflyGroup = new FireflyGroup();
-            add(fireflyGroup);
+            
 
         }
 
@@ -89,7 +91,7 @@ namespace FourChambers
         override public void update()
         {
             base.update();
-            //fireflyGroup.update();
+            fireflyGroup.update();
             if (transition >= 0)
             {
                 for (int i = 0; i < FlxG.levelWidth / Globals.TILE_SIZE_X; i++)
@@ -104,7 +106,15 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
+<<<<<<< HEAD
             base.render(spriteBatch);
+=======
+            bg.render(spriteBatch);
+            bgTiles.render(spriteBatch);
+            base.render(spriteBatch);
+            fgTiles.render(spriteBatch);
+            fireflyGroup.render(spriteBatch);
+>>>>>>> parent of 62ff5c4... x
         }
     }
 }
