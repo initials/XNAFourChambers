@@ -54,7 +54,7 @@ namespace FourChambers
 
         override public void update()
         {
-            FlxU.collide(actorsGrp, levelTilemap);
+            FlxU.collide(actorsGrp, levelTilemap.levelTiles);
             FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
             
             collideArrows();
