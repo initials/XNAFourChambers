@@ -50,6 +50,8 @@ namespace FourChambers
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
 
+            PerLevelAdjustments.adjustForLevel(actorsGrp,levelTilemap);
+
         }
 
         override public void update()
@@ -74,7 +76,7 @@ namespace FourChambers
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
                 Globals.arrowCombo = 20;
 
-                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x-60;
+                actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x-40;
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").y;
 
                 foreach (var item in actorsGrp.members)
@@ -94,7 +96,7 @@ namespace FourChambers
                 if (item is Marksman)
                 {
                     FlxU.overlap(((Marksman)(item)).allProjectiles, actorsGrp, runOverlapOnObject2);
-                    FlxU.collide(((Marksman)(item)).allProjectiles, levelTilemap);
+                    FlxU.collide(((Marksman)(item)).allProjectiles, levelTilemap.levelTiles);
 
                 }
             }
@@ -126,44 +128,7 @@ namespace FourChambers
             {
                 overlapWithLadder(Sender, e);
             }
-            //duplicate code.
 
-            /*
-            if ((e.Object1 is Marksman) && (e.Object2 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver<=0)
-            {
-                Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
-
-                foreach (var item in ((Door)(e.Object2)).sparkles.members)
-                {
-                    ((FlxSprite)(item)).scale+= FlxU.random();
-                    ((FlxSprite)(item)).angle+=FlxU.random();
-                    if (((FlxSprite)(item)).scale > 30)
-                    {
-                        FlxG.level++;
-
-                        FlxG.state = new SingleScreenLevel();
-                        break;
-                    }
-                }
-            }
-            if ((e.Object2 is Marksman) && (e.Object1 is Door) && FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
-            {
-                Console.WriteLine("Touching the Door {0}", FourChambers_Globals.numberOfEnemiesToKillBeforeLevelOver);
-
-                foreach (var item in ((Door)(e.Object1)).sparkles.members)
-                {
-                    ((FlxSprite)(item)).scale += FlxU.random();
-                    ((FlxSprite)(item)).angle += FlxU.random();
-                    if (((FlxSprite)(item)).scale > 30)
-                    {
-                        FlxG.level++;
-
-                        FlxG.state = new SingleScreenLevel();
-                        break;
-                    }
-                }
-            }
-            */
 
             return true;
         }
