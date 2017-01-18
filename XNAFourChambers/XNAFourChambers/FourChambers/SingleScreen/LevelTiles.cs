@@ -17,7 +17,7 @@ namespace FourChambers
     {
         private Dictionary<string, string> levelAttrs;
         private FlxTilemap bgTiles;
-        private FlxTilemap levelTiles;
+        public FlxTilemap levelTiles;
         private FlxTilemap fgTiles;
 
         private FlxSprite bg;
