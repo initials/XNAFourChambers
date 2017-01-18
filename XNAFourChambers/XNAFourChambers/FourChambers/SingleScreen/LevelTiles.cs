@@ -26,7 +26,8 @@ namespace FourChambers
         public LevelTiles()
             : base()
         {
-            Console.WriteLine("Creating a custom LevelTiles tilemap");
+
+            Console.WriteLine("Creating a custom LevelTiles tilemap x ");
 
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
             bg.alpha = 0.25f;
@@ -42,15 +43,9 @@ namespace FourChambers
 
             auto = FlxTilemap.STRING;
 
-<<<<<<< HEAD
-            levelTiles.loadMap(levelAttrs["collide"],
-                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
-                Globals.TILE_SIZE_X,
-=======
             loadMap(levelAttrs["collide"], 
                 FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]), 
                 Globals.TILE_SIZE_X, 
->>>>>>> parent of 62ff5c4... x
                 Globals.TILE_SIZE_Y);
 
 
