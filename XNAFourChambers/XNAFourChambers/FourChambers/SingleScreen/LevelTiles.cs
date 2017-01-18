@@ -35,6 +35,21 @@ namespace FourChambers
             bg.alpha = 0.55f;
             add(bg);
 
+
+            levelAttrs = new Dictionary<string, string>();
+            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
+
+            bgTiles = new FlxTilemap();
+            bgTiles.auto = FlxTilemap.STRING;
+
+            bgTiles.loadMap(levelAttrs["bg"],
+                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
+                Globals.TILE_SIZE_X,
+                Globals.TILE_SIZE_Y);
+            bgTiles.alpha = 0.5f;
+            add(bgTiles);
+
+
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/collide");
 
@@ -50,18 +65,6 @@ namespace FourChambers
                 Globals.TILE_SIZE_Y);
             add(levelTiles);
 
-            levelAttrs = new Dictionary<string, string>();
-            levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
-
-            bgTiles = new FlxTilemap();
-            bgTiles.auto = FlxTilemap.STRING;
-
-            bgTiles.loadMap(levelAttrs["bg"],
-                FlxG.Content.Load<Texture2D>("fourchambers/" + levelAttrs["tileset"]),
-                Globals.TILE_SIZE_X,
-                Globals.TILE_SIZE_Y);
-            bgTiles.alpha = 0.5f;
-            add(bgTiles);
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/fg");

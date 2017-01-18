@@ -115,6 +115,9 @@ namespace FourChambers
                 }
                 if (item is ZingerNest && item.debugName=="readyToPop"  && !item.dead)
                 {
+                
+                    Console.WriteLine("Ready to Pop!");
+
                     List<FlxObject> zingers = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
 
                     
@@ -132,7 +135,7 @@ namespace FourChambers
 
                         }
                     }
-                    //item.kill();
+                    item.kill();
                 }
             }
             
