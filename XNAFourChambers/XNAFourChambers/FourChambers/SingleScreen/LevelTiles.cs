@@ -32,7 +32,7 @@ namespace FourChambers
             Console.WriteLine("Creating a custom LevelTiles tilemap x ");
 
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
-            bg.alpha = 0.25f;
+            bg.alpha = 0.55f;
             add(bg);
 
             levelAttrs = new Dictionary<string, string>();
