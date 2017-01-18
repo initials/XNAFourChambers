@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 namespace FourChambers
 {
-    class ActorsGroup : FlxGroup
+    public class ActorsGroup : FlxGroup
     {
         
         List<Dictionary<string, string>> actorsAttrs;
