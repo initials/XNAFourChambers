@@ -93,6 +93,45 @@ namespace FourChambers
                     }
                 }
             }
+            if (FlxG.keys.justPressed(Keys.F1))
+            {
+                FlxG.zoom--;
+                FlxG.width *= 2;
+                FlxG.height *= 2;
+                //FlxG.resolutionWidth /= 2;
+                //FlxG.resolutionHeight /= 2;
+                FlxG._game.Initialize();
+
+                Console.WriteLine("FlxG.zoom: {0}", FlxG.zoom);
+
+                FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
+                FlxG.followBounds(0, 0, 4800, 3200, false);
+
+            }
+            if (FlxG.keys.justPressed(Keys.F2))
+            {
+                FlxG.zoom++;
+                FlxG.width /= 2;
+                FlxG.height /= 2;
+                //FlxG.resolutionWidth *= 2;
+                //FlxG.resolutionHeight *= 2;
+
+                FlxG._game.Initialize();
+
+                Console.WriteLine("FlxG.zoom: {0}", FlxG.zoom);
+
+                FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
+                FlxG.followBounds(0, 0, 4800, 3200, false);
+
+            }
+            if (FlxG.keys.justPressed(Keys.F3))
+            {
+                FlxG.color(Color.Tomato);
+            }
+            if (FlxG.keys.justPressed(Keys.F4))
+            {
+
+            }
         }
 
         private void collideArrows()

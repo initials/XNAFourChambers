@@ -27,7 +27,7 @@ namespace Loader_Four
         //nothing much to see here, typical XNA initialization code
         public FlxFactory()
         {
-            FlxG.zoom = 3;
+            FlxG.zoom = 1;
 
 #if ! DEBUG
 
@@ -115,7 +115,15 @@ namespace Loader_Four
             }
             _graphics.ApplyChanges();
 
-            Console.WriteLine("Running Game at Settings: {0}x{1}\nFullscreen?: {2}\nPreferrred: {3}x{4}", FlxG.resolutionWidth, FlxG.resolutionHeight, FlxG.fullscreen, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            Console.WriteLine("Running Game at Settings: {0}x{1}\nFullscreen?: {2}\nPreferrred: {3}x{4} \n -- Zoom: {5} \nFlxG.width/height {6} x {7}", 
+                FlxG.resolutionWidth, 
+                FlxG.resolutionHeight, 
+                FlxG.fullscreen, 
+                GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, 
+                GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height,
+                FlxG.zoom,
+                FlxG.width,
+                FlxG.height);
 
             FlxG.Game = this;
 #if !WINDOWS_PHONE

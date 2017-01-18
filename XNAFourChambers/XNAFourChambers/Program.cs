@@ -73,7 +73,7 @@ namespace Loader_Four
             FourChambers.FourChambers_Globals.gif = true;
 #endif
 
-
+            Console.WriteLine("Beggining Game at FlxG.width/height {0} x {1}", FlxG.width, FlxG.height);
 
         }
     }

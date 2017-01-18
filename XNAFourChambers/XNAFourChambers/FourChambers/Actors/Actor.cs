@@ -585,7 +585,7 @@ namespace FourChambers
 
             dead = true;
 
-            flicker(1.5f);
+            //flicker(1.5f);
 
             isPlayerControlled = false;
 

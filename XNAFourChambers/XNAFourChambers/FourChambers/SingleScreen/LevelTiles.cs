@@ -29,12 +29,9 @@ namespace FourChambers
             : base()
         {
 
-            Console.WriteLine("Creating a custom LevelTiles tilemap x ");
-
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
             bg.alpha = 0.55f;
             add(bg);
-
 
             levelAttrs = new Dictionary<string, string>();
             levelAttrs = FlxXMLReader.readAttributesFromOelFile(Globals.levelFile, "level/bg");
@@ -77,8 +74,6 @@ namespace FourChambers
                 Globals.TILE_SIZE_Y);
             add(fgTiles);
 
-
-
             fireflyGroup = new FireflyGroup();
             
 
@@ -98,7 +93,6 @@ namespace FourChambers
                     fgTiles.setTile(i, (int)transition, FlxU.randomInt(0, 250));
                 }
                 transition += 0.25f;
-
 
             }
         }
