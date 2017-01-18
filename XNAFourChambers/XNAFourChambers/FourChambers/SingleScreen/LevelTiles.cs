@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
-    class LevelTiles : FlxTilemap
+    class LevelTiles : FlxGroup
     {
         private Dictionary<string, string> levelAttrs;
         private FlxTilemap bgTiles;
