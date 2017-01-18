@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 namespace FourChambers
 {
-    public class ActorsGroup : FlxGroup
+    class ActorsGroup : FlxGroup
     {
         
         List<Dictionary<string, string>> actorsAttrs;
@@ -79,9 +79,20 @@ namespace FourChambers
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine(type + " did not create In Actors Group.cs");
+                    
                 }
             }
+
+            // return a sorted list of members based on render order
+
+            //int i = 0;
+            //FlxObject o;
+            //int ml = members.Count;
+
+
+            //// sort members by y to draw correctly.
+            //members = members.OrderBy(d => d.renderOrder).ToList();
+
         }
 
         override public void update()

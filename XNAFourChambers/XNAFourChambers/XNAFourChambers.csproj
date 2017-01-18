@@ -258,7 +258,6 @@
     <Compile Include="FourChambers\SingleScreen\ActorsGroup.cs" />
     <Compile Include="FourChambers\SingleScreen\Ladder.cs" />
     <Compile Include="FourChambers\SingleScreen\LevelTiles.cs" />
-    <Compile Include="FourChambers\SingleScreen\PerLevelAdjustments.cs" />
     <Compile Include="FourChambers\SingleScreen\SingleScreenLevel.cs" />
     <Compile Include="FourChambers\Overworld\MapActor.cs" />
     <Compile Include="FourChambers\Overworld\MapState.cs" />
