@@ -104,13 +104,7 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
-            //bg.render(spriteBatch);
-            //bgTiles.render(spriteBatch);
             base.render(spriteBatch);
-            //fgTiles.render(spriteBatch);
-            //fireflyGroup.render(spriteBatch);
         }
-
-
     }
 }
