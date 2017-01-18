@@ -116,7 +116,7 @@ namespace FourChambers
             {
                 if (!dead)
                 {
-                    Console.WriteLine("I am a {0} itemsThatCanKill Not dead, obj: {1}", GetType().ToString() ,obj.GetType().ToString());
+                    //Console.WriteLine("I am a {0} itemsThatCanKill Not dead, obj: {1}", GetType().ToString() ,obj.GetType().ToString());
 
                     Globals.arrowCombo++;
 

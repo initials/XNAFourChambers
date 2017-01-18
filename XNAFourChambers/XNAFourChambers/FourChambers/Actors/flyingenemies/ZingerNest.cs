@@ -43,7 +43,7 @@ namespace FourChambers
         {
             //acceleration.Y = FourChambers_Globals.GRAVITY;
 
-            Console.WriteLine("Zinger Nest has been overlapped, by: {0}", obj.GetType().ToString());
+            //Console.WriteLine("Zinger Nest has been overlapped, by: {0}", obj.GetType().ToString());
             if (itemsThatCanKill.Contains(obj.GetType().ToString()))
             {
                 acceleration.Y = Globals.GRAVITY;
@@ -51,7 +51,7 @@ namespace FourChambers
 
             }
 
-            base.overlapped(obj);
+            //base.overlapped(obj);
         }
 
         public override void kill()
