@@ -80,7 +80,7 @@ namespace FourChambers
 
             if (overlappedWith == "FourChambers.Marksman")
             {
-                if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
+                if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.UP)
                 {
                     play("pulse");
                     FlxG.level++;
