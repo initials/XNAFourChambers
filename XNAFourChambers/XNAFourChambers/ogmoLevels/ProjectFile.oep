@@ -5,8 +5,8 @@
   <BackgroundColor A="255" R="128" G="128" B="255" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
-    <Width>800</Width>
-    <Height>800</Height>
+    <Width>480</Width>
+    <Height>320</Height>
   </LevelDefaultSize>
   <LevelMinimumSize>
     <Width>320</Width>
@@ -187,8 +187,8 @@
     </EntityDefinition>
     <EntityDefinition Name="door" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>32</Width>
+        <Height>32</Height>
       </Size>
       <Origin>
         <X>0</X>

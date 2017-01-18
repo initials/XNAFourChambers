@@ -20,15 +20,15 @@ namespace FourChambers
 
             addAnimation("idle", new int[] { 0,1,2,3,2,1 }, (int)FlxU.random(8,12));
             play("idle");
-            y += 16;
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
 
-            //actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+            actorsThatCanCollectWhenDead = new List<string>() { };
 
             drag.X = drag.Y = 0;
             acceleration.Y = 0;
-            health = 10;
+            health = 1;
+
 
         }
 

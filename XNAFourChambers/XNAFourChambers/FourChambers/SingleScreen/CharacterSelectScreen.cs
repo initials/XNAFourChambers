@@ -74,7 +74,7 @@ namespace FourChambers
 
         override public void update()
         {
-            prism.x = actorsGrp.members[currentCharacterSelected].x;
+            prism.x = (actorsGrp.members[currentCharacterSelected].x + actorsGrp.members[currentCharacterSelected].width/2) - (prism.width/2);
             prism.y = actorsGrp.members[currentCharacterSelected].y - 24;
 
             if (FlxControl.LEFTJUSTPRESSED)
@@ -99,6 +99,7 @@ namespace FourChambers
                     FlxG.play("sfx/Door");
                     FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
                     levelTilemap.transition = 0;
+                    FlxG.quake.start(0.00525f, 1.7f);
                 }
                 else
                 {

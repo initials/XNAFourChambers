@@ -154,7 +154,7 @@ namespace FourChambers
         {
             if (dead)
             {
-                color = Color.Red;
+                color = new Color(1.0f, 0.75f, 0.75f);
             }
 
             hurtTimer += FlxG.elapsed;

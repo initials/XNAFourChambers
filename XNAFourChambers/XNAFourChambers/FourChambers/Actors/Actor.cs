@@ -578,16 +578,12 @@ namespace FourChambers
 
         public override void kill()
         {
+            if (dead == false)
+                FlxG.write(GetType().ToString() + " is dead. ");
 
             play("death");
 
             dead = true;
-
-            //FlxG.score += score;
-
-            FlxG.write(actorName + " is dead");
-
-            flicker(1.5f);
 
             isPlayerControlled = false;
 

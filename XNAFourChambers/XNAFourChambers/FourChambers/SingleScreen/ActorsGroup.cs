@@ -26,28 +26,9 @@ namespace FourChambers
 
             foreach (Dictionary<string, string> nodes in actorsAttrs)
             {
-                bool pc = false;
-                int localWidth = 0;
-                int localHeight = 0;
-                string PX = "";
-                string PY = "";
-                uint PT = 0;
-                int PS = 0;
-                float PC = 0.0f;
-                //print nodes;
-
-                //foreach (KeyValuePair<string, string> kvp in nodes)
-                //{
-                //    Console.Write("Key = {0}, Value = {1}, ",
-                //        kvp.Key, kvp.Value);
-                //}
-                //Console.Write("\r\n");
-
                 string nameOfNewActor = "FourChambers." + FlxU.firstLetterToUpper( nodes["Name"] );
 
                 var type = Type.GetType(nameOfNewActor);
-
-                //Console.WriteLine(nodes["Name"]);
 
                 try
                 {
@@ -84,9 +65,7 @@ namespace FourChambers
                         add(sprite);
                     }
                     else {
-                    //if (nodes["Name"] == "marksman")
-                    //{
-                        var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) - 16);
+                        var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) );
                         add(sprite);
                         if (!sprite.onScreen())
                         {
@@ -96,9 +75,6 @@ namespace FourChambers
                             sprite.y = -100;
 
                         }
-
-
-                    //}
                     }
                 }
                 catch (Exception)

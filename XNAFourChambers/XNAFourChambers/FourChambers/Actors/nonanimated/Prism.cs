@@ -6,12 +6,14 @@ using org.flixel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using XNATweener;
 
 namespace FourChambers
 {
     class Prism : FlxSprite
     {
+        private Tweener t;
+
         public Prism(int xPos, int yPos)
             : base(xPos, yPos)
         {
@@ -24,13 +26,18 @@ namespace FourChambers
             addAnimationCallback(check);
 
             debugName = "";
+
+            t = new Tweener(yPos - 10, yPos + 10, 1.5f, Quadratic.EaseInOut);
+            t.PingPong = true;
+            t.Start();
         }
 
         override public void update()
         {
-            
+            y = t.Position;
 
             base.update();
+            t.Update(FlxG.elapsedAsGameTime);
 
             if (this._curAnim.name == "wrap")
             {

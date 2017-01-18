@@ -46,7 +46,7 @@ namespace FourChambers
             
             addAnimation("run", new int[] {2, 3, 4, 5, 6, 7,8,9 }, 18);
 
-            addAnimation("idle", new int[] { 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 19, 18, 19, 18, 19, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, }, 12);
+            addAnimation("idle", new int[] { 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 19, 18, 19, 18, 19, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 17}, 12);
 
             addAnimation("attack", new int[] { 0,10, }, 12);
             
@@ -83,6 +83,13 @@ namespace FourChambers
             //{
             //    velocity.X = 0;
             //}
+            if (Name == "idle" && Frame == _curAnim.frames.Length - 1)
+            {
+                if (facing == Flx2DFacing.Right)
+                    velocity.X = 3300;
+                else if (facing == Flx2DFacing.Left)
+                    velocity.X = -3300;
+            }
             if (Name == "hurt" && Frame == _curAnim.frames.Length - 1)
             {
                 //velocity.X = 32;

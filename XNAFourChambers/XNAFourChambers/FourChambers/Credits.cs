@@ -70,7 +70,7 @@ namespace FourChambers
             addString(" ");
             addString("Minifigs by svh440");
             addString(" ");
-            addString("Background Pixel Art by ");
+            addString("Environment Pixel Art by ");
             addString("Surt");
             addString("");
         }
