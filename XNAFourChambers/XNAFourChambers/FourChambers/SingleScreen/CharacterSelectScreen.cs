@@ -64,12 +64,7 @@ namespace FourChambers
             FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
         }
 
-        public static int LimitToRange(int value, int inclusiveMinimum, int inclusiveMaximum)
-        {
-            if (value < inclusiveMinimum) { return inclusiveMinimum; }
-            if (value > inclusiveMaximum) { return inclusiveMaximum; }
-            return value;
-        }
+
 
 
         override public void update()
@@ -87,7 +82,7 @@ namespace FourChambers
                 currentCharacterSelected++;
                 FlxG.play("sfx/Pickup_Coin");
             }
-            currentCharacterSelected = LimitToRange(currentCharacterSelected, 0, actorsGrp.members.Count-1);
+            currentCharacterSelected = Utils.LimitToRange(currentCharacterSelected, 0, actorsGrp.members.Count-1);
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal>0.5f)
             {

@@ -20,7 +20,7 @@ namespace FourChambers
                 {
                     try
                     {
-                        ((FlxSprite)(item)).color = Color.Black;
+                        ((FlxSprite)(item)).color = new Color(0,0,0, ((FlxSprite)(item)).alpha);
                     }
                     catch (Exception)
                     {
@@ -34,7 +34,7 @@ namespace FourChambers
                     {
                         if (item.GetType().Name != "bg")
                         {
-                            ((FlxTilemap)(item)).color = Color.Black;
+                            ((FlxTilemap)(item)).color = new Color(0,0,0, ((FlxTilemap)(item)).alpha);
                         }
                     }
                     catch (Exception)

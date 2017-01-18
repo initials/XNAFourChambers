@@ -65,13 +65,19 @@ namespace FourChambers
 
             FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo );
 
+            if (FlxG.debug)
+                runDebugKeyPresses();
+        }
+
+        private void runDebugKeyPresses()
+        {
             if (FlxG.keys.R)
             {
                 FlxG.level = 1;
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
-            if (FlxG.keys.P)
+            if (FlxG.keys.F9)
             {
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
                 Globals.arrowCombo = 20;

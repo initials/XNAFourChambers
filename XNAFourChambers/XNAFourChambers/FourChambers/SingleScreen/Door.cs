@@ -84,9 +84,21 @@ namespace FourChambers
                 {
                     play("pulse");
                     FlxG.level++;
+                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 4);
+
                     FlxG.state = new SingleScreenLevel();
                     return;
                 }
+                if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.DOWN)
+                {
+                    play("pulse");
+                    FlxG.level--;
+                    FlxG.level = Utils.LimitToRange(FlxG.level, 1, 4);
+
+                    FlxG.state = new SingleScreenLevel();
+                    return;
+                }
+
             }
 
             base.overlapped(obj);

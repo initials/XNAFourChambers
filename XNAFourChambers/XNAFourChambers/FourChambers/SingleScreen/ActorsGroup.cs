@@ -74,7 +74,7 @@ namespace FourChambers
                 }
                 catch (Exception)
                 {
-                    
+                    Console.WriteLine("Failed to Make " + type);
                 }
             }
 

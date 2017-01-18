@@ -275,6 +275,7 @@
     <Compile Include="FourChambers\SingleScreen\Timer.cs" />
     <Compile Include="FourChambers\SingleScreen\Waterfall.cs" />
     <Compile Include="FourChambers\TestStates\TextTestState.cs" />
+    <Compile Include="FourChambers\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
