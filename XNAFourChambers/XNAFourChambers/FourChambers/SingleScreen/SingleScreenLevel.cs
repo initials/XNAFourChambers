@@ -105,12 +105,12 @@ namespace FourChambers
                 Console.WriteLine("FlxG.zoom: {0}", FlxG.zoom);
 
                 FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
-                FlxG.followBounds(0, 0, 4800, 3200, false);
+                FlxG.followBounds(0, 0, 480, 320, false);
 
             }
             if (FlxG.keys.justPressed(Keys.F2))
             {
-                FlxG.zoom++;
+                FlxG.zoom*=2;
                 FlxG.width /= 2;
                 FlxG.height /= 2;
                 //FlxG.resolutionWidth *= 2;
@@ -118,10 +118,10 @@ namespace FourChambers
 
                 FlxG._game.Initialize();
 
-                Console.WriteLine("FlxG.zoom: {0}", FlxG.zoom);
+                Console.WriteLine("FlxG.zoom: {0} w/h {1} {2}", FlxG.zoom, FlxG.width, FlxG.height);
 
                 FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
-                FlxG.followBounds(0, 0, 4800, 3200, false);
+                FlxG.followBounds(0, 0, 480, 320, false);
 
             }
             if (FlxG.keys.justPressed(Keys.F3))
