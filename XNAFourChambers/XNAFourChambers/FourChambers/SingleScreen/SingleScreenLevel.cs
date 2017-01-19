@@ -14,6 +14,7 @@ namespace FourChambers
     {
         private LevelTiles levelTilemap;
         private ActorsGroup actorsGrp;
+        private Seraphine seraphine;
 
         override public void create()
         {
@@ -51,6 +52,10 @@ namespace FourChambers
             add(actorsGrp);
 
             PerLevelAdjustments.adjustForLevel(actorsGrp,levelTilemap);
+
+            seraphine = new Seraphine(-100, -100);
+            add(seraphine);
+
 
         }
 
