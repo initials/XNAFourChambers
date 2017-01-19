@@ -101,7 +101,7 @@ namespace FourChambers
             dead = false;
             visible = true;
             exists = true;
-            color = Color.White;
+            //color = Color.White;
             if (X>FlxG.width/2)
                 velocity.X = maxVelocity.X * -1;
             else
@@ -154,7 +154,7 @@ namespace FourChambers
         {
             if (dead)
             {
-                color = new Color(1.0f, 0.75f, 0.75f);
+                //color = new Color(1.0f, 0.75f, 0.75f);
                 //color = Color.Red;
             }
 

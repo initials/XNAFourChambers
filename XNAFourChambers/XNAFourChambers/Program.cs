@@ -75,6 +75,17 @@ namespace Loader_Four
 
             Console.WriteLine("Beggining Game at FlxG.width/height {0} x {1}", FlxG.width, FlxG.height);
 
+            FourChambers.Globals.gameSizeGlobals.Add("zoom", FlxG.zoom);
+            FourChambers.Globals.gameSizeGlobals.Add("zoomCloseUp", FlxG.zoom*4);
+
+            FourChambers.Globals.gameSizeGlobals.Add("width", FlxG.width);
+            FourChambers.Globals.gameSizeGlobals.Add("height", FlxG.height);
+
+            FourChambers.Globals.gameSizeGlobals.Add("widthCloseUp", FlxG.width/4);
+            FourChambers.Globals.gameSizeGlobals.Add("heightCloseUp", FlxG.height/4);
+
+
+
         }
     }
 }

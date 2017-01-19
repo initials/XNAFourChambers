@@ -107,6 +107,7 @@ namespace FourChambers
 
         public static int numberOfEnemiesToKillBeforeLevelOver;
 
+        public static Dictionary<string, int> gameSizeGlobals = new Dictionary<string, int>();
 
         /// <summary>
         /// Allows the FlxConsole to run commands.

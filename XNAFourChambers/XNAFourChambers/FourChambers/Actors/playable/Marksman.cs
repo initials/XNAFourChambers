@@ -48,8 +48,8 @@ namespace FourChambers
                 addAnimation("jumpRange", new int[] { 3, 4, 5, 6, 7, 8, 9 }, 3, true);
                 addAnimation("climb", new int[] { 20, 21, 22, 23, 24, 25, 24, 23, 22, 21 }, 24, true);
                 addAnimation("climbidle", new int[] { 20 }, 0, true);
-                addAnimation("death", new int[] { 26, 27 }, 4, false);
-                addAnimation("hurt", new int[] { 26, 27 }, 4, false);
+                addAnimation("death", new int[] { 74,75,76,77,78,79,80,81,82,83 }, 8, false);
+                addAnimation("hurt", new int[] { 74,75 }, 4, false);
 
                 addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
                 addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
@@ -495,6 +495,16 @@ namespace FourChambers
             meleeHitBox.render(spriteBatch);
             arrows.render(spriteBatch);
 
+        }
+        public override void kill()
+        {
+            if (!dead)
+            {
+                Utils.zoomIn();
+                FlxG.followBounds(0, 0, 480, 320, false);
+                FlxG.follow(this, 1);
+            }
+            base.kill();
         }
     }
 }

@@ -73,6 +73,10 @@ namespace FourChambers
         {
             if (FlxG.keys.R)
             {
+                FlxG.follow(null, 0);
+                Utils.zoomOut();
+
+
                 FlxG.level = 1;
                 FlxG.state = new SingleScreenLevel();
                 return;
@@ -95,14 +99,7 @@ namespace FourChambers
             }
             if (FlxG.keys.justPressed(Keys.F1))
             {
-                FlxG.zoom--;
-                FlxG.width *= 2;
-                FlxG.height *= 2;
-                //FlxG.resolutionWidth /= 2;
-                //FlxG.resolutionHeight /= 2;
-                FlxG._game.Initialize();
-
-                Console.WriteLine("FlxG.zoom: {0}", FlxG.zoom);
+                Utils.zoomOut();
 
                 FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
                 FlxG.followBounds(0, 0, 480, 320, false);
@@ -110,15 +107,7 @@ namespace FourChambers
             }
             if (FlxG.keys.justPressed(Keys.F2))
             {
-                FlxG.zoom*=2;
-                FlxG.width /= 2;
-                FlxG.height /= 2;
-                //FlxG.resolutionWidth *= 2;
-                //FlxG.resolutionHeight *= 2;
-
-                FlxG._game.Initialize();
-
-                Console.WriteLine("FlxG.zoom: {0} w/h {1} {2}", FlxG.zoom, FlxG.width, FlxG.height);
+                Utils.zoomIn();
 
                 FlxG.follow(actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"), 1);
                 FlxG.followBounds(0, 0, 480, 320, false);

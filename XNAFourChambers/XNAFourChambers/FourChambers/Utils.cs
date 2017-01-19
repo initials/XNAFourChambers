@@ -16,6 +16,20 @@ namespace FourChambers
             if (value > inclusiveMaximum) { return inclusiveMaximum; }
             return value;
         }
+        public static void zoomIn()
+        {
+            FlxG.zoom = Globals.gameSizeGlobals["zoomCloseUp"];
+            FlxG.width = Globals.gameSizeGlobals["widthCloseUp"];
+            FlxG.height = Globals.gameSizeGlobals["heightCloseUp"];
+            FlxG._game.Initialize();
+        }
+        public static void zoomOut()
+        {
+            FlxG.zoom = Globals.gameSizeGlobals["zoom"];
+            FlxG.width = Globals.gameSizeGlobals["width"];
+            FlxG.height = Globals.gameSizeGlobals["height"];
+            FlxG._game.Initialize();
+        }
     }
 }
 

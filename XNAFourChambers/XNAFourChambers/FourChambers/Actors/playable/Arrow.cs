@@ -194,7 +194,9 @@ namespace FourChambers
         }
         override public void kill()
         {
-            FlxG.play(SndHit, 0.5f, false);
+            if (onScreen())
+                FlxG.play(SndHit, 0.5f, false);
+
             _fire.stop();
 
             visible = false;
