@@ -20,8 +20,6 @@ namespace FourChambers
 
             isPlayerControlled = true;
 
-            loadGraphic(ImgWarlock, true, false, 29, 29);
-
             //bounding box tweaks
             width = 7;
             height = 16;
