@@ -54,52 +54,6 @@ namespace FourChambers
                 addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
                 addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
             }
-            else if (Globals.PLAYER_ACTOR == Globals.PLAYER_MISTRESS)
-            {
-
-                loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Mistress_50x50"), true, false, 50, 50);
-
-                addAnimation("run", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 12);
-                addAnimation("walk", new int[] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 }, 8);
-                addAnimation("jump", new int[] { 7 }, 12);
-
-                addAnimation("runRange", new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, 12);
-                addAnimation("walkRange", new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }, 8);
-                addAnimation("jumpRange", new int[] { 25 }, 12);
-
-                addAnimation("idleMelee", new int[] { 0 }, 12);
-                addAnimation("attackMelee", new int[] { 0, 1, 2, 3, 4, 5, 6, 6, 6, 0 }, 30, true);
-                addAnimation("hurt", new int[] { 17, 18, 19, 20, 21, 22, 23, 24 }, 12);
-                addAnimation("death", new int[] { 17, 18, 19, 20, 21, 22, 23, 24 }, 12);
-
-                addAnimation("climb", new int[] { 20, 21, 22, 23, 24, 25, 24, 23, 22, 21 }, 24, true);
-                addAnimation("climbidle", new int[] { 20 }, 0, true);
-
-            }
-            else if (Globals.PLAYER_ACTOR == Globals.PLAYER_WARLOCK)
-            {
-
-                loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
-
-                addAnimation("run", new int[] { 5, 6, 7, 8, 9 }, 12);
-                addAnimation("walk", new int[] { 5, 6, 7, 8, 9 }, 12);
-                addAnimation("idle", new int[] { 0, 1, 2, 3 }, 12);
-                addAnimation("attack", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 30);
-
-
-                //Fix these...
-                addAnimation("idleMelee", new int[] { 0, 1, 2, 3 }, 12);
-                addAnimation("attackMelee", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 60, true);
-                addAnimation("jump", new int[] { 5,6,7 }, 3, true);
-                addAnimation("jumpRange", new int[] { 5, 6, 7 }, 3, true);
-                addAnimation("climb", new int[] { 0 }, 24, true);
-                addAnimation("climbidle", new int[] { 0 }, 0, true);
-                addAnimation("death", new int[] { 0 }, 4, false);
-                addAnimation("hurt", new int[] { 0 }, 4, false);
-                addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
-                addAnimation("idleRange", new int[] { 0 }, 12);
-            }
-
 
             addAnimationCallback(footstep);
 
@@ -144,7 +98,6 @@ namespace FourChambers
                 Arrow arrow = new Arrow(-1000, 1000);
                 arrows.add(arrow);
                 //arrow.explodesOnImpact = true;
-
             }
             
             _bullets = arrows.members;
@@ -322,8 +275,6 @@ namespace FourChambers
 
             if (hasRangeWeapon && ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && attackingJoystick) || (FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder) && velocity.X != 0) )
             {
-                //Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
-
                 float rightX = GamePad.GetState(playerIndex).ThumbSticks.Right.X;
                 float rightY = GamePad.GetState(playerIndex).ThumbSticks.Right.Y;
 

@@ -237,6 +237,7 @@
     <Compile Include="FourChambers\DataEntryState.cs" />
     <Compile Include="FourChambers\Environment\Firefly.cs" />
     <Compile Include="FourChambers\Environment\FireflyGroup.cs" />
+    <Compile Include="FourChambers\Environment\Sign.cs" />
     <Compile Include="FourChambers\EventSprite.cs" />
     <Compile Include="FourChambers\Globals.cs" />
     <Compile Include="FourChambers\LevelData.cs" />

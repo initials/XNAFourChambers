@@ -20,8 +20,6 @@ namespace FourChambers
 
             isPlayerControlled = true;
 
-            ImgWarlock = FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_ss_29x29");
-
             loadGraphic(ImgWarlock, true, false, 29, 29);
 
             //bounding box tweaks
@@ -30,16 +28,25 @@ namespace FourChambers
             offset.X = 11;
             offset.Y = 13;
 
+            loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
 
-            //animations
             addAnimation("run", new int[] { 5, 6, 7, 8, 9 }, 12);
             addAnimation("walk", new int[] { 5, 6, 7, 8, 9 }, 12);
-
-            addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
-            addAnimation("walkRange", new int[] { 5, 6, 7, 8, 9 }, 12);
-
             addAnimation("idle", new int[] { 0, 1, 2, 3 }, 12);
-            addAnimation("attack", new int[] { 11,12,13,14,15,16 }, 14);
+            addAnimation("attack", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 30);
+
+
+            //Fix these...
+            addAnimation("idleMelee", new int[] { 0, 1, 2, 3 }, 12);
+            addAnimation("attackMelee", new int[] { 11, 12, 13, 14, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16, 15, 16 }, 60, true);
+            addAnimation("jump", new int[] { 5, 6, 7 }, 3, true);
+            addAnimation("jumpRange", new int[] { 5, 6, 7 }, 3, true);
+            addAnimation("climb", new int[] { 0 }, 24, true);
+            addAnimation("climbidle", new int[] { 0 }, 0, true);
+            addAnimation("death", new int[] { 0 }, 4, false);
+            addAnimation("hurt", new int[] { 0 }, 4, false);
+            addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
+            addAnimation("idleRange", new int[] { 0 }, 12);
 
             playerIndex = PlayerIndex.Two;
 
