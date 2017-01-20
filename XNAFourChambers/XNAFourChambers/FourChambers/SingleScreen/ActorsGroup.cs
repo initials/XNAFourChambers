@@ -102,15 +102,25 @@ namespace FourChambers
             {
                 if (item.dead && !item.exists)
                 {
-                    if (FlxU.random() < chance)
+                    if (FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4))
                     {
                         // Get list of respawn Point
                         List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
 
-                        FlxObject randomPosition = spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+                        FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+
+                        if (randomPosition.x > FlxG.width / 2) ((FlxSprite)item).facing = Flx2DFacing.Left;
+                        else ((FlxSprite)item).facing = Flx2DFacing.Right;
 
                         //Respawn based on chance of respawn
                         item.reset(randomPosition.x, randomPosition.y);
+
+
+
+                        Console.WriteLine("Respawning {0} at {1} x {2}", item.GetType().ToString(), randomPosition.x, randomPosition.y);
+
+
+
                     }
                 }
                 if (item is ZingerNest && item.debugName=="readyToPop"  && !item.dead)

@@ -207,31 +207,30 @@ namespace FourChambers
         }
         override public void update()
         {
-            if (!onScreen())
-            {
-                if (FlxU.random() > 0.5f)
-                {
-                    x = 0;
-                    y = 72;
+            //if (!onScreen())
+            //{
+            //    if (FlxU.random() > 0.5f)
+            //    {
+            //        x = 0;
+            //        y = 72;
 
-                    if (velocity.X < 0)
-                    {
-                        velocity.X *= -1;
-                    }
-                }
-                else 
-                {
-                    x = 464;
-                    y = 72;
+            //        if (velocity.X < 0)
+            //        {
+            //            velocity.X *= -1;
+            //        }
+            //    }
+            //    else 
+            //    {
+            //        x = 464;
+            //        y = 72;
 
-                    if (velocity.X > 0)
-                    {
-                        velocity.X *= -1;
-                    }
-                }
+            //        if (velocity.X > 0)
+            //        {
+            //            velocity.X *= -1;
+            //        }
+            //    }
+            //}
 
-
-            }
             if (hurtTimer >= timeDownAfterHurt && !dead )
             {
                 //if (actorType=="unicorn") FlxG.write("Setting colorFlickerValues");

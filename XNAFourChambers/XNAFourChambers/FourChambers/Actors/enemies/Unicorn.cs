@@ -70,6 +70,7 @@ namespace FourChambers
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
             
+            
         }
 
         
@@ -85,6 +86,8 @@ namespace FourChambers
             //}
             if (Name == "idle" && Frame == _curAnim.frames.Length - 1)
             {
+                thingsThatHaveHappenedToThisActor.Add("HasDoneAShit");
+
                 if (facing == Flx2DFacing.Right)
                     velocity.X = 3300;
                 else if (facing == Flx2DFacing.Left)
@@ -120,8 +123,17 @@ namespace FourChambers
 
             if (obj.GetType().ToString() == "FourChambers.Marksman")
             {
-                drag.X = 500;
+
+                if (thingsThatHaveHappenedToThisActor.Contains("HasDoneAShit"))
+                {
+                    drag.X = 0;
+                }
+                else
+                {
+                    drag.X = 500;
+                }
             }
+
             //string overlappedWith = obj.GetType().ToString();
 
             //if (overlappedWith == "FourChambers.Zinger")

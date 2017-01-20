@@ -107,10 +107,12 @@ namespace FourChambers
             visible = true;
             exists = true;
             //color = Color.White;
-            if (X>FlxG.width/2)
-                velocity.X = maxVelocity.X * -1;
+
+            if (facing == Flx2DFacing.Right)
+                velocity.X = runSpeed * 10;
             else
-                velocity.X = maxVelocity.X;
+                velocity.X = runSpeed * -10;
+            
             base.reset(X, Y);
             health = 1;
         }
