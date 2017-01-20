@@ -24,6 +24,8 @@ namespace FourChambers
         protected FlxEmitter _fire;
         public BigExplosion _ex;
 
+        public int framesInAir = 0;
+
 
         public Arrow(int xPos, int yPos)
             : base(xPos, yPos)
@@ -82,6 +84,8 @@ namespace FourChambers
 
         override public void update()
         {
+            framesInAir++;
+
             if (hasTouched == false)
             {
                 if (velocity.X > 0)
@@ -215,6 +219,8 @@ namespace FourChambers
 
         public void shoot(int X, int Y, int VelocityX, int VelocityY)
         {
+            framesInAir = 0;
+
             _fire.start(false, 0.01f, 0);
             
             // Global counter for arrows fired.
