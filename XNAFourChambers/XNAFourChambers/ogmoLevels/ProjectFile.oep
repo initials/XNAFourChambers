@@ -16,7 +16,7 @@
     <Width>3200</Width>
     <Height>3200</Height>
   </LevelMaximumSize>
-  <Filename>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\ogmoLevels\ProjectFile.oep</Filename>
+  <Filename>E:\VisualStudio2010\XNAFourChambers\XNAFourChambers\XNAFourChambers\ogmoLevels\ProjectFile.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>true</CameraEnabled>
   <CameraSize>
@@ -1727,6 +1727,40 @@
         <RectColor A="255" R="255" G="128" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="arbitrarySprite" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="spriteName" Default="" MaxChars="-1" MultiLine="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="sign" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="255" G="128" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="message" Default="" MaxChars="-1" MultiLine="false" />
+      </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
   </EntityDefinitions>

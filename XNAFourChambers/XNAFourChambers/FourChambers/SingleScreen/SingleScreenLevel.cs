@@ -51,16 +51,25 @@ namespace FourChambers
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
 
-            PerLevelAdjustments.adjustForLevel(actorsGrp,levelTilemap);
+            
 
             seraphine = new Seraphine(-100, -100);
-            add(seraphine);
+            actorsGrp.add(seraphine);
 
-
+            PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
         }
 
         override public void update()
         {
+            FlxObject player = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
+
+            if (player!=null && player.dead && seraphine.concern == false)
+            {
+                seraphine.concern = true;
+                seraphine.x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x - 20;
+                seraphine.y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y - 30;
+            }
+
             FlxU.collide(actorsGrp, levelTilemap.levelTiles);
             FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
             

@@ -17,7 +17,7 @@ namespace FourChambers
         {
 
             // Set up the stats for this actor.
-            actorName = "Husky Lifesavier";
+            actorName = "Holly Hox";
             score = 250;
             health = 5;
             runSpeed = 120;

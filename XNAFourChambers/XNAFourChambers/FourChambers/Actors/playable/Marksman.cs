@@ -434,24 +434,6 @@ namespace FourChambers
 
             }
 
-            PlayerIndex pi;
-
-            if (Globals.seraphineHasBeenKilled == false && canFly)
-            {
-                if (FlxG.gamepads.isButtonDown(Buttons.Y, playerIndex, out pi) || FlxG.keys.W)
-                {
-                    velocity.Y = -100;
-                    //FlxG.bloom.Visible = true;
-                    flying = true;
-                }
-                else
-                {
-                    //velocity.Y = FourChambers_Globals.GRAVITY;
-                    //FlxG.bloom.Visible = false;
-                    flying = false;
-                }
-            }
-
             if (FlxGlobal.cheatString == "weapons")
             {
                 hasMeleeWeapon = true;

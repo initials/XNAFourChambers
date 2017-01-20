@@ -18,7 +18,7 @@ namespace FourChambers
         {
 
             // Set up the stats for this actor.
-            actorName = "Jenny";
+            actorName = "Francie Nolan";
             score = 250;
             health = 15;
             runSpeed = 120;
