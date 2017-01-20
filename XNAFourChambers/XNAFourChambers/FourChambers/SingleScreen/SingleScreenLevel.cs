@@ -56,6 +56,8 @@ namespace FourChambers
             seraphine = new Seraphine(-100, -100);
             actorsGrp.add(seraphine);
 
+            Utils.zoomOut();
+
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
         }
 

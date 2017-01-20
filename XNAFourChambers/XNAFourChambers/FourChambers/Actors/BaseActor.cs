@@ -103,18 +103,24 @@ namespace FourChambers
 
         public override void reset(float X, float Y)
         {
+            base.reset(X, Y - (height-16));
+
             dead = false;
             visible = true;
             exists = true;
             //color = Color.White;
 
-            if (facing == Flx2DFacing.Right)
-                velocity.X = runSpeed * 10;
+            if (X >= FlxG.levelWidth / 2)
+            {
+                velocity.X = maxVelocity.X * -1;
+            }
             else
-                velocity.X = runSpeed * -10;
-            
-            base.reset(X, Y);
+            {
+                velocity.X = maxVelocity.X ;
+            }
+                
             health = 1;
+
         }
 
         public override void overlapped(FlxObject obj)
@@ -123,8 +129,6 @@ namespace FourChambers
             {
                 if (!dead)
                 {
-                    //Console.WriteLine("I am a {0} itemsThatCanKill Not dead, obj: {1}", GetType().ToString() ,obj.GetType().ToString());
-
                     Globals.arrowCombo++;
 
                     ((FlxSprite)obj).kill();
@@ -135,8 +139,6 @@ namespace FourChambers
             {
                 if (dead)
                 {
-                    //Console.WriteLine("I am a {0} actorsThatCanCollectWhenDead Dead, obj: {1}", GetType().ToString(), obj.GetType().ToString());
-
                     Globals.numberOfEnemiesToKillBeforeLevelOver--;
 
                     exists = false;
@@ -147,8 +149,6 @@ namespace FourChambers
                 }
                 else
                 {
-                    //Console.WriteLine("I am a {0} actorsThatCanCollectWhenDead Not dead, obj: {1}", GetType().ToString(), obj.GetType().ToString());
-
                     ((FlxSprite)obj).hurt(1);
                 }
             }

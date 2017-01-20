@@ -109,17 +109,13 @@ namespace FourChambers
 
                         FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
 
-                        if (randomPosition.x > FlxG.width / 2) ((FlxSprite)item).facing = Flx2DFacing.Left;
-                        else ((FlxSprite)item).facing = Flx2DFacing.Right;
-
                         //Respawn based on chance of respawn
                         item.reset(randomPosition.x, randomPosition.y);
 
-
-
                         Console.WriteLine("Respawning {0} at {1} x {2}", item.GetType().ToString(), randomPosition.x, randomPosition.y);
 
-
+                        //if (FlxG.keys.justPressed(Keys.F4))
+                        //    break;
 
                     }
                 }

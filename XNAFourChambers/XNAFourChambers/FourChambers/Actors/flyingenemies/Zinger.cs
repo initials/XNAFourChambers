@@ -49,7 +49,7 @@ namespace FourChambers
             acceleration.Y = 50;
             maxVelocity.X = FlxU.random(20,50);
             maxVelocity.Y = FlxU.random(20, 50);
-            velocity.X = 100;
+            //velocity.X = 100;
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 

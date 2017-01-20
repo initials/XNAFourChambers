@@ -175,7 +175,6 @@ namespace FourChambers
 
             drag.X = 0;
             drag.Y = 0;
-            velocity.X = runSpeed;
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
@@ -204,6 +203,8 @@ namespace FourChambers
         override public void hitSide(FlxObject Contact, float Velocity)
         {
             velocity.X = velocity.X * -1;
+            //base.hitSide(Contact, Velocity);
+
         }
         override public void update()
         {
