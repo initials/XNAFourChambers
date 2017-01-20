@@ -62,6 +62,8 @@ namespace FourChambers
 
             FlxG.setHudTextScale(1, FlxG.zoom);
             FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
+
+            //FlxG.showBounds = true;
         }
 
 
@@ -107,6 +109,7 @@ namespace FourChambers
 
             if (prism.debugName == "readyToGoToNextState")
             {
+                FlxG.setHudText(1, "");
                 FlxG.state = new SingleScreenLevel();
                 return;
             }

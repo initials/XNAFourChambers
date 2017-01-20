@@ -57,6 +57,8 @@ namespace FourChambers
             Utils.zoomOut();
 
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
+
+            
         }
 
         override public void update()
@@ -74,10 +76,12 @@ namespace FourChambers
             FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
             
             collideArrows();
-            
+
+
+
             base.update();
 
-            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo );
+            //FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
 
             if (FlxG.debug)
                 runDebugKeyPresses();
@@ -89,7 +93,6 @@ namespace FourChambers
             {
                 FlxG.follow(null, 0);
                 Utils.zoomOut();
-
 
                 FlxG.level = 1;
                 FlxG.state = new SingleScreenLevel();

@@ -6,16 +6,18 @@ using org.flixel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-namespace XNAFourChambers.FourChambers.Environment
+namespace FourChambers
 {
     class Sign : FlxSprite
     {
+        public string message;
+
         public Sign(int xPos, int yPos)
             : base(xPos, yPos)
         {
             loadGraphic("fourchambers/auto_surt2_16x16", true, false, 16, 16);
-            //frame = 11;
-
+            frame = 592;
+            message = "";
         }
 
         /// <summary>
@@ -24,6 +26,16 @@ namespace XNAFourChambers.FourChambers.Environment
         override public void update()
         {
             base.update();
+        }
+
+        public override void overlapped(FlxObject obj)
+        {
+            if (obj.GetType().ToString() == "FourChambers.Marksman")
+            {
+                FlxG.setHudText(3, message);
+            }
+
+            base.overlapped(obj);
         }
     }
 }

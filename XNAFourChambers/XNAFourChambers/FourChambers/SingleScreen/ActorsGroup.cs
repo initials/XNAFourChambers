@@ -26,9 +26,11 @@ namespace FourChambers
 
                 var type = Type.GetType(nameOfNewActor);
 
+                Console.WriteLine("Making " + type);
+
                 try
                 {
-                    Console.WriteLine("Made " + type);
+                    
                     if (nodes.ContainsKey("event") && nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
                         var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), 
@@ -66,6 +68,21 @@ namespace FourChambers
                             sprite.y = -100;
 
                         }
+
+                        if (nameOfNewActor == "FourChambers.Sign")
+                        {
+                            ((Sign)(sprite)).message = nodes["message"].ToString();
+                        }
+
+                        //Console.WriteLine(nodes.ContainsKey("message"));
+
+                        //Console.WriteLine(sprite.GetType().GetProperty("message") != null );
+
+                        //if ( nodes.ContainsKey("message") == true &&  sprite.GetType().GetProperty("message") != null) 
+                        //{
+                        //    Console.WriteLine("writing the sign message");
+                        //    ((Sign)(sprite)).message = nodes["message"].ToString();
+                        //}
                     }
                 }
                 catch (Exception)

@@ -444,6 +444,11 @@ namespace FourChambers
                 else if (hasRangeWeapon == true) play("idleRange");
                 else play("idle");
             }
+
+            //if (GetType().ToString() == "FourChambers.Warlock")
+            //{
+            //    Console.WriteLine(_curAnim.name);
+            //}
         }
 
         override public void update()

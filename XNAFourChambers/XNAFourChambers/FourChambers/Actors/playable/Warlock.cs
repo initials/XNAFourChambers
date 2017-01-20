@@ -11,20 +11,12 @@ namespace FourChambers
 {
     public class Warlock : Actor
     {
-        private Texture2D ImgWarlock;
-
         public Warlock(int xPos, int yPos)
             : base(xPos, yPos)
         {
             actorName = "Terry";
 
-            isPlayerControlled = true;
 
-            //bounding box tweaks
-            width = 7;
-            height = 16;
-            offset.X = 11;
-            offset.Y = 13;
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
 
@@ -44,7 +36,13 @@ namespace FourChambers
             addAnimation("death", new int[] { 0 }, 4, false);
             addAnimation("hurt", new int[] { 0 }, 4, false);
             addAnimation("runRange", new int[] { 5, 6, 7, 8, 9 }, 12);
-            addAnimation("idleRange", new int[] { 0 }, 12);
+            addAnimation("idleRange", new int[] { 0,1,2,3 }, 4);
+
+            //bounding box tweaks
+            width = 5;
+            height = 16;
+
+            setOffset(21, 34);
 
             playerIndex = PlayerIndex.Two;
 
@@ -53,13 +51,12 @@ namespace FourChambers
             drag.X = runSpeed * 4;
             drag.Y = runSpeed * 4;
 
+
+
         }
 
         override public void update()
         {
-
-            //PlayerIndex pi;
-            
             //SHOOTING
             if ((frame == 16 ) && attackingJoystick)
             {
@@ -95,11 +92,8 @@ namespace FourChambers
 
             }
 
-
             base.update();
 
         }
-
-
     }
 }
