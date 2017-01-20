@@ -121,24 +121,16 @@ namespace FourChambers
                 }
                 if (item is ZingerNest && item.debugName=="readyToPop"  && !item.dead)
                 {
-                
-                    Console.WriteLine("Ready to Pop!");
-
                     List<FlxObject> zingers = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
-
-                    
-
                     for (int i = 0; i < zingers.Count; i++)
                     {
                         
 
                         if (((Zinger)(zingers[i])).dead == true)
                         {
-                            
                             ((Zinger)(zingers[i])).reset(item.x, item.y);
                             ((Zinger)(zingers[i])).homing = true;
                             ((Zinger)(zingers[i])).homingTarget = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Marksman");
-
                         }
                     }
                     item.kill();
@@ -150,8 +142,6 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
-            
-
             base.render(spriteBatch);
         }
 

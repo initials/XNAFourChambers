@@ -51,8 +51,6 @@ namespace FourChambers
             actorsGrp = new ActorsGroup();
             add(actorsGrp);
 
-            
-
             seraphine = new Seraphine(-100, -100);
             actorsGrp.add(seraphine);
 
@@ -187,6 +185,11 @@ namespace FourChambers
         protected bool runOverlapOnObject2(object Sender, FlxSpriteCollisionEvent e)
         {
             //((Arrow)e.Object1).kill();
+
+            if (e.Object1 is Arrow)
+                Console.WriteLine("Frames in air: {0} ", ((Arrow)e.Object1).framesInAir);
+
+
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
             return true;
