@@ -165,7 +165,9 @@
     <Compile Include="FourChambers\Actors\flyingenemies\Drone.cs" />
     <Compile Include="FourChambers\Actors\flyingenemies\FlyingEnemy.cs" />
     <Compile Include="FourChambers\Actors\flyingenemies\Zinger.cs" />
-    <Compile Include="FourChambers\Actors\flyingenemies\ZingerHoming.cs" />
+    <Compile Include="FourChambers\Actors\flyingenemies\ZingerHoming.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FourChambers\Actors\flyingenemies\ZingerNest.cs" />
     <Compile Include="FourChambers\Actors\nonanimated\Artist.cs" />
     <Compile Include="FourChambers\Actors\nonanimated\Assassin.cs" />

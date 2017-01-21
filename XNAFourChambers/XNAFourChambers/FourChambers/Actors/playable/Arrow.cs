@@ -17,23 +17,16 @@ namespace FourChambers
 
         protected const string SndShoot = "sfx/arrowShoot1";
         protected const string SndHit = "sfx/arrowHit1";
-       // public FlxSprite _ex;
-
-        public bool explodesOnImpact = false;
-
+        public bool explodesOnImpact = true;
         protected FlxEmitter _fire;
-        public BigExplosion _ex;
-
         public int framesInAir = 0;
-
+        
+        public bool scheduledToDie = false;
+        public int scheduledToDieInFrames = 50;
 
         public Arrow(int xPos, int yPos)
             : base(xPos, yPos)
         {
-
-            //_ex = new BigExplosion(0, 0);
-
-            //_ex = exp;
 
             ImgBullet = FlxG.Content.Load<Texture2D>("fourchambers/arrow_8x1");
 
@@ -41,14 +34,13 @@ namespace FourChambers
 
             hasTouched = false;
 
-
             width = 8;
             height = 1;
             offset.X = 0;
             offset.Y = 0;
             exists = false;
 
-            addAnimation("explode", new int[] { 0, 1 }, 10, false);
+            addAnimation("explode", new int[] { 0 }, 30, false);
             addAnimation("normal", new int[] { 0 }, 0, false);
 
             play("normal");
@@ -64,9 +56,12 @@ namespace FourChambers
             _fire = new FlxEmitter();
             _fire.setSize(1, 1);
             _fire.setRotation();
-            _fire.setXSpeed(-15, 15);
-            _fire.setYSpeed(-15, 15);
-            _fire.gravity = 0;
+            _fire.setXSpeed(-44, 44);
+            _fire.setYSpeed(-44, 44);
+            _fire.gravity = 45;
+            //_fire.particleDrag.X = 50;
+            //_fire.particleDrag.Y = 50;
+
             _fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
 
             damage = 15;
@@ -76,7 +71,6 @@ namespace FourChambers
 
         override public void render(SpriteBatch spriteBatch)
         {
-            //_ex.render(spriteBatch);
             _fire.render(spriteBatch);
             base.render(spriteBatch);
         }
@@ -85,6 +79,25 @@ namespace FourChambers
         override public void update()
         {
             framesInAir++;
+
+            if (scheduledToDie == true)
+            {
+                scheduledToDieInFrames--;
+                //visible = false;
+            }
+            else
+            {
+                _fire.x = x + (width / 2);
+                _fire.y = y + (height / 2);
+            }
+            if (scheduledToDieInFrames <= 0)
+            {
+                delayedKill();
+            }
+            if (scheduledToDieInFrames <= 45)
+            {
+                //y -= 5;
+            }
 
             if (hasTouched == false)
             {
@@ -105,123 +118,101 @@ namespace FourChambers
                 }
             }
 
-            if (dead && finished) exists = false;
-            else
-            {
-                //_ex.update();
-                _fire.at(this);
-                _fire.update();
-                base.update();
-            }
+
+
+            _fire.update();
+            base.update();
 
             if (onScreen() == false && !dead)
             {
                 Globals.arrowCombo = 0;
-                kill();
+                delayedKill();
             }
+
 
         }
 
         override public void hitSide(FlxObject Contact, float Velocity) 
         {
-            _fire.setXSpeed(50, 100);
-            _fire.setYSpeed(50, 100);
-            _fire.start(true, 0.01f, 0);
-            if (explodesOnImpact)
-            {
-                _ex.x = x - _ex.width / 2;
-                _ex.y = y - _ex.height / 2;
-                _ex.play("explode", true);
-            }
-            _fire.stop();
+            genericArrowHit();
+
+        }
+
+        private void genericArrowHit()
+        {
+
+            _fire.setXSpeed(-85, 85);
+            _fire.setYSpeed(-85, 85);
+
+            if (scheduledToDie == false)
+                _fire.start(true, 5, 0);
+
+            play("explode");
 
             Globals.arrowCombo = 0;
-            hasTouched= true;
-            kill(); 
+            hasTouched = true;
+            //kill(); 
+            scheduledToDie = true;
+            
+
         }
 
         public override void hitLeft(FlxObject Contact, float Velocity)
         {
-            _fire.setXSpeed(50, 100);
-            _fire.setYSpeed(50, 100);
-            _fire.start(true, 0.01f, 0);
+            genericArrowHit();
 
-            Globals.arrowCombo = 0;
             base.hitLeft(Contact, Velocity);
         }
 
         public override void hitRight(FlxObject Contact, float Velocity)
         {
-            _fire.setXSpeed(50, 100);
-            _fire.setYSpeed(50, 100);
-            _fire.start(true, 0.01f, 0);
+            genericArrowHit();
 
-            Globals.arrowCombo = 0;
             base.hitRight(Contact, Velocity);
         }
 
         override public void hitBottom(FlxObject Contact, float Velocity) 
         {
-            _fire.setXSpeed(50, 100);
-            _fire.setYSpeed(50, 100);
-            _fire.start(true, 0.01f, 0);
+            genericArrowHit();
 
-            if (explodesOnImpact)
-            {
-                _ex.x = x - _ex.width / 2;
-                _ex.y = y - _ex.height / 2;
-                _ex.play("explode", true);
-            }
-            _fire.stop();
-            hasTouched = true;
-            dead = true;
-            solid = false;
-            Globals.arrowCombo = 0;
-            kill(); 
+            //kill(); 
         }
         override public void hitTop(FlxObject Contact, float Velocity) 
         {
-            _fire.setXSpeed(50, 100);
-            _fire.setYSpeed(50, 100);
-            _fire.start(true, 0.01f, 0);
+            genericArrowHit();
 
-            if (explodesOnImpact)
-            {
-                _ex.x = x - _ex.width / 2;
-                _ex.y = y - _ex.height / 2;
-                _ex.play("explode", true);
-            }
-            _fire.stop();
-            hasTouched = true;
-            Globals.arrowCombo = 0;
-            kill(); 
+            //kill(); 
         }
         override public void kill()
         {
             if (onScreen())
                 FlxG.play(SndHit, 0.5f, false);
 
-            _fire.stop();
-
-            visible = false;
-
             if (dead) return;
             velocity.X = 0;
             velocity.Y = 0;
-            //if (onScreen()) FlxG.play(SndHit);
             
             play("explode");
-            dead = true;
 
-            base.kill();
+            genericArrowHit();
+
             
+        }
+
+        public void delayedKill()
+        {
+            base.kill();
+
         }
 
         public void shoot(int X, int Y, int VelocityX, int VelocityY)
         {
             framesInAir = 0;
+            scheduledToDieInFrames = 50;
+            scheduledToDie = false;
 
-            _fire.start(false, 0.01f, 0);
+            //particles release at regular intervals;
+            _fire.start(false, 0.02f, 0);
             
             // Global counter for arrows fired.
             Globals.arrowsFired++;

@@ -901,6 +901,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="fourchambers\arrow_8x5.png">
+      <Name>arrow_8x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="fourchambers\characterSpriteSheets\Executor_50x50.csv">
       <Name>Executor_50x50</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

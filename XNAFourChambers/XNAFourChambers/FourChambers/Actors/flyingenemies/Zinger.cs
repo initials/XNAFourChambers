@@ -91,7 +91,7 @@ namespace FourChambers
             if (homing && homingTarget != null)
             {
                 float rightX1 = homingTarget.x;
-                float rightY1 = homingTarget.y - (FlxU.random()*40);
+                float rightY1 = homingTarget.y - (FlxU.random(-20,40));
 
                 float xDiff = x - rightX1;
                 float yDiff = y - rightY1;

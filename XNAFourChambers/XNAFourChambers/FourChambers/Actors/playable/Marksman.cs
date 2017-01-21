@@ -353,9 +353,10 @@ namespace FourChambers
                 {
                     for (int i = 0; i < Globals.arrowsToFire; i++)
                     {
-                        int yVel = (int)(velocity_y * (-550 - (Globals.arrowPower* 50)));
-                        int yVelAdjusted = yVel - (i * 40);
-                        int xVel = (int)(velocity_x * (-550 - (Globals.arrowPower*50)));
+                        int arrowSpeed = -150;
+                        int yVel = (int)(velocity_y * (arrowSpeed - (Globals.arrowPower * 1)));
+                        int yVelAdjusted = yVel - (i * 5);
+                        int xVel = (int)(velocity_x * (arrowSpeed - (Globals.arrowPower * 1)));
 
                         ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), xVel, yVelAdjusted);
 
