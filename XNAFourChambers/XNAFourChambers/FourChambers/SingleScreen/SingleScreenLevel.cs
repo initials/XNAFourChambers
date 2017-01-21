@@ -189,6 +189,7 @@ namespace FourChambers
         {
             //((Arrow)e.Object1).kill();
 
+            //Add bonus for long shots, 20+ frames
             if (e.Object1 is Arrow)
                 Console.WriteLine("Frames in air: {0} ", ((Arrow)e.Object1).framesInAir);
 
