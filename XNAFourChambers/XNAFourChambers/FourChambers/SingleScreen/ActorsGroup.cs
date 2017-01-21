@@ -91,15 +91,8 @@ namespace FourChambers
                 }
             }
 
-            // return a sorted list of members based on render order
-
-            //int i = 0;
-            //FlxObject o;
-            //int ml = members.Count;
-
-
             //// sort members by y to draw correctly.
-            //members = members.OrderBy(d => d.renderOrder).ToList();
+            members = members.OrderBy(d => d.renderOrder).ToList();
 
         }
 

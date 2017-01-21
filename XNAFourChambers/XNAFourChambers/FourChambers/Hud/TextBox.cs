@@ -6,7 +6,7 @@ using org.flixel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using XNATweener;
 
 namespace FourChambers
 {
@@ -18,6 +18,9 @@ namespace FourChambers
 
         public bool writeOn = false;
         private int writeOnChar = 0;
+        public int framesSinceTriggered = 0;
+
+        public Tweener t;
 
         public TextBox(int xPos, int yPos, int xWidth, int yHeight, string Text, int Style)
             : base(xPos, yPos, xWidth, yHeight)
@@ -45,10 +48,24 @@ namespace FourChambers
 
             text = Text;
 
+            t = new Tweener(0, -45, 1.5f, Quadratic.EaseOut);
+            t.hasEnded = true;
+
+            //t.Reset();
+
+            framesSinceTriggered = 100000;
+
+            visible = false;
+
+            
+
         }
 
         public void setText(string Text)
         {
+            visible = true;
+            framesSinceTriggered = 0;
+
             string newText = Text;
 
             if (newText.Length > 60)
@@ -71,15 +88,33 @@ namespace FourChambers
 
         override public void update()
         {
+            //if (FlxG.keys.T) visible = false;
+            //if (FlxG.keys.Y) visible = true;
 
+            if (framesSinceTriggered < 75)
+            {
+                t.Reset();
+                t.Start();
+            }
+            else if (framesSinceTriggered > 75)
+            {
 
+            }
 
-            flxText.x = x+6;
-            flxText.y = y+2;
+            y = t.Position;
+
+            framesSinceTriggered++;
+
+            //Console.WriteLine(framesSinceTriggered + " " + t.Position);
+
+            flxText.x = x+8;
+            flxText.y = y+4;
 
             flxText.update();
 
             base.update();
+            t.Update(FlxG.elapsedAsGameTime);
+
 
             if (writeOn)
             {
