@@ -26,7 +26,7 @@ namespace FourChambers
 
                 var type = Type.GetType(nameOfNewActor);
 
-                Console.WriteLine("Making " + type);
+                Console.WriteLine("Making " + nameOfNewActor);
 
                 try
                 {
@@ -87,12 +87,12 @@ namespace FourChambers
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Failed to Make " + type);
+                    Console.WriteLine("Failed to Make " + nameOfNewActor);
                 }
             }
 
             //// sort members by y to draw correctly.
-            members = members.OrderBy(d => d.renderOrder).ToList();
+            //members = members.OrderBy(d => d.renderOrder).ToList();
 
         }
 
