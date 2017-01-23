@@ -92,7 +92,7 @@ namespace FourChambers
             }
 
             //// sort members by y to draw correctly.
-            //members = members.OrderBy(d => d.renderOrder).ToList();
+            members = members.OrderBy(d => d.renderOrder).ToList();
 
         }
 

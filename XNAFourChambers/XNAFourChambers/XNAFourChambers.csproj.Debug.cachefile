@@ -125,7 +125,9 @@ Content\fourchambers\bg.xnb
 Content\fourchambers\fire_wisp.xnb
 Content\fourchambers\heart_16x16.xnb
 Content\fourchambers\spike8x16.xnb
+Content\fourchambers\waterFallSparkle.xnb
 Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb
+Content\fourchambers\doorSparkles.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -231,8 +233,6 @@ Content\music\ralph\nw hooker.xnb
 Content\music\ralph\snow song.xnb
 Content\music\ralph\stiff run.xnb
 Content\music\ralph\this is the news.xnb
-Content\fourchambers\doorSparkles.xnb
-Content\fourchambers\waterFallSparkle.xnb
 Content\fourchambers\arrow_8x5.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma

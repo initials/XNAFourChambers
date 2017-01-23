@@ -21,8 +21,7 @@ namespace FourChambers
         protected FlxEmitter _fire;
         public int framesInAir = 0;
         
-        public bool scheduledToDie = false;
-        public int scheduledToDieInFrames = 50;
+       
 
         public Arrow(int xPos, int yPos)
             : base(xPos, yPos)
@@ -80,24 +79,8 @@ namespace FourChambers
         {
             framesInAir++;
 
-            if (scheduledToDie == true)
-            {
-                scheduledToDieInFrames--;
-                //visible = false;
-            }
-            else
-            {
-                _fire.x = x + (width / 2);
-                _fire.y = y + (height / 2);
-            }
-            if (scheduledToDieInFrames <= 0)
-            {
-                delayedKill();
-            }
-            if (scheduledToDieInFrames <= 45)
-            {
-                //y -= 5;
-            }
+            _fire.x = x + (width / 2);
+            _fire.y = y + (height / 2);
 
             if (hasTouched == false)
             {
@@ -126,7 +109,7 @@ namespace FourChambers
             if (onScreen() == false && !dead)
             {
                 Globals.arrowCombo = 0;
-                delayedKill();
+                kill();
             }
 
 
@@ -144,16 +127,14 @@ namespace FourChambers
             _fire.setXSpeed(-85, 85);
             _fire.setYSpeed(-85, 85);
 
-            if (scheduledToDie == false)
-                _fire.start(true, 5, 0);
+            _fire.start(true, 5, 0);
 
             play("explode");
 
             Globals.arrowCombo = 0;
             hasTouched = true;
-            //kill(); 
-            scheduledToDie = true;
-            
+            kill(); 
+
 
         }
 
@@ -196,20 +177,18 @@ namespace FourChambers
 
             genericArrowHit();
 
-            
-        }
-
-        public void delayedKill()
-        {
             base.kill();
-
         }
+
+        //public void delayedKill()
+        //{
+        //    base.kill();
+
+        //}
 
         public void shoot(int X, int Y, int VelocityX, int VelocityY)
         {
             framesInAir = 0;
-            scheduledToDieInFrames = 50;
-            scheduledToDie = false;
 
             //particles release at regular intervals;
             _fire.start(false, 0.02f, 0);

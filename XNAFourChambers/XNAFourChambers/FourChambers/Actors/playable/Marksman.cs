@@ -51,6 +51,9 @@ namespace FourChambers
             addAnimation("runRange", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 12);
             addAnimation("idleRange", new int[] { 48, 49, 50, 51, 52, 53, 54, 55, 56 }, 12);
 
+            addAnimation("Press A to take a piss in the fountain of youth", new int[] { 84, 85, 86 }, 4, true);
+
+
             addAnimationCallback(footstep);
 
             //bounding box tweaks
@@ -353,7 +356,7 @@ namespace FourChambers
                 {
                     for (int i = 0; i < Globals.arrowsToFire; i++)
                     {
-                        int arrowSpeed = -150;
+                        int arrowSpeed = -250;
                         int yVel = (int)(velocity_y * (arrowSpeed - (Globals.arrowPower * 1)));
                         int yVelAdjusted = yVel - (i * 5);
                         int xVel = (int)(velocity_x * (arrowSpeed - (Globals.arrowPower * 1)));

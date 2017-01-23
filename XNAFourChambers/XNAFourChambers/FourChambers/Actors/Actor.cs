@@ -192,6 +192,8 @@ namespace FourChambers
             grass.setSize(5, 1);
             grass.gravity = 22;
 
+            debugName = "";
+
         }
 
         public void stopAttacking(string Name, uint Frame, int FrameIndex)
@@ -233,6 +235,7 @@ namespace FourChambers
                 facing = Flx2DFacing.Left;
                 acceleration.X -= drag.X;
                 attackingMelee = false;
+                debugName = "";
             }
             //Walking right.
             else if (((FlxG.keys.D && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickRight, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadRight, playerIndex, out pi)) && !isClimbingLadder)
@@ -243,6 +246,7 @@ namespace FourChambers
                 facing = Flx2DFacing.Right;
                 acceleration.X += drag.X;
                 attackingMelee = false;
+                debugName = "";
             }
 
             // ladders
@@ -255,6 +259,8 @@ namespace FourChambers
                 isClimbingLadder = true;
                 attackingMelee = false;
 
+                debugName = "";
+
                 // on a ladder, snap to nearest 16
             }
             else if (((FlxG.keys.S && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.LeftThumbstickDown, playerIndex, out pi) || FlxG.gamepads.isButtonDown(Buttons.DPadDown, playerIndex, out pi)) && canClimbLadder && !FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi))
@@ -265,6 +271,9 @@ namespace FourChambers
                 velocity.Y = 100;
                 isClimbingLadder = true;
                 attackingMelee = false;
+
+                debugName = "";
+
             }
             else
             {
@@ -394,6 +403,8 @@ namespace FourChambers
 
         public void updateAnims()
         {
+            List<FlxAnim> anim = animations.Where(p => p.name == debugName).ToList();
+
             if (dead)
             {
                 play("death");
@@ -401,6 +412,10 @@ namespace FourChambers
             else if (hurtTimer < timeDownAfterHurt)
             {
                 play("hurt");
+            }
+            else if (debugName != "" && anim.Count != 0)
+            {
+                play(debugName);
             }
             else if (isClimbingLadder)
             {
