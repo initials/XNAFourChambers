@@ -47,8 +47,21 @@ namespace FourChambers
                     FlxSprite p = emitParticleAndReturnSprite();
                     p.y += FlxU.randomInt(0, Height);
                     p.velocity.Y = FlxU.random(20, 98);
+                    p.frame = FlxU.randomInt(0, 10);
                 }
             }
+
+        }
+
+        public override void emitParticle()
+        {
+            FlxSprite s = members[_particle] as FlxSprite;
+            s.frame = FlxU.randomInt(0, 10);
+
+            base.emitParticle();
+
+            //Console.WriteLine("Emitted particle, frame is {0}", s.frame);
+
 
         }
 
@@ -61,14 +74,21 @@ namespace FourChambers
             collider.update();
             FlxU.collide(this, collider);
 
+            //FlxU.collide(this, SingleScreenLevel.actorsGrp);
+
             base.update();
 
             foreach (var item in members)
             {
                 if (item.velocity.Y < 0)
                 {
+                    //((FlxParticle)(item)).velocity.X = 50;
                     ((FlxParticle)(item)).frame = 11;
                     //((FlxParticle)(item)).velocity.X = FlxU.random(-5,5);
+                }
+                else
+                {
+                    //((FlxParticle)(item)).velocity.X = -50;
                 }
             }
         }

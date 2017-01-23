@@ -39,6 +39,10 @@ namespace FourChambers
             speedOfWingFlapVelocity = FlxU.random(-30.0f, -20.0f);
 
             health = 1;
+
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
             
         }
 
