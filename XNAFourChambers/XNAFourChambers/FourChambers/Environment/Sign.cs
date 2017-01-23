@@ -52,8 +52,7 @@ namespace FourChambers
             if (obj.GetType().ToString() == "FourChambers.Marksman")
             {
                 textBox.setText(message);
-                ((FlxSprite)(obj)).debugName = message;
-
+                
             }
 
             base.overlapped(obj);

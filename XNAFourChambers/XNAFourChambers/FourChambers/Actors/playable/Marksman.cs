@@ -439,5 +439,21 @@ namespace FourChambers
             }
             base.kill();
         }
+        public override void overlapped(FlxObject obj)
+        {
+            if (obj.GetType().ToString() == "FourChambers.Sign")
+            {
+                if (FlxControl.ACTION)
+                {
+                    debugName = ((Sign)(obj)).message;
+                }
+                else
+                {
+                    debugName = "";
+                }
+            }
+
+            base.overlapped(obj);
+        }
     }
 }

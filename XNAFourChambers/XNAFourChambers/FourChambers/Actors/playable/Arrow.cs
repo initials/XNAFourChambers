@@ -65,7 +65,6 @@ namespace FourChambers
 
             damage = 15;
 
-
         }
 
         override public void render(SpriteBatch spriteBatch)
@@ -101,8 +100,6 @@ namespace FourChambers
                 }
             }
 
-
-
             _fire.update();
             base.update();
 
@@ -111,8 +108,6 @@ namespace FourChambers
                 Globals.arrowCombo = 0;
                 kill();
             }
-
-
         }
 
         override public void hitSide(FlxObject Contact, float Velocity) 
@@ -155,14 +150,10 @@ namespace FourChambers
         override public void hitBottom(FlxObject Contact, float Velocity) 
         {
             genericArrowHit();
-
-            //kill(); 
         }
         override public void hitTop(FlxObject Contact, float Velocity) 
         {
             genericArrowHit();
-
-            //kill(); 
         }
         override public void kill()
         {
@@ -175,16 +166,8 @@ namespace FourChambers
             
             play("explode");
 
-            genericArrowHit();
-
             base.kill();
         }
-
-        //public void delayedKill()
-        //{
-        //    base.kill();
-
-        //}
 
         public void shoot(int X, int Y, int VelocityX, int VelocityY)
         {
