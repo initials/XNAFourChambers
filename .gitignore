@@ -51,6 +51,5 @@ Icon
 /XNAFourChambers.suo
 XNAFourChambers.suo
 XNAFourChambers.suo
-XNAFourChambers/XNAFourChambersContent/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-*.cache
-
+XNAFourChambers/XNAFourChambersContent/obj/*
+XNAFourChambers/XNAFourChambers/XNAFourChambers.csproj.Debug.cachefile

@@ -782,7 +782,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\characterSpriteSheets\Marksman_50x50.xnb</Output>
-      <Time>2017-01-20T07:10:58.8476514+11:00</Time>
+      <Time>2017-01-24T07:20:12.7227361+11:00</Time>
     </Item>
     <Item>
       <Source>fourchambers\auto_surt2_16x16.png</Source>
@@ -2132,6 +2132,15 @@
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles.xnb</Output>
       <Time>2017-01-15T12:17:53.4785228+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\arrow_8x5.png</Source>
+      <Name>fourchambers\arrow_8x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\arrow_8x5.xnb</Output>
+      <Time>2017-01-21T23:15:28.0692601+11:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
