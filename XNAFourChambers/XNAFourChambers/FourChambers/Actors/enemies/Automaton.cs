@@ -17,7 +17,6 @@ namespace FourChambers
         {
 
             actorName = "Automatic Gerry";
-            actorType = "automaton";
             score = 250;
             health = 1;
             runSpeed = 5;
@@ -27,11 +26,8 @@ namespace FourChambers
             _jumpInitialTime = 0.045f;
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
-            //drag.X = runSpeed * 4;
-            //drag.Y = runSpeed * 4;
+            
             playbackFile = "FourChambers/ActorRecording/automaton.txt";
-            //timeDownAfterHurt = 2.5f;
-            actorType = "automaton";
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;

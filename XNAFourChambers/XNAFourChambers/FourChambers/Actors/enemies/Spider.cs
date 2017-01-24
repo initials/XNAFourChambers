@@ -31,9 +31,6 @@ namespace FourChambers
             //drag.Y = runSpeed * 4;
             playbackFile = "FourChambers/ActorRecording/spider.txt";
             //timeDownAfterHurt = 0.25f;
-            
-            actorType = "spider";
-
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;

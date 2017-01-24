@@ -24,11 +24,6 @@ namespace FourChambers
         public string actorName;
 
         /// <summary>
-        /// A quick helper for finding the type of actor. Must be set up manually.
-        /// </summary>
-        public string actorType;
-        
-        /// <summary>
         /// Score for killing this creature.
         /// </summary>
         public int score;
@@ -80,7 +75,7 @@ namespace FourChambers
         {
             score = 0;
             actorName="BaseActor";
-            actorType = "BaseActor";
+
             acceleration.Y = Globals.GRAVITY;
 
             itemsThatCanKill = new List<string>();
@@ -171,9 +166,9 @@ namespace FourChambers
 
             if (FlxGlobal.cheatString != null)
             {
-                if (FlxGlobal.cheatString.StartsWith("control" + actorType))
+                if (FlxGlobal.cheatString.StartsWith("control" + GetType().ToString()))
                 {
-                    FlxG.write("Controlling " + actorType);
+                    FlxG.write("Controlling " + GetType().ToString());
 
                     isPlayerControlled = true;
 

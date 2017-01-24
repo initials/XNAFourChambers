@@ -15,6 +15,8 @@ namespace FourChambers
         private LevelTiles levelTilemap;
         public static ActorsGroup actorsGrp;
         private Seraphine seraphine;
+        private Gloom gloom;
+
         public static GenericEmitter particles;
 
         override public void create()
@@ -54,6 +56,9 @@ namespace FourChambers
 
             seraphine = new Seraphine(-100, -100);
             actorsGrp.add(seraphine);
+
+            gloom = new Gloom(-100, -100);
+            actorsGrp.add(gloom);
 
             particles = new GenericEmitter(20, 20, 1, 1);
             add(particles);

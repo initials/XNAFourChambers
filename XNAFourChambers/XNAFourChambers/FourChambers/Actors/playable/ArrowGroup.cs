@@ -55,7 +55,7 @@ namespace FourChambers
                 }
                 else
                 {
-                    //((FlxEmitter)(fires).members[i]).stop();
+                    ((FlxEmitter)(fires).members[i]).stop();
                 }
             }
 

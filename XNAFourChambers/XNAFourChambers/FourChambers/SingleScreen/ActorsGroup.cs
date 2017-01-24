@@ -141,6 +141,18 @@ namespace FourChambers
                     }
                     item.kill();
                 }
+
+                if (FlxG.elapsedTotal < 5)
+                {
+                    FlxSprite gloom = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Gloom");
+                    if (gloom.onScreen() == false)
+                    {
+                        List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
+                        FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+                        gloom.reset(randomPosition.x, randomPosition.y);
+                    }
+
+                }
             }
             
             base.update();

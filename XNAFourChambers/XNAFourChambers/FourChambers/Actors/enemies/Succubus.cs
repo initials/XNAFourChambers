@@ -33,7 +33,6 @@ namespace FourChambers
 
             playbackFile = "FourChambers/ActorRecording/succubus.txt";
             timeDownAfterHurt = 2.5f;
-            actorType = "succubus";
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;

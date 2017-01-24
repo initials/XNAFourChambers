@@ -436,6 +436,8 @@ namespace FourChambers
                 Utils.zoomIn();
                 FlxG.followBounds(0, 0, 480, 320, false);
                 FlxG.follow(this, 1);
+                FlxG.playMp3("music/gwd/Dramatic", 0.5f);
+
             }
             base.kill();
         }

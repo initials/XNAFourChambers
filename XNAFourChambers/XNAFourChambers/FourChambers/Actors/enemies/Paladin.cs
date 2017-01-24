@@ -31,7 +31,6 @@ namespace FourChambers
             
             playbackFile = "FourChambers/ActorRecording/paladin.txt";
             timeDownAfterHurt = 2.5f;
-            actorType = "paladin";
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;

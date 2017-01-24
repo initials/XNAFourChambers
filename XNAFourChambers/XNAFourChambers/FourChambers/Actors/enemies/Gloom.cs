@@ -36,7 +36,6 @@ namespace FourChambers
             
             playbackFile = "FourChambers/ActorRecording/gloom.txt";
             timeDownAfterHurt = 2.5f;
-            actorType = "gloom";
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
@@ -61,19 +60,15 @@ namespace FourChambers
             offset.X = 2;
             offset.Y = 0;
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
         }
 
         override public void update()
         {
-
-
-
-
-
             base.update();
-
         }
-
-
     }
 }
