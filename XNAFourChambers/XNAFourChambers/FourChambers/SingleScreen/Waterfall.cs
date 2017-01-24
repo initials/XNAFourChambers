@@ -10,6 +10,7 @@ using org.flixel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
 namespace FourChambers
 {
     class Waterfall : FlxEmitter
@@ -27,8 +28,12 @@ namespace FourChambers
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
             gravity = 98;
-            createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 170, true, 1, FlxU.random(0.02f,0.45f) );
-
+            //createSprites(FlxG.Content.Load<Texture2D>("fourchambers/waterFallSparkle"), 170, true, 1, FlxU.random(0.02f,0.45f) );
+            for (int i = 0; i < 150; i++)
+            {
+                WaterfallParticle p = new WaterfallParticle(FlxU.random(0.02f, 0.35f));
+                add(p);
+            }
             //start(false, 0.05f, 0);
             start(false, 0.015f, 0);
 
@@ -38,30 +43,18 @@ namespace FourChambers
             collider.createGraphic(32, 16, Color.Red);
             collider.@fixed = true;
 
-            foreach (var item in members)
-            {
-                ((FlxParticle)(item))._bounce = FlxU.random(0.02f, 0.35f);
+            //foreach (var item in members)
+            //{
+            //    ((FlxParticle)(item))._bounce = FlxU.random(0.02f, 0.35f);
+            //    if (FlxU.random() > 0.9f)
+            //    {
+            //        FlxSprite p = emitParticleAndReturnSprite();
+            //        p.y += FlxU.randomInt(0, Height);
+            //        p.velocity.Y = FlxU.random(20, 98);
+            //        p.frame = FlxU.randomInt(0, 10);
 
-                if (FlxU.random() > 0.9f)
-                {
-                    FlxSprite p = emitParticleAndReturnSprite();
-                    p.y += FlxU.randomInt(0, Height);
-                    p.velocity.Y = FlxU.random(20, 98);
-                    p.frame = FlxU.randomInt(0, 10);
-                }
-            }
-
-        }
-
-        public override void emitParticle()
-        {
-            FlxSprite s = members[_particle] as FlxSprite;
-            s.frame = FlxU.randomInt(0, 10);
-
-            base.emitParticle();
-
-            //Console.WriteLine("Emitted particle, frame is {0}", s.frame);
-
+            //    }
+            //}
 
         }
 
@@ -78,19 +71,14 @@ namespace FourChambers
 
             base.update();
 
-            foreach (var item in members)
-            {
-                if (item.velocity.Y < 0)
-                {
-                    //((FlxParticle)(item)).velocity.X = 50;
-                    ((FlxParticle)(item)).frame = 11;
-                    //((FlxParticle)(item)).velocity.X = FlxU.random(-5,5);
-                }
-                else
-                {
-                    //((FlxParticle)(item)).velocity.X = -50;
-                }
-            }
+            //foreach (var item in members)
+            //{
+            //    if (item.velocity.Y < 0)
+            //    {
+            //        ((FlxParticle)(item)).frame = 11;
+            //    }
+            //}
+
         }
 
         public override void render(SpriteBatch spriteBatch)

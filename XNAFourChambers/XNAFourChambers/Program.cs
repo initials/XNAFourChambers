@@ -51,6 +51,7 @@ namespace Loader_Four
 
 
 #if DEBUG
+            FlxG.level = 2;
             FlxG.debug = true;
 #endif
 #if DEMO
