@@ -13,7 +13,7 @@ namespace FourChambers
     public class SingleScreenLevel : FlxState
     {
         private LevelTiles levelTilemap;
-        private ActorsGroup actorsGrp;
+        public static ActorsGroup actorsGrp;
         private Seraphine seraphine;
 
         override public void create()
@@ -81,13 +81,15 @@ namespace FourChambers
 
             base.update();
 
-            //FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
+            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
 
             if (FlxG.debug)
                 runDebugKeyPresses();
+
+            runKeyPresses();
         }
 
-        private void runDebugKeyPresses()
+        private void runKeyPresses()
         {
             if (FlxG.keys.R)
             {
@@ -98,6 +100,11 @@ namespace FourChambers
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
+        }
+
+        private void runDebugKeyPresses()
+        {
+
             if (FlxG.keys.F9)
             {
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;

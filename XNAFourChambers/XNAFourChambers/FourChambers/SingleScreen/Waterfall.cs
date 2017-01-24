@@ -66,6 +66,7 @@ namespace FourChambers
             
             collider.update();
             FlxU.collide(this, collider);
+            //FlxU.collide(this, SingleScreenLevel.actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman"));
 
             //FlxU.collide(this, SingleScreenLevel.actorsGrp);
 

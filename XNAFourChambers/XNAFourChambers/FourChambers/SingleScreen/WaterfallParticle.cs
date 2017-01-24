@@ -19,6 +19,9 @@ namespace FourChambers
         {
             loadGraphic("fourchambers/waterFallSparkle", true, false, 3, 3);
             frame = FlxU.randomInt(0, 10);
+
+            exists = false;
+
         }
 
         /// <summary>
@@ -36,7 +39,8 @@ namespace FourChambers
         public override void onEmit()
         {
             velocity.Y = 1;
-            frame = FlxU.randomInt(0, 10);
+            if (frame==11)
+                frame = FlxU.randomInt(0, 10);
             base.onEmit();
         }
     }
