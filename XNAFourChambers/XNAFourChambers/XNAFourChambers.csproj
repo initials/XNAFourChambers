@@ -220,6 +220,7 @@
     <Compile Include="FourChambers\Actors\nonanimated\Willowisp.cs" />
     <Compile Include="FourChambers\Actors\nonanimated\Wizard.cs" />
     <Compile Include="FourChambers\Actors\playable\Arrow.cs" />
+    <Compile Include="FourChambers\Actors\playable\ArrowGroup.cs" />
     <Compile Include="FourChambers\Actors\playable\BigExplosion.cs" />
     <Compile Include="FourChambers\Actors\playable\BulletGroup.cs" />
     <Compile Include="FourChambers\Actors\playable\Marksman.cs" />
@@ -259,6 +260,8 @@
     <Compile Include="FourChambers\Levels\LevelEndState.cs" />
     <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
     <Compile Include="FourChambers\SingleScreen\ActorsGroup.cs" />
+    <Compile Include="FourChambers\SingleScreen\GenericEmitter.cs" />
+    <Compile Include="FourChambers\SingleScreen\GenericParticle.cs" />
     <Compile Include="FourChambers\SingleScreen\Ladder.cs" />
     <Compile Include="FourChambers\SingleScreen\LevelTiles.cs" />
     <Compile Include="FourChambers\SingleScreen\PerLevelAdjustments.cs" />

@@ -9,30 +9,29 @@ using Microsoft.Xna.Framework.Input;
 
 namespace FourChambers
 {
-    class Waterfall : FlxEmitter
+    public class GenericEmitter : FlxEmitter
     {
-        public FlxSprite collider;
+        public static int minFrame;
+        public static int maxFrame;
 
-        public Waterfall(int xPos, int yPos, int Width, int Height)
+        public GenericEmitter(int xPos, int yPos, int Width, int Height)
             : base(xPos, yPos)
         {
-            setSize(Width, 16);
+            setSize(1, 1);
             setRotation();
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
             gravity = 98;
-            for (int i = 0; i < 150; i++)
+            for (int i = 0; i < 35; i++)
             {
-                WaterfallParticle p = new WaterfallParticle(FlxU.random(0.02f, 0.35f));
+                GenericParticle p = new GenericParticle(FlxU.random(0.02f, 0.35f));
                 add(p);
             }
-            start(false, 0.015f, 0);
+            //start(false, 0.02f, 0);
 
             renderOrder = 1;
-
-            collider = new FlxSprite(xPos, yPos + Height);
-            collider.createGraphic(32, 16, Color.Red);
-            collider.@fixed = true;
+            minFrame = 0;
+            maxFrame = 0;
 
         }
 
@@ -41,12 +40,7 @@ namespace FourChambers
         /// </summary>
         override public void update()
         {
-            
-            collider.update();
-            FlxU.collide(this, collider);
-
             base.update();
-
         }
 
         public override void render(SpriteBatch spriteBatch)
@@ -59,4 +53,4 @@ namespace FourChambers
     }
 }
 
-        
+

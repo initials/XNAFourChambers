@@ -26,7 +26,7 @@ namespace FourChambers
 
         private Vector2 lastJoystickDirection;
 
-        public FlxGroup arrows;
+        public ArrowGroup arrows;
 
         public Marksman(int xPos, int yPos)
             : base(xPos, yPos)
@@ -90,7 +90,7 @@ namespace FourChambers
 
             isPlayerControlled = true;
 
-            arrows = new FlxGroup();
+            arrows = new ArrowGroup();
 
             for (int i = 0; i < arrowsRemaining; i++)
             {
@@ -443,12 +443,26 @@ namespace FourChambers
         {
             if (obj.GetType().ToString() == "FourChambers.Sign")
             {
+                if (FlxControl.ACTIONJUSTPRESSED)
+                {
+                    SingleScreenLevel.particles.start(false, 0.05f, 0);
+
+                    SingleScreenLevel.particles.x = x + 3;
+                    SingleScreenLevel.particles.y = y + 8;
+
+                    SingleScreenLevel.particles.setXSpeed(10, 15);
+                    SingleScreenLevel.particles.setYSpeed(-2, 2);
+
+                    //SingleScreenLevel.particles.emitParticle();
+                }
+
                 if (FlxControl.ACTION)
                 {
                     debugName = ((Sign)(obj)).message;
                 }
                 else
                 {
+                    SingleScreenLevel.particles.stop();
                     debugName = "";
                 }
             }

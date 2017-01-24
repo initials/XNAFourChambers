@@ -1287,6 +1287,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="fourchambers\customSparkles.png">
+      <Name>customSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="fourchambers\fireThrower.csv">
       <Name>fireThrower</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -15,6 +15,7 @@ namespace FourChambers
         private LevelTiles levelTilemap;
         public static ActorsGroup actorsGrp;
         private Seraphine seraphine;
+        public static GenericEmitter particles;
 
         override public void create()
         {
@@ -54,6 +55,9 @@ namespace FourChambers
             seraphine = new Seraphine(-100, -100);
             actorsGrp.add(seraphine);
 
+            particles = new GenericEmitter(20, 20, 1, 1);
+            add(particles);
+
             Utils.zoomOut();
 
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
@@ -77,11 +81,9 @@ namespace FourChambers
             
             collideArrows();
 
-
-
             base.update();
 
-            FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
+            FlxG.setHudText(3, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
 
             if (FlxG.debug)
                 runDebugKeyPresses();

@@ -18,7 +18,9 @@ namespace FourChambers
         protected const string SndShoot = "sfx/arrowShoot1";
         protected const string SndHit = "sfx/arrowHit1";
         public bool explodesOnImpact = true;
-        protected FlxEmitter _fire;
+
+        public FlxEmitter _fire;
+
         public int framesInAir = 0;
         
        
@@ -52,16 +54,13 @@ namespace FourChambers
             maxVelocity.Y = 1000;
 
             
-            _fire = new FlxEmitter();
-            _fire.setSize(1, 1);
-            _fire.setRotation();
-            _fire.setXSpeed(-44, 44);
-            _fire.setYSpeed(-44, 44);
-            _fire.gravity = 45;
-            //_fire.particleDrag.X = 50;
-            //_fire.particleDrag.Y = 50;
-
-            _fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
+            //_fire = new FlxEmitter();
+            //_fire.setSize(1, 1);
+            //_fire.setRotation();
+            //_fire.setXSpeed(-44, 44);
+            //_fire.setYSpeed(-44, 44);
+            //_fire.gravity = 45;
+            //_fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
 
             damage = 15;
 
@@ -69,7 +68,7 @@ namespace FourChambers
 
         override public void render(SpriteBatch spriteBatch)
         {
-            _fire.render(spriteBatch);
+            //_fire.render(spriteBatch);
             base.render(spriteBatch);
         }
 
@@ -78,8 +77,8 @@ namespace FourChambers
         {
             framesInAir++;
 
-            _fire.x = x + (width / 2);
-            _fire.y = y + (height / 2);
+            //_fire.x = x + (width / 2);
+            //_fire.y = y + (height / 2);
 
             if (hasTouched == false)
             {
@@ -100,7 +99,7 @@ namespace FourChambers
                 }
             }
 
-            _fire.update();
+            //_fire.update();
             base.update();
 
             if (onScreen() == false && !dead)
@@ -122,7 +121,7 @@ namespace FourChambers
             _fire.setXSpeed(-85, 85);
             _fire.setYSpeed(-85, 85);
 
-            _fire.start(true, 5, 0);
+            _fire.start(true, 0.5f, 13);
 
             play("explode");
 
@@ -157,8 +156,17 @@ namespace FourChambers
         }
         override public void kill()
         {
+
             if (onScreen())
+            {
                 FlxG.play(SndHit, 0.5f, false);
+                _fire.setXSpeed(-85, 85);
+                _fire.setYSpeed(-85, 85);
+
+                _fire.start(true, 5, 13);
+
+            }
+
 
             if (dead) return;
             velocity.X = 0;
@@ -174,7 +182,7 @@ namespace FourChambers
             framesInAir = 0;
 
             //particles release at regular intervals;
-            _fire.start(false, 0.02f, 0);
+            //_fire.start(false, 0.02f, 0);
             
             // Global counter for arrows fired.
             Globals.arrowsFired++;

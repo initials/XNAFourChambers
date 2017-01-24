@@ -14,7 +14,7 @@ namespace FourChambers
     {
         public static void adjustForLevel(ActorsGroup actorsGrp, LevelTiles levelTiles)
         {
-            if (FlxG.level == 3)
+            if (FlxG.level == 5)
             {
                 foreach (var item in actorsGrp.members)
                 {
