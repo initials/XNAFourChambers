@@ -91,7 +91,7 @@ namespace FourChambers
             {
                 if (FlxControl.ACTIONJUSTPRESSED || FlxG.mouse.justPressed() )
                 {
-                    FlxG.state = new MapState();
+
 
                 }
 

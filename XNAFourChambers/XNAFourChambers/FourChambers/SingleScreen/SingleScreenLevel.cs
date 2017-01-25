@@ -59,6 +59,8 @@ namespace FourChambers
 
             gloom = new Gloom(-100, -100);
             actorsGrp.add(gloom);
+            gloom.dead = true;
+            gloom.exists = false;
 
             particles = new GenericEmitter(20, 20, 1, 1);
             add(particles);

@@ -47,6 +47,11 @@ namespace FourChambers
 
             concern = false;
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
+
         }
 
         override public void update()

@@ -31,18 +31,11 @@ namespace FourChambers
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 58;
             
-            //drag.X = runSpeed * 4;
-            //drag.Y = runSpeed * 4;
-            
             playbackFile = "FourChambers/ActorRecording/gloom.txt";
             timeDownAfterHurt = 2.5f;
 
             //Set the health bar max from here now that we know our health starting point.
             healthBar.max = (uint)health;
-
-            // Load graphic and create animations.
-            // Required anims:
-            // walk, run, idle, attack, death, hurt, jump
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Gloom_13x26"), true, false, 13, 26);
 

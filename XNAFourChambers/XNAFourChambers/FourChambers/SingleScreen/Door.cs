@@ -22,9 +22,6 @@ namespace FourChambers
         {
             renderOrder = 999;
 
-            //width = 16;
-            //height = 16;
-
             Texture2D Img = FlxG.Content.Load<Texture2D>("fourchambers/door_32x32");
 
             loadGraphic(Img, false, false, 32, 32);
@@ -37,8 +34,6 @@ namespace FourChambers
             addAnimationCallback(pulse);
 
             play("idle");
-
-            //y -= 12;
 
             sparkles = new FlxEmitter();
             sparkles.setSize(6, 12);
@@ -84,7 +79,7 @@ namespace FourChambers
                 {
                     play("pulse");
                     FlxG.level++;
-                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 4);
+                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 5);
 
                     FlxG.state = new SingleScreenLevel();
                     return;
@@ -93,7 +88,7 @@ namespace FourChambers
                 {
                     play("pulse");
                     FlxG.level--;
-                    FlxG.level = Utils.LimitToRange(FlxG.level, 1, 4);
+                    FlxG.level = Utils.LimitToRange(FlxG.level, 1, 5);
 
                     FlxG.state = new SingleScreenLevel();
                     return;

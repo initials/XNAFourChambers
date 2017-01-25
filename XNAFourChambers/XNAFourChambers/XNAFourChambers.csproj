@@ -227,38 +227,23 @@
     <Compile Include="FourChambers\Actors\playable\MeleeHitBox.cs" />
     <Compile Include="FourChambers\Actors\playable\Mistress.cs" />
     <Compile Include="FourChambers\Actors\playable\Seraphine.cs" />
-    <Compile Include="FourChambers\Actors\playable\SeraphineMulti.cs" />
     <Compile Include="FourChambers\Actors\playable\Warlock.cs" />
     <Compile Include="FourChambers\Actors\playable\WarlockFireBall.cs" />
-    <Compile Include="FourChambers\CharacterSelectionState.cs" />
-    <Compile Include="FourChambers\CharacterTestState.cs" />
     <Compile Include="FourChambers\Credits.cs" />
-    <Compile Include="FourChambers\Cutscenes\CutsceneState.cs" />
     <Compile Include="FourChambers\Dangers\FireBall.cs" />
     <Compile Include="FourChambers\Dangers\FireThrower.cs" />
     <Compile Include="FourChambers\Dangers\Spike.cs" />
-    <Compile Include="FourChambers\DataEntryState.cs" />
     <Compile Include="FourChambers\Environment\Firefly.cs" />
     <Compile Include="FourChambers\Environment\FireflyGroup.cs" />
-    <Compile Include="FourChambers\Levels\Sign.cs" />
+    <Compile Include="FourChambers\SingleScreen\Sign.cs" />
     <Compile Include="FourChambers\EventSprite.cs" />
     <Compile Include="FourChambers\Globals.cs" />
-    <Compile Include="FourChambers\LevelData.cs" />
-    <Compile Include="FourChambers\GameSelectionMenuState.cs" />
     <Compile Include="FourChambers\Hud\Heart.cs" />
     <Compile Include="FourChambers\Hud\ImpactText.cs" />
     <Compile Include="FourChambers\Hud\LevelName.cs" />
-    <Compile Include="FourChambers\Hud\PlayHud.cs" />
     <Compile Include="FourChambers\Hud\TextBox.cs" />
-    <Compile Include="FourChambers\Levels\AllLevels.cs" />
-    <Compile Include="FourChambers\Levels\BasePlayStateFromOel.cs" />
-    <Compile Include="FourChambers\Levels\BasePlayStateFromOelTutorial.cs" />
     <Compile Include="FourChambers\SingleScreen\CharacterSelectScreen.cs" />
     <Compile Include="FourChambers\SingleScreen\Door.cs" />
-    <Compile Include="FourChambers\Levels\FallAwayBridgeBlock.cs" />
-    <Compile Include="FourChambers\Levels\Hill.cs" />
-    <Compile Include="FourChambers\Levels\LevelEndState.cs" />
-    <Compile Include="FourChambers\Levels\LevelBeginText.cs" />
     <Compile Include="FourChambers\SingleScreen\ActorsGroup.cs" />
     <Compile Include="FourChambers\SingleScreen\GenericEmitter.cs" />
     <Compile Include="FourChambers\SingleScreen\GenericParticle.cs" />
@@ -266,112 +251,17 @@
     <Compile Include="FourChambers\SingleScreen\LevelTiles.cs" />
     <Compile Include="FourChambers\SingleScreen\PerLevelAdjustments.cs" />
     <Compile Include="FourChambers\SingleScreen\SingleScreenLevel.cs" />
-    <Compile Include="FourChambers\Overworld\MapActor.cs" />
-    <Compile Include="FourChambers\Overworld\MapState.cs" />
-    <Compile Include="FourChambers\Levels\MovingPlatform.cs" />
-    <Compile Include="FourChambers\Levels\MultiPlayerCharacterSelect.cs" />
-    <Compile Include="FourChambers\Levels\MultiPlayerPlayState.cs" />
-    <Compile Include="FourChambers\Levels\MultiPlayerBaseState.cs" />
-    <Compile Include="FourChambers\Levels\Tree.cs" />
-    <Compile Include="FourChambers\PointBurst.cs" />
-    <Compile Include="FourChambers\PowerUp.cs" />
-    <Compile Include="FourChambers\PowerUpProgress.cs" />
-    <Compile Include="FourChambers\PowerUpThrower.cs" />
+    <Compile Include="FourChambers\SingleScreen\PowerUp.cs" />
     <Compile Include="FourChambers\SingleScreen\SpawnPoint.cs" />
     <Compile Include="FourChambers\SingleScreen\Timer.cs" />
     <Compile Include="FourChambers\SingleScreen\Waterfall.cs" />
     <Compile Include="FourChambers\SingleScreen\WaterfallParticle.cs" />
-    <Compile Include="FourChambers\TestStates\TextTestState.cs" />
     <Compile Include="FourChambers\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FourChambers\ActorRecording\automaton.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\chicken.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\corsair.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\cow.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\deer.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\executor.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\feline.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\gloom.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\grizzly.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\harvester.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\kerberos.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\lion.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\medusa.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\mistress.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\mistress_getaway.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\mistress_level3.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\mummy.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\nymph.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\paladin.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\rat.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\snake.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\spider.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\succubus.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\tormentor.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\unicorn.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\vampire.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\wolf.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FourChambers\ActorRecording\zombie.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="FourChambers\Text\script.txt" />
     <Content Include="Game.ico" />
     <Content Include="GAMESETTINGS.txt" />
@@ -416,9 +306,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FourChambers\Weapons\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ogmoLevels\characterSelect.oel">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -434,6 +322,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ogmoLevels\level4.oel">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ogmoLevels\level5.oel">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ogmoLevels\ProjectFile.oep">

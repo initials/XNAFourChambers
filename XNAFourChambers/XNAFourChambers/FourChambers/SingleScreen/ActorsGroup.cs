@@ -91,68 +91,32 @@ namespace FourChambers
                 }
             }
 
-            //// sort members by y to draw correctly.
+            // sort members by y to draw correctly.
+            // seems to do weird things to climbing the ladder.
             members = members.OrderBy(d => d.renderOrder).ToList();
 
         }
 
         override public void update()
         {
-            float chance = 0.00251f;
 
-            if (FlxG.elapsedTotal < 15) chance = 0.000251f;
-            else if (FlxG.elapsedTotal < 30) chance = 0.000451f;
-            else if (FlxG.elapsedTotal < 45) chance = 0.001651f;
             
             foreach (var item in members)
             {
-                if (item.dead && !item.exists)
-                {
-                    if (FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4))
-                    {
-                        // Get list of respawn Point
-                        List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
+                
+                
 
-                        FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+                //if (FlxG.elapsedTotal < 5)
+                //{
+                //    FlxSprite gloom = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Gloom");
+                //    if (gloom.onScreen() == false)
+                //    {
+                //        List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
+                //        FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
+                //        gloom.reset(randomPosition.x, randomPosition.y);
+                //    }
 
-                        //Respawn based on chance of respawn
-                        item.reset(randomPosition.x, randomPosition.y);
-
-                        Console.WriteLine("Respawning {0} at {1} x {2}", item.GetType().ToString(), randomPosition.x, randomPosition.y);
-
-                        //if (FlxG.keys.justPressed(Keys.F4))
-                        //    break;
-
-                    }
-                }
-                if (item is ZingerNest && item.debugName=="readyToPop"  && !item.dead)
-                {
-                    List<FlxObject> zingers = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
-                    for (int i = 0; i < zingers.Count; i++)
-                    {
-                        
-
-                        if (((Zinger)(zingers[i])).dead == true)
-                        {
-                            ((Zinger)(zingers[i])).reset(item.x, item.y);
-                            ((Zinger)(zingers[i])).homing = true;
-                            ((Zinger)(zingers[i])).homingTarget = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Marksman");
-                        }
-                    }
-                    item.kill();
-                }
-
-                if (FlxG.elapsedTotal < 5)
-                {
-                    FlxSprite gloom = (FlxSprite)members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Gloom");
-                    if (gloom.onScreen() == false)
-                    {
-                        List<FlxObject> spawnPoints = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.SpawnPoint");
-                        FlxSprite randomPosition = (FlxSprite)spawnPoints[FlxU.randomInt(0, spawnPoints.Count)];
-                        gloom.reset(randomPosition.x, randomPosition.y);
-                    }
-
-                }
+                //}
             }
             
             base.update();
