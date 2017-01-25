@@ -47,6 +47,12 @@ namespace FourChambers
                         add(sprite);
 
                     }
+                    else if (nodes.ContainsKey("spriteName"))
+                    {
+                        var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["spriteName"])), Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
+                        add(sprite);
+
+                    }
                     else if (nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
                         var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]), Convert.ToInt32(nodes["width"]), Convert.ToInt32(nodes["height"]));

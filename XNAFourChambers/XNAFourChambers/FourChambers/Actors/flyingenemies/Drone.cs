@@ -19,7 +19,8 @@ namespace FourChambers
             actorName = "Drone";
             score = 25;
 
-
+            maxVelocity.X = FlxU.random(20, 50);
+            maxVelocity.Y = FlxU.random(20, 50);
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Drone_ss_9x13"), true, false, 9, 13);
 

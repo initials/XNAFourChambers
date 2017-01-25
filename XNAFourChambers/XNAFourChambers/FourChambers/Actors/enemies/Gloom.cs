@@ -76,21 +76,20 @@ namespace FourChambers
                         b.homing = true;
                         b.homingTarget = SingleScreenLevel.actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
                         
-                        FlxG.quake.start(0.005f, 0.5f);
+                        
 
                         if (thingsThatHaveHappenedToThisActor.Contains("ReleasedBats")==false)
                         {
                             FlxG.play("sfx/bat");
+                            FlxG.quake.start(0.005f, 0.5f);
+                            FlxObject s = SingleScreenLevel.actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Stonehenge");
+                            if (s != null)
+                                ((FlxSprite)s).play("fall");
                         }
 
                         thingsThatHaveHappenedToThisActor.Add("ReleasedBats");
-
-
-
                     }
                 }
-
-
             }
 
             base.update();
