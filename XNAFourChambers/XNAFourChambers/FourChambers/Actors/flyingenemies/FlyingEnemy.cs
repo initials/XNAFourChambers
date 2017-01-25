@@ -109,6 +109,7 @@ namespace FourChambers
 
                 if (homingTarget.dead == true)
                 {
+                    homing = false;
                     homingTarget = null;
                 }
             }
@@ -123,9 +124,21 @@ namespace FourChambers
             drag.X = 1000;
             acceleration.Y = Globals.GRAVITY;
 
+            homing = false;
+            homingTarget = null;
+
             //FlxG.score += score * FourChambers_Globals.arrowCombo;
 
             //base.kill();
+        }
+
+        public override void reset(float X, float Y)
+        {
+            dead = false;
+            visible = true;
+            exists = true;
+
+            base.reset(X, Y);
         }
 
 

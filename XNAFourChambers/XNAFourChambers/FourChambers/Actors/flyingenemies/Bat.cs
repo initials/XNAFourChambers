@@ -58,6 +58,12 @@ namespace FourChambers
 
         }
 
+        public override void reset(float X, float Y)
+        {
+            play("fly");
+            angle = 0;
+            base.reset(X, Y);
+        }
 
     }
 }

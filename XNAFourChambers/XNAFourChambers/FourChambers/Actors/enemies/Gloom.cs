@@ -70,7 +70,7 @@ namespace FourChambers
                 //get all bats and release them.
                 foreach (Bat b in Utils.getAllActorsOfType(SingleScreenLevel.actorsGrp.members, "FourChambers.Bat"))
                 {
-                    if (b.dead)
+                    if (b.dead && !b.exists)
                     {
                         b.reset(this.x, this.y);
                         b.homing = true;
