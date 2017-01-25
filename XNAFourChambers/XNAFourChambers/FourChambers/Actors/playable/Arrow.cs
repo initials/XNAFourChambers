@@ -15,8 +15,8 @@ namespace FourChambers
 
         private bool hasTouched;
 
-        protected const string SndShoot = "sfx/arrowShoot1";
-        protected const string SndHit = "sfx/arrowHit1";
+        protected string SndShoot = "sfx/arrowShoot1";
+        protected string SndHit = "sfx/arrowHit1";
         public bool explodesOnImpact = true;
 
         public FlxEmitter _fire;
@@ -63,6 +63,10 @@ namespace FourChambers
             //_fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
 
             damage = 15;
+
+            SndShoot = "sfx/arrowShoot" + FlxU.randomInt(1,4).ToString();
+            SndHit = "sfx/arrowHit" + FlxU.randomInt(1, 4).ToString();
+
 
         }
 

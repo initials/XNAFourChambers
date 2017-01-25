@@ -906,10 +906,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Content Include="fourchambers\characterSpriteSheets\Executor_50x50.csv">
-      <Name>Executor_50x50</Name>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Compile Include="fourchambers\fire_wisp.png">
       <Name>fire_wisp</Name>
       <Importer>TextureImporter</Importer>
@@ -1292,16 +1288,12 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Content Include="fourchambers\fireThrower.csv">
-      <Name>fireThrower</Name>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fourchambers\heart_16x16.csv">
+    <None Include="fourchambers\heart_16x16.csv">
       <Name>heart_16x16</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

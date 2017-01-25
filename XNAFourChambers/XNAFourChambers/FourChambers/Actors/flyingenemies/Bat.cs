@@ -35,13 +35,9 @@ namespace FourChambers
             offset.Y = 3;
 
             //basic player physics
-            int runSpeed = 30;
-            ////drag.X = runSpeed * 4;
             acceleration.Y = 50;
-            maxVelocity.X = runSpeed;
-            maxVelocity.Y = 1000;
-
-            //jumpPower = -140;
+            maxVelocity.X = FlxU.random(20, 50);
+            maxVelocity.Y = FlxU.random(20, 50);
 
             velocity.X = 100;
 

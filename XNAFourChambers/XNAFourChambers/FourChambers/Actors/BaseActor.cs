@@ -63,6 +63,7 @@ namespace FourChambers
 
         public float price;
         public bool lockedForSelection;
+        public int releaseTime = 10000000;
 
 
         /// <summary>

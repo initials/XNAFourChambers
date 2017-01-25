@@ -57,10 +57,42 @@ namespace FourChambers
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
+            releaseTime = 5;
+
         }
 
         override public void update()
         {
+            if (!dead && FlxU.random() < 0.005f && SingleScreenLevel.actorsGrp != null && onScreen())
+            {
+                Console.WriteLine("Release the bats!");
+
+                //get all bats and release them.
+                foreach (Bat b in Utils.getAllActorsOfType(SingleScreenLevel.actorsGrp.members, "FourChambers.Bat"))
+                {
+                    if (b.dead)
+                    {
+                        b.reset(this.x, this.y);
+                        b.homing = true;
+                        b.homingTarget = SingleScreenLevel.actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
+                        
+                        FlxG.quake.start(0.005f, 0.5f);
+
+                        if (thingsThatHaveHappenedToThisActor.Contains("ReleasedBats")==false)
+                        {
+                            FlxG.play("sfx/bat");
+                        }
+
+                        thingsThatHaveHappenedToThisActor.Add("ReleasedBats");
+
+
+
+                    }
+                }
+
+
+            }
+
             base.update();
         }
     }

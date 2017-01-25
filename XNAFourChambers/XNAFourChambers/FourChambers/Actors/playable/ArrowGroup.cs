@@ -27,7 +27,7 @@ namespace FourChambers
             _fire.setRotation();
             _fire.setXSpeed(-44, 44);
             _fire.setYSpeed(-44, 44);
-            _fire.gravity = 45;
+            _fire.gravity = 75;
             _fire.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/arrowSparkles"), 25, true);
             _fire.start(false, 0.009f, 0);
             fires.add(_fire);

@@ -32,20 +32,15 @@ namespace FourChambers
 
             foreach (var item in SingleScreenLevel.actorsGrp.members)
             {
-                //Console.WriteLine("actors: {0}", item.GetType().ToString());
-
-                if (item.dead && !item.exists)
+                if (item.dead && !item.exists && item is BaseActor)
                 {
-                    if (FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4))
+                    if (FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4) || FlxG.elapsedTotal > ((BaseActor)item).releaseTime)
                     {
-
                         //Respawn based on chance of respawn
                         item.reset(x, y);
 
-                        Console.WriteLine("Respawning {0} at {1} x {2}", item.GetType().ToString(), x, y);
-
-                        //if (FlxG.keys.justPressed(Keys.F4))
-                        //    break;
+                        Console.WriteLine("Respawning {0} at {1} x {2}, release time was {3}, elapsed total {4}", 
+                            item.GetType().ToString(), x, y, ((BaseActor)(item)).releaseTime, FlxG.elapsedTotal);
 
                     }
                 }

@@ -16,8 +16,6 @@ namespace FourChambers
         {
             actorName = "Terry";
 
-
-
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/Warlock_50x50"), true, false, 50, 50);
 
             addAnimation("run", new int[] { 5, 6, 7, 8, 9 }, 12);

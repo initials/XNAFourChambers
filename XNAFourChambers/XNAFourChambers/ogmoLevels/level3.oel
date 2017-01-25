@@ -88,5 +88,17 @@
     <spawnPoint id="23" x="0" y="64" />
     <spawnPoint id="24" x="0" y="160" />
     <spawnPoint id="25" x="464" y="256" />
+    <bat id="27" x="-128" y="96" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="28" x="-128" y="112" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="29" x="-128" y="128" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="30" x="-112" y="96" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="31" x="-112" y="112" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="32" x="-112" y="128" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="33" x="-96" y="128" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="34" x="-80" y="112" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="35" x="-96" y="112" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="36" x="-96" y="96" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="37" x="-80" y="96" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="38" x="-80" y="128" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
   </ActorsLayer>
 </level>

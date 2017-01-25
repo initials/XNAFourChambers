@@ -12,7 +12,7 @@ namespace FourChambers
 {
     class FlyingEnemy : BaseActor
     {
-        public FlxSprite homingTarget;
+        public FlxObject homingTarget;
         public bool homing = false;
 
         /// <summary>
@@ -33,11 +33,13 @@ namespace FourChambers
             originalPosition.X = xPos;
             originalPosition.Y = yPos;
 
-            int runSpeed = 30;
             acceleration.Y = 50;
-            maxVelocity.X = runSpeed;
+            maxVelocity.X = 1000;
             maxVelocity.Y = 1000;
             velocity.X = 100;
+
+            chanceOfWingFlap += FlxU.random(0.005, 0.009);
+            speedOfWingFlapVelocity += FlxU.random(0, 3);
 
         }
         override public void hitSide(FlxObject Contact, float Velocity)
@@ -59,23 +61,6 @@ namespace FourChambers
                     timeDead = 0;
                     acceleration.Y = 50;
                 }
-                //if (timeDead > 2)
-                //{
-                //    flicker(1.0f);
-                //}
-                //if (timeDead > 3)
-                //{
-                //    reset(originalPosition.X, originalPosition.Y);
-                //    dead = false;
-                //    angle = 0;
-                //    flicker(-0.001f);
-                //    angularVelocity = 0;
-                //    angularDrag = 700;
-                //    drag.X = 0;
-                //    timeDead = 0;
-                //    play("fly");
-                //    velocity.X = 100;
-                //}
 
                 if (dead == false)
                 {

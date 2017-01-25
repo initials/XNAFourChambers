@@ -30,6 +30,23 @@ namespace FourChambers
             FlxG.height = Globals.gameSizeGlobals["height"];
             FlxG._game.Initialize();
         }
+
+        //List<FlxObject> zingers = SingleScreenLevel.actorsGrp.members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
+        public static List<FlxObject> getAllActorsOfType(List<FlxObject> members, string typeOfActor)
+        {
+            List<FlxObject> membersOfType = members.FindAll((FlxObject sp) => sp.GetType().ToString() == typeOfActor);
+            return membersOfType;
+        }
+
+        public static List<FlxObject> getAllPlayerControlledActors(List<FlxObject> members)
+        {
+            List<FlxObject> membersOfType = members.FindAll((FlxObject sp) => sp.GetType().ToString() == "BaseActor");
+
+            List<FlxObject> playerControlledActors = membersOfType.FindAll((FlxObject sp) => ((BaseActor)(sp)).isPlayerControlled == true);
+            return playerControlledActors;
+        }
+
+
     }
 }
 

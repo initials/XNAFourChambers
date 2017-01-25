@@ -122,12 +122,14 @@ Content\fourchambers\spike.xnb
 Content\fourchambers\grassParticles.xnb
 Content\fourchambers\characterSpriteSheets\Rat_50x50.xnb
 Content\fourchambers\bg.xnb
+Content\fourchambers\arrow_8x5.xnb
 Content\fourchambers\fire_wisp.xnb
 Content\fourchambers\heart_16x16.xnb
 Content\fourchambers\spike8x16.xnb
 Content\fourchambers\waterFallSparkle.xnb
 Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb
 Content\fourchambers\doorSparkles.xnb
+Content\fourchambers\customSparkles.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -233,8 +235,6 @@ Content\music\ralph\nw hooker.xnb
 Content\music\ralph\snow song.xnb
 Content\music\ralph\stiff run.xnb
 Content\music\ralph\this is the news.xnb
-Content\fourchambers\arrow_8x5.xnb
-Content\fourchambers\customSparkles.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
 Content\music\gwd\Dramatic.wma
@@ -252,8 +252,6 @@ Content\music\ralph\nw hooker.wma
 Content\music\ralph\snow song.wma
 Content\music\ralph\stiff run.wma
 Content\music\ralph\this is the news.wma
-Content\fourchambers\characterSpriteSheets\Executor_50x50.csv
-Content\fourchambers\fireThrower.csv
 Content\fourchambers\heart_16x16.csv
 OgmoEditor2\OgmoEditor2Project.oep
 OgmoEditor2\SportsGround.oel

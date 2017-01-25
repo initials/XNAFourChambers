@@ -33,12 +33,6 @@ namespace FourChambers
             addAnimation("death", new int[] { 2,3,4 }, 8, false);
             play("fly");
 
-            //bounding box tweaks
-            //width = 10;
-            //height = 10;
-            //offset.X = 1;
-            //offset.Y = 4;
-
             chanceOfWingFlap += FlxU.random(0.005, 0.009);
             speedOfWingFlapVelocity += FlxU.random(0,3);
 
@@ -47,9 +41,8 @@ namespace FourChambers
 
             runSpeed = 30;
             acceleration.Y = 50;
-            maxVelocity.X = FlxU.random(20,50);
+            maxVelocity.X = FlxU.random(20, 50);
             maxVelocity.Y = FlxU.random(20, 50);
-            //velocity.X = 100;
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
@@ -112,7 +105,7 @@ namespace FourChambers
 
                 Vector2 targetVel = new Vector2((float)velocity_x * FlxU.randomInt(-400, -200), (float)velocity_y * FlxU.randomInt(-400, -200));
 
-                if (velocity.X < targetVel.X) velocity.X += FlxU.randomInt(0,40);
+                if (velocity.X < targetVel.X) velocity.X += FlxU.randomInt(0, 40);
                 if (velocity.X > targetVel.X) velocity.X -= FlxU.randomInt(0, 40);
                 if (velocity.Y < targetVel.Y) velocity.Y += FlxU.randomInt(0, 40);
                 if (velocity.Y > targetVel.Y) velocity.Y -= FlxU.randomInt(0, 40);
