@@ -94,9 +94,6 @@
     <unicorn id="33" x="-32" y="32" flip="False" />
     <unicorn id="34" x="-64" y="16" flip="False" />
     <unicorn id="35" x="-32" y="16" flip="False" />
-    <zingerNest id="36" x="32" y="32" />
-    <zingerNest id="37" x="96" y="32" />
-    <zingerNest id="38" x="64" y="32" />
     <spawnPoint id="28" x="0" y="256" />
     <spawnPoint id="29" x="464" y="96" />
     <spawnPoint id="30" x="464" y="256" />
