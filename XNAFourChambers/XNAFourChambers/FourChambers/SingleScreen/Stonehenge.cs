@@ -21,7 +21,7 @@ namespace FourChambers
             setOffset(34, 68);
 
             addAnimation("stay", new int[] { 0 }, 12, false);
-            addAnimation("fall", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, 6, true);
+            addAnimation("fall", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }, 9, false);
 
             play("stay");
         }

@@ -130,6 +130,8 @@ namespace FourChambers
             //FlxG.score += score * FourChambers_Globals.arrowCombo;
 
             //base.kill();
+
+            
         }
 
         public override void reset(float X, float Y)
@@ -137,7 +139,7 @@ namespace FourChambers
             dead = false;
             visible = true;
             exists = true;
-
+            acceleration.Y = 50;
             base.reset(X, Y);
         }
 

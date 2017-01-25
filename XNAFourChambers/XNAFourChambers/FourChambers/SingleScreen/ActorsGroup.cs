@@ -97,9 +97,8 @@ namespace FourChambers
                 }
             }
 
-            // sort members by y to draw correctly.
             // seems to do weird things to climbing the ladder.
-            members = members.OrderBy(d => d.renderOrder).ToList();
+            //members = members.OrderBy(d => d.renderOrder).ToList();
 
         }
 

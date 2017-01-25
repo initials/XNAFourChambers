@@ -56,7 +56,7 @@ namespace FourChambers
 
         public override void overlapped(FlxObject obj)
         {
-            ((FlxSprite)obj).kill();
+            //
             //acceleration.Y = FourChambers_Globals.GRAVITY;
 
             //Console.WriteLine("Zinger Nest has been overlapped, by: {0}", obj.GetType().ToString());
@@ -64,7 +64,7 @@ namespace FourChambers
             {
                 acceleration.Y = Globals.GRAVITY;
                 @fixed = false;
-
+                ((FlxSprite)obj).kill();
             }
 
             //base.overlapped(obj);

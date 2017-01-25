@@ -90,16 +90,9 @@
     <drone id="27" x="272" y="48" flip="False" />
     <bat id="30" x="-160" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="31" x="-144" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
-    <bat id="32" x="-128" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="33" x="-112" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="34" x="-96" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <marksman id="4" x="224" y="224" flip="False" isPlayerControlled="True" />
-    <tormentor id="28" x="-128" y="176" flip="False" />
-    <tormentor id="29" x="-144" y="176" flip="False" />
-    <tormentor id="36" x="-144" y="176" flip="False" />
-    <tormentor id="37" x="-160" y="176" flip="False" />
-    <tormentor id="38" x="-96" y="176" flip="False" />
-    <tormentor id="39" x="-128" y="160" flip="False" />
     <_event id="35" x="416" y="192" width="32" height="80" event="waterfall" value1="0" value2="0" repeat="1" />
     <_event id="40" x="448" y="128" width="32" height="144" event="waterfall" value1="0" value2="0" repeat="1" />
     <ladder id="41" x="80" y="112" height="160" />
@@ -107,7 +100,12 @@
     <spawnPoint id="43" x="0" y="256" />
     <spawnPoint id="44" x="464" y="64" />
     <sign id="45" x="368" y="256" message="Press A to take a piss in the fountain of youth" anim="" animAction="" />
-    <sign id="46" x="320" y="240" message="Danger!" anim="" animAction="" />
     <arbitrarySprite id="47" x="176" y="208" width="32" height="32" spriteName="stonehenge" />
+    <bat id="28" x="-128" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="29" x="-160" y="176" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="32" x="-144" y="176" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="36" x="-128" y="176" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="37" x="-112" y="176" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
+    <bat id="38" x="-96" y="176" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
   </ActorsLayer>
 </level>
