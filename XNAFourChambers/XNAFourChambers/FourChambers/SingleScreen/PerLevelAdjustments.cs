@@ -51,7 +51,7 @@ namespace FourChambers
             }
             if (FlxG.level == 5)
             {
-                setToColor(actorsGrp, levelTiles, 255, 22, 20);
+                setToColor(actorsGrp, levelTiles, 0, 0, 0);
             }
         }
 
@@ -75,7 +75,15 @@ namespace FourChambers
                 {
                     if (item.GetType().Name != "bg")
                     {
-                        ((FlxTilemap)(item)).color = new Color(R, G, B);
+                        float _alpha = ((FlxTilemap)(item)).alpha; 
+                        byte _bytealpha = (byte)(255f * _alpha); 
+                        //color = new Color(color.R, color.G, color.B, _bytealpha); 
+
+                        ((FlxTilemap)(item)).color = new Color(R, G, B, _bytealpha);
+
+                        ((FlxTilemap)(item)).alpha = _alpha;
+
+
                     }
                 }
                 catch (Exception)
