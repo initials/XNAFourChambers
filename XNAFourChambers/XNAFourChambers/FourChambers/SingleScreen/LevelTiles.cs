@@ -1,7 +1,3 @@
-/*
- * Add these to Visual Studio to quickly create new FlxSprites
- */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +24,14 @@ namespace FourChambers
         public LevelTiles()
             : base()
         {
+            //setScrollFactors(0, 0);
 
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
             bg.alpha = 0.55f;
             bg.setScrollFactors(0, 0);
+            bg.@fixed = true;
+            bg.solid = true;
+            bg.moves = false;
             add(bg);
 
             levelAttrs = new Dictionary<string, string>();
