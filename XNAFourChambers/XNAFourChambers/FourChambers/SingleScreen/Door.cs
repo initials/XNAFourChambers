@@ -79,7 +79,7 @@ namespace FourChambers
                 {
                     play("pulse");
                     FlxG.level++;
-                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 5);
+                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 6);
 
                     FlxG.state = new SingleScreenLevel();
                     return;
@@ -88,7 +88,7 @@ namespace FourChambers
                 {
                     play("pulse");
                     FlxG.level--;
-                    FlxG.level = Utils.LimitToRange(FlxG.level, 1, 5);
+                    FlxG.level = Utils.LimitToRange(FlxG.level, 1, 6);
 
                     FlxG.state = new SingleScreenLevel();
                     return;

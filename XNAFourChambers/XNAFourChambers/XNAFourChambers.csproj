@@ -328,6 +328,9 @@
     <None Include="ogmoLevels\level5.oel">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ogmoLevels\level6.oel">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ogmoLevels\ProjectFile.oep">
       <SubType>Designer</SubType>
     </None>

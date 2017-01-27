@@ -88,6 +88,7 @@ namespace FourChambers
             
             collideArrows();
 
+            PerLevelAdjustments.update(actorsGrp, levelTilemap);
             base.update();
 
             FlxG.setHudText(3, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);

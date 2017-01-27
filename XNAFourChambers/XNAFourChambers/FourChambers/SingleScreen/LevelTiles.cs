@@ -31,6 +31,7 @@ namespace FourChambers
 
             bg = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/bg"));
             bg.alpha = 0.55f;
+            bg.setScrollFactors(0, 0);
             add(bg);
 
             levelAttrs = new Dictionary<string, string>();
@@ -44,6 +45,7 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
+            bg.setScrollFactors(0.2f, 0.2f);
             add(bgTiles);
 
 

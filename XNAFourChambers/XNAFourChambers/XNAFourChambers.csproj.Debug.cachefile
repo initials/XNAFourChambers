@@ -122,10 +122,14 @@ Content\fourchambers\spike.xnb
 Content\fourchambers\grassParticles.xnb
 Content\fourchambers\characterSpriteSheets\Rat_50x50.xnb
 Content\fourchambers\bg.xnb
+Content\fourchambers\arrow_8x5.xnb
 Content\fourchambers\fire_wisp.xnb
 Content\fourchambers\heart_16x16.xnb
 Content\fourchambers\spike8x16.xnb
+Content\fourchambers\waterFallSparkle.xnb
 Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb
+Content\fourchambers\doorSparkles.xnb
+Content\fourchambers\customSparkles.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -231,10 +235,6 @@ Content\music\ralph\nw hooker.xnb
 Content\music\ralph\snow song.xnb
 Content\music\ralph\stiff run.xnb
 Content\music\ralph\this is the news.xnb
-Content\fourchambers\doorSparkles.xnb
-Content\fourchambers\waterFallSparkle.xnb
-Content\fourchambers\arrow_8x5.xnb
-Content\fourchambers\customSparkles.xnb
 Content\fourchambers\Stonehenge_100x100.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
@@ -262,6 +262,7 @@ ogmoLevels\level2.oel
 ogmoLevels\level3.oel
 ogmoLevels\level4.oel
 ogmoLevels\level5.oel
+ogmoLevels\level6.oel
 Content\flixel\autotiles.xnb
 Content\flixel\autotiles_alt.xnb
 Content\flixel\cursor.xnb

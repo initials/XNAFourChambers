@@ -66,12 +66,27 @@ namespace FourChambers
                     else {
                         var sprite = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]) );
                         add(sprite);
-                        if (!sprite.onScreen())
+                        if (!sprite.onScreen() )
                         {
-                            sprite.dead = true;
-                            sprite.exists = false;
-                            sprite.x = -100;
-                            sprite.y = -100;
+                            if (sprite is BaseActor)
+                            {
+                                if (((BaseActor)sprite).isPlayerControlled==false)
+                                {
+                                    sprite.dead = true;
+                                    sprite.exists = false;
+                                    sprite.x = -100;
+                                    sprite.y = -100;
+                                }
+                            }
+                            else
+                            {
+                                sprite.dead = true;
+                                sprite.exists = false;
+                                sprite.x = -100;
+                                sprite.y = -100;
+                            }
+
+                            Console.WriteLine(" -> Not on screen. killing: " + nameOfNewActor);
 
                         }
 

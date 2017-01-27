@@ -12,6 +12,18 @@ namespace FourChambers
 {
     public class PerLevelAdjustments
     {
+        public static void update(ActorsGroup actorsGrp, LevelTiles levelTiles)
+        {
+            if (FlxG.level == 6)
+            {
+                int newColor = 256 - (int)Utils.getAllActorsOfType(actorsGrp.members, "FourChambers.Marksman")[0].y / 4;
+                newColor = Utils.LimitToRange(newColor, 0, 256);
+
+                //Console.WriteLine(newColor);
+
+                setToColor(actorsGrp, levelTiles, newColor, newColor, newColor);
+            }
+        }
         public static void adjustForLevel(ActorsGroup actorsGrp, LevelTiles levelTiles)
         {
             // add zinger nests
@@ -19,7 +31,7 @@ namespace FourChambers
             {
                 for (int j = 0; j < levelTiles.levelTiles.heightInTiles; j++)
                 {
-                    Console.WriteLine(levelTiles.levelTiles.getTile(i, j));
+                    //Console.WriteLine(levelTiles.levelTiles.getTile(i, j));
 
                     if (levelTiles.levelTiles.getTile(i, j) == 12)
                     {
@@ -28,36 +40,49 @@ namespace FourChambers
                     }
                 }
             }
+            if (FlxG.level == 6)
+            {
+                //FlxG.color(Color.Black);
 
+                FlxG.follow( Utils.getAllActorsOfType(actorsGrp.members, "FourChambers.Marksman")[0], 5.5f );
+                FlxG.followBounds(0, 0, FlxG.levelWidth, FlxG.levelHeight, true);
+
+                //setToColor(actorsGrp, levelTiles);
+            }
             if (FlxG.level == 5)
             {
-                foreach (var item in actorsGrp.members)
-                {
-                    try
-                    {
-                        ((FlxSprite)(item)).color = new Color(0,0,0, ((FlxSprite)(item)).alpha);
-                    }
-                    catch (Exception)
-                    {
+                setToColor(actorsGrp, levelTiles, 255, 22, 20);
+            }
+        }
 
-                    }
-                    
+        private static void setToColor(ActorsGroup actorsGrp, LevelTiles levelTiles, int R, int G, int B)
+        {
+            foreach (var item in actorsGrp.members)
+            {
+                try
+                {
+                    ((FlxSprite)(item)).color = new Color(R,G,B, ((FlxSprite)(item)).alpha);
                 }
-                foreach (var item in levelTiles.members)
+                catch (Exception)
                 {
-                    try
-                    {
-                        if (item.GetType().Name != "bg")
-                        {
-                            ((FlxTilemap)(item)).color = new Color(0,0,0, ((FlxTilemap)(item)).alpha);
-                        }
-                    }
-                    catch (Exception)
-                    {
-
-                    }
 
                 }
+
+            }
+            foreach (var item in levelTiles.members)
+            {
+                try
+                {
+                    if (item.GetType().Name != "bg")
+                    {
+                        ((FlxTilemap)(item)).color = new Color(R, G, B, ((FlxTilemap)(item)).alpha);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+
             }
         }
     }
