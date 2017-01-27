@@ -61,12 +61,7 @@ namespace FourChambers
             {
                 try
                 {
-                    float newAlpha = ((FlxSprite)(item)).alpha ;
-                    //Console.WriteLine("Alpha of {0} is {1}", item.GetType().ToString(), newAlpha);
-                    if (newAlpha!=1)
-                        ((FlxSprite)(item)).color = new Color(R, G, B, newAlpha);
-                    else
-                        ((FlxSprite)(item)).color = new Color(R, G, B, 256);
+                    ((FlxSprite)(item)).color = new Color(R, G, B);
                 }
                 catch (Exception)
                 {
@@ -80,14 +75,7 @@ namespace FourChambers
                 {
                     if (item.GetType().Name != "bg")
                     {
-                        float newAlpha = ((FlxTilemap)(item)).alpha ;
-                        //Console.WriteLine("Alpha of {0} is {1}", item.GetType().ToString(), newAlpha);
-                        
-                        if (newAlpha != 1)
-                            ((FlxTilemap)(item)).color = new Color(R, G, B, newAlpha);
-                        else
-                            ((FlxTilemap)(item)).color = new Color(R, G, B, 256);
-
+                        ((FlxTilemap)(item)).color = new Color(R, G, B);
                     }
                 }
                 catch (Exception)

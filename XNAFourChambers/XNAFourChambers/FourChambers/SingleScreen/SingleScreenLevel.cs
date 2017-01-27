@@ -23,6 +23,9 @@ namespace FourChambers
         {
             base.create();
 
+
+
+
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
             FlxG.elapsedTotal = 0;
@@ -106,7 +109,7 @@ namespace FourChambers
                 FlxG.follow(null, 0);
                 Utils.zoomOut();
 
-                FlxG.level = 1;
+                FlxG.level = 6;
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
