@@ -73,7 +73,7 @@ namespace FourChambers
             {
                 try
                 {
-                    if (item.GetType().Name != "bg")
+                    if (item.GetType().Name != "bg" && item.GetType().ToString()=="org.flixel.FlxTilemap")
                     {
                         float _alpha = ((FlxTilemap)(item)).alpha; 
                         byte _bytealpha = (byte)(255f * _alpha); 

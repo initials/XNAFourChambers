@@ -19,11 +19,17 @@ namespace FourChambers
 
         public static GenericEmitter particles;
 
+
         override public void create()
         {
             base.create();
 
+            if (FlxG.debug)
+            {
+                Console.WriteLine(" - F9 - Advance to next level");
+                Console.WriteLine(" - R  - Reset To level 1");
 
+            }
 
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
@@ -109,7 +115,7 @@ namespace FourChambers
                 FlxG.follow(null, 0);
                 Utils.zoomOut();
 
-                FlxG.level = 6;
+                FlxG.level = 1;
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
