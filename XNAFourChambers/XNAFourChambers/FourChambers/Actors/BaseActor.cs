@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using XNATweener;
+
 namespace FourChambers
 {
     /* FlxSprite > Base Actor > Actor > Marksman
@@ -65,6 +67,7 @@ namespace FourChambers
         public bool lockedForSelection;
         public int releaseTime = 10000000;
 
+        public Tweener colorFlasher;
 
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
@@ -87,7 +90,18 @@ namespace FourChambers
 
             thingsThatHaveHappenedToThisActor = new List<string>();
 
+            colorFlasher = new Tweener(0, 1, 1, Linear.EaseInOut);
+            colorFlasher.PingPong = true;
+            colorFlasher.Start();
 
+
+        }
+
+        public override void kill()
+        {
+            colorFlasher.Start();
+
+            base.kill();
         }
 
         public override void hurt(float Damage)
@@ -104,7 +118,7 @@ namespace FourChambers
             dead = false;
             visible = true;
             exists = true;
-            //color = Color.White;
+            color = Color.White;
 
             if (X >= FlxG.levelWidth / 2)
             {
@@ -155,8 +169,13 @@ namespace FourChambers
         }
         override public void update()
         {
+            colorFlasher.Update(FlxG.elapsedAsGameTime);
+
             if (dead)
             {
+                color = new Color(1, colorFlasher.Position, colorFlasher.Position) ;
+
+
                 //color = new Color(1.0f, 0.75f, 0.75f);
                 //color = Color.Red;
             }

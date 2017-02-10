@@ -52,6 +52,7 @@ namespace FourChambers
             if (FlxG.level == 5)
             {
                 setToColor(actorsGrp, levelTiles, 0, 0, 0);
+                Globals.numberOfEnemiesToKillBeforeLevelOver = 1;
             }
         }
 

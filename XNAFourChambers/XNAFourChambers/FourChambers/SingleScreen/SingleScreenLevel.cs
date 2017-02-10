@@ -113,6 +113,7 @@ namespace FourChambers
         {
             if (FlxG.keys.R)
             {
+                Globals.arrowCombo = 0;
                 FlxG.follow(null, 0);
                 Utils.zoomOut();
 

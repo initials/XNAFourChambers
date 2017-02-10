@@ -64,7 +64,7 @@
     <marksman id="3" x="16" y="224" flip="False" isPlayerControlled="True" />
     <spike id="27" x="96" y="240" width="32" height="16" />
     <spike id="28" x="160" y="240" width="32" height="16" />
-    <grizzly id="0" x="384" y="256" flip="False" />
     <door id="1" x="432" y="240" levelToGoTo="1" />
+    <mistress id="0" x="400" y="256" flip="False" />
   </ActorsLayer>
 </level>
