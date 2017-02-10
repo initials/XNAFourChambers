@@ -47,7 +47,7 @@ namespace FourChambers
                 pestsRemainingNumberText.text = Globals.numberOfEnemiesToKillBeforeLevelOver.ToString();
             else
             {
-                pestsRemainingText.text = "Work is over! Don't work for free. Clock out.";
+                pestsRemainingText.text = "Don't work for free. Clock out.";
                 pestsRemainingNumberText.text = "";
 
                 pestsRemainingText.x = FlxU.randomInt((FlxG.width / 2) - 17, (FlxG.width / 2) - 15);
