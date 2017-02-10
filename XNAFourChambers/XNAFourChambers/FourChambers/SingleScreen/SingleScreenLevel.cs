@@ -78,7 +78,8 @@ namespace FourChambers
 
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
 
-            
+            Hud hud = new Hud();
+            add(hud);
         }
 
         override public void update()

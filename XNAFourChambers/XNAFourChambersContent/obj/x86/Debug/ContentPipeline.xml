@@ -2160,6 +2160,15 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\Stonehenge_100x100.xnb</Output>
       <Time>2016-04-23T16:04:38.0930403+10:00</Time>
     </Item>
+    <Item>
+      <Source>ui\BetterPixels.spritefont</Source>
+      <Name>ui\BetterPixels</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\ui\BetterPixels.xnb</Output>
+      <Time>2016-04-23T16:04:38.822082+10:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

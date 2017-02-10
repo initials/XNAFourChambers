@@ -1294,6 +1294,11 @@
       <Name>heart_16x16</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="ui\BetterPixels.spritefont">
+      <Name>BetterPixels</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fourchambers\Stonehenge_100x100.png">
