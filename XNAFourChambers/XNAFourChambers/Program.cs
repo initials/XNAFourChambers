@@ -24,21 +24,17 @@ namespace Loader_Four
         public FlixelEntryPoint2(Game game)
             : base(game)
         {
-            ///Post build zipper
-            ///cd ..
-            ///C:\_Files\programs\7-Zip\7z a -tzip FourChambers.zip Release\ -r
-
+            /*
+            Post build zipper
+            cd ..
+            C:\_Files\programs\7-Zip\7z a -tzip FourChambers.zip Release\ -r
+            */
             int w = FlxG.resolutionWidth / FlxG.zoom;
             int h = FlxG.resolutionHeight / FlxG.zoom;
-
-
-
             FourChambers.Globals.startGame();
-
 
             //initGame(w, h, new FourChambers.CharacterSelectScreen(), new Color(15, 15, 15), true, new Color(5, 5, 5));
             initGame(w, h, new FourChambers.SingleScreenLevel(), new Color(15, 15, 15), true, new Color(5, 5, 5));
-
 
             FlxG.debug = false;
 
@@ -51,7 +47,7 @@ namespace Loader_Four
 
 
 #if DEBUG
-            FlxG.level = 6;
+            FlxG.level = 1;
             FlxG.debug = true;
 #endif
 #if DEMO
