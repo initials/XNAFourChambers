@@ -14,8 +14,6 @@ namespace FourChambers
         private FlxText pestsRemainingNumberText;
         private FlxText pestsRemainingText;
 
-
-
         public Hud()
             : base()
         {
@@ -25,20 +23,13 @@ namespace FourChambers
             add(pestsRemainingNumberText);
 
             pestsRemainingText = new FlxText((FlxG.width / 2) - 16, 1, 50);
-            pestsRemainingText.setFormat(FlxG.Content.Load<SpriteFont>("ui/BetterPixels"), 1, Color.White, FlxJustification.Left, Color.Black);
+            pestsRemainingText.setFormat(FlxG.Content.Load<SpriteFont>("ui/BetterPixels"), 1, Color.White, FlxJustification.Center, Color.Black);
+
             add(pestsRemainingText);
             pestsRemainingText.text = "Collect\n\nMore Pests";
 
-
-
-
-
-
         }
 
-        /// <summary>
-        /// The Update Cycle. Called once every cycle.
-        /// </summary>
         override public void update()
         {
 //           FlxG.setHudText(3, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);

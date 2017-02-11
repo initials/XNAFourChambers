@@ -14,9 +14,6 @@ namespace FourChambers
     /* FlxSprite > Base Actor > Actor > Marksman
      *                        > EnemyActor > Bat
      * 
-     * 
-     * 
-     * 
      */ 
     public class BaseActor : FlxSprite
     {

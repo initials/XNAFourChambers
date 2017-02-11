@@ -111,7 +111,7 @@ namespace FourChambers
 
         private void runKeyPresses()
         {
-            if (FlxG.keys.R)
+            if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
             {
                 Globals.arrowCombo = 0;
                 FlxG.follow(null, 0);
