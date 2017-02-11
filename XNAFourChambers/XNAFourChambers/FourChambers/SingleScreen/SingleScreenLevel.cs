@@ -111,6 +111,23 @@ namespace FourChambers
 
         private void runKeyPresses()
         {
+            if (actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").dead==true)
+            {
+                if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
+                {
+                    Globals.arrowCombo = 0;
+                    FlxG.follow(null, 0);
+                    Utils.zoomOut();
+
+                    FlxG.level = 1;
+                    FlxG.state = new SingleScreenLevel();
+                    return;
+                }
+            }
+        }
+
+        private void runDebugKeyPresses()
+        {
             if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
             {
                 Globals.arrowCombo = 0;
@@ -121,10 +138,6 @@ namespace FourChambers
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
-        }
-
-        private void runDebugKeyPresses()
-        {
 
             if (FlxG.keys.F9)
             {
