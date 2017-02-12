@@ -764,7 +764,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\characterSpriteSheets\Executor_50x50.xnb</Output>
-      <Time>2016-04-23T16:04:38.1190418+10:00</Time>
+      <Time>2017-02-12T12:30:28.2624545+11:00</Time>
     </Item>
     <Item>
       <Source>fourchambers\characterSpriteSheets\Vampire_50x50.png</Source>
@@ -1118,6 +1118,15 @@
       <Time>2017-01-19T08:32:51.6842132+11:00</Time>
     </Item>
     <Item>
+      <Source>fourchambers\arrow_8x5.png</Source>
+      <Name>fourchambers\arrow_8x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\arrow_8x5.xnb</Output>
+      <Time>2017-01-21T23:15:28.0692601+11:00</Time>
+    </Item>
+    <Item>
       <Source>fourchambers\fire_wisp.png</Source>
       <Name>fourchambers\fire_wisp</Name>
       <Importer>TextureImporter</Importer>
@@ -1145,6 +1154,15 @@
       <Time>2016-04-23T16:04:38.1490435+10:00</Time>
     </Item>
     <Item>
+      <Source>fourchambers\waterFallSparkle.png</Source>
+      <Name>fourchambers\waterFallSparkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\waterFallSparkle.xnb</Output>
+      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
+    </Item>
+    <Item>
       <Source>fourchambers\characterSpriteSheets\Seraphine_50x50.png</Source>
       <Name>fourchambers\characterSpriteSheets\Seraphine_50x50</Name>
       <Importer>TextureImporter</Importer>
@@ -1152,6 +1170,33 @@
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb</Output>
       <Time>2016-04-23T16:04:38.1280423+10:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\doorSparkles.png</Source>
+      <Name>fourchambers\doorSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\doorSparkles.xnb</Output>
+      <Time>2017-01-15T12:17:53.4785228+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\customSparkles.png</Source>
+      <Name>fourchambers\customSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\customSparkles.xnb</Output>
+      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\Stonehenge_100x100.png</Source>
+      <Name>fourchambers\Stonehenge_100x100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\Stonehenge_100x100.xnb</Output>
+      <Time>2016-04-23T16:04:38.0930403+10:00</Time>
     </Item>
     <Item>
       <Source>sfx\arrowHit1.wav</Source>
@@ -2114,51 +2159,6 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\music\ralph\this is the news.xnb</Output>
       <Extra>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\music\ralph\this is the news.wma</Extra>
       <Time>2016-04-23T16:04:38.7230764+10:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\doorSparkles.png</Source>
-      <Name>fourchambers\doorSparkles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\doorSparkles.xnb</Output>
-      <Time>2017-01-15T12:17:53.4785228+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\waterFallSparkle.png</Source>
-      <Name>fourchambers\waterFallSparkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\waterFallSparkle.xnb</Output>
-      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\arrow_8x5.png</Source>
-      <Name>fourchambers\arrow_8x5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\arrow_8x5.xnb</Output>
-      <Time>2017-01-21T23:15:28.0692601+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\customSparkles.png</Source>
-      <Name>fourchambers\customSparkles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\customSparkles.xnb</Output>
-      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\Stonehenge_100x100.png</Source>
-      <Name>fourchambers\Stonehenge_100x100</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\fourchambers\Stonehenge_100x100.xnb</Output>
-      <Time>2016-04-23T16:04:38.0930403+10:00</Time>
     </Item>
     <Item>
       <Source>ui\BetterPixels.spritefont</Source>

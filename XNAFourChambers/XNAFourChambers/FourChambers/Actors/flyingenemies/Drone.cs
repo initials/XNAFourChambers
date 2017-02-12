@@ -77,7 +77,7 @@ namespace FourChambers
                 play("fly");
             }
 
-            if (dead == false)
+            if (dead == false )
             {
                 if (frame == 8)
                 {

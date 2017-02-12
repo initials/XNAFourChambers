@@ -1290,6 +1290,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="fourchambers\characterSpriteSheets\Executor_50x50.csv">
+      <Name>Executor_50x50</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="fourchambers\heart_16x16.csv">
       <Name>heart_16x16</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

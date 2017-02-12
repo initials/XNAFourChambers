@@ -147,8 +147,6 @@ namespace FourChambers
 
         public FlxBar healthBar;
 
-        public bool customAnimation = false;
-
         public enum Recording
         {
             None = 0,
@@ -249,7 +247,11 @@ namespace FourChambers
                 facing = Flx2DFacing.Left;
             }
 
-            if (hurtTimer < timeDownAfterHurt)
+            if (customAnimation != null)
+            {
+                play(customAnimation);
+            }
+            else if (hurtTimer < timeDownAfterHurt)
             {
                 play("hurt");
             }

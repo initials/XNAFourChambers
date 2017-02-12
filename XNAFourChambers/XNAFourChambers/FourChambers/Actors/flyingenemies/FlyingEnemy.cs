@@ -48,6 +48,10 @@ namespace FourChambers
         }
         override public void update()
         {
+            if (customAnimation != null)
+            {
+                play(customAnimation, false);
+            }
 
             if (path == null)
             {

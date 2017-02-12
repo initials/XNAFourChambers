@@ -66,6 +66,8 @@ namespace FourChambers
 
         public Tweener colorFlasher;
 
+        public string customAnimation;
+
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
         /// </summary>
@@ -91,6 +93,7 @@ namespace FourChambers
             colorFlasher.PingPong = true;
             colorFlasher.Start();
 
+            customAnimation = null;
 
         }
 

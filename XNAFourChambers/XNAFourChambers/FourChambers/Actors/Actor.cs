@@ -405,7 +405,11 @@ namespace FourChambers
         {
             List<FlxAnim> anim = animations.Where(p => p.name == debugName).ToList();
 
-            if (dead)
+            if (customAnimation != null)
+            {
+                play(customAnimation);
+            }
+            else if (dead)
             {
                 play("death");
             }
@@ -484,7 +488,7 @@ namespace FourChambers
                 framesSinceLeftGround++;
             }
 
-            if (isClimbingLadder)
+            if (isClimbingLadder || customAnimation!=null)
             {
                 acceleration.Y = 0;
             }

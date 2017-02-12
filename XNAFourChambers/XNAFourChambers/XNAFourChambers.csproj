@@ -133,6 +133,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FourChambers\AnimationCycleState.cs" />
     <Compile Include="FourChambers\Actors\Actor.cs" />
     <Compile Include="FourChambers\Actors\BaseActor.cs" />
     <Compile Include="FourChambers\Actors\enemies\Automaton.cs" />

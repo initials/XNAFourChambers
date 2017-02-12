@@ -42,7 +42,7 @@ namespace FourChambers
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/characterSpriteSheets/harvester_50x50"), true, false, 50, 50);
 
             addAnimation("run", new int[] { 2, 3, 4, 5, 6, 7 }, 12);
-            addAnimation("walk", new int[] { 2, 3, 4, 5, 6, 7 }, 8);
+            addAnimation("walk", new int[] { 4, 5, 6, 7, 8 }, 8);
             addAnimation("idle", new int[] { 0,16,17,18,19 }, 12);
             addAnimation("attack", new int[] { 8,9,10,11,12,13,13,13,14,14,14,15,15,15}, 18);
 
