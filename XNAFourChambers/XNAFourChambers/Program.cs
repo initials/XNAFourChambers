@@ -45,6 +45,7 @@ namespace Loader_Four
             FlxG.level = 1;
             FlxG.score = 0;
 
+            FlxG.hudFont = "ui/BetterPixels";
 
 #if DEBUG
             FlxG.level = 1;

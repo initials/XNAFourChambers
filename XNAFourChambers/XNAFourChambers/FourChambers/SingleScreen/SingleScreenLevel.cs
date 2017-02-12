@@ -41,8 +41,8 @@ namespace FourChambers
             Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
-            FlxG.setHudTextScale(1, FlxG.zoom);
-            FlxG.setHudTextPosition(1, 16, 8);
+            //FlxG.setHudTextScale(1, FlxG.zoom);
+            //FlxG.setHudTextPosition(1, 16, 8);
 
             Globals.getLevelFileName();
 
@@ -101,11 +101,14 @@ namespace FourChambers
             PerLevelAdjustments.update(actorsGrp, levelTilemap);
             base.update();
 
-            FlxG.setHudText(3, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
 
             if (FlxG.debug)
-                runDebugKeyPresses();
+            {
 
+                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
+
+                runDebugKeyPresses();
+            }
             runKeyPresses();
         }
 
@@ -113,6 +116,8 @@ namespace FourChambers
         {
             if (actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").dead==true)
             {
+                FlxG.mouse.hide();
+
                 if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
                 {
                     Globals.arrowCombo = 0;
@@ -121,6 +126,9 @@ namespace FourChambers
 
                     FlxG.level = 1;
                     FlxG.state = new SingleScreenLevel();
+
+                    FlxG.setHudText(3, "");
+
                     return;
                 }
             }
@@ -136,6 +144,9 @@ namespace FourChambers
 
                 FlxG.level = 1;
                 FlxG.state = new SingleScreenLevel();
+
+                FlxG.setHudText(3, "");
+
                 return;
             }
 
