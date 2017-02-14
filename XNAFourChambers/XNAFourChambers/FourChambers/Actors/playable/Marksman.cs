@@ -272,6 +272,7 @@ namespace FourChambers
                 hasUsedJoystickToAim = false;
             }
 
+            int arrowSpeed = -250;
             if (hasRangeWeapon && ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && attackingJoystick) || (FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder) && velocity.X != 0) )
             {
                 float rightX = GamePad.GetState(playerIndex).ThumbSticks.Right.X;
@@ -282,7 +283,9 @@ namespace FourChambers
 				//rightY *= -1;
 
 				#endif
+
                 
+
                 // No Right Stick so do a generic shoot...
                 if (arrowsRemaining >= 1)
                 {
@@ -305,10 +308,10 @@ namespace FourChambers
                         // use the right stick to fire a weapon
                         else
                         {
-                            int yVel = (int)(rightY * -600);
+                            int yVel = (int)(rightY * arrowSpeed);
                             int yVelAdjusted = yVel - (i * 40);
 
-                            ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), (int)(rightX * 600), yVelAdjusted);
+                            ((Arrow)(_bullets[_curArrow])).shoot((int)x, (int)(y + (height / 2)), (int)(rightX * (arrowSpeed * -1)), yVelAdjusted);
                         }
 
                         if (rightX < 0)
@@ -356,7 +359,7 @@ namespace FourChambers
                 {
                     for (int i = 0; i < Globals.arrowsToFire; i++)
                     {
-                        int arrowSpeed = -250;
+                        
                         int yVel = (int)(velocity_y * (arrowSpeed - (Globals.arrowPower * 1)));
                         int yVelAdjusted = yVel - (i * 5);
                         int xVel = (int)(velocity_x * (arrowSpeed - (Globals.arrowPower * 1)));
