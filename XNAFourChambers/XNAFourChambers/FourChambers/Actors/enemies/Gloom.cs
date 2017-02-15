@@ -57,7 +57,7 @@ namespace FourChambers
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
-            releaseTime = 45;
+            releaseTime = 900;
 
         }
 

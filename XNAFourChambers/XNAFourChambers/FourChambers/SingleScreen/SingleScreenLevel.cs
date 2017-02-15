@@ -41,8 +41,8 @@ namespace FourChambers
             Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
-            //FlxG.setHudTextScale(1, FlxG.zoom);
-            //FlxG.setHudTextPosition(1, 16, 8);
+            FlxG.setHudTextScale(1, 1);
+            FlxG.setHudTextPosition(1, 1, 1);
 
             Globals.getLevelFileName();
 
@@ -104,11 +104,11 @@ namespace FourChambers
 
             if (FlxG.debug)
             {
-
-                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo);
-
+                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo + "Globals.arrowsFired" + Globals.arrowsFired);
+                
                 runDebugKeyPresses();
             }
+
             runKeyPresses();
         }
 

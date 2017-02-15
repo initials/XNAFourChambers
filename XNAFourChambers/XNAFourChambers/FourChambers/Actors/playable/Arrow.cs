@@ -186,7 +186,7 @@ namespace FourChambers
             framesInAir = 0;
 
             //particles release at regular intervals;
-            //_fire.start(false, 0.02f, 0);
+            _fire.start(false, 0.02f, 0);
             
             // Global counter for arrows fired.
             Globals.arrowsFired++;

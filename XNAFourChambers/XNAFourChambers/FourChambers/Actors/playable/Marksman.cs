@@ -326,7 +326,7 @@ namespace FourChambers
                         if (++_curArrow >= _bullets.Count)
                             _curArrow = 0;
                     }
-                    arrowsRemaining--;
+                    //arrowsRemaining--;
                 }
 
                 if (arrowsRemaining < 0) arrowsRemaining = 0;
@@ -338,7 +338,7 @@ namespace FourChambers
             }
 
             // use the mouse position to fire a bullet.
-            if ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && (attackingMouse) && hasRangeWeapon)
+            if (FlxG.keys.F10 || ((_curFrame == 8 || _curFrame == 9 || _curFrame == 10) && (attackingMouse) && hasRangeWeapon))
             {
                 //Console.WriteLine("Shooting Arrow " + FlxG.elapsedTotal + " This is the frame of the Marksman animation" + _curFrame);
 
@@ -371,7 +371,7 @@ namespace FourChambers
 
                     }
                 }
-                arrowsRemaining--;
+                //arrowsRemaining--;
                 if (rightX1 - x < 0)
                 {
                     facing = Flx2DFacing.Left;
