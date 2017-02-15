@@ -89,8 +89,6 @@
     <rat id="25" x="-112" y="128" flip="False" />
     <drone id="26" x="192" y="48" flip="False" />
     <drone id="27" x="272" y="48" flip="False" />
-    <automaton id="28" x="-144" y="144" flip="False" />
-    <automaton id="29" x="-112" y="144" flip="False" />
     <bat id="30" x="-160" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="31" x="-144" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />
     <bat id="32" x="-128" y="160" flip="False" pathType="LOOP_FORWARD" pathSpeed="100" pathCornering="3" />

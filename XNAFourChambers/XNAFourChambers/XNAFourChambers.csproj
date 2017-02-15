@@ -257,6 +257,7 @@
     <Compile Include="FourChambers\SingleScreen\SpawnPoint.cs" />
     <Compile Include="FourChambers\SingleScreen\Stonehenge.cs" />
     <Compile Include="FourChambers\SingleScreen\Timer.cs" />
+    <Compile Include="FourChambers\SingleScreen\TitleText.cs" />
     <Compile Include="FourChambers\SingleScreen\Waterfall.cs" />
     <Compile Include="FourChambers\SingleScreen\WaterfallParticle.cs" />
     <Compile Include="FourChambers\Utils.cs" />

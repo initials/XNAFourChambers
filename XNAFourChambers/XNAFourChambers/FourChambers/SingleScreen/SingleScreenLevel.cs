@@ -124,31 +124,44 @@ namespace FourChambers
                     FlxG.follow(null, 0);
                     Utils.zoomOut();
 
-                    FlxG.level = 1;
+                    //FlxG.level = 1;
                     FlxG.state = new SingleScreenLevel();
 
                     FlxG.setHudText(3, "");
 
                     return;
                 }
+                if (FlxG.keys.ESCAPE || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+                {
+                    Globals.arrowCombo = 0;
+                    FlxG.follow(null, 0);
+                    Utils.zoomOut();
+
+                    FlxG.level = 1;
+                    FlxG.state = new CharacterSelectScreen();
+
+                    FlxG.setHudText(3, "");
+
+                    return;
+                }
+
             }
         }
 
         private void runDebugKeyPresses()
         {
-            if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
-            {
-                Globals.arrowCombo = 0;
-                FlxG.follow(null, 0);
-                Utils.zoomOut();
+            //if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
+            //{
+            //    Globals.arrowCombo = 0;
+            //    FlxG.follow(null, 0);
+            //    Utils.zoomOut();
 
-                FlxG.level = 1;
-                FlxG.state = new SingleScreenLevel();
+            //    FlxG.state = new SingleScreenLevel();
 
-                FlxG.setHudText(3, "");
+            //    FlxG.setHudText(3, "");
 
-                return;
-            }
+            //    return;
+            //}
 
             if (FlxG.keys.F9)
             {

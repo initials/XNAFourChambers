@@ -2169,6 +2169,15 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\ui\BetterPixels.xnb</Output>
       <Time>2017-02-12T10:18:32.6131044+11:00</Time>
     </Item>
+    <Item>
+      <Source>ui\PixelFraktur.spritefont</Source>
+      <Name>ui\PixelFraktur</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Debug\Content\ui\PixelFraktur.xnb</Output>
+      <Time>2017-02-15T19:25:04.8677558+11:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

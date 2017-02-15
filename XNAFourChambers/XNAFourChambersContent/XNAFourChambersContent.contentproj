@@ -1304,6 +1304,12 @@
       <Processor>FontDescriptionProcessor</Processor>
       <SubType>Designer</SubType>
     </Compile>
+    <Compile Include="ui\PixelFraktur.spritefont">
+      <Name>PixelFraktur</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fourchambers\Stonehenge_100x100.png">

@@ -10,6 +10,8 @@ namespace FourChambers
 {
     public class Globals
     {
+        public const string GAME_NAME = "The Four Chambers of the Human Heart";
+
         public const int TILE_SIZE_X = 16;
         public const int TILE_SIZE_Y = 16;
 
