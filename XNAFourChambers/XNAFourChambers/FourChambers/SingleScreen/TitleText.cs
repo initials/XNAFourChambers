@@ -27,7 +27,9 @@ namespace FourChambers
         /// </summary>
         override public void update()
         {
-            t.Update(FlxG.elapsedAsGameTime);
+            if (FlxG.elapsedFrames>50)
+                t.Update(FlxG.elapsedAsGameTime);
+
             base.update();
             x = t.Position.X;
             y = t.Position.Y;

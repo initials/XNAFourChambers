@@ -67,7 +67,12 @@ namespace FourChambers
 
             //FlxG.showBounds = true;
 
-            
+            for (int i = 0; i < 25; i++)
+            {
+                Cloud c = new Cloud((int)FlxU.random(0, FlxG.height), (int)FlxU.random(0, FlxG.width));
+                add(c);
+
+            }
         }
 
         private void addText()
@@ -142,7 +147,19 @@ namespace FourChambers
             else
                 FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED], $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " to unlock");
 
+            if (FlxG.debug)
+            {
+                runDebugKeyPresses();
+            }
 
+        }
+        private void runDebugKeyPresses()
+        {
+            if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
+            {
+                FlxG.state = new CharacterSelectScreen();
+                return;
+            }
         }
 
     }

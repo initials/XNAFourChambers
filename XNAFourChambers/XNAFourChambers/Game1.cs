@@ -27,7 +27,7 @@ namespace Loader_Four
         //nothing much to see here, typical XNA initialization code
         public FlxFactory()
         {
-            FlxG.zoom = 2;
+            FlxG.zoom = 1;
 
 #if ! DEBUG
 

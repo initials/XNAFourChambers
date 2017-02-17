@@ -130,7 +130,6 @@ Content\fourchambers\waterFallSparkle.xnb
 Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb
 Content\fourchambers\doorSparkles.xnb
 Content\fourchambers\customSparkles.xnb
-Content\fourchambers\Stonehenge_100x100.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -236,6 +235,7 @@ Content\music\ralph\nw hooker.xnb
 Content\music\ralph\snow song.xnb
 Content\music\ralph\stiff run.xnb
 Content\music\ralph\this is the news.xnb
+Content\fourchambers\Stonehenge_100x100.xnb
 Content\ui\BetterPixels.xnb
 Content\ui\PixelFraktur.xnb
 Content\music\gwd\ColdMoody.wma
