@@ -68,6 +68,8 @@ namespace FourChambers
 
         public string customAnimation;
 
+        public bool isRespawnable;
+
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
         /// </summary>
@@ -76,6 +78,8 @@ namespace FourChambers
         public BaseActor(int xPos, int yPos)
             : base(xPos, yPos)
         {
+            isRespawnable = true;
+
             score = 0;
             actorName="BaseActor";
 

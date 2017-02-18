@@ -283,12 +283,22 @@ namespace FourChambers
             // Jumping. 
             if ((_jump >= 0 || framesSinceLeftGround < 10 || isClimbingLadder) && (((FlxG.keys.W && playerIndex == PlayerIndex.One) && canFly == false && !isClimbingLadder) || (FlxG.keys.SPACE && playerIndex == PlayerIndex.One) || FlxG.gamepads.isButtonDown(Buttons.A, playerIndex, out pi)))
             {
+
                 lastAttack = "range";
                 if (framesSinceLeftGround < 10)
                 {
                     _jump = 0.0f;
                     framesSinceLeftGround = 10000;
                 }
+                //Console.WriteLine(_jump);
+
+                if (_jump == 0.0f)
+                {
+                    //play sound
+
+                    grass.start(true, 0.5f, 12);
+                }
+
                 if (isClimbingLadder)
                 {
                     _jump = 0.0f;

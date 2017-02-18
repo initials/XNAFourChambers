@@ -82,9 +82,14 @@ namespace FourChambers
             add(hud);
         }
 
+        public FlxObject getPlayerCharacter()
+        {
+            return actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
+        }
+
         override public void update()
         {
-            FlxObject player = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
+            FlxObject player = getPlayerCharacter();
 
             if (player!=null && player.dead && seraphine.concern == false)
             {

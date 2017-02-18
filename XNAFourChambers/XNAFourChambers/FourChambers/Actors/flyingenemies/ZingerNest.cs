@@ -15,6 +15,7 @@ namespace FourChambers
         public ZingerNest(int xPos, int yPos)
             : base(xPos, yPos)
         {
+            isRespawnable = false;
 
             loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/spawner"), true, false, 16, 16);
 

@@ -34,7 +34,7 @@ namespace FourChambers
             {
                 if (item.dead && !item.exists && item is BaseActor)
                 {
-                    if ((FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4)) && FlxG.elapsedTotal > ((BaseActor)item).releaseTime)
+                    if (((FlxU.random() < chance || FlxG.keys.justPressed(Keys.F4)) && FlxG.elapsedTotal > ((BaseActor)item).releaseTime) && ((BaseActor)item).isRespawnable)
                     {
                         Console.WriteLine("Respawning {0} at {1} x {2}, release time was {3}, elapsed total {4}, dead {5}, exists {6}",
                             item.GetType().ToString(), x, y, ((BaseActor)(item)).releaseTime, FlxG.elapsedTotal, item.dead, item.exists);
