@@ -18,7 +18,7 @@ namespace FourChambers
         private Gloom gloom;
 
         public static GenericEmitter particles;
-
+        public static Hud hud;
 
         override public void create()
         {
@@ -78,7 +78,7 @@ namespace FourChambers
 
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
 
-            Hud hud = new Hud();
+            hud = new Hud();
             add(hud);
         }
 
@@ -104,7 +104,7 @@ namespace FourChambers
             collideArrows();
 
             PerLevelAdjustments.update(actorsGrp, levelTilemap);
-            base.update();
+            
 
 
             if (FlxG.debug)
@@ -115,6 +115,8 @@ namespace FourChambers
             }
 
             runKeyPresses();
+
+            base.update();
         }
 
         private void runKeyPresses()
@@ -136,7 +138,7 @@ namespace FourChambers
 
                     return;
                 }
-                if (FlxG.keys.ESCAPE || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+                if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
                 {
                     Globals.arrowCombo = 0;
                     FlxG.follow(null, 0);

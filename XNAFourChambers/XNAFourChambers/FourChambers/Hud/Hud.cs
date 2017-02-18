@@ -6,15 +6,20 @@ using org.flixel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using XNATweener;
 
 namespace FourChambers
 {
-    class Hud : FlxGroup
+    public class Hud : FlxGroup
     {
         private FlxText pestsRemainingNumberText;
         private FlxText pestsRemainingText;
 
         //private FlxText pressToRestart;
+
+        private Tweener scaleTween;
+        private Tweener rotationTween;
+        private bool shouldFollowTween;
 
         public Hud()
             : base()
@@ -40,7 +45,28 @@ namespace FourChambers
             //pressToRestart.text = "Press [R] / (Y) to Restart";
             //pressToRestart.visible = false;
 
+            scaleTween = new Tweener(4, 2, 1.4f, Bounce.EaseOut);
+            scaleTween.Reset();
 
+            rotationTween = new Tweener(360, 0, 0.5f, Quadratic.EaseIn);
+            rotationTween.Reset();
+
+        }
+
+        public void startTween()
+        {
+            scaleTween.Reset();
+            rotationTween.Reset();
+
+
+            shouldFollowTween = true;
+            scaleTween.Start();
+            rotationTween.Start();
+
+            
+
+            //pestsRemainingNumberText.scale = 3;
+            pestsRemainingNumberText.angle = 45;
         }
 
         override public void update()
@@ -77,7 +103,14 @@ namespace FourChambers
 
 
             }
+            if (shouldFollowTween)
+            {
+                pestsRemainingNumberText.scale = scaleTween.Position;
+                pestsRemainingNumberText.angle = rotationTween.Position;
+            }
 
+            scaleTween.Update(FlxG.elapsedAsGameTime);
+            rotationTween.Update(FlxG.elapsedAsGameTime);
 
             base.update();
         }

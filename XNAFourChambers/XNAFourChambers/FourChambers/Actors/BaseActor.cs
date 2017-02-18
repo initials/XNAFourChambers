@@ -160,6 +160,8 @@ namespace FourChambers
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
 
                     FlxG.quake.start(0.008f, ((20 - Globals.numberOfEnemiesToKillBeforeLevelOver) * 0.1f) * 0.2f);
+
+                    SingleScreenLevel.hud.startTween();
                 }
                 else
                 {

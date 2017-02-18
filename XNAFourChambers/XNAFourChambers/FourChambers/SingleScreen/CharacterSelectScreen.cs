@@ -145,7 +145,7 @@ namespace FourChambers
             if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
                 FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!");
             else
-                FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED], $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " to unlock");
+                FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ");
 
             if (FlxG.debug)
             {
