@@ -60,7 +60,8 @@ namespace FourChambers
             //offset.X = 3;
             //offset.Y = 7;
 
-            startPlayingBack();
+            if (FlxG.level==5)
+                startPlayingBack();
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
 

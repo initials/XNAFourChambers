@@ -37,14 +37,17 @@ namespace FourChambers
         {
             if ( debugName == "readyToPop" && !dead)
             {
+                int totalEmitted = 0;
+
                 List<FlxObject> zingers = SingleScreenLevel.actorsGrp.members.FindAll((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Zinger");
                 for (int i = 0; i < zingers.Count; i++)
                 {
-                    if (((Zinger)(zingers[i])).dead == true)
+                    if (((Zinger)(zingers[i])).dead == true && totalEmitted <=2 )
                     {
                         ((Zinger)(zingers[i])).reset(x, y);
                         ((Zinger)(zingers[i])).homing = true;
                         ((Zinger)(zingers[i])).homingTarget = (FlxSprite)SingleScreenLevel.actorsGrp.members.Find((FlxObject sp) => sp.GetType().ToString() == "FourChambers.Marksman");
+                        totalEmitted++;
                     }
                 }
                 kill();
