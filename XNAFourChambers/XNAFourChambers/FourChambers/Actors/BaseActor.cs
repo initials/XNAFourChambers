@@ -70,6 +70,9 @@ namespace FourChambers
 
         public bool isRespawnable;
 
+        public bool lockToOnScreen = false;
+
+
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
         /// </summary>
@@ -98,6 +101,7 @@ namespace FourChambers
             colorFlasher.Start();
 
             customAnimation = null;
+            lockToOnScreen = false;
 
         }
 
@@ -175,6 +179,13 @@ namespace FourChambers
         }
         override public void update()
         {
+
+            if (lockToOnScreen)
+            {
+                if (x < 3) x = 3;
+                if (x > FlxG.width-16) x = FlxG.width-16;
+
+            }
             colorFlasher.Update(FlxG.elapsedAsGameTime);
 
             if (dead)

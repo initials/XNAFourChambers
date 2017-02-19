@@ -80,8 +80,11 @@ namespace FourChambers
                     play("pulse");
                     FlxG.level++;
                     FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 7);
-
-                    FlxG.state = new SingleScreenLevel();
+                    if (FlxG.level==7)
+                        FlxG.state = new CharacterSelectScreen();
+                    else
+                        FlxG.state = new SingleScreenLevel();
+                    
                     return;
                 }
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.DOWN)

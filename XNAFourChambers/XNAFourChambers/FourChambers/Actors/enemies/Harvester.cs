@@ -66,6 +66,8 @@ namespace FourChambers
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
+            lockToOnScreen = true;
         }
 
         override public void update()
