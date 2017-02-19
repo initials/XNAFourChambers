@@ -28,7 +28,7 @@ namespace FourChambers
             {
                 Console.WriteLine(" - F9 - Advance to next level");
                 Console.WriteLine(" - R  - Reset To level 1");
-
+                Console.WriteLine("Creating Level: {0}", FlxG.level);
             }
 
 
@@ -104,24 +104,26 @@ namespace FourChambers
             collideArrows();
 
             PerLevelAdjustments.update(actorsGrp, levelTilemap);
-            
-
 
             if (FlxG.debug)
             {
-                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo + "Globals.arrowsFired" + Globals.arrowsFired);
+                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo + " Globals.arrowsFired: " + Globals.arrowsFired + " State: " + FlxG.state.ToString());
                 
                 runDebugKeyPresses();
             }
 
-            runKeyPresses();
-
             base.update();
+
+            runKeyPresses();
         }
 
         private void runKeyPresses()
         {
-            if (actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").dead==true)
+            FlxObject m = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
+            if (m == null)
+                return;
+
+            if (m.dead==true)
             {
                 FlxG.mouse.hide();
 

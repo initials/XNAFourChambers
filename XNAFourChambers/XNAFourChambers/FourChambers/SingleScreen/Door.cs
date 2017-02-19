@@ -78,13 +78,19 @@ namespace FourChambers
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.UP && obj.dead==false)
                 {
                     play("pulse");
-                    FlxG.level++;
-                    FlxG.level =  Utils.LimitToRange(FlxG.level, 1, 7);
-                    if (FlxG.level==7)
+                    if (FlxG.level == 7)
+                    {
+                        FlxG.level=1;
                         FlxG.state = new CharacterSelectScreen();
+                        return;
+                    }
                     else
+                    {
+
+                        FlxG.level++;
+                        FlxG.level = Utils.LimitToRange(FlxG.level, 1, 7);
                         FlxG.state = new SingleScreenLevel();
-                    
+                    }
                     return;
                 }
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.DOWN)
@@ -92,7 +98,6 @@ namespace FourChambers
                     play("pulse");
                     FlxG.level--;
                     FlxG.level = Utils.LimitToRange(FlxG.level, 1, 7);
-
                     FlxG.state = new SingleScreenLevel();
                     return;
                 }
