@@ -14,6 +14,12 @@ namespace FourChambers
     {
         public static void update(ActorsGroup actorsGrp, LevelTiles levelTiles)
         {
+            if (FlxG.level == 5)
+            {
+                if (Globals.numberOfEnemiesToKillBeforeLevelOver==0)
+                    setToColor(actorsGrp, levelTiles, 0, 0, 0);
+                
+            }
             if (FlxG.level == 6)
             {
                 int newColor = 256 - (int)Utils.getAllActorsOfType(actorsGrp.members, "FourChambers.Marksman")[0].y / 4;
@@ -51,7 +57,7 @@ namespace FourChambers
             }
             if (FlxG.level == 5)
             {
-                setToColor(actorsGrp, levelTiles, 0, 0, 0);
+                //setToColor(actorsGrp, levelTiles, 0, 0, 0);
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 1;
             }
         }

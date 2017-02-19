@@ -48,7 +48,7 @@ namespace FourChambers
             scaleTween = new Tweener(4, 2, 1.4f, Bounce.EaseOut);
             scaleTween.Reset();
 
-            rotationTween = new Tweener(360, 0, 0.5f, Quadratic.EaseIn);
+            rotationTween = new Tweener(720, 0, 0.5f, Quadratic.EaseIn);
             rotationTween.Reset();
 
         }

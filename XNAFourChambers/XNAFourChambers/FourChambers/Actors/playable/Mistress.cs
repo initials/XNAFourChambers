@@ -79,6 +79,11 @@ namespace FourChambers
 
             price = 1.99f;
 
+            startPlayingBack();
+
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
         }
 
         override public void update()

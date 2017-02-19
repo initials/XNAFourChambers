@@ -267,6 +267,38 @@
     <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FourChambers\ActorRecording\automaton.txt" />
+    <Content Include="FourChambers\ActorRecording\chicken.txt" />
+    <Content Include="FourChambers\ActorRecording\corsair.txt" />
+    <Content Include="FourChambers\ActorRecording\cow.txt" />
+    <Content Include="FourChambers\ActorRecording\deer.txt" />
+    <Content Include="FourChambers\ActorRecording\executor.txt" />
+    <Content Include="FourChambers\ActorRecording\feline.txt" />
+    <Content Include="FourChambers\ActorRecording\gloom.txt" />
+    <Content Include="FourChambers\ActorRecording\grizzly.txt" />
+    <None Include="FourChambers\ActorRecording\harvester.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="FourChambers\ActorRecording\kerberos.txt" />
+    <Content Include="FourChambers\ActorRecording\lion.txt" />
+    <Content Include="FourChambers\ActorRecording\medusa.txt" />
+    <None Include="FourChambers\ActorRecording\mistress.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="FourChambers\ActorRecording\mistress_getaway.txt" />
+    <Content Include="FourChambers\ActorRecording\mistress_level3.txt" />
+    <Content Include="FourChambers\ActorRecording\mummy.txt" />
+    <Content Include="FourChambers\ActorRecording\nymph.txt" />
+    <Content Include="FourChambers\ActorRecording\paladin.txt" />
+    <Content Include="FourChambers\ActorRecording\rat.txt" />
+    <Content Include="FourChambers\ActorRecording\snake.txt" />
+    <Content Include="FourChambers\ActorRecording\spider.txt" />
+    <Content Include="FourChambers\ActorRecording\succubus.txt" />
+    <Content Include="FourChambers\ActorRecording\tormentor.txt" />
+    <Content Include="FourChambers\ActorRecording\unicorn.txt" />
+    <Content Include="FourChambers\ActorRecording\vampire.txt" />
+    <Content Include="FourChambers\ActorRecording\wolf.txt" />
+    <Content Include="FourChambers\ActorRecording\zombie.txt" />
     <Content Include="FourChambers\Text\script.txt" />
     <Content Include="Game.ico" />
     <Content Include="GAMESETTINGS.txt" />

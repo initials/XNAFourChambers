@@ -20,15 +20,16 @@ namespace FourChambers
             actorName = "Creeping Death";
             score = 50000;
             health = 1;
-            runSpeed = 14;
+            runSpeed = 75;
             _jumpPower = -110.0f;
             _jumpInitialPower = -110.0f;
             _jumpMaxTime = 0.15f;
             _jumpInitialTime = 0.045f;
             maxVelocity.X = runSpeed * 4;
             maxVelocity.Y = 1000;
-            //drag.X = runSpeed * 4;
-            //drag.Y = runSpeed * 4;
+
+            drag.X = runSpeed * 4;
+            drag.Y = runSpeed * 4;
             playbackFile = "FourChambers/ActorRecording/harvester.txt";
             timeDownAfterHurt = 2.5f;
 
@@ -59,9 +60,11 @@ namespace FourChambers
             //offset.X = 3;
             //offset.Y = 7;
 
-           
-             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
+            startPlayingBack();
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
         }
 
         override public void update()
@@ -71,17 +74,31 @@ namespace FourChambers
 
             base.update();
 
-
             bool buttonRightShoulder = ((_rec == Recording.Playback || _rec == Recording.Reverse) && _history[frameCount][(int)FlxRecord.ButtonMap.RightShoulder]);
 
-            if (buttonRightShoulder)
+            if (buttonRightShoulder) // || FlxG.gamepads.isNewButtonPress(Buttons.RightShoulder)
             {
                 x -= 4;
+                List<SpawnPoint> availableSpawnPoints = new List<SpawnPoint>();
+
+                foreach (var item in SingleScreenLevel.actorsGrp.members)
+                {
+                    if (item.GetType().ToString() == "FourChambers.SpawnPoint")
+                    {
+                        availableSpawnPoints.Add((SpawnPoint)item);
+                    }
+                }
+
+                //pick random spawn point;
+
+                int r = FlxU.randomInt(0, availableSpawnPoints.Count);
+
+                x = availableSpawnPoints[r].x;
+                y = availableSpawnPoints[r].y;
+
             }
 
-
         }
-
 
     }
 }

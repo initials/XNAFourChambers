@@ -16,6 +16,8 @@ namespace FourChambers
         private ActorsGroup actorsGrp;
         private Prism prism;
         private int currentCharacterSelected = 0;
+        private TitleText t;
+
 
         override public void create()
         {
@@ -80,7 +82,7 @@ namespace FourChambers
             int i = 1;
             foreach (var item in Globals.GAME_NAME.Split(' '))
             {
-                TitleText t = new TitleText(FlxG.width / 2 - 100, FlxG.height + (i * 14), 200, FlxG.width / 2 - 100, 8 + (i * 14), 2.0f + (i*0.2f));
+                t = new TitleText(FlxG.width / 2 - 100, FlxG.height + (i * 14), 200, FlxG.width / 2 - 100, 8 + (i * 14), 2.0f + (i*0.2f));
                 t.setFormat("ui/PixelFraktur", 1, Color.White, Color.Black, FlxJustification.Center);
                 t.text = item.ToString();
                 add(t);

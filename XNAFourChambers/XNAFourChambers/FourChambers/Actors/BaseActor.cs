@@ -189,18 +189,21 @@ namespace FourChambers
             hurtTimer += FlxG.elapsed;
             
             base.update();
+            
 
             if (FlxGlobal.cheatString != null)
             {
-                if (FlxGlobal.cheatString.StartsWith("control" + GetType().ToString()))
+                //Console.WriteLine(GetType().ToString() + FlxGlobal.cheatString);
+
+                if (FlxGlobal.cheatString.StartsWith("control" + GetType().ToString().Split('.')[1]))
                 {
-                    FlxG.write("Controlling " + GetType().ToString());
+                    FlxG.write("Controlling " + GetType().ToString().Split('.')[1]);
 
                     isPlayerControlled = true;
 
                     FlxGlobal.cheatString = "";
 
-                    FlxG.follow(this, 7.0f);
+                    //FlxG.follow(this, 7.0f);
                 }
             }
 

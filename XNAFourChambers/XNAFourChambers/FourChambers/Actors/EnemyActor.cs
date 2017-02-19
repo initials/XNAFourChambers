@@ -286,7 +286,7 @@ namespace FourChambers
                 play("idle");
             }
             
-            if (isPlayerControlled)
+            if ((isPlayerControlled || _rec==Recording.Playback) && hurtTimer > timeDownAfterHurt)
             {   
                 updateInputs();
             }
@@ -469,9 +469,8 @@ namespace FourChambers
 
 
             // ----------------------------------------------------------------
-
-
             // Running pushes walk speed higher.
+            
             if (buttonRightTrigger || rightTriggerControl)
             {
                 lastAttack = "range";
