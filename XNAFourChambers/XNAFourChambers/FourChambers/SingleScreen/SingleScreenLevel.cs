@@ -24,6 +24,13 @@ namespace FourChambers
         {
             base.create();
 
+            FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
+            add(f);
+
+            FlxG.followBounds(0, 0, 2500, 2500, true);
+            FlxG.follow(f, 5);
+
+
             if (FlxG.debug)
             {
                 Console.WriteLine(" - F9 - Advance to next level");
@@ -80,6 +87,10 @@ namespace FourChambers
 
             hud = new Hud();
             add(hud);
+
+
+
+
         }
 
         public FlxObject getPlayerCharacter()
@@ -107,14 +118,15 @@ namespace FourChambers
 
             if (FlxG.debug)
             {
-                FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo + " Globals.arrowsFired: " + Globals.arrowsFired + " State: " + FlxG.state.ToString());
+                //FlxG.setHudText(1, "Time in Level: " + FlxG.elapsedTotal.ToString().Split('.')[0] + " Collect " + Globals.numberOfEnemiesToKillBeforeLevelOver.ToString() + " more pests. Arrow Combo: " + Globals.arrowCombo + " Globals.arrowsFired: " + Globals.arrowsFired + " State: " + FlxG.state.ToString());
                 
                 runDebugKeyPresses();
             }
 
             base.update();
 
-            runKeyPresses();
+            if (FlxG.elapsedTotal>1.0f)
+                runKeyPresses();
         }
 
         private void runKeyPresses()
@@ -122,6 +134,20 @@ namespace FourChambers
             FlxObject m = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman");
             if (m == null)
                 return;
+
+            if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+            {
+                Globals.arrowCombo = 0;
+                FlxG.follow(null, 0);
+                Utils.zoomOut();
+
+                FlxG.level = 1;
+                FlxG.state = new CharacterSelectScreen();
+
+                FlxG.setHudText(3, "");
+
+                return;
+            }
 
             if (m.dead==true)
             {
@@ -140,19 +166,7 @@ namespace FourChambers
 
                     return;
                 }
-                if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
-                {
-                    Globals.arrowCombo = 0;
-                    FlxG.follow(null, 0);
-                    Utils.zoomOut();
 
-                    FlxG.level = 1;
-                    FlxG.state = new CharacterSelectScreen();
-
-                    FlxG.setHudText(3, "");
-
-                    return;
-                }
 
             }
         }

@@ -19,6 +19,19 @@ namespace FourChambers
 
             actorsAttrs = new List<Dictionary<string, string>>();
             actorsAttrs = FlxXMLReader.readNodesFromOelFile(Globals.levelFile, "level/ActorsLayer");
+            
+            foreach (Dictionary<string, string> nodes in actorsAttrs)
+            {
+
+                string nameOfNewActor = "FourChambers." + FlxU.firstLetterToUpper(nodes["Name"]);
+
+                var type = Type.GetType(nameOfNewActor);
+                if (nameOfNewActor == "FourChambers.Door")
+                {
+                    var newDoor = (FlxSprite)Activator.CreateInstance(type, Convert.ToInt32(nodes["x"]), Convert.ToInt32(nodes["y"]));
+                    add(newDoor);
+                }
+            }
 
             foreach (Dictionary<string, string> nodes in actorsAttrs)
             {
@@ -30,8 +43,11 @@ namespace FourChambers
 
                 try
                 {
-                    
-                    if (nodes.ContainsKey("event") && nodes.ContainsKey("height") && nodes.ContainsKey("width"))
+                    if (nameOfNewActor == "FourChambers.Door")
+                    {
+                        //ignore
+                    }
+                    else if (nodes.ContainsKey("event") && nodes.ContainsKey("height") && nodes.ContainsKey("width"))
                     {
                         var sprite = (FlxObject)Activator.CreateInstance(Type.GetType("FourChambers." + FlxU.firstLetterToUpper(nodes["event"])), 
                             Convert.ToInt32(nodes["x"]), 

@@ -27,7 +27,11 @@ namespace Loader_Four
         //nothing much to see here, typical XNA initialization code
         public FlxFactory()
         {
-            FlxG.zoom = 2;
+            //set up the graphics device and the content manager
+            _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+
+            FlxG.zoom = 3;
 
 #if ! DEBUG
 
@@ -36,7 +40,7 @@ namespace Loader_Four
 #endif
 
             FlxG.resolutionWidth = 480 * FlxG.zoom;
-            FlxG.resolutionHeight = 320 * FlxG.zoom;
+            FlxG.resolutionHeight = 270 * FlxG.zoom;
 
 
             int newZoom = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / FlxG.resolutionWidth;
@@ -48,11 +52,7 @@ namespace Loader_Four
 
             int newW = newZoom * FlxG.resolutionWidth;
             int newH = newZoom * FlxG.resolutionHeight;
-            Console.WriteLine("Will scale to : {0}x{1}", newW, newH);
-
-
-
-
+            Console.WriteLine("Will scale to : {0}x{1} - is widescreen?{2}", newW, newH, GraphicsAdapter.DefaultAdapter.IsWideScreen.ToString());
 
 #if ! DEBUG
             FlxG.zoom = newZoom;
@@ -76,28 +76,28 @@ namespace Loader_Four
 
 
 
-            //set up the graphics device and the content manager
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+
 
             if (FlxG.fullscreen)
             {
+                /*
                 FlxG.borderWidth = borderW/2;
                 FlxG.borderHeight = borderH/2;
 
                 Console.WriteLine("BORDER WIDTH x:{0}-y:{1}", FlxG.borderWidth, FlxG.borderHeight);
+                */
 
                 //resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
                 //resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-                if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
-                {
-                    //if user has it set to widescreen, let's make sure this
-                    //is ACTUALLY a widescreen resolution.
-                    if (((FlxG.resolutionWidth / 16) * 9) != FlxG.resolutionHeight)
-                    {
-                        FlxG.resolutionWidth = (FlxG.resolutionHeight / 9) * 16;
-                    }
-                }
+                //if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
+                //{
+                //    //if user has it set to widescreen, let's make sure this
+                //    //is ACTUALLY a widescreen resolution.
+                //    if (((FlxG.resolutionWidth / 16) * 9) != FlxG.resolutionHeight)
+                //    {
+                //        FlxG.resolutionWidth = (FlxG.resolutionHeight / 9) * 16;
+                //    }
+                //}
             }
 
             //we don't need no new-fangled pixel processing

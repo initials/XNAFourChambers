@@ -17,11 +17,19 @@ namespace FourChambers
         private Prism prism;
         private int currentCharacterSelected = 0;
         private TitleText t;
+        private FlxText infoText;
 
 
         override public void create()
         {
             base.create();
+
+            FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
+            add(f);
+
+            FlxG.followBounds(0, 0, 2500, 2500, true);
+            FlxG.follow(f, 5);
+
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
@@ -64,17 +72,35 @@ namespace FourChambers
 
             actorsGrp.members = actorsGrp.members.OrderBy(d => d.x).ToList();
 
-            FlxG.setHudTextScale(1, FlxG.zoom);
-            FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
+            //FlxG.setHudTextScale(1, FlxG.zoom);
+            //FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
 
             //FlxG.showBounds = true;
 
             for (int i = 0; i < 25; i++)
             {
-                Cloud c = new Cloud((int)FlxU.random(0, FlxG.height), (int)FlxU.random(0, FlxG.width));
+                Cloud c = new Cloud((int)FlxU.random(0, FlxG.width) + 160, (int)FlxU.random(0, FlxG.height) + 160);
                 add(c);
 
             }
+
+            //Cloud c2 = new Cloud(FlxG.width, FlxG.height);
+            //add(c2);
+
+            //c2 = new Cloud(FlxG.width * FlxG.zoom, FlxG.height * FlxG.zoom);
+            //add(c2);
+
+            Console.WriteLine("Cloud FlxG.width/height {0} x {1}", FlxG.width, FlxG.height);
+
+            infoText = new FlxText(0,0,200);
+            
+            infoText.setFormat("ui/BetterPixels", 1, Color.White, Color.Black, FlxJustification.Left);
+            infoText.setScrollFactors(1, 1);
+            add(infoText);
+            infoText.x = prism.x;
+            infoText.y = prism.y-32;
+
+
         }
 
         private void addText()
@@ -120,7 +146,8 @@ namespace FourChambers
 
                     FlxG.fade.start(Color.Black, 1.5f);
                     FlxG.play("sfx/Door");
-                    FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
+                    //FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
+
                     levelTilemap.transition = 0;
                     FlxG.quake.start(0.00525f, 1.7f);
                 }
@@ -135,7 +162,9 @@ namespace FourChambers
 
             if (prism.debugName == "readyToGoToNextState")
             {
-                FlxG.setHudText(1, "");
+                infoText.text = "";
+
+                //FlxG.setHudText(1, "");
                 FlxG.state = new SingleScreenLevel();
                 return;
             }
@@ -145,14 +174,29 @@ namespace FourChambers
             base.update();
 
             if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
-                FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!");
+            {
+                infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!";
+                //FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!");
+            }
             else
-                FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ");
+            {
+                infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ";
 
+                //FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ");
+            }
             if (FlxG.debug)
             {
                 runDebugKeyPresses();
             }
+            if (FlxG.elapsedTotal > 1.0f)
+            {
+                if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+                {
+                    FlxG.Game.Exit();
+                    return;
+                }
+            }
+
 
         }
         private void runDebugKeyPresses()

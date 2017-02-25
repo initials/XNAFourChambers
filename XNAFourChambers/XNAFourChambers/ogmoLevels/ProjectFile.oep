@@ -5,8 +5,8 @@
   <BackgroundColor A="255" R="128" G="128" B="255" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
-    <Width>480</Width>
-    <Height>320</Height>
+    <Width>800</Width>
+    <Height>592</Height>
   </LevelDefaultSize>
   <LevelMinimumSize>
     <Width>320</Width>
@@ -20,8 +20,8 @@
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>true</CameraEnabled>
   <CameraSize>
-    <Width>320</Width>
-    <Height>240</Height>
+    <Width>480</Width>
+    <Height>270</Height>
   </CameraSize>
   <ExportCameraPosition>true</ExportCameraPosition>
   <LevelValueDefinitions>

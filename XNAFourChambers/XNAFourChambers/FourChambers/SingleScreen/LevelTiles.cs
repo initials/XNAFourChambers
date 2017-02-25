@@ -44,7 +44,7 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
-            bgTiles.setScrollFactors(0.2f, 0.2f);
+            //bgTiles.setScrollFactors(0.2f, 0.2f);
             add(bgTiles);
 
 

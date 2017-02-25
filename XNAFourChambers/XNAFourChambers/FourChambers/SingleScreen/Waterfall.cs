@@ -21,12 +21,12 @@ namespace FourChambers
             setXSpeed(0, 0);
             setYSpeed(-15, 15);
             gravity = 98;
-            for (int i = 0; i < 150; i++)
+            for (int i = 0; i < 25; i++)
             {
                 WaterfallParticle p = new WaterfallParticle(FlxU.random(0.02f, 0.35f));
                 add(p);
             }
-            start(false, 0.015f, 0);
+            start(false, 0.065f, 0);
 
             renderOrder = 1;
 
