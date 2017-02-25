@@ -276,6 +276,9 @@
     <Content Include="FourChambers\ActorRecording\feline.txt" />
     <Content Include="FourChambers\ActorRecording\gloom.txt" />
     <Content Include="FourChambers\ActorRecording\grizzly.txt" />
+    <None Include=".itch.toml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="FourChambers\ActorRecording\harvester.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
