@@ -93,8 +93,9 @@ namespace FourChambers
             Console.WriteLine("Cloud FlxG.width/height {0} x {1}", FlxG.width, FlxG.height);
 
             infoText = new FlxText(0,0,200);
-            
-            infoText.setFormat("ui/BetterPixels", 1, Color.White, Color.Black, FlxJustification.Left);
+
+            //flixel/initials/SMALL_PIXEL
+            infoText.setFormat("flixel/initials/Munro", 1, Color.White, Color.Black, FlxJustification.Left);
             infoText.setScrollFactors(1, 1);
             add(infoText);
             infoText.x = prism.x;

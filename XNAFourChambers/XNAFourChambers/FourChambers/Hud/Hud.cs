@@ -28,11 +28,11 @@ namespace FourChambers
             scrollFactor.Y = 0;
 
             pestsRemainingNumberText = new FlxText((FlxG.width / 2) - 16 , 10, 50);
-            pestsRemainingNumberText.setFormat(FlxG.Content.Load<SpriteFont>("ui/BetterPixels"), 2, Color.White, FlxJustification.Left, Color.Black);
+            pestsRemainingNumberText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 2, Color.White, FlxJustification.Left, Color.Black);
             add(pestsRemainingNumberText);
 
             pestsRemainingText = new FlxText((FlxG.width / 2) - 16, 1, 50);
-            pestsRemainingText.setFormat(FlxG.Content.Load<SpriteFont>("ui/BetterPixels"), 1, Color.White, FlxJustification.Center, Color.Black);
+            pestsRemainingText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Center, Color.Black);
 
             add(pestsRemainingText);
             pestsRemainingText.text = "Collect\n\nMore Pests";
