@@ -13,7 +13,10 @@ namespace FourChambers
     public class Hud : FlxGroup
     {
         private FlxText pestsRemainingNumberText;
+
         private FlxText pestsRemainingText;
+        private FlxText pestsRemainingBelowText;
+
 
         //private FlxText pressToRestart;
 
@@ -31,12 +34,18 @@ namespace FourChambers
             pestsRemainingNumberText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 2, Color.White, FlxJustification.Left, Color.Black);
             add(pestsRemainingNumberText);
 
-            pestsRemainingText = new FlxText((FlxG.width / 2) - 16, 1, 50);
+            pestsRemainingText = new FlxText((FlxG.width / 2) - 32, 1, 50);
             pestsRemainingText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Center, Color.Black);
 
             add(pestsRemainingText);
-            pestsRemainingText.text = "Collect\n\nMore Pests";
+            pestsRemainingText.text = "Collect";
 
+
+            pestsRemainingBelowText = new FlxText((FlxG.width / 2) - 32, pestsRemainingNumberText.y + 20, 50);
+            pestsRemainingBelowText.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Center, Color.Black);
+
+            add(pestsRemainingBelowText);
+            pestsRemainingBelowText.text = "More Pests";
 
 
             //pressToRestart = new FlxText(4, FlxG.height-24 , 50);
@@ -50,6 +59,14 @@ namespace FourChambers
 
             rotationTween = new Tweener(720, 0, 0.5f, Quadratic.EaseIn);
             rotationTween.Reset();
+
+            for (int i = 0; i < Globals.numberOfEnemiesToKillBeforeLevelOver; i++)
+            {
+                EnemiesRemainingIndicator e = new EnemiesRemainingIndicator(1 + (4 * i), 1);
+                e.setScrollFactors(0, 0);
+                add(e);
+                e.scale = 0.25f;
+            }
 
         }
 
@@ -67,6 +84,20 @@ namespace FourChambers
 
             //pestsRemainingNumberText.scale = 3;
             pestsRemainingNumberText.angle = 45;
+
+            int count = 0;
+            foreach (var item in members)
+            {
+                if (item.GetType().ToString() == "FourChambers.EnemiesRemainingIndicator")
+                {
+                    if (count >= Globals.numberOfEnemiesToKillBeforeLevelOver)
+                    {
+                        ((FlxSprite)(item)).play("dead");
+
+                    }
+                    count++;
+                }
+            }
         }
 
         override public void update()
@@ -87,7 +118,7 @@ namespace FourChambers
                 else
                 {
                     pestsRemainingText.text = "Don't work for free. Clock out.";
-
+                    pestsRemainingBelowText.text = "";
                     pestsRemainingNumberText.text = "";
 
                     pestsRemainingText.x = FlxU.randomInt((FlxG.width / 2) - 17, (FlxG.width / 2) - 15);

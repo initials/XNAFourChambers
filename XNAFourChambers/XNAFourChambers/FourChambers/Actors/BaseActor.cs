@@ -159,6 +159,8 @@ namespace FourChambers
                 {
                     Globals.numberOfEnemiesToKillBeforeLevelOver--;
 
+
+
                     exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);

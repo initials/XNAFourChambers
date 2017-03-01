@@ -189,6 +189,7 @@ namespace FourChambers
             if (FlxG.keys.F9)
             {
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
+                hud.startTween();
                 Globals.arrowCombo = 20;
 
                 actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Door").x;
