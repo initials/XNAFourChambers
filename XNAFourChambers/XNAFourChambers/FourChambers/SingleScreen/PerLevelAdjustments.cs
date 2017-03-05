@@ -41,7 +41,7 @@ namespace FourChambers
 
                     if (levelTiles.levelTiles.getTile(i, j) == 12)
                     {
-                        if (FlxU.random() < 0.18)
+                        if (FlxU.random() < Globals.CHANCE_OF_ZINGER_NEST)
                             actorsGrp.add(new ZingerNest(i * 16, (j * 16)+16));
                     }
                 }

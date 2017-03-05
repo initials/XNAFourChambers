@@ -76,7 +76,6 @@ namespace FourChambers
 
         public override void kill()
         {
-            Console.WriteLine("Zinger Nest kill: {0}", acceleration.Y);
 
             FlxG.play("sfx/harvesterAttack", 0.5f, false);
             //acceleration.Y = FourChambers_Globals.GRAVITY;

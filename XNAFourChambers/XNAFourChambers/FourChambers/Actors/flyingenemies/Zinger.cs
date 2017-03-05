@@ -166,5 +166,24 @@ namespace FourChambers
         {
             base.overlapped(obj);
         }
+
+        public void customOverlap(FlxObject obj)
+        {
+            //Console.WriteLine("Custom Overlap run from Zinger with: {0}", obj.GetType().ToString());
+        }
+        public void overlapWithZingerNest(FlxObject obj)
+        {
+            color = Color.Red;
+
+            //Console.WriteLine("Custom Overlap run from Zinger with: {0}", obj.GetType().ToString());
+        }
+        public void overlapWithBat(FlxObject obj)
+        {
+            color = Color.Green;
+
+            //Console.WriteLine("Custom Overlap run from Zinger with: {0}", obj.GetType().ToString());
+        }
+
+
     }
 }
