@@ -29,6 +29,7 @@ namespace FourChambers
             drag.X = drag.Y = 0;
             acceleration.Y = 0;
             health = 1;
+            maxVelocity.Y = 150;
 
 
         }
@@ -55,6 +56,13 @@ namespace FourChambers
 
 
             base.update();
+
+        }
+
+        public void overlapWithZinger(FlxObject obj)
+        {
+            collide(obj);
+            FlxU.collide(this, obj);
 
         }
 

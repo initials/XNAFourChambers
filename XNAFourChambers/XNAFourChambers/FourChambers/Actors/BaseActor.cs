@@ -128,6 +128,7 @@ namespace FourChambers
             dead = false;
             visible = true;
             exists = true;
+
             color = Color.White;
 
             if (X >= FlxG.levelWidth / 2)
@@ -147,7 +148,9 @@ namespace FourChambers
         {
             /*
              * This checks if a custom overlap method has been written
-             * For example a Zinger may have overlapWithBat() 
+             * For example a Zinger may have overlapWithBat(FlxObject obj) 
+             * 
+             * public void overlapWithObjectName(FlxObject obj)
              */
             if (GetType().GetMethod("overlapWith" + obj.GetType().ToString().Split('.')[1]) != null)
             {

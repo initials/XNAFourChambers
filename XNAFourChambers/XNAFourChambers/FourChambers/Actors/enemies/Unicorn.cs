@@ -116,6 +116,18 @@ namespace FourChambers
         {
             base.update();
         }
+
+        public void overlapWithMarksman(FlxObject obj)
+        {
+            if (thingsThatHaveHappenedToThisActor.Contains("HasDoneAShit"))
+            {
+                drag.X = 0;
+            }
+            else
+            {
+                drag.X = 500;
+            }
+        }
         
         public override void overlapped(FlxObject obj)
         {
@@ -123,14 +135,7 @@ namespace FourChambers
             if (obj.GetType().ToString() == "FourChambers.Marksman")
             {
 
-                if (thingsThatHaveHappenedToThisActor.Contains("HasDoneAShit"))
-                {
-                    drag.X = 0;
-                }
-                else
-                {
-                    drag.X = 500;
-                }
+                
             }
 
             //string overlappedWith = obj.GetType().ToString();
@@ -163,6 +168,11 @@ namespace FourChambers
                 FlxG.play("sfx/horseHurt", 1.0f, false);
 
             base.hurt(Damage);
+        }
+
+        public void overlapWithZinger(FlxObject obj)
+        {
+            color = Color.Blue;
         }
     }
 }
