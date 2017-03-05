@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using System.Reflection;
+
 using XNATweener;
 
 namespace FourChambers
@@ -143,6 +145,20 @@ namespace FourChambers
 
         public override void overlapped(FlxObject obj)
         {
+            /*
+             * This checks if a custom overlap method has been written
+             * For example a Zinger may have overlapWithBat() 
+             */
+            if (GetType().GetMethod("overlapWith" + obj.GetType().ToString().Split('.')[1]) != null)
+            {
+                Type thisType = this.GetType();
+                MethodInfo theMethod = thisType.GetMethod("overlapWith" + obj.GetType().ToString().Split('.')[1]);
+                theMethod.Invoke(this, new object[] { obj });
+            }
+
+
+
+
             if (itemsThatCanKill.Contains( obj.GetType().ToString() ))
             {
                 if (!dead)
