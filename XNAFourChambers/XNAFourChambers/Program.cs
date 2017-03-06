@@ -51,7 +51,7 @@ namespace Loader_Four
             FlxG.level = 1;
             FlxG.score = 0;
 
-            FlxG.hudFont = "ui/BetterPixels";
+            FlxG.hudFont = "flixel/initials/Munro";
 
 #if DEBUG
             FlxG.level = 1;

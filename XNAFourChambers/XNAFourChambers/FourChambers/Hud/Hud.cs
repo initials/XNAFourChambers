@@ -18,7 +18,7 @@ namespace FourChambers
         private FlxText pestsRemainingBelowText;
 
 
-        //private FlxText pressToRestart;
+        private FlxText pressToRestart;
 
         private Tweener scaleTween;
         private Tweener rotationTween;
@@ -48,11 +48,13 @@ namespace FourChambers
             pestsRemainingBelowText.text = "More Pests";
 
 
-            //pressToRestart = new FlxText(4, FlxG.height-24 , 50);
-            //pressToRestart.setFormat(FlxG.Content.Load<SpriteFont>("ui/BetterPixels"), 1, Color.White, FlxJustification.Left, Color.Black);
+            //pressToRestart = new FlxText(4, 4, 150);
+            //pressToRestart.setFormat(FlxG.Content.Load<SpriteFont>("flixel/initials/Munro"), 1, Color.White, FlxJustification.Left, Color.Black);
             //add(pressToRestart);
             //pressToRestart.text = "Press [R] / (Y) to Restart";
             //pressToRestart.visible = false;
+            //pressToRestart.setScrollFactors(0, 0);
+
 
             scaleTween = new Tweener(4, 2, 1.4f, Bounce.EaseOut);
             scaleTween.Reset();
@@ -75,12 +77,9 @@ namespace FourChambers
             scaleTween.Reset();
             rotationTween.Reset();
 
-
             shouldFollowTween = true;
             scaleTween.Start();
             rotationTween.Start();
-
-            
 
             //pestsRemainingNumberText.scale = 3;
             pestsRemainingNumberText.angle = 45;
@@ -124,9 +123,6 @@ namespace FourChambers
                     pestsRemainingText.x = FlxU.randomInt((FlxG.width / 2) - 17, (FlxG.width / 2) - 15);
                     pestsRemainingText.y = FlxU.randomInt(9, 12);
                 }
-
-
-
             }
             if (FlxG.zoom == Globals.gameSizeGlobals["zoomCloseUp"])
             {
@@ -134,8 +130,10 @@ namespace FourChambers
                 pestsRemainingText.text = "";
 
                 FlxG.setHudText(3, "Press [R] / (Y) to Restart");
-                FlxG.setHudTextScale(3, 4);
-                FlxG.setHudTextPosition(3, 8, FlxG.height - 8);
+                FlxG.setHudTextScale(3, 3);
+                FlxG.setHudTextPosition(3, 8, FlxG.height - 16);
+
+                //pressToRestart.visible = true;
 
                 //pressToRestart.visible = true;
                 //pressToRestart.x = FlxG.mouse.screenX;
@@ -144,6 +142,14 @@ namespace FourChambers
                 //Console.WriteLine("X {0} Y {1}", pressToRestart.x, pressToRestart.y);
 
 
+                //turn off enemy indicators
+                foreach (var item in members)
+                {
+                    if (item.GetType().ToString() == "FourChambers.EnemiesRemainingIndicator")
+                    {
+                        ((FlxSprite)(item)).kill();
+                    }
+                }
             }
             if (shouldFollowTween)
             {

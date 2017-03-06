@@ -42,8 +42,6 @@ namespace FourChambers
                         //Respawn based on chance of respawn
                         item.reset(x, y);
 
-                        
-
                     }
                 }
             }

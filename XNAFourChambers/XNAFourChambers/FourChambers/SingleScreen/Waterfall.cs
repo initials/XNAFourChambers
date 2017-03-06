@@ -51,8 +51,6 @@ namespace FourChambers
 
         public override void render(SpriteBatch spriteBatch)
         {
-            //collider.render(spriteBatch);
-
             base.render(spriteBatch);
         }
 

@@ -88,9 +88,6 @@ namespace FourChambers
             hud = new Hud();
             add(hud);
 
-
-
-
         }
 
         public FlxObject getPlayerCharacter()
@@ -166,8 +163,6 @@ namespace FourChambers
 
                     return;
                 }
-
-
             }
         }
 
@@ -257,8 +252,6 @@ namespace FourChambers
 
         protected bool overlapCallback(object Sender, FlxSpriteCollisionEvent e)
         {
-            
-
             ((FlxSprite)e.Object1).overlapped(((FlxSprite)e.Object2));
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
@@ -268,7 +261,6 @@ namespace FourChambers
             {
                 overlapWithLadder(Sender, e);
             }
-
 
             return true;
         }
@@ -282,12 +274,9 @@ namespace FourChambers
             //if (e.Object1 is Arrow)
             //    Console.WriteLine("Frames in air: {0} ", ((Arrow)e.Object1).framesInAir);
 
-
             ((FlxSprite)e.Object2).overlapped(((FlxSprite)e.Object1));
 
             return true;
         }
-
-
     }
 }
