@@ -41,7 +41,7 @@ namespace FourChambers
             sparkles.setXSpeed(-255, 255);
             sparkles.setYSpeed(-255, 0);
             sparkles.gravity = Globals.GRAVITY / 10;
-            sparkles.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/doorSparkles"), 75, true);
+            sparkles.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/doorSparkles3x3"), 75, true);
             sparkles.at(this);
             sparkles.x += 14;
             sparkles.y += 8;

@@ -143,7 +143,7 @@ namespace FourChambers
                     prism.play("wrap");
 
                     
-                    FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToNextState, true);
+                    FlxG.fade.start(Color.Black, 2.5f, goToNextState, true);
                     
                     FlxG.play("sfx/Door");
 
@@ -152,8 +152,8 @@ namespace FourChambers
                     FlxG.quake.start(0.00525f, 1.7f);
 
 
-                    followObject.velocity.X = 25;
-                    followObject.acceleration.X = 65;
+                    followObject.velocity.X = 45;
+                    followObject.acceleration.X = 75;
 
 
                     foreach (var item in this.defaultGroup.members)

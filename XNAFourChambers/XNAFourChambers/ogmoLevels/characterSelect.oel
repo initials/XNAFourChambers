@@ -120,5 +120,6 @@
     <harvester id="36" x="288" y="336" flip="False" />
     <paladin id="37" x="352" y="336" flip="False" />
     <vampire id="38" x="416" y="336" flip="False" />
+    <artist id="0" x="512" y="368" flip="False" />
   </ActorsLayer>
 </level>

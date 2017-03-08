@@ -15,8 +15,12 @@ namespace FourChambers
         public const string HUD_FONT = "flixel/initials/Munro";
         public const string TITLE_FONT = "ui/PixelFraktur";
 
-
+#if DEBUG
+        public const float FADE_OUT_TIME = 0.25f;
+#else
         public const float FADE_OUT_TIME = 1.25f;
+#endif
+
 
         public const float CHANCE_OF_ZINGER_NEST = 0.18f;
 
