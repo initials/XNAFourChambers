@@ -25,7 +25,7 @@ namespace FourChambers
         {
             base.create();
 
-            FlxG.bloom.Visible = false;
+            //FlxG.bloom.Visible = false;
 
             followObject = new FlxObject(400, 592 / 2, 1, 1);
             add(followObject);

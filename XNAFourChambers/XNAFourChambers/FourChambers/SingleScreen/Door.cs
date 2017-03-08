@@ -78,8 +78,8 @@ namespace FourChambers
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.UP && obj.dead==false)
                 {
 
-                    FlxG.bloom.Visible = true;
-                    FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[3];
+                    //FlxG.bloom.Visible = true;
+                    //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[3];
 
                     play("pulse");
 
@@ -129,8 +129,8 @@ namespace FourChambers
         {
             if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
             {
-                FlxG.bloom.Visible = true;
-                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
+                //FlxG.bloom.Visible = true;
+                //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
 
                 play("pulse");
                 //sparkles.start(false, 0.01f, 0);

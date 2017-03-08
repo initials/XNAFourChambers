@@ -24,7 +24,7 @@ namespace FourChambers
         {
             base.create();
 
-            FlxG.bloom.Visible = false;
+            //FlxG.bloom.Visible = false;
 
             FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
             add(f);
@@ -106,6 +106,8 @@ namespace FourChambers
                 seraphine.concern = true;
                 seraphine.x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x - 20;
                 seraphine.y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y - 30;
+
+                //FlxG.bloom.Visible = false;
             }
 
             FlxU.collide(actorsGrp, levelTilemap.levelTiles);

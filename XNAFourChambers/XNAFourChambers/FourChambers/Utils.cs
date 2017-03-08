@@ -27,7 +27,7 @@ namespace FourChambers
 
         public static void zoomIn()
         {
-            FlxG.bloom.Visible = false;
+            //FlxG.bloom.Visible = false;
 
             FlxG.zoom = Globals.gameSizeGlobals["zoomCloseUp"];
             FlxG.width = Globals.gameSizeGlobals["widthCloseUp"];
