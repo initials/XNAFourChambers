@@ -2178,6 +2178,15 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\ui\PixelFraktur.xnb</Output>
       <Time>2017-02-15T19:25:04.8677558+11:00</Time>
     </Item>
+    <Item>
+      <Source>sfx\EnemyHurt1.wav</Source>
+      <Name>sfx\EnemyHurt1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\EnemyHurt1.xnb</Output>
+      <Time>2017-03-09T08:09:50.9295812+11:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

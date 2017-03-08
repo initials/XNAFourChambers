@@ -327,6 +327,9 @@ namespace FourChambers
 
         public override void kill()
         {
+
+            FlxG.play("sfx/EnemyHurt1");
+
             color = Color.White;
 
             play("death");

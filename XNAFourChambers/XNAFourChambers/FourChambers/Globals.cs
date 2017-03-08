@@ -18,7 +18,7 @@ namespace FourChambers
 
         public const float FADE_OUT_TIME = 1.25f;
 
-        public const float CHANCE_OF_ZINGER_NEST = 1.0f;
+        public const float CHANCE_OF_ZINGER_NEST = 0.18f;
 
         public const int TILE_SIZE_X = 16;
         public const int TILE_SIZE_Y = 16;

@@ -63,10 +63,6 @@ namespace FourChambers
             if (FlxG.level == 7)
             {
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;
-
-                //FlxG.setHudText(3, "Your shift is over but your boss called and wants you to come in early tomorrow.");
-                //FlxG.setHudTextScale(3, 2);
-                //FlxG.setHudTextPosition(3, 8, FlxG.height - 8);
             }
         }
 

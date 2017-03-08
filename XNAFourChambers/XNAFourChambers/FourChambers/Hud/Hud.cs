@@ -109,10 +109,9 @@ namespace FourChambers
             {
                 if (FlxG.level == 7)
                 {
-                    //pestsRemainingText.x = FlxU.randomInt((FlxG.width / 2) - 17, (FlxG.width / 2) - 16);
-                    //pestsRemainingText.y = FlxU.randomInt(9, 10);
-
                     pestsRemainingText.text = "Your shift is over but your boss called\nand wants you to come in early tomorrow.";
+                    pestsRemainingBelowText.text = "";
+                    pestsRemainingNumberText.text = "";
                 }
                 else
                 {

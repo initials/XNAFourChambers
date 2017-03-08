@@ -86,6 +86,7 @@ namespace FourChambers
             Utils.zoomOut();
 
             PerLevelAdjustments.adjustForLevel(actorsGrp, levelTilemap);
+            PerLevelAdjustments.update(actorsGrp, levelTilemap);
 
             hud = new Hud();
             add(hud);
