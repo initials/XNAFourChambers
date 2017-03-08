@@ -29,7 +29,7 @@ namespace FourChambers
             drag.X = drag.Y = 0;
             acceleration.Y = 0;
             health = 1;
-            maxVelocity.Y = 150;
+            maxVelocity.Y = 350;
 
 
         }

@@ -16,7 +16,7 @@ namespace FourChambers
         public const string TITLE_FONT = "ui/PixelFraktur";
 
 
-        
+        public const float FADE_OUT_TIME = 1.25f;
 
         public const float CHANCE_OF_ZINGER_NEST = 1.0f;
 

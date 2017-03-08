@@ -77,19 +77,22 @@ namespace FourChambers
             {
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.UP && obj.dead==false)
                 {
+
+                    FlxG.bloom.Visible = true;
+                    FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[3];
+
                     play("pulse");
+
                     if (FlxG.level == 7)
                     {
-                        FlxG.level=1;
-                        FlxG.state = new CharacterSelectScreen();
-                        return;
+                        if (FlxG.fade.exists == false)
+                            FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, true);
                     }
                     else
                     {
+                        if (FlxG.fade.exists==false)
+                            FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToNextLevel, true);
 
-                        FlxG.level++;
-                        FlxG.level = Utils.LimitToRange(FlxG.level, 1, 7);
-                        FlxG.state = new SingleScreenLevel();
                     }
                     return;
                 }
@@ -107,10 +110,28 @@ namespace FourChambers
             base.overlapped(obj);
         }
 
+        private static void goToNextLevel(object sender, FlxEffectCompletedEvent e)
+        {
+            FlxG.level++;
+            FlxG.level = Utils.LimitToRange(FlxG.level, 1, 7);
+            FlxG.state = new SingleScreenLevel();
+            return;
+        }
+
+        private static void goToCharacterSelectScreen(object sender, FlxEffectCompletedEvent e)
+        {
+            FlxG.level = 1;
+            FlxG.state = new CharacterSelectScreen();
+            return;
+        }
+
         override public void update()
         {
             if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0)
             {
+                FlxG.bloom.Visible = true;
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
+
                 play("pulse");
                 //sparkles.start(false, 0.01f, 0);
                 

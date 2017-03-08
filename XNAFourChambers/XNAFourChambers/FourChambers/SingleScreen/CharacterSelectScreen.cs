@@ -25,6 +25,8 @@ namespace FourChambers
         {
             base.create();
 
+            FlxG.bloom.Visible = false;
+
             followObject = new FlxObject(400, 592 / 2, 1, 1);
             add(followObject);
             
@@ -136,11 +138,13 @@ namespace FourChambers
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal>0.5f)
             {
-                if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
+                if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false && FlxG.fade.exists == false)
                 {
                     prism.play("wrap");
 
-                    FlxG.fade.start(Color.Black, 2.5f, goToNextState, true);
+                    
+                    FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToNextState, true);
+                    
                     FlxG.play("sfx/Door");
 
                     //levelTilemap.transition = 0;
@@ -159,6 +163,10 @@ namespace FourChambers
                             ((TitleText)(item)).pushTextOffToLeft();
                         }
                     }
+
+                }
+                else if (FlxG.fade.exists == true)
+                {
 
                 }
                 else

@@ -24,6 +24,8 @@ namespace FourChambers
         {
             base.create();
 
+            FlxG.bloom.Visible = false;
+
             FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
             add(f);
 
@@ -107,7 +109,9 @@ namespace FourChambers
             }
 
             FlxU.collide(actorsGrp, levelTilemap.levelTiles);
-            FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
+
+            if (FlxG.fade.exists == false)
+                FlxU.overlap(actorsGrp, actorsGrp, overlapCallback);
             
             collideArrows();
 
@@ -134,15 +138,8 @@ namespace FourChambers
 
             if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
             {
-                Globals.arrowCombo = 0;
-                FlxG.follow(null, 0);
-                Utils.zoomOut();
-
-                FlxG.level = 1;
-                FlxG.state = new CharacterSelectScreen();
-
-                FlxG.setHudText(3, "");
-
+                //goToCharacterSelectScreen();
+                FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, true);
                 return;
             }
 
@@ -152,19 +149,16 @@ namespace FourChambers
 
                 if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
                 {
-                    Globals.arrowCombo = 0;
-                    FlxG.follow(null, 0);
-                    Utils.zoomOut();
-
-                    //FlxG.level = 1;
-                    FlxG.state = new SingleScreenLevel();
-
-                    FlxG.setHudText(3, "");
-
+                    //restartScene();
+                    FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, restartScene, true);
                     return;
                 }
             }
         }
+
+
+
+
 
         private void runDebugKeyPresses()
         {
@@ -278,5 +272,41 @@ namespace FourChambers
 
             return true;
         }
+
+        public static void goToNextState(object sender, FlxEffectCompletedEvent e)
+        {
+            FlxG.state = new SingleScreenLevel();
+            return;
+        }
+
+        public static void goToCharacterSelectScreen(object sender, FlxEffectCompletedEvent e)
+        {
+            Globals.arrowCombo = 0;
+            FlxG.follow(null, 0);
+            Utils.zoomOut();
+
+            FlxG.level = 1;
+            FlxG.state = new CharacterSelectScreen();
+
+            FlxG.setHudText(3, "");
+
+            return;
+        }
+
+        private static void restartScene(object sender, FlxEffectCompletedEvent e)
+        {
+            Globals.arrowCombo = 0;
+            FlxG.follow(null, 0);
+            Utils.zoomOut();
+
+            //FlxG.level = 1;
+            FlxG.state = new SingleScreenLevel();
+
+            FlxG.setHudText(3, "");
+
+            return;
+        }
+
+
     }
 }
