@@ -19,16 +19,18 @@ namespace FourChambers
         private TitleText t;
         private FlxText infoText;
 
+        private FlxObject followObject;
 
         override public void create()
         {
             base.create();
 
-            FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
-            add(f);
+            followObject = new FlxObject(400, 592 / 2, 1, 1);
+            add(followObject);
+            
 
             FlxG.followBounds(0, 0, 2500, 2500, true);
-            FlxG.follow(f, 5);
+            FlxG.follow(followObject, 5);
 
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
@@ -84,23 +86,16 @@ namespace FourChambers
 
             }
 
-            //Cloud c2 = new Cloud(FlxG.width, FlxG.height);
-            //add(c2);
-
-            //c2 = new Cloud(FlxG.width * FlxG.zoom, FlxG.height * FlxG.zoom);
-            //add(c2);
-
-            Console.WriteLine("Cloud FlxG.width/height {0} x {1}", FlxG.width, FlxG.height);
-
             infoText = new FlxText(0,0,200);
 
-            //flixel/initials/SMALL_PIXEL
-            infoText.setFormat("flixel/initials/Munro", 1, Color.White, Color.Black, FlxJustification.Left);
+            infoText.setFormat(Globals.HUD_FONT, 1, Color.White, Color.Black, FlxJustification.Left);
             infoText.setScrollFactors(1, 1);
             add(infoText);
             infoText.x = prism.x;
             infoText.y = prism.y-32;
 
+            Console.WriteLine(FlxG.scroll.X);
+            Console.WriteLine(FlxG.scroll.Y);
 
         }
 
@@ -110,20 +105,20 @@ namespace FourChambers
             foreach (var item in Globals.GAME_NAME.Split(' '))
             {
                 t = new TitleText(FlxG.width / 2 - 100, FlxG.height + (i * 14), 200, FlxG.width / 2 - 100, 8 + (i * 14), 2.0f + (i*0.2f));
-                t.setFormat("ui/PixelFraktur", 1, Color.White, Color.Black, FlxJustification.Center);
+                t.setFormat(Globals.TITLE_FONT, 1, Color.White, Color.Black, FlxJustification.Center);
                 t.text = item.ToString();
                 add(t);
 
                 i++;
-
             }
         }
 
-
-
-
         override public void update()
         {
+
+            //Console.WriteLine(FlxG.scroll.X);
+            //Console.WriteLine(FlxG.scroll.Y);
+
             prism.x = (actorsGrp.members[currentCharacterSelected].x + actorsGrp.members[currentCharacterSelected].width/2) - (prism.width/2);
             prism.y = actorsGrp.members[currentCharacterSelected].y - 24;
 
@@ -145,12 +140,26 @@ namespace FourChambers
                 {
                     prism.play("wrap");
 
-                    FlxG.fade.start(Color.Black, 1.5f);
+                    FlxG.fade.start(Color.Black, 2.5f, goToNextState, true);
                     FlxG.play("sfx/Door");
-                    //FlxG.setHudTextPosition(1, int.MaxValue, int.MaxValue);
 
-                    levelTilemap.transition = 0;
+                    //levelTilemap.transition = 0;
+
                     FlxG.quake.start(0.00525f, 1.7f);
+
+
+                    followObject.velocity.X = 25;
+                    followObject.acceleration.X = 65;
+
+
+                    foreach (var item in this.defaultGroup.members)
+                    {
+                        if (item.GetType().ToString() == "FourChambers.TitleText")
+                        {
+                            ((TitleText)(item)).pushTextOffToLeft();
+                        }
+                    }
+
                 }
                 else
                 {
@@ -163,11 +172,7 @@ namespace FourChambers
 
             if (prism.debugName == "readyToGoToNextState")
             {
-                infoText.text = "";
 
-                //FlxG.setHudText(1, "");
-                FlxG.state = new SingleScreenLevel();
-                return;
             }
 
             FlxU.collide(actorsGrp, levelTilemap);
@@ -200,6 +205,13 @@ namespace FourChambers
 
 
         }
+
+        public static void goToNextState(object sender, FlxEffectCompletedEvent e)
+        {
+            FlxG.state = new SingleScreenLevel();
+            return;
+        }
+
         private void runDebugKeyPresses()
         {
             if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))

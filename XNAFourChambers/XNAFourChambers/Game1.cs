@@ -115,7 +115,7 @@ namespace Loader_Four
             }
             _graphics.ApplyChanges();
 
-            Console.WriteLine("Running Game at Settings: {0}x{1}\nFullscreen?: {2}\nPreferrred: {3}x{4} \n -- Zoom: {5} \nFlxG.width/height {6} x {7}", 
+            Console.WriteLine("* Running Game at Settings: {0}x{1}\n -- Fullscreen?: {2}\n -- Preferrred: {3}x{4} \n -- Zoom: {5} \n -- FlxG.width/height {6} x {7} \n -- -- --", 
                 FlxG.resolutionWidth, 
                 FlxG.resolutionHeight, 
                 FlxG.fullscreen, 

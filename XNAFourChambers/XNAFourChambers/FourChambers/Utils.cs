@@ -16,6 +16,15 @@ namespace FourChambers
             if (value > inclusiveMaximum) { return inclusiveMaximum; }
             return value;
         }
+
+        public static float LimitFloatToRange(float value, float inclusiveMinimum, float inclusiveMaximum)
+        {
+            if (value < inclusiveMinimum) { return inclusiveMinimum; }
+            if (value > inclusiveMaximum) { return inclusiveMaximum; }
+            return value;
+        }
+
+
         public static void zoomIn()
         {
             FlxG.zoom = Globals.gameSizeGlobals["zoomCloseUp"];

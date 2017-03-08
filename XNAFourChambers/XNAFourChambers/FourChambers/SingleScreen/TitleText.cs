@@ -17,6 +17,11 @@ namespace FourChambers
         public TitleText(float xPos, float yPos, float Width, float destX, float destY, float timeFrame)
             : base(xPos, yPos, Width)
         {
+            //setScrollFactors(2, 2);
+
+            //x += FlxG.scroll.X * (1 - scrollFactor.X);
+            //y += FlxG.scroll.Y * (1 - scrollFactor.Y);
+
             t = new Vector2Tweener(new Vector2(xPos, yPos), new Vector2(destX, destY), timeFrame, XNATweener.Bounce.EaseOut);
             t.Play();
 
@@ -31,8 +36,16 @@ namespace FourChambers
                 t.Update(FlxG.elapsedAsGameTime);
 
             base.update();
+
             x = t.Position.X;
             y = t.Position.Y;
+            
+        }
+
+        public void pushTextOffToLeft()
+        {
+            t = new Vector2Tweener(new Vector2(x, y), new Vector2(x-450, y), 2.0f, XNATweener.Cubic.EaseIn);
+            t.Play();
         }
 
     }

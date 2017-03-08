@@ -44,8 +44,13 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
-            //bgTiles.setScrollFactors(0.2f, 0.2f);
+            bgTiles.setScrollFactors(0.5f, 0.5f);
             add(bgTiles);
+
+            bgTiles.x += FlxG.scroll.X * (1 - bgTiles.scrollFactor.X);
+            bgTiles.y += FlxG.scroll.Y * (1 - bgTiles.scrollFactor.Y);
+
+
 
 
             levelAttrs = new Dictionary<string, string>();
@@ -85,6 +90,19 @@ namespace FourChambers
         /// </summary>
         override public void update()
         {
+            /*
+            if (FlxG.keys.O)
+            {
+                bgTiles.x--;
+                Console.WriteLine(bgTiles.x + " " + bgTiles.y);
+            }
+            if (FlxG.keys.P)
+            {
+                bgTiles.y--;
+                Console.WriteLine(bgTiles.x + " " + bgTiles.y);
+            }
+            */
+
             base.update();
             fireflyGroup.update();
             if (transition >= 0)

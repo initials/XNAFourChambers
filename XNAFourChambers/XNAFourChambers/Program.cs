@@ -51,7 +51,7 @@ namespace Loader_Four
             FlxG.level = 1;
             FlxG.score = 0;
 
-            FlxG.hudFont = "flixel/initials/Munro";
+            FlxG.hudFont = FourChambers.Globals.HUD_FONT;
 
 #if DEBUG
             FlxG.level = 1;

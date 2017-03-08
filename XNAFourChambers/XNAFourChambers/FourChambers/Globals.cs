@@ -12,6 +12,12 @@ namespace FourChambers
     {
         public const string GAME_NAME = "The Four Chambers of the Human Heart";
 
+        public const string HUD_FONT = "flixel/initials/Munro";
+        public const string TITLE_FONT = "ui/PixelFraktur";
+
+
+        
+
         public const float CHANCE_OF_ZINGER_NEST = 1.0f;
 
         public const int TILE_SIZE_X = 16;
