@@ -94,7 +94,7 @@ namespace FourChambers
             infoText.setScrollFactors(1, 1);
             add(infoText);
             infoText.x = prism.x;
-            infoText.y = prism.y-32;
+            infoText.y = prism.y+56;
 
             Console.WriteLine(FlxG.scroll.X);
             Console.WriteLine(FlxG.scroll.Y);
