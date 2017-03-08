@@ -116,8 +116,6 @@ namespace FourChambers
 
         public override void hurt(float Damage)
         {
-            //Console.WriteLine("Health of {0} - {1}", actorType, health);
-
             base.hurt(Damage);
         }
 
@@ -159,9 +157,6 @@ namespace FourChambers
                 theMethod.Invoke(this, new object[] { obj });
             }
 
-
-
-
             if (itemsThatCanKill.Contains( obj.GetType().ToString() ))
             {
                 if (!dead)
@@ -178,8 +173,6 @@ namespace FourChambers
                 {
                     Globals.numberOfEnemiesToKillBeforeLevelOver--;
 
-
-
                     exists = false;
 
                     FlxG.play("sfx/Pickup_Coin25", 0.75f);
@@ -193,8 +186,6 @@ namespace FourChambers
                     ((FlxSprite)obj).hurt(1);
                 }
             }
-
-            
 
             base.overlapped(obj);
         }
@@ -212,21 +203,14 @@ namespace FourChambers
             if (dead)
             {
                 color = new Color(1, colorFlasher.Position, colorFlasher.Position) ;
-
-
-                //color = new Color(1.0f, 0.75f, 0.75f);
-                //color = Color.Red;
             }
 
             hurtTimer += FlxG.elapsed;
             
             base.update();
-            
 
             if (FlxGlobal.cheatString != null)
             {
-                //Console.WriteLine(GetType().ToString() + FlxGlobal.cheatString);
-
                 if (FlxGlobal.cheatString.StartsWith("control" + GetType().ToString().Split('.')[1]))
                 {
                     FlxG.write("Controlling " + GetType().ToString().Split('.')[1]);
@@ -238,9 +222,6 @@ namespace FourChambers
                     //FlxG.follow(this, 7.0f);
                 }
             }
-
         }
-
-
     }
 }

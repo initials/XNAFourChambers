@@ -38,9 +38,9 @@ namespace FourChambers
             sparkles = new FlxEmitter();
             sparkles.setSize(6, 12);
             sparkles.setRotation();
-            sparkles.setXSpeed(-151, 151);
-            sparkles.setYSpeed(-151, 151);
-            sparkles.gravity = 0;
+            sparkles.setXSpeed(-255, 255);
+            sparkles.setYSpeed(-255, 0);
+            sparkles.gravity = Globals.GRAVITY / 10;
             sparkles.createSprites(FlxG.Content.Load<Texture2D>("fourchambers/doorSparkles"), 75, true);
             sparkles.at(this);
             sparkles.x += 14;
@@ -75,8 +75,11 @@ namespace FourChambers
 
             if (overlappedWith == "FourChambers.Marksman")
             {
+
                 if (Globals.numberOfEnemiesToKillBeforeLevelOver <= 0 && FlxControl.UP && obj.dead==false)
                 {
+                    obj.visible = false;
+                    sparkles.start(false, 0.01f, 0);
 
                     //FlxG.bloom.Visible = true;
                     //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[3];
@@ -133,7 +136,7 @@ namespace FourChambers
                 //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
 
                 play("pulse");
-                //sparkles.start(false, 0.01f, 0);
+                
                 
             }
 
