@@ -13,6 +13,7 @@ namespace FourChambers
     class TitleText : FlxText
     {
         public Vector2Tweener t;
+        private float timing;
 
         public TitleText(float xPos, float yPos, float Width, float destX, float destY, float timeFrame)
             : base(xPos, yPos, Width)
@@ -24,6 +25,8 @@ namespace FourChambers
 
             t = new Vector2Tweener(new Vector2(xPos, yPos), new Vector2(destX, destY), timeFrame, XNATweener.Bounce.EaseOut);
             t.Play();
+
+            timing = timeFrame;
 
         }
 
@@ -44,7 +47,7 @@ namespace FourChambers
 
         public void pushTextOffToLeft()
         {
-            t = new Vector2Tweener(new Vector2(x, y), new Vector2(x-450, y), 2.0f, XNATweener.Cubic.EaseIn);
+            t = new Vector2Tweener(new Vector2(x, y), new Vector2(x - 450, y), timing, XNATweener.Cubic.EaseIn);
             t.Play();
         }
 
