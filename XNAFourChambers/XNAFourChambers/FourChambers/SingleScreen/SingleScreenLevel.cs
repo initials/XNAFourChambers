@@ -151,6 +151,8 @@ namespace FourChambers
 
                 if (FlxG.keys.R || FlxG.gamepads.isNewButtonPress(Buttons.Y))
                 {
+                    FlxG.setHudText(3, " ");
+
                     //restartScene();
                     FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, restartScene, true);
                     return;

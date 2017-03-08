@@ -124,7 +124,7 @@ namespace FourChambers
                     pestsRemainingText.y = FlxU.randomInt(9, 12);
                 }
             }
-            if (FlxG.zoom == Globals.gameSizeGlobals["zoomCloseUp"])
+            if (FlxG.zoom == Globals.gameSizeGlobals["zoomCloseUp"] && FlxG.fade.exists==false)
             {
                 pestsRemainingNumberText.text = "";
                 pestsRemainingText.text = "";
