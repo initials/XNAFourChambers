@@ -143,7 +143,7 @@ namespace FourChambers
                     prism.play("wrap");
 
                     
-                    FlxG.fade.start(Color.Black, 2.5f, goToNextState, true);
+                    FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
                     
                     FlxG.play("sfx/Door");
 

@@ -139,7 +139,7 @@ namespace FourChambers
             if (m == null)
                 return;
 
-            if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+            if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
             {
                 //goToCharacterSelectScreen();
                 FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, true);

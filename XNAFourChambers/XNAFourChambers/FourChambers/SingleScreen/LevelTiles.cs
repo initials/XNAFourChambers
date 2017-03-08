@@ -31,6 +31,7 @@ namespace FourChambers
             bg.setScrollFactors(0.01f, 0.01f);
             bg.@fixed = true;
             bg.moves = false;
+            bg.boundingBoxOverride = false;
             add(bg);
 
             levelAttrs = new Dictionary<string, string>();
