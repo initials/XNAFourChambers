@@ -113,6 +113,8 @@ namespace FourChambers
 
         private static void goToNextLevel(object sender, FlxEffectCompletedEvent e)
         {
+            Globals.writeGameProgressToFile();
+
             FlxG.level++;
             FlxG.level = Utils.LimitToRange(FlxG.level, 1, 7);
             FlxG.state = new SingleScreenLevel();

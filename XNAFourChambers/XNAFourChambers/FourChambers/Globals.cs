@@ -21,6 +21,7 @@ namespace FourChambers
         public const float FADE_OUT_TIME = 1.25f;
 #endif
 
+        public const string SAVE_FILE_NAME = "turbo.z80";
 
         public const float CHANCE_OF_ZINGER_NEST = 0.18f;
 
@@ -96,12 +97,6 @@ namespace FourChambers
         public static int arrowPower = 0;
 
         public static int swordPower = 0;
-
-        /// <summary>
-        /// A list of available level numbers. 
-        /// Levels are removed as they are played, making the List smaller.
-        /// </summary>
-        public static List<int> availableLevels;
 
         /// <summary>
         /// 
@@ -195,7 +190,7 @@ namespace FourChambers
 
             Console.WriteLine("Writing Game Progress to File: {0}", FlxG.score);
 
-            FlxU.saveToDevice(progress, "gui.dll");
+            FlxU.saveToDevice(progress, Globals.SAVE_FILE_NAME);
             //FlxU.saveToDevice(progress, "gui.txt");
             //if (FlxG.debug)
             //    FlxU.saveToDevice(progress, "gui_DEBUG.dll");
@@ -206,7 +201,7 @@ namespace FourChambers
 
         public static void readGameProgressToFile()
         {
-            string progress = FlxU.loadFromDevice("gui.dll");
+            string progress = FlxU.loadFromDevice(Globals.SAVE_FILE_NAME);
 
             string[] vsplit = progress.Split('$');
 
@@ -230,26 +225,6 @@ namespace FourChambers
             Console.WriteLine("Reading Game Progress - Highest Level available {0} -- Money == ${1}", elements1[1], elements1[0]);
 
 
-        }
-
-        public static void advanceToNextLevel()
-        {
-            Globals.seraphineHasBeenKilled = false;
-
-            if (availableLevels.Count == 0)
-            {
-                Globals.availableLevels = new List<int>() { 21, 22, 23, 24, 25, 26, 27 };
-
-                FlxG.level = 1000;
-                Console.WriteLine("advanceToNextLevel() ");
-            }
-            else
-            {
-                int newLevel = (int)FlxU.random(0, Globals.availableLevels.Count);
-                FlxG.level = Globals.availableLevels[newLevel];
-                Console.WriteLine("advanceToNextLevel() " + Globals.availableLevels[newLevel] + "  New Level:  " + newLevel + " " + availableLevels.Count);
-                Globals.availableLevels.RemoveAt(newLevel);
-            }
         }
 
         public static void getLevelFileName()

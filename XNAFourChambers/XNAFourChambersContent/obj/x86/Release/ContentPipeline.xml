@@ -2187,6 +2187,69 @@
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\EnemyHurt1.xnb</Output>
       <Time>2017-03-09T08:09:50.9295812+11:00</Time>
     </Item>
+    <Item>
+      <Source>fourchambers\doorSparkles3x3.png</Source>
+      <Name>fourchambers\doorSparkles3x3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles3x3.xnb</Output>
+      <Time>2017-03-10T06:56:47.7413274+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\catscreech.wav</Source>
+      <Name>sfx\catscreech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\catscreech.xnb</Output>
+      <Time>2017-03-10T06:56:47.7433276+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\demonic-woman-scream.wav</Source>
+      <Name>sfx\demonic-woman-scream</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\demonic-woman-scream.xnb</Output>
+      <Time>2017-03-10T06:56:47.7463277+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\long-growl.wav</Source>
+      <Name>sfx\long-growl</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\long-growl.xnb</Output>
+      <Time>2017-03-10T06:56:47.7533281+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\monster-screech.wav</Source>
+      <Name>sfx\monster-screech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\monster-screech.xnb</Output>
+      <Time>2017-03-10T06:56:47.7563283+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\screech5.wav</Source>
+      <Name>sfx\screech5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\screech5.xnb</Output>
+      <Time>2017-03-10T06:56:47.7583284+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\vampire-hiss.wav</Source>
+      <Name>sfx\vampire-hiss</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\vampire-hiss.xnb</Output>
+      <Time>2017-03-10T06:56:47.7653288+11:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

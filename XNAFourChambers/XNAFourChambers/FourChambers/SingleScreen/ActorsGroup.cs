@@ -39,7 +39,7 @@ namespace FourChambers
 
                 var type = Type.GetType(nameOfNewActor);
 
-                Console.WriteLine("Making " + nameOfNewActor);
+                Console.WriteLine("Making {0} @ position {1}:{2}", nameOfNewActor, nodes["x"], nodes["y"]);
 
                 try
                 {
