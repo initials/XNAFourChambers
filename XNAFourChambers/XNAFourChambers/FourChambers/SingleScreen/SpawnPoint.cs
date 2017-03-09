@@ -16,7 +16,7 @@ namespace FourChambers
             : base(xPos, yPos)
         {
             createGraphic(16, 16, Color.Green);
-            alpha = 0.1f;
+            alpha = 1.0f;
         }
 
         /// <summary>

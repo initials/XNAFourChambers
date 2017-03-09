@@ -29,11 +29,9 @@ namespace FourChambers
 
             followObject = new FlxObject(400, 592 / 2, 1, 1);
             add(followObject);
-            
 
             FlxG.followBounds(0, 0, 2500, 2500, true);
             FlxG.follow(followObject, 5);
-
 
             FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
 
@@ -42,7 +40,6 @@ namespace FourChambers
             Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
 
             FlxG.showHud();
-            
 
             Globals.levelFile = "ogmoLevels/characterSelect.oel";
 
@@ -76,11 +73,6 @@ namespace FourChambers
 
             actorsGrp.members = actorsGrp.members.OrderBy(d => d.x).ToList();
 
-            //FlxG.setHudTextScale(1, FlxG.zoom);
-            //FlxG.setHudTextPosition(1, prism.x, prism.y - 24);
-
-            //FlxG.showBounds = true;
-
             for (int i = 0; i < 25; i++)
             {
                 Cloud c = new Cloud((int)FlxU.random(0, FlxG.width) + 160, (int)FlxU.random(0, FlxG.height) + 160);
@@ -95,9 +87,6 @@ namespace FourChambers
             add(infoText);
             infoText.x = prism.x;
             infoText.y = prism.y+56;
-
-            Console.WriteLine(FlxG.scroll.X);
-            Console.WriteLine(FlxG.scroll.Y);
 
         }
 
@@ -117,10 +106,6 @@ namespace FourChambers
 
         override public void update()
         {
-
-            //Console.WriteLine(FlxG.scroll.X);
-            //Console.WriteLine(FlxG.scroll.Y);
-
             prism.x = (actorsGrp.members[currentCharacterSelected].x + actorsGrp.members[currentCharacterSelected].width/2) - (prism.width/2);
             prism.y = actorsGrp.members[currentCharacterSelected].y - 24;
 
@@ -141,7 +126,6 @@ namespace FourChambers
                 if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false && FlxG.fade.exists == false)
                 {
                     prism.play("wrap");
-
                     
                     FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
                     
@@ -150,11 +134,9 @@ namespace FourChambers
                     //levelTilemap.transition = 0;
 
                     FlxG.quake.start(0.00525f, 1.7f);
-
-
+                    
                     followObject.velocity.X = 45;
                     followObject.acceleration.X = 75;
-
 
                     foreach (var item in this.defaultGroup.members)
                     {
@@ -190,13 +172,10 @@ namespace FourChambers
             if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false)
             {
                 infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!";
-                //FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " ready!");
             }
             else
             {
                 infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ";
-
-                //FlxG.setHudText(1, actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ");
             }
             if (FlxG.debug)
             {
@@ -204,14 +183,21 @@ namespace FourChambers
             }
             if (FlxG.elapsedTotal > 1.0f)
             {
-                if (FlxControl.CANCELJUSTPRESSED || FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
+                if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
                 {
-                    FlxG.Game.Exit();
-                    return;
+                    FlxG.fade.start(Color.Black, 1.5f, exitGame, false);
+
+                    foreach (var item in this.defaultGroup.members)
+                    {
+                        if (item.GetType().ToString() == "FourChambers.TitleText")
+                        {
+                            ((TitleText)(item)).text = "THOU ART DEAD";
+                        }
+                    }
+
+
                 }
             }
-
-
         }
 
         public static void goToNextState(object sender, FlxEffectCompletedEvent e)
@@ -219,6 +205,13 @@ namespace FourChambers
             FlxG.state = new SingleScreenLevel();
             return;
         }
+
+        public static void exitGame(object sender, FlxEffectCompletedEvent e)
+        {
+            FlxG.Game.Exit();
+            return;
+        }
+
 
         private void runDebugKeyPresses()
         {

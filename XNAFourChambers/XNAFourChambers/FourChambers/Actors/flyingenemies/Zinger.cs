@@ -48,7 +48,7 @@ namespace FourChambers
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
-            deathSound = "sfx/screech5";
+            deathSound = "sfx/EnemyHurt1";
 
         }
 

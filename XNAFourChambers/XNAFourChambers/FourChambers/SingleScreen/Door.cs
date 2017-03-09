@@ -88,13 +88,11 @@ namespace FourChambers
 
                     if (FlxG.level == 7)
                     {
-                        if (FlxG.fade.exists == false)
-                            FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, true);
+                        FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, false);
                     }
                     else
                     {
-                        if (FlxG.fade.exists==false)
-                            FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToNextLevel, true);
+                        FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToNextLevel, false);
 
                     }
                     return;

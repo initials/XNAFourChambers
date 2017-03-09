@@ -141,8 +141,7 @@ namespace FourChambers
 
             if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isNewButtonPress(Buttons.Back))
             {
-                //goToCharacterSelectScreen();
-                FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, true);
+                FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, goToCharacterSelectScreen, false);
                 return;
             }
 
@@ -154,8 +153,7 @@ namespace FourChambers
                 {
                     FlxG.setHudText(3, " ");
 
-                    //restartScene();
-                    FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, restartScene, true);
+                    FlxG.fade.start(Color.Black, Globals.FADE_OUT_TIME, restartScene, false);
                     return;
                 }
             }
