@@ -59,6 +59,7 @@ namespace FourChambers
 
             releaseTime = 12;
 
+            deathSound = "sfx/EnemyHurt1";
         }
 
         override public void update()

@@ -68,8 +68,8 @@ namespace FourChambers
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
-            
-            
+
+            deathSound = "sfx/horseHurt";
         }
 
         
@@ -164,8 +164,8 @@ namespace FourChambers
             velocity.X = 0;
             //color = Color.PaleVioletRed;
 
-            if (onScreen())
-                FlxG.play("sfx/horseHurt", 1.0f, false);
+            //if (onScreen())
+            //    FlxG.play("sfx/horseHurt", 1.0f, false);
 
             base.hurt(Damage);
         }

@@ -12,6 +12,7 @@ namespace FourChambers
 {
     class Bat : FlyingEnemy
     {
+        
 
         public Bat(int xPos, int yPos)
             : base(xPos, yPos)
@@ -46,6 +47,8 @@ namespace FourChambers
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox"};
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
+            deathSound = "sfx/monster-screech";
 
         }
 

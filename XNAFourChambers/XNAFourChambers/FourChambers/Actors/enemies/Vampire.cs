@@ -60,6 +60,8 @@ namespace FourChambers
 
             //offset.X = 4;
             //offset.Y = 1;
+
+            deathSound = "sfx/vampire-hiss";
         }
 
         override public void update()

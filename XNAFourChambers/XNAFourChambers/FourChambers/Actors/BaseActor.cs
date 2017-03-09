@@ -74,6 +74,7 @@ namespace FourChambers
 
         public bool lockToOnScreen = false;
 
+        public string deathSound = "";
 
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
@@ -109,6 +110,16 @@ namespace FourChambers
 
         public override void kill()
         {
+
+            Console.WriteLine("Kill: {0} ", GetType().ToString());
+
+            if (deathSound != null && deathSound != "")
+            {
+                Console.WriteLine("Death Sound! : {0} ", deathSound);
+                FlxG.play(deathSound);
+
+            }
+
             colorFlasher.Start();
 
             base.kill();
@@ -116,6 +127,16 @@ namespace FourChambers
 
         public override void hurt(float Damage)
         {
+
+            Console.WriteLine("Hurt: {0} ", GetType().ToString());
+
+            if (deathSound != null && deathSound != "")
+            {
+                Console.WriteLine("Death Sound! : {0} ", deathSound);
+                FlxG.play(deathSound);
+
+            }
+
             base.hurt(Damage);
         }
 

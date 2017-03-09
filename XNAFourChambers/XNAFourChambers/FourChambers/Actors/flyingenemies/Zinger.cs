@@ -48,6 +48,8 @@ namespace FourChambers
 
             actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
 
+            deathSound = "sfx/screech5";
+
         }
 
         public override void reset(float X, float Y)
