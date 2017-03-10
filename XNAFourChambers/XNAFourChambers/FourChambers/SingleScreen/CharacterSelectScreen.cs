@@ -130,7 +130,7 @@ namespace FourChambers
                     FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
 
 
-                    showTextMessage();
+                    
 
                     FlxG.play("sfx/Door");
 
