@@ -1,2 +1,3 @@
 C:\Users\Shane\Documents\Visual Studio 2010\Projects\XNAFourChambers\XNAFourChambers\XNAFourChambersContent\obj\x86\Release\XNAFourChambersContent.contentprojResolveAssemblyReference.cache
 C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambersContent\obj\x86\Release\XNAFourChambersContent.contentprojResolveAssemblyReference.cache
+E:\VisualStudio2010\XNAFourChambers\XNAFourChambers\XNAFourChambersContent\obj\x86\Release\XNAFourChambersContent.contentprojResolveAssemblyReference.cache

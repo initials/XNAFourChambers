@@ -33,8 +33,6 @@ namespace FourChambers
             FlxG.followBounds(0, 0, 2500, 2500, true);
             FlxG.follow(followObject, 5);
 
-            FlxG.mouse.show(FlxG.Content.Load<Texture2D>("fourchambers/crosshair"));
-
             FlxG.elapsedTotal = 0;
 
             Globals.numberOfEnemiesToKillBeforeLevelOver = 20;
@@ -88,6 +86,8 @@ namespace FourChambers
             infoText.x = prism.x;
             infoText.y = prism.y+56;
 
+
+
         }
 
         private void addText()
@@ -128,7 +128,10 @@ namespace FourChambers
                     prism.play("wrap");
                     
                     FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
-                    
+
+
+                    showTextMessage();
+
                     FlxG.play("sfx/Door");
 
                     //levelTilemap.transition = 0;
@@ -191,17 +194,22 @@ namespace FourChambers
                     {
                         if (item.GetType().ToString() == "FourChambers.TitleText")
                         {
-                            ((TitleText)(item)).text = "THOU ART DEAD";
+                            ((TitleText)(item)).text = "";
                         }
                     }
-
-
                 }
             }
         }
 
-        public static void goToNextState(object sender, FlxEffectCompletedEvent e)
+        public void showTextMessage()
         {
+            NokiaPhone n = new NokiaPhone();
+            add(n);
+        }
+
+        public void goToNextState(object sender, FlxEffectCompletedEvent e)
+        {
+            
             FlxG.state = new SingleScreenLevel();
             return;
         }

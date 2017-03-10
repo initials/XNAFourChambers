@@ -131,6 +131,7 @@ Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb
 Content\fourchambers\doorSparkles.xnb
 Content\fourchambers\customSparkles.xnb
 Content\fourchambers\Stonehenge_100x100.xnb
+Content\fourchambers\doorSparkles3x3.xnb
 Content\sfx\arrowHit1.xnb
 Content\sfx\arrowHit2.xnb
 Content\sfx\arrowHit3.xnb
@@ -219,6 +220,13 @@ Content\sfx\sony\whooshes\whoosh_wobble-001.xnb
 Content\sfx\sony\whooshes\whoosh_wobble-002.xnb
 Content\sfx\sony\whooshes\whoosh_wobble-003.xnb
 Content\sfx\sony\whooshes\whoosh_wobble-004.xnb
+Content\sfx\EnemyHurt1.xnb
+Content\sfx\catscreech.xnb
+Content\sfx\demonic-woman-scream.xnb
+Content\sfx\long-growl.xnb
+Content\sfx\monster-screech.xnb
+Content\sfx\screech5.xnb
+Content\sfx\vampire-hiss.xnb
 Content\music\gwd\ColdMoody.xnb
 Content\music\gwd\ColdMoody_EnergyRemix.xnb
 Content\music\gwd\Dramatic.xnb
@@ -238,14 +246,8 @@ Content\music\ralph\stiff run.xnb
 Content\music\ralph\this is the news.xnb
 Content\ui\BetterPixels.xnb
 Content\ui\PixelFraktur.xnb
-Content\sfx\EnemyHurt1.xnb
-Content\fourchambers\doorSparkles3x3.xnb
-Content\sfx\catscreech.xnb
-Content\sfx\demonic-woman-scream.xnb
-Content\sfx\long-growl.xnb
-Content\sfx\monster-screech.xnb
-Content\sfx\screech5.xnb
-Content\sfx\vampire-hiss.xnb
+Content\fourchambers\NokiaScreen.xnb
+Content\sfx\smstone.xnb
 Content\music\gwd\ColdMoody.wma
 Content\music\gwd\ColdMoody_EnergyRemix.wma
 Content\music\gwd\Dramatic.wma

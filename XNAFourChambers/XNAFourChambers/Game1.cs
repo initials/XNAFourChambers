@@ -31,7 +31,7 @@ namespace Loader_Four
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            FlxG.zoom = 3;
+            FlxG.zoom = FourChambers.Globals.DEBUG_ZOOM;
 
 #if ! DEBUG
 

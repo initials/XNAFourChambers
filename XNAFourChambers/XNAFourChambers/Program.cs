@@ -45,8 +45,6 @@ namespace Loader_Four
             FlxG.debug = false;
 
             FourChambers.Globals.gif = true;
-            FourChambers.Globals.BUILD_TYPE = FourChambers.Globals.BUILD_TYPE_RELEASE;
-            FourChambers.Globals.DEMO_VERSION = false;
             FourChambers.Globals.PIRATE_COPY = false;
             FlxG.level = 1;
             FlxG.score = 0;

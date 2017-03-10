@@ -30,12 +30,19 @@ namespace FourChambers
 
         public const float GRAVITY = 820.0f;
 
+        public const int DEBUG_ZOOM = 1;
+
+
+        /*
         public static int BUILD_TYPE = 0;
 
         public const int BUILD_TYPE_RELEASE = 0;
         public const int BUILD_TYPE_PRESS = 1;
 
         public static bool DEMO_VERSION = false;
+        */
+
+
 
         public static int PLAYER_ACTOR = 1;
 

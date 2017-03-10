@@ -356,7 +356,7 @@ namespace FourChambers
             loadGraphic(Img, false, false, 16, 16);
 
             //22x14
-
+            /*
             if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_PRESS)
             {
                 if (FlxU.random() > 0.5)
@@ -428,6 +428,7 @@ namespace FourChambers
                     play("item");
                 }
             }
+             * */
         }
 
         public void TypeOfPowerUp(int Typ)
@@ -465,18 +466,6 @@ namespace FourChambers
             }
 
             base.overlapped(obj);
-        }
-
-        public void powerUpType(int setToType)
-        {
-            if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_PRESS)
-            {
-
-            }
-            else if (Globals.BUILD_TYPE == Globals.BUILD_TYPE_RELEASE)
-            {
-
-            }
         }
 
         public override void kill()
