@@ -119,6 +119,13 @@ namespace FourChambers
                 currentCharacterSelected++;
                 FlxG.play("sfx/Pickup_Coin");
             }
+
+            if (FlxG.keys.justPressed(Keys.Y))
+            {
+                showTextMessage();
+
+            }
+
             currentCharacterSelected = Utils.LimitToRange(currentCharacterSelected, 0, actorsGrp.members.Count-1);
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal>0.5f)

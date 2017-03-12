@@ -2113,7 +2113,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\bg.xnb</Output>
-      <Time>2017-02-25T13:54:31.6908191+11:00</Time>
+      <Time>2017-03-11T10:54:52.3381144+11:00</Time>
     </Item>
     <Item>
       <Source>fourchambers\waterFallSparkle.png</Source>
@@ -2249,6 +2249,24 @@
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\vampire-hiss.xnb</Output>
       <Time>2017-03-10T06:56:47.7653288+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\NokiaScreen.png</Source>
+      <Name>fourchambers\NokiaScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\NokiaScreen.xnb</Output>
+      <Time>2017-03-11T10:54:52.3371143+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\smstone.wav</Source>
+      <Name>sfx\smstone</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\smstone.xnb</Output>
+      <Time>2017-03-11T10:54:52.3531152+11:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
