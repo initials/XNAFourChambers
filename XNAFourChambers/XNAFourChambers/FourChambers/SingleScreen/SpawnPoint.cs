@@ -15,7 +15,12 @@ namespace FourChambers
         public SpawnPoint(int xPos, int yPos)
             : base(xPos, yPos)
         {
-            createGraphic(16, 16, Color.Green);
+            //createGraphic(16, 16, Color.Green);
+
+            loadGraphic("fourchambers/portal", true, false, 8, 8);
+            addAnimation("pulse", new int[] { 0, 1, 2, 3, 0 }, 18, false);
+            play("pulse", true);
+
             alpha = 1.0f;
         }
 
@@ -40,8 +45,10 @@ namespace FourChambers
                             item.GetType().ToString(), x, y, ((BaseActor)(item)).releaseTime, FlxG.elapsedTotal, item.dead, item.exists);
 
                         //Respawn based on chance of respawn
-                        item.reset(x, y);
+                        //item.reset(x+4, y+4);
+                        ((BaseActor)(item)).resetIn(x+4, y+4, 10);
 
+                        play("pulse", true);
                     }
                 }
             }

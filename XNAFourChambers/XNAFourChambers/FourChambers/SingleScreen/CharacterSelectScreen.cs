@@ -136,9 +136,6 @@ namespace FourChambers
                     
                     FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
 
-
-                    
-
                     FlxG.play("sfx/Door");
 
                     //levelTilemap.transition = 0;

@@ -79,7 +79,7 @@ namespace FourChambers
 
             price = 1.99f;
 
-            startPlayingBack();
+            //startPlayingBack();
 
             itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
 

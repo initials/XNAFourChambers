@@ -76,6 +76,16 @@ namespace FourChambers
 
         public string deathSound = "";
 
+        private int resetTimer = 100000;
+
+        public int resetDurationToWait = 1;
+
+        private float resetStorageX = 0.0f;
+
+        private float resetStorageY = 0.0f;
+
+
+
         /// <summary>
         /// The base for Actors. Should remain pretty empty.
         /// </summary>
@@ -105,6 +115,9 @@ namespace FourChambers
 
             customAnimation = null;
             lockToOnScreen = false;
+
+            resetTimer = 100000;
+            resetDurationToWait = 1;
 
         }
 
@@ -138,6 +151,23 @@ namespace FourChambers
             }
 
             base.hurt(Damage);
+        }
+
+        public void resetIn(float X, float Y, int Duration)
+        {
+            //Console.WriteLine(Duration);
+            Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
+
+            dead = false;
+            visible = true;
+            exists = true;
+
+            this.resetTimer = 0;
+            this.resetStorageX = X;
+            this.resetStorageY = Y;
+            this.resetDurationToWait = Duration;
+
+            Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
         }
 
         public override void reset(float X, float Y)
@@ -212,6 +242,20 @@ namespace FourChambers
         }
         override public void update()
         {
+            
+            if (resetTimer<25)
+                Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
+
+            if (resetTimer == resetDurationToWait)
+            {
+
+                
+                
+                reset(resetStorageX, resetStorageY);
+            }
+            resetTimer += 1;
+
+
 
             if (lockToOnScreen)
             {

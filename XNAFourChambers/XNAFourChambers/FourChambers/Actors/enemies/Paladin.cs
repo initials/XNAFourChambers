@@ -48,17 +48,19 @@ namespace FourChambers
             height = 20;
             setOffset(20, 30);
 
+            itemsThatCanKill = new List<string>() { "FourChambers.Arrow", "FourChambers.MeleeHitBox" };
+
+            actorsThatCanCollectWhenDead = new List<string>() { "FourChambers.Marksman" };
+
+            deathSound = "sfx/screech5";
+
 
 
         }
 
         override public void update()
         {
-
-
-
             base.update();
-
         }
 
 

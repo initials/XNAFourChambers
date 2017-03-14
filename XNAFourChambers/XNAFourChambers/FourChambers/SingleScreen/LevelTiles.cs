@@ -45,11 +45,11 @@ namespace FourChambers
                 Globals.TILE_SIZE_X,
                 Globals.TILE_SIZE_Y);
             bgTiles.alpha = 0.5f;
-            bgTiles.setScrollFactors(0.5f, 0.5f);
+            bgTiles.setScrollFactors(0.9f, 0.9f);
             add(bgTiles);
 
-            bgTiles.x += FlxG.scroll.X * (1 - bgTiles.scrollFactor.X);
-            bgTiles.y += FlxG.scroll.Y * (1 - bgTiles.scrollFactor.Y);
+            //bgTiles.x += FlxG.scroll.X * (1 - bgTiles.scrollFactor.X);
+            //bgTiles.y += FlxG.scroll.Y * (1 - bgTiles.scrollFactor.Y);
 
 
 
