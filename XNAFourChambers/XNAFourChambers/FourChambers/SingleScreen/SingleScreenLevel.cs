@@ -20,11 +20,13 @@ namespace FourChambers
         public static GenericEmitter particles;
         public static Hud hud;
 
+        public static NokiaPhone nokiaPhone;
+
         override public void create()
         {
             base.create();
 
-            //FlxG.bloom.Visible = false;
+            FlxG.bloom.Visible = false;
 
             FlxObject f = new FlxObject(400, 592 / 2, 1, 1);
             add(f);
@@ -90,6 +92,11 @@ namespace FourChambers
 
             hud = new Hud();
             add(hud);
+
+            nokiaPhone = new NokiaPhone();
+            add(nokiaPhone);
+            nokiaPhone.visible = false;
+
 
         }
 

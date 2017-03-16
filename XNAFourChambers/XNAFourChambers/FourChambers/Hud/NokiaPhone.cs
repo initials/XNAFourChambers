@@ -13,6 +13,8 @@ namespace FourChambers
 {
     public class NokiaPhone : FlxGroup
     {
+        public int numberOfTimesShown;
+
         public NokiaPhone()
             : base()
         {
@@ -52,6 +54,8 @@ namespace FourChambers
 
             x = (84*4) - (FlxG.width/2) + 84;
             y = 100;
+
+            numberOfTimesShown = 0;
         }
 
         public void setVisible()
@@ -59,8 +63,8 @@ namespace FourChambers
             FlxG.bloom.Visible = true;
             FlxG.play("sfx/smstone");
             visible = true;
-            
 
+            numberOfTimesShown++;
         }
 
         override public void update()

@@ -24,6 +24,7 @@ namespace FourChambers
         private NokiaPhone nokiaPhone;
 
 
+
         override public void create()
         {
             base.create();
@@ -138,9 +139,18 @@ namespace FourChambers
                 {
                     prism.play("wrap");
 
-                    FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
+                    if (nokiaPhone.numberOfTimesShown >= 1)
+                    {
+                        FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
+                        FlxG.play("sfx/Door");
+                    }
+                    else
+                    {
 
-                    FlxG.play("sfx/Door");
+                        nokiaPhone.setVisible();
+                    }
+
+                    
 
                     //levelTilemap.transition = 0;
 
