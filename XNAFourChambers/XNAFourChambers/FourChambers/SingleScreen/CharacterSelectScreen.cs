@@ -21,6 +21,9 @@ namespace FourChambers
 
         private FlxObject followObject;
 
+        private NokiaPhone nokiaPhone;
+
+
         override public void create()
         {
             base.create();
@@ -86,7 +89,9 @@ namespace FourChambers
             infoText.x = prism.x;
             infoText.y = prism.y+56;
 
-
+            nokiaPhone = new NokiaPhone();
+            add(nokiaPhone);
+            nokiaPhone.visible = false;
 
         }
 
@@ -107,7 +112,7 @@ namespace FourChambers
         override public void update()
         {
             prism.x = (actorsGrp.members[currentCharacterSelected].x + actorsGrp.members[currentCharacterSelected].width/2) - (prism.width/2);
-            prism.y = actorsGrp.members[currentCharacterSelected].y - 24;
+            prism.y = actorsGrp.members[currentCharacterSelected].y - 36;
 
             if (FlxControl.LEFTJUSTPRESSED)
             {
@@ -122,8 +127,7 @@ namespace FourChambers
 
             if (FlxG.keys.justPressed(Keys.Y))
             {
-                showTextMessage();
-
+                showTextMessage(null,null);
             }
 
             currentCharacterSelected = Utils.LimitToRange(currentCharacterSelected, 0, actorsGrp.members.Count-1);
@@ -133,7 +137,7 @@ namespace FourChambers
                 if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false && FlxG.fade.exists == false)
                 {
                     prism.play("wrap");
-                    
+
                     FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
 
                     FlxG.play("sfx/Door");
@@ -157,6 +161,10 @@ namespace FourChambers
                 else if (FlxG.fade.exists == true)
                 {
 
+                }
+                else if (nokiaPhone.visible==true)
+                {
+                    FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
                 }
                 else
                 {
@@ -205,15 +213,26 @@ namespace FourChambers
             }
         }
 
-        public void showTextMessage()
+        public void showTextMessage(object sender, FlxEffectCompletedEvent e)
         {
-            NokiaPhone n = new NokiaPhone();
-            add(n);
+            FlxG.fade.exists = false;
+            
+            nokiaPhone.setVisible();
+            
+            FlxG.stopMp3();
+
         }
 
         public void goToNextState(object sender, FlxEffectCompletedEvent e)
         {
             
+            FlxG.state = new SingleScreenLevel();
+            return;
+        }
+
+        public void goToNextState()
+        {
+
             FlxG.state = new SingleScreenLevel();
             return;
         }
