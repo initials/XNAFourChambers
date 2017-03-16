@@ -18,7 +18,7 @@ namespace FourChambers
             //createGraphic(16, 16, Color.Green);
 
             loadGraphic("fourchambers/portal", true, false, 8, 8);
-            addAnimation("pulse", new int[] { 0, 1, 2, 3, 0 }, 18, false);
+            addAnimation("pulse", new int[] { 0, 1, 2, 3,4,5,6,0 }, 18, false);
             play("pulse", true);
 
             alpha = 1.0f;

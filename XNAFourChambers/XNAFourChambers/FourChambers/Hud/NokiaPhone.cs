@@ -18,6 +18,10 @@ namespace FourChambers
         {
             setScrollFactors(0, 0);
 
+            //FlxSprite bg = new FlxSprite(0, 0);
+            //bg.createGraphic(1000, 1000, Color.Black);
+            //add(bg);
+
             FlxSprite e = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/NokiaScreen"));
             e.setScrollFactors(0, 0);
             e.scale = 4;
@@ -35,23 +39,33 @@ namespace FourChambers
 
             FlxText newText = new FlxText(0, 0, 48);
             newText.scale = 2;
-            newText.text = "From: Your Boss\nMessage: Can you\nwork on the weekend?\nkthx";
+            newText.text = "From: Your Boss\nMessage: Can u work\non the weekend?\nkthx";
             newText.color = Color.Black;
             add(newText);
             newText.offset.X = -32;
             newText.offset.Y = 32;
 
-            FlxG.play("sfx/smstone");
-            FlxG.bloom.Visible = true;
+            
+            
             //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
 
 
-            x = 168;
+            x = (84*4) - (FlxG.width/2) + 84;
             y = 100;
+        }
+
+        public void setVisible()
+        {
+            FlxG.bloom.Visible = true;
+            FlxG.play("sfx/smstone");
+            visible = true;
+            
+
         }
 
         override public void update()
         {
+
             foreach (var item in members)
             {
                 //item.x = x;

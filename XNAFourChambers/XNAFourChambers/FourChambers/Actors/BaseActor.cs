@@ -156,7 +156,7 @@ namespace FourChambers
         public void resetIn(float X, float Y, int Duration)
         {
             //Console.WriteLine(Duration);
-            Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
+            //Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
 
             dead = false;
             visible = true;
@@ -167,7 +167,7 @@ namespace FourChambers
             this.resetStorageY = Y;
             this.resetDurationToWait = Duration;
 
-            Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
+            //Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
         }
 
         public override void reset(float X, float Y)
@@ -243,8 +243,8 @@ namespace FourChambers
         override public void update()
         {
             
-            if (resetTimer<25)
-                Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
+            //if (resetTimer<25)
+            //    Console.WriteLine("Reseting {0} -> {1}", resetTimer, resetDurationToWait);
 
             if (resetTimer == resetDurationToWait)
             {
