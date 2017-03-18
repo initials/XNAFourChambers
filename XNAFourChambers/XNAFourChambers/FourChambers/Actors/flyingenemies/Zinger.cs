@@ -175,13 +175,13 @@ namespace FourChambers
         }
         public void overlapWithZingerNest(FlxObject obj)
         {
-            color = Color.Red;
+            //color = Color.Red;
 
             //Console.WriteLine("Custom Overlap run from Zinger with: {0}", obj.GetType().ToString());
         }
         public void overlapWithBat(FlxObject obj)
         {
-            color = Color.Green;
+            //color = Color.Green;
 
             //Console.WriteLine("Custom Overlap run from Zinger with: {0}", obj.GetType().ToString());
         }
