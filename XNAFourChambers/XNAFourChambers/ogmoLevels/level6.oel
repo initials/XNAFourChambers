@@ -1,4 +1,4 @@
-<level width="800" height="1600" levelName="" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="gwd/OffKilterLoop_haspercus" fireflyColor="#FFFF00" bgColor="#55B4FF">
+<level width="800" height="1600" levelName="The Third Chamber of the Human Heart" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="gwd/OffKilterLoop_haspercus" fireflyColor="#FFFF00" bgColor="#55B4FF">
   <camera x="0" y="0" />
   <bg tileset="auto_surt2_16x16" exportMode="CSV">-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 -1,-1,-1,-1,-1,-1,-1,-1,6,12,-1,-1,-1,-1,-1,-1,6,14,12,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1

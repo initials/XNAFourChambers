@@ -63,9 +63,12 @@ namespace FourChambers
             textMessage.scale = 2;
             textMessage.text = textStories[0];
             textMessage.color = Color.Black;
+            textMessage.alignment = FlxJustification.Left;
             add(textMessage);
-            textMessage.offset.X = -24;
+            textMessage.offset.X = 92;
             textMessage.offset.Y = 32;
+
+
 
             //x = (84 + 84/2);
 

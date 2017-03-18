@@ -1,4 +1,4 @@
-<level width="800" height="592" levelName="The First Chamber Of The Human Heart" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="ralph/nw hooker" fireflyColor="#FFFF80" bgColor="#000000">
+<level width="800" height="592" levelName="The Second Chamber Of The Human Heart" bgGraphic="Fear" timeOfDayPalette="skyPalette" music="ralph/nw hooker" fireflyColor="#FFFF80" bgColor="#000000">
   <camera x="160" y="160" />
   <bg tileset="auto_surt_16x16" exportMode="CSV">-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
