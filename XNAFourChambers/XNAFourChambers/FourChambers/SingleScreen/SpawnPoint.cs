@@ -45,8 +45,8 @@ namespace FourChambers
                             item.GetType().ToString(), x, y, ((BaseActor)(item)).releaseTime, FlxG.elapsedTotal, item.dead, item.exists);
 
                         //Respawn based on chance of respawn
-                        //item.reset(x+4, y+4);
-                        ((BaseActor)(item)).resetIn(x+4, y+4, 10);
+                        item.reset(x+4, y+4);
+                        //((BaseActor)(item)).resetIn(x+4, y+4, 10);
 
                         play("pulse", true);
                     }

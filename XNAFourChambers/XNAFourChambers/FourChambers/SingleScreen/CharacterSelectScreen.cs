@@ -101,7 +101,7 @@ namespace FourChambers
             int i = 1;
             foreach (var item in Globals.GAME_NAME.Split(' '))
             {
-                t = new TitleText(FlxG.width / 2 - 100, FlxG.height + (i * 14), 200, FlxG.width / 2 - 100, 8 + (i * 14), 2.0f + (i*0.2f));
+                t = new TitleText(FlxG.width / 2 - 100, FlxG.height + (i * 14), 200, FlxG.width / 2 - 100, 8 + (i * 14), 2.0f + (i*0.2f), 50);
                 t.setFormat(Globals.TITLE_FONT, 1, Color.White, Color.Black, FlxJustification.Center);
                 t.text = item.ToString();
                 add(t);

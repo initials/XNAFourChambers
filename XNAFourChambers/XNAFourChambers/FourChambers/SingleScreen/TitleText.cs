@@ -14,8 +14,9 @@ namespace FourChambers
     {
         public Vector2Tweener t;
         private float timing;
+        private int _delay;
 
-        public TitleText(float xPos, float yPos, float Width, float destX, float destY, float timeFrame)
+        public TitleText(float xPos, float yPos, float Width, float destX, float destY, float timeFrame, int Delay)
             : base(xPos, yPos, Width)
         {
             //setScrollFactors(2, 2);
@@ -28,6 +29,8 @@ namespace FourChambers
 
             timing = timeFrame;
 
+            _delay = Delay;
+
         }
 
         /// <summary>
@@ -35,13 +38,16 @@ namespace FourChambers
         /// </summary>
         override public void update()
         {
-            if (FlxG.elapsedFrames>50)
+            if (FlxG.elapsedFrames>_delay)
                 t.Update(FlxG.elapsedAsGameTime);
 
             base.update();
 
             x = t.Position.X;
             y = t.Position.Y;
+
+            if (y < 0)
+                visible = false;
             
         }
 
