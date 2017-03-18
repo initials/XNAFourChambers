@@ -137,12 +137,34 @@ namespace FourChambers
             {
                 if (((BaseActor)(actorsGrp.members[currentCharacterSelected])).lockedForSelection == false && FlxG.fade.exists == false)
                 {
-                    prism.play("wrap");
+                    
 
                     if (nokiaPhone.numberOfTimesShown >= 1)
                     {
+                        
+                        prism.play("wrap");
+
                         FlxG.fade.start(Color.Black, 1.5f, goToNextState, true);
                         FlxG.play("sfx/Door");
+
+                        //levelTilemap.transition = 0;
+
+                        FlxG.quake.start(0.00525f, 1.7f);
+
+                        followObject.velocity.X = 45;
+                        followObject.acceleration.X = 75;
+
+                        foreach (var item in this.defaultGroup.members)
+                        {
+                            if (item.GetType().ToString() == "FourChambers.TitleText")
+                            {
+                                ((TitleText)(item)).pushTextOffToLeft();
+                            }
+                        }
+
+                        nokiaPhone.setInvisible();
+
+
                     }
                     else
                     {
@@ -152,20 +174,7 @@ namespace FourChambers
 
                     
 
-                    //levelTilemap.transition = 0;
 
-                    FlxG.quake.start(0.00525f, 1.7f);
-                    
-                    followObject.velocity.X = 45;
-                    followObject.acceleration.X = 75;
-
-                    foreach (var item in this.defaultGroup.members)
-                    {
-                        if (item.GetType().ToString() == "FourChambers.TitleText")
-                        {
-                            ((TitleText)(item)).pushTextOffToLeft();
-                        }
-                    }
 
                 }
                 else if (FlxG.fade.exists == true)

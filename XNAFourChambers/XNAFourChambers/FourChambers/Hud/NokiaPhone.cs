@@ -14,6 +14,7 @@ namespace FourChambers
     public class NokiaPhone : FlxGroup
     {
         public int numberOfTimesShown;
+        public int timeVisible;
 
         public NokiaPhone()
             : base()
@@ -47,13 +48,12 @@ namespace FourChambers
             newText.offset.X = -32;
             newText.offset.Y = 32;
 
-            
-            
-            //FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
+            //x = (84 + 84/2);
 
+            //y = 48 + 48/2;
 
-            x = (84*4) - (FlxG.width/2) + 84;
-            y = 100;
+            x = FlxG.width / 2 - 84/2;
+            y = FlxG.height / 2 - 48 / 2;
 
             numberOfTimesShown = 0;
         }
@@ -65,10 +65,41 @@ namespace FourChambers
             visible = true;
 
             numberOfTimesShown++;
+            timeVisible = 0;
+        }
+
+        public void setInvisible()
+        {
+            FlxG.bloom.Visible = false;
+            visible = false;
+
         }
 
         override public void update()
         {
+            timeVisible++;
+
+            if (FlxG.keys.NUMPADFOUR)
+            {
+                x--;
+                Console.WriteLine("x/y - x:{0}--y{1}", x, y);
+            }
+            if (FlxG.keys.NUMPADSIX)
+            {
+                x++;
+                Console.WriteLine("x/y - x:{0}--y{1}", x, y);
+            }
+            if (FlxG.keys.NUMPADEIGHT)
+            {
+                y--;
+                Console.WriteLine("x/y - x:{0}--y{1}", x, y);
+            }
+            if (FlxG.keys.NUMPADTWO)
+            {
+                y++;
+                Console.WriteLine("x/y - x:{0}--y{1}", x, y);
+            }
+
 
             foreach (var item in members)
             {
@@ -79,7 +110,7 @@ namespace FourChambers
 
             }
 
-            if (FlxG.elapsedFrames < 65)
+            if (timeVisible < 25)
             {
                 FlxG.bloom.blurAmount = FlxU.random(0.0f, 0.50f);
                 FlxG.bloom.bloomThreshold = FlxU.random(0.5f, 1);
