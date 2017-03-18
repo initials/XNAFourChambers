@@ -2257,7 +2257,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\NokiaScreen.xnb</Output>
-      <Time>2017-03-11T10:54:52.3371143+11:00</Time>
+      <Time>2017-03-18T12:26:27.7127199+11:00</Time>
     </Item>
     <Item>
       <Source>sfx\smstone.wav</Source>
@@ -2266,7 +2266,16 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\smstone.xnb</Output>
-      <Time>2017-03-11T10:54:52.3531152+11:00</Time>
+      <Time>2017-03-18T11:28:16.1091358+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\portal.png</Source>
+      <Name>fourchambers\portal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\portal.xnb</Output>
+      <Time>2017-03-18T11:28:16.1071356+11:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

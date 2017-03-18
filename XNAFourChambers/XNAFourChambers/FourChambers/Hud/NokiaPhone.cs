@@ -25,7 +25,15 @@ namespace FourChambers
             //bg.createGraphic(1000, 1000, Color.Black);
             //add(bg);
 
-            FlxSprite e = new FlxSprite(0, 0, FlxG.Content.Load<Texture2D>("fourchambers/NokiaScreen"));
+            FlxSprite e = new FlxSprite(0, 0);
+            e.loadGraphic(FlxG.Content.Load<Texture2D>("fourchambers/NokiaScreen"), true, false, 84, 48);
+            e.addAnimation("flicker", 
+                new int[] { 3, FlxU.randomInt(0, 2), FlxU.randomInt(0, 2), 
+                FlxU.randomInt(0, 2), FlxU.randomInt(0, 2), 
+                FlxU.randomInt(0, 2), FlxU.randomInt(0, 4), 
+                FlxU.randomInt(0, 4), FlxU.randomInt(0, 4), 0, 1, 2, 3 }, 3);
+
+            e.play("flicker");
             e.setScrollFactors(0, 0);
             e.scale = 4;
             add(e);
@@ -45,7 +53,7 @@ namespace FourChambers
             newText.text = "From: Your Boss\nMessage: Can u work\non the weekend?\nkthx";
             newText.color = Color.Black;
             add(newText);
-            newText.offset.X = -32;
+            newText.offset.X = -24;
             newText.offset.Y = 32;
 
             //x = (84 + 84/2);
@@ -78,6 +86,8 @@ namespace FourChambers
         override public void update()
         {
             timeVisible++;
+
+            base.update();
 
             if (FlxG.keys.NUMPADFOUR)
             {

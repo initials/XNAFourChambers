@@ -97,6 +97,11 @@ namespace FourChambers
             add(nokiaPhone);
             nokiaPhone.visible = false;
 
+            TitleText t = new TitleText(FlxG.width / 2 - 100, FlxG.height / 2 - 50, 200, FlxG.width / 2 - 100, -50, 1.0f, 150);
+            t.setFormat(Globals.TITLE_FONT, 1, Color.White, Color.Black, FlxJustification.Center);
+            t.text = string.Format("Level {0}\n{1}", FlxG.level, levelAttrs["levelName"]);
+            add(t);
+
 
         }
 
@@ -114,8 +119,6 @@ namespace FourChambers
                 seraphine.concern = true;
                 seraphine.x = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").x - 20;
                 seraphine.y = actorsGrp.members.Find((FlxObject item) => item.GetType().ToString() == "FourChambers.Marksman").y - 30;
-
-                //FlxG.bloom.Visible = false;
             }
 
             FlxU.collide(actorsGrp, levelTilemap.levelTiles);
