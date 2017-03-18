@@ -172,7 +172,7 @@ namespace FourChambers
 
         public void overlapWithZinger(FlxObject obj)
         {
-            color = Color.Blue;
+            //color = Color.Blue;
         }
     }
 }

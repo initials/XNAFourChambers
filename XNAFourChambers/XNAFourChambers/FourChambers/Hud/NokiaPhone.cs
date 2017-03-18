@@ -15,10 +15,21 @@ namespace FourChambers
     {
         public int numberOfTimesShown;
         public int timeVisible;
+        public List<string> textStories;
+        public FlxText textMessage;
 
         public NokiaPhone()
             : base()
         {
+
+            textStories = new List<string>() { 
+                "From: Your Boss\nMessage: Can u work\non the weekend?\nkthx", 
+                "Can u spray the\nBrouwer's backyard\nIt's full of hornets", 
+                "Don't forget\nDo it in costume",
+                "Our customers\nAren't paying for\nsome normie to",
+                "exterminate\ntheir pests"
+            };
+
             setScrollFactors(0, 0);
 
             //FlxSprite bg = new FlxSprite(0, 0);
@@ -48,13 +59,13 @@ namespace FourChambers
             t.scale = 2;
             add(t);
 
-            FlxText newText = new FlxText(0, 0, 48);
-            newText.scale = 2;
-            newText.text = "From: Your Boss\nMessage: Can u work\non the weekend?\nkthx";
-            newText.color = Color.Black;
-            add(newText);
-            newText.offset.X = -24;
-            newText.offset.Y = 32;
+            textMessage = new FlxText(0, 0, 48);
+            textMessage.scale = 2;
+            textMessage.text = textStories[0];
+            textMessage.color = Color.Black;
+            add(textMessage);
+            textMessage.offset.X = -24;
+            textMessage.offset.Y = 32;
 
             //x = (84 + 84/2);
 
@@ -78,8 +89,21 @@ namespace FourChambers
 
         public void setInvisible()
         {
+
             FlxG.bloom.Visible = false;
             visible = false;
+
+        }
+
+        public void moveStoryAlong()
+        {
+            int index = textStories.FindIndex(x => x.StartsWith(textMessage.text));
+
+            if (textStories.Count <= index + 1)
+                setInvisible();
+            else
+                textMessage.text = textStories[index + 1];
+
 
         }
 

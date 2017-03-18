@@ -128,7 +128,7 @@ namespace FourChambers
                 pestsRemainingNumberText.text = "";
                 pestsRemainingText.text = "";
 
-                FlxG.setHudText(3, "Press [R] / (Y) to Restart");
+                FlxG.setHudText(3, "Press [R] / (Y) to Exterminate Pests In Full Costume. Press [ESC] / (Back) to select new costume. ");
                 FlxG.setHudTextScale(3, 3);
                 FlxG.setHudTextPosition(3, 8, FlxG.height - 16);
 

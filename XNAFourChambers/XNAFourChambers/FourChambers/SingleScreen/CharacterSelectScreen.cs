@@ -139,7 +139,7 @@ namespace FourChambers
                 {
                     
 
-                    if (nokiaPhone.numberOfTimesShown >= 1)
+                    if (nokiaPhone.numberOfTimesShown >= 1 && nokiaPhone.visible==false)
                     {
                         
                         prism.play("wrap");
@@ -163,8 +163,13 @@ namespace FourChambers
                         }
 
                         nokiaPhone.setInvisible();
+                        
 
 
+                    }
+                    else if (nokiaPhone.visible)
+                    {
+                        nokiaPhone.moveStoryAlong();
                     }
                     else
                     {
