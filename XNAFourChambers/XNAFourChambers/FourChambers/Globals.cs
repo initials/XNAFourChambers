@@ -30,7 +30,7 @@ namespace FourChambers
 
         public const float GRAVITY = 820.0f;
 
-        public const int DEBUG_ZOOM = 1;
+        public const int DEBUG_ZOOM = 2;
 
 
         /*

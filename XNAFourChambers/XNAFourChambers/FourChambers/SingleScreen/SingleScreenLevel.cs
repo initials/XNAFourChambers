@@ -187,7 +187,11 @@ namespace FourChambers
 
             //    return;
             //}
-
+            if (FlxG.keys.F8)
+            {
+                Globals.numberOfEnemiesToKillBeforeLevelOver = 5;
+                hud.startTween();
+            }
             if (FlxG.keys.F9)
             {
                 Globals.numberOfEnemiesToKillBeforeLevelOver = 0;

@@ -791,7 +791,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\auto_surt2_16x16.xnb</Output>
-      <Time>2017-01-15T17:53:18.6345919+11:00</Time>
+      <Time>2017-08-02T19:58:22.036306+10:00</Time>
     </Item>
     <Item>
       <Source>fourchambers\Door_32x32.png</Source>
@@ -1109,6 +1109,24 @@
       <Time>2016-04-23T16:04:38.1270423+10:00</Time>
     </Item>
     <Item>
+      <Source>fourchambers\bg.png</Source>
+      <Name>fourchambers\bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\bg.xnb</Output>
+      <Time>2017-03-11T10:54:52.3381144+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\arrow_8x5.png</Source>
+      <Name>fourchambers\arrow_8x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\arrow_8x5.xnb</Output>
+      <Time>2017-01-21T23:15:28.0692601+11:00</Time>
+    </Item>
+    <Item>
       <Source>fourchambers\fire_wisp.png</Source>
       <Name>fourchambers\fire_wisp</Name>
       <Importer>TextureImporter</Importer>
@@ -1136,6 +1154,15 @@
       <Time>2016-04-23T16:04:38.1490435+10:00</Time>
     </Item>
     <Item>
+      <Source>fourchambers\waterFallSparkle.png</Source>
+      <Name>fourchambers\waterFallSparkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\waterFallSparkle.xnb</Output>
+      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
+    </Item>
+    <Item>
       <Source>fourchambers\characterSpriteSheets\Seraphine_50x50.png</Source>
       <Name>fourchambers\characterSpriteSheets\Seraphine_50x50</Name>
       <Importer>TextureImporter</Importer>
@@ -1143,6 +1170,60 @@
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\characterSpriteSheets\Seraphine_50x50.xnb</Output>
       <Time>2016-04-23T16:04:38.1280423+10:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\doorSparkles.png</Source>
+      <Name>fourchambers\doorSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles.xnb</Output>
+      <Time>2017-01-15T12:17:53.4785228+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\customSparkles.png</Source>
+      <Name>fourchambers\customSparkles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\customSparkles.xnb</Output>
+      <Time>2017-02-18T14:05:07.0529951+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\Stonehenge_100x100.png</Source>
+      <Name>fourchambers\Stonehenge_100x100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\Stonehenge_100x100.xnb</Output>
+      <Time>2016-04-23T16:04:38.0930403+10:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\doorSparkles3x3.png</Source>
+      <Name>fourchambers\doorSparkles3x3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles3x3.xnb</Output>
+      <Time>2017-03-10T06:56:47.7413274+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\NokiaScreen.png</Source>
+      <Name>fourchambers\NokiaScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\NokiaScreen.xnb</Output>
+      <Time>2017-03-18T12:26:27.7127199+11:00</Time>
+    </Item>
+    <Item>
+      <Source>fourchambers\portal.png</Source>
+      <Name>fourchambers\portal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\portal.xnb</Output>
+      <Time>2017-03-18T11:28:16.1071356+11:00</Time>
     </Item>
     <Item>
       <Source>sfx\arrowHit1.wav</Source>
@@ -1937,6 +2018,78 @@
       <Time>2016-04-23T16:04:38.822082+10:00</Time>
     </Item>
     <Item>
+      <Source>sfx\EnemyHurt1.wav</Source>
+      <Name>sfx\EnemyHurt1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\EnemyHurt1.xnb</Output>
+      <Time>2017-03-09T08:09:50.9295812+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\catscreech.wav</Source>
+      <Name>sfx\catscreech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\catscreech.xnb</Output>
+      <Time>2017-03-10T06:56:47.7433276+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\demonic-woman-scream.wav</Source>
+      <Name>sfx\demonic-woman-scream</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\demonic-woman-scream.xnb</Output>
+      <Time>2017-03-10T06:56:47.7463277+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\long-growl.wav</Source>
+      <Name>sfx\long-growl</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\long-growl.xnb</Output>
+      <Time>2017-03-10T06:56:47.7533281+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\monster-screech.wav</Source>
+      <Name>sfx\monster-screech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\monster-screech.xnb</Output>
+      <Time>2017-03-10T06:56:47.7563283+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\screech5.wav</Source>
+      <Name>sfx\screech5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\screech5.xnb</Output>
+      <Time>2017-03-10T06:56:47.7583284+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\vampire-hiss.wav</Source>
+      <Name>sfx\vampire-hiss</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\vampire-hiss.xnb</Output>
+      <Time>2017-03-10T06:56:47.7653288+11:00</Time>
+    </Item>
+    <Item>
+      <Source>sfx\smstone.wav</Source>
+      <Name>sfx\smstone</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\smstone.xnb</Output>
+      <Time>2017-03-18T11:28:16.1091358+11:00</Time>
+    </Item>
+    <Item>
       <Source>music\gwd\ColdMoody.mp3</Source>
       <Name>music\gwd\ColdMoody</Name>
       <Importer>Mp3Importer</Importer>
@@ -2107,60 +2260,6 @@
       <Time>2016-04-23T16:04:38.7230764+10:00</Time>
     </Item>
     <Item>
-      <Source>fourchambers\bg.png</Source>
-      <Name>fourchambers\bg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\bg.xnb</Output>
-      <Time>2017-03-11T10:54:52.3381144+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\waterFallSparkle.png</Source>
-      <Name>fourchambers\waterFallSparkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\waterFallSparkle.xnb</Output>
-      <Time>2017-01-25T19:15:52.7524005+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\doorSparkles.png</Source>
-      <Name>fourchambers\doorSparkles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles.xnb</Output>
-      <Time>2017-01-15T12:17:53.4785228+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\arrow_8x5.png</Source>
-      <Name>fourchambers\arrow_8x5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\arrow_8x5.xnb</Output>
-      <Time>2017-01-21T23:15:28.0692601+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\customSparkles.png</Source>
-      <Name>fourchambers\customSparkles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\customSparkles.xnb</Output>
-      <Time>2017-02-18T14:05:07.0529951+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\Stonehenge_100x100.png</Source>
-      <Name>fourchambers\Stonehenge_100x100</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\Stonehenge_100x100.xnb</Output>
-      <Time>2016-04-23T16:04:38.0930403+10:00</Time>
-    </Item>
-    <Item>
       <Source>ui\BetterPixels.spritefont</Source>
       <Name>ui\BetterPixels</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -2177,105 +2276,6 @@
       <Options>None</Options>
       <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\ui\PixelFraktur.xnb</Output>
       <Time>2017-02-15T19:25:04.8677558+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\EnemyHurt1.wav</Source>
-      <Name>sfx\EnemyHurt1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\EnemyHurt1.xnb</Output>
-      <Time>2017-03-09T08:09:50.9295812+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\doorSparkles3x3.png</Source>
-      <Name>fourchambers\doorSparkles3x3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\doorSparkles3x3.xnb</Output>
-      <Time>2017-03-10T06:56:47.7413274+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\catscreech.wav</Source>
-      <Name>sfx\catscreech</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\catscreech.xnb</Output>
-      <Time>2017-03-10T06:56:47.7433276+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\demonic-woman-scream.wav</Source>
-      <Name>sfx\demonic-woman-scream</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\demonic-woman-scream.xnb</Output>
-      <Time>2017-03-10T06:56:47.7463277+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\long-growl.wav</Source>
-      <Name>sfx\long-growl</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\long-growl.xnb</Output>
-      <Time>2017-03-10T06:56:47.7533281+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\monster-screech.wav</Source>
-      <Name>sfx\monster-screech</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\monster-screech.xnb</Output>
-      <Time>2017-03-10T06:56:47.7563283+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\screech5.wav</Source>
-      <Name>sfx\screech5</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\screech5.xnb</Output>
-      <Time>2017-03-10T06:56:47.7583284+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\vampire-hiss.wav</Source>
-      <Name>sfx\vampire-hiss</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\vampire-hiss.xnb</Output>
-      <Time>2017-03-10T06:56:47.7653288+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\NokiaScreen.png</Source>
-      <Name>fourchambers\NokiaScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\NokiaScreen.xnb</Output>
-      <Time>2017-03-18T12:26:27.7127199+11:00</Time>
-    </Item>
-    <Item>
-      <Source>sfx\smstone.wav</Source>
-      <Name>sfx\smstone</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\sfx\smstone.xnb</Output>
-      <Time>2017-03-18T11:28:16.1091358+11:00</Time>
-    </Item>
-    <Item>
-      <Source>fourchambers\portal.png</Source>
-      <Name>fourchambers\portal</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\_Files\game_dev\XNAFourChambers\XNAFourChambers\XNAFourChambers\bin\x86\Release\Content\fourchambers\portal.xnb</Output>
-      <Time>2017-03-18T11:28:16.1071356+11:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -2314,8 +2314,8 @@
         <Value>2010-08-23T11:41:18+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-10-28T09:44:06.8097308+11:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-06-21T10:09:21.4848435+10:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
