@@ -214,8 +214,9 @@ namespace FourChambers
             }
             else
             {
-                infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " [LOCKED] Proposed Price: $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ";
+                infoText.text = actorsGrp.members[currentCharacterSelected].GetType().ToString().Split('.')[1] + " BUY NOW $" + ((BaseActor)(actorsGrp.members[currentCharacterSelected])).price.ToString() + " ";
             }
+
             if (FlxG.debug)
             {
                 runDebugKeyPresses();
